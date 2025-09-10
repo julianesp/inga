@@ -1,4 +1,4 @@
-import SearchBox from "@/components/SearchBox";
+import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 
@@ -44,7 +44,7 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
       </section>
 
-      <SearchBox />
+      <GlobalSearch />
 
       {/* Services Preview */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
