@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
+import styles from "../styles/Navbar.module.scss";
 
 const navigationLinks = [
   { href: "/", label: "Inicio" },
@@ -19,8 +20,11 @@ const navigationLinks = [
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // backdrop-blur-md
   return (
-    <nav className="bg-white dark:bg-gray-900 shadow-lg sticky top-0 z-50 rounded-bl-2xl rounded-br-2xl backdrop-blur-md transition-colors duration-200">
+    <nav
+      className={`border-white border-b-4  sticky top-0 z-50 rounded-bl-2xl rounded-br-2xl  ${styles.navbar}`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
@@ -41,12 +45,14 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-3">
+          <div
+            className={`hidden lg:flex items-center space-x-3 ${styles.links}`}
+          >
             {navigationLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                className="text-white dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
               >
                 {link.label}
               </Link>
