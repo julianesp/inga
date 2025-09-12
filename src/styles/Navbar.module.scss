@@ -7,11 +7,7 @@
   top: 0;
   z-index: 50;
 
-  /* Fondo con alfa para que se vea el blur */
-  background-color: rgba(15, 23, 42, 0.62); /* ~#0F172A con 72% opacidad */
-  /* o en hex de 8 dígitos: #0F172AB8 */
-
-  /* Blur notorio y un poco de saturación para efecto “glass” */
+  /* Blur notorio y un poco de saturación para efecto "glass" */
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
 
@@ -24,7 +20,7 @@
 /* Fallback si el navegador no soporta backdrop-filter (Firefox sin flag) */
 @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .navbar {
-    background-color: #0f172a;
+    /* Usar variables CSS para que responda al modo dark */
   } /* sólido sin blur */
 }
 
