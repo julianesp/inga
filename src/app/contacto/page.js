@@ -9,7 +9,6 @@ export const metadata = {
 export default function ContactoPage() {
   return (
     <div className="min-h-screen">
-
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
         <div className="container mx-auto px-4">
@@ -139,31 +138,31 @@ export default function ContactoPage() {
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="font-semibold">Lunes a Viernes:</span>
-                    <span>7:00 AM - 5:00 PM</span>
+                    <span className="font-semibold text-black">Lunes a Viernes:</span>
+                    <span className="text-black">7:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-semibold">Sábados:</span>
-                    <span>8:00 AM - 12:00 PM</span>
+                    <span className="font-semibold text-black">Sábados:</span>
+                    <span className="text-black">8:00 AM - 12:00 PM</span>
                   </div>
                   <p className="text-sm text-green-700 mt-4">
-                    * Los sábados solo en sedes de Sibundoy y Colón
+                    * Los sábados solo en sedes de Sibundoy y Colón (ejemplo)
                   </p>
                 </div>
               </div>
 
               <div className="bg-red-50 rounded-lg p-8 border border-red-200">
                 <h3 className="text-xl font-bold text-red-800 mb-4">
-                  🚨 Emergencias
+                  🚨 Emergencias (¿hay servicio de emergencias?)
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="font-semibold">Todos los días:</span>
-                    <span>24 horas</span>
+                    <span className="font-semibold text-black">Todos los días:</span>
+                    <span className="text-black">24 horas</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-semibold">Festivos:</span>
-                    <span>24 horas</span>
+                    <span className="font-semibold text-black">Festivos:</span>
+                    <span className="text-black">24 horas</span>
                   </div>
                   <p className="text-sm text-red-700 mt-4">
                     * Servicio de emergencias disponible solo en sede principal
@@ -194,7 +193,6 @@ export default function ContactoPage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }
