@@ -23,7 +23,7 @@ export default function Navbar() {
   // backdrop-blur-md
   return (
     <nav
-      className={`border-white border-b-4  sticky top-0 z-50 rounded-bl-2xl rounded-br-2xl  ${styles.navbar}`}
+      className={`border-white border-b-4 sticky top-0 z-50 rounded-bl-2xl rounded-br-2xl bg-slate-900/75 dark:bg-slate-800/75 ${styles.navbar}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
@@ -57,7 +57,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
           </div>
 
           {/* Mobile menu button */}

@@ -1,6 +1,7 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import Link from "next/link";
+import { useState } from "react";
 
 interface Contacto {
   id: string;
@@ -16,183 +17,214 @@ interface Contacto {
 
 const directorioContactos: Contacto[] = [
   {
-    id: '1',
-    nombre: 'Dr. Miguel Tandioy',
-    cargo: 'Gerente General',
-    departamento: 'Gerencia',
-    telefono: '(8) 420-1234',
-    extension: '101',
-    email: 'gerencia@ips-inga-kamentsa.org',
-    sede: 'Sibundoy',
-    horarioAtencion: 'Lunes a Viernes 8:00 AM - 5:00 PM'
+    id: "1",
+    nombre: "Dr. Miguel Tandioy",
+    cargo: "Gerente General",
+    departamento: "Gerencia",
+    telefono: "(8) 420-1234",
+    extension: "101",
+    email: "gerencia@ips-inga-kamentsa.org",
+    sede: "Sibundoy",
+    horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
   },
   {
-    id: '2',
-    nombre: 'Dra. Carmen Chindoy',
-    cargo: 'Directora Científica',
-    departamento: 'Asistencial',
-    telefono: '(8) 420-1234',
-    extension: '102',
-    email: 'direccion.cientifica@ips-inga-kamentsa.org',
-    sede: 'Sibundoy',
-    horarioAtencion: 'Lunes a Viernes 7:00 AM - 4:00 PM'
+    id: "2",
+    nombre: "Dra. Carmen Chindoy",
+    cargo: "Directora Científica",
+    departamento: "Asistencial",
+    telefono: "(8) 420-1234",
+    extension: "102",
+    email: "direccion.cientifica@ips-inga-kamentsa.org",
+    sede: "Sibundoy",
+    horarioAtencion: "Lunes a Viernes 7:00 AM - 4:00 PM",
   },
   {
-    id: '3',
-    nombre: 'Lic. Ana Jamioy',
-    cargo: 'Coordinadora Administrativa',
-    departamento: 'Secretaría',
-    telefono: '(8) 420-1234',
-    extension: '103',
-    email: 'secretaria@ips-inga-kamentsa.org',
-    sede: 'Sibundoy',
-    horarioAtencion: 'Lunes a Viernes 8:00 AM - 5:00 PM'
+    id: "3",
+    nombre: "Lic. Ana Jamioy",
+    cargo: "Coordinadora Administrativa",
+    departamento: "Secretaría",
+    telefono: "(8) 420-1234",
+    extension: "103",
+    email: "secretaria@ips-inga-kamentsa.org",
+    sede: "Sibundoy",
+    horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
   },
   {
-    id: '4',
-    nombre: 'Sra. María Muchachasoy',
-    cargo: 'Coordinadora Atención al Usuario',
-    departamento: 'Atención al Usuario',
-    telefono: '(8) 420-1111',
-    extension: '104',
-    email: 'atencion.usuario@ips-inga-kamentsa.org',
-    sede: 'Sibundoy',
-    horarioAtencion: 'Lunes a Viernes 7:00 AM - 5:00 PM'
+    id: "4",
+    nombre: "Sra. María Muchachasoy",
+    cargo: "Coordinadora Atención al Usuario",
+    departamento: "Atención al Usuario",
+    telefono: "(8) 420-1111",
+    extension: "104",
+    email: "atencion.usuario@ips-inga-kamentsa.org",
+    sede: "Sibundoy",
+    horarioAtencion: "Lunes a Viernes 7:00 AM - 5:00 PM",
   },
   {
-    id: '5',
-    nombre: 'Enf. Carlos Tisoy',
-    cargo: 'Coordinador Enfermería',
-    departamento: 'Asistencial',
-    telefono: '(8) 420-1234',
-    extension: '105',
-    email: 'enfermeria@ips-inga-kamentsa.org',
-    sede: 'Sibundoy',
-    horarioAtencion: 'Lunes a Sábado 7:00 AM - 7:00 PM'
+    id: "5",
+    nombre: "Enf. Carlos Tisoy",
+    cargo: "Coordinador Enfermería",
+    departamento: "Asistencial",
+    telefono: "(8) 420-1234",
+    extension: "105",
+    email: "enfermeria@ips-inga-kamentsa.org",
+    sede: "Sibundoy",
+    horarioAtencion: "Lunes a Sábado 7:00 AM - 7:00 PM",
   },
   {
-    id: '6',
-    nombre: 'Taita Domingo Tandioy',
-    cargo: 'Médico Tradicional Principal',
-    departamento: 'Medicina Tradicional',
-    telefono: '(8) 420-1234',
-    extension: '106',
-    email: 'medicina.tradicional@ips-inga-kamentsa.org',
-    sede: 'Sibundoy',
-    horarioAtencion: 'Martes y Jueves 8:00 AM - 12:00 PM'
+    id: "6",
+    nombre: "Taita Domingo Tandioy",
+    cargo: "Médico Tradicional Principal",
+    departamento: "Medicina Tradicional",
+    telefono: "(8) 420-1234",
+    extension: "106",
+    email: "medicina.tradicional@ips-inga-kamentsa.org",
+    sede: "Sibundoy",
+    horarioAtencion: "Martes y Jueves 8:00 AM - 12:00 PM",
   },
   {
-    id: '7',
-    nombre: 'Dr. Roberto Quinchoa',
-    cargo: 'Coordinador Sede Colón',
-    departamento: 'Asistencial',
-    telefono: '(8) 420-5678',
-    extension: '201',
-    email: 'colon@ips-inga-kamentsa.org',
-    sede: 'Colón',
-    horarioAtencion: 'Lunes a Viernes 8:00 AM - 4:00 PM'
+    id: "7",
+    nombre: "Dr. Roberto Quinchoa",
+    cargo: "Coordinador Sede Colón",
+    departamento: "Asistencial",
+    telefono: "(8) 420-5678",
+    extension: "201",
+    email: "colon@ips-inga-kamentsa.org",
+    sede: "Colón",
+    horarioAtencion: "Lunes a Viernes 8:00 AM - 4:00 PM",
   },
   {
-    id: '8',
-    nombre: 'Enf. Patricia Muyuy',
-    cargo: 'Coordinadora Sede Santiago',
-    departamento: 'Asistencial',
-    telefono: '(8) 420-9012',
-    extension: '301',
-    email: 'santiago@ips-inga-kamentsa.org',
-    sede: 'Santiago',
-    horarioAtencion: 'Lunes a Viernes 8:00 AM - 4:00 PM'
+    id: "8",
+    nombre: "Enf. Patricia Muyuy",
+    cargo: "Coordinadora Sede Santiago",
+    departamento: "Asistencial",
+    telefono: "(8) 420-9012",
+    extension: "301",
+    email: "santiago@ips-inga-kamentsa.org",
+    sede: "Santiago",
+    horarioAtencion: "Lunes a Viernes 8:00 AM - 4:00 PM",
   },
   {
-    id: '9',
-    nombre: 'Aux. Luis Jojoa',
-    cargo: 'Coordinador Sede San Andrés',
-    departamento: 'Asistencial',
-    telefono: '(8) 420-3456',
-    extension: '401',
-    email: 'sanandres@ips-inga-kamentsa.org',
-    sede: 'San Andrés',
-    horarioAtencion: 'Lunes a Viernes 8:00 AM - 4:00 PM'
+    id: "9",
+    nombre: "Aux. Luis Jojoa",
+    cargo: "Coordinador Sede San Andrés",
+    departamento: "Asistencial",
+    telefono: "(8) 420-3456",
+    extension: "401",
+    email: "sanandres@ips-inga-kamentsa.org",
+    sede: "San Andrés",
+    horarioAtencion: "Lunes a Viernes 8:00 AM - 4:00 PM",
   },
   {
-    id: '10',
-    nombre: 'Cont. Jorge Chicangana',
-    cargo: 'Coordinador Financiero',
-    departamento: 'Administrativo',
-    telefono: '(8) 420-1234',
-    extension: '107',
-    email: 'financiero@ips-inga-kamentsa.org',
-    sede: 'Sibundoy',
-    horarioAtencion: 'Lunes a Viernes 8:00 AM - 5:00 PM'
-  }
+    id: "10",
+    nombre: "Cont. Jorge Chicangana",
+    cargo: "Coordinador Financiero",
+    departamento: "Administrativo",
+    telefono: "(8) 420-1234",
+    extension: "107",
+    email: "financiero@ips-inga-kamentsa.org",
+    sede: "Sibundoy",
+    horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
+  },
 ];
 
 export default function DirectorioTelefonico() {
-  const [filtroSede, setFiltroSede] = useState<string>('todas');
-  const [filtroDepartamento, setFiltroDepartamento] = useState<string>('todos');
-  const [busqueda, setBusqueda] = useState<string>('');
+  const [filtroSede, setFiltroSede] = useState<string>("todas");
+  const [filtroDepartamento, setFiltroDepartamento] = useState<string>("todos");
+  const [busqueda, setBusqueda] = useState<string>("");
 
-  const sedes = ['todas', ...Array.from(new Set(directorioContactos.map(c => c.sede)))];
-  const departamentos = ['todos', ...Array.from(new Set(directorioContactos.map(c => c.departamento)))];
+  const sedes = [
+    "todas",
+    ...Array.from(new Set(directorioContactos.map((c) => c.sede))),
+  ];
+  const departamentos = [
+    "todos",
+    ...Array.from(new Set(directorioContactos.map((c) => c.departamento))),
+  ];
 
-  const contactosFiltrados = directorioContactos.filter(contacto => {
-    const cumpleSede = filtroSede === 'todas' || contacto.sede === filtroSede;
-    const cumpleDepartamento = filtroDepartamento === 'todos' || contacto.departamento === filtroDepartamento;
-    const cumpleBusqueda = busqueda === '' || 
+  const contactosFiltrados = directorioContactos.filter((contacto) => {
+    const cumpleSede = filtroSede === "todas" || contacto.sede === filtroSede;
+    const cumpleDepartamento =
+      filtroDepartamento === "todos" ||
+      contacto.departamento === filtroDepartamento;
+    const cumpleBusqueda =
+      busqueda === "" ||
       contacto.nombre.toLowerCase().includes(busqueda.toLowerCase()) ||
       contacto.cargo.toLowerCase().includes(busqueda.toLowerCase()) ||
       contacto.departamento.toLowerCase().includes(busqueda.toLowerCase());
-    
+
     return cumpleSede && cumpleDepartamento && cumpleBusqueda;
   });
 
   const getDepartamentoColor = (departamento: string) => {
     switch (departamento) {
-      case 'Gerencia': return 'bg-purple-100 text-purple-800 border-purple-200';
-      case 'Asistencial': return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'Secretaría': return 'bg-green-100 text-green-800 border-green-200';
-      case 'Atención al Usuario': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      case 'Medicina Tradicional': return 'bg-orange-100 text-orange-800 border-orange-200';
-      case 'Administrativo': return 'bg-gray-100 text-gray-800 border-gray-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+      case "Gerencia":
+        return "bg-purple-100 text-purple-800 border-purple-200";
+      case "Asistencial":
+        return "bg-blue-100 text-blue-800 border-blue-200";
+      case "Secretaría":
+        return "bg-green-100 text-green-800 border-green-200";
+      case "Atención al Usuario":
+        return "bg-yellow-100 text-yellow-800 border-yellow-200";
+      case "Medicina Tradicional":
+        return "bg-orange-100 text-orange-800 border-orange-200";
+      case "Administrativo":
+        return "bg-gray-100 text-gray-800 border-gray-200";
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
   const getDepartamentoIcon = (departamento: string) => {
     switch (departamento) {
-      case 'Gerencia': return '👔';
-      case 'Asistencial': return '👩‍⚕️';
-      case 'Secretaría': return '📝';
-      case 'Atención al Usuario': return '🤝';
-      case 'Medicina Tradicional': return '🌿';
-      case 'Administrativo': return '💼';
-      default: return '📞';
+      case "Gerencia":
+        return "👔";
+      case "Asistencial":
+        return "👩‍⚕️";
+      case "Secretaría":
+        return "📝";
+      case "Atención al Usuario":
+        return "🤝";
+      case "Medicina Tradicional":
+        return "🌿";
+      case "Administrativo":
+        return "💼";
+      default:
+        return "📞";
     }
   };
 
   return (
     <section id="directorio" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        {/* <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Directorio Telefónico
-        </h2>
+        </h2> */}
 
         {/* Información de contacto principal */}
         <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg p-8 mb-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
+          <div className="flex flex-col md:flex-row gap-8 text-center items-center justify-center w-full">
+            <div className="flex-1 flex flex-col items-center">
               <h3 className="text-xl font-bold mb-2">📞 Línea Principal</h3>
-              <p className="text-2xl font-bold">(8) 420-1234</p>
+              <Link
+                href="tel:3118487680"
+                className="text-2xl font-bold hover:text-green-200 transition-colors"
+              >
+                311 848 7680
+              </Link>
               <p className="opacity-90">Todas las sedes</p>
             </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">🚨 Emergencias</h3>
-              <p className="text-2xl font-bold">(8) 420-0000</p>
-              <p className="opacity-90">24 horas</p>
-            </div>
-            <div>
+
+            <div className="flex-1 flex flex-col items-center">
               <h3 className="text-xl font-bold mb-2">📧 Email General</h3>
-              <p className="text-lg font-bold">contacto@ips-inga-kamentsa.org</p>
+              <p className="text-lg font-bold">
+                <a
+                  href="mailto:atencionalusuarioipsingak@gmail.com"
+                  className="hover:text-green-200 transition-colors"
+                >
+                  atencionalusuarioipsingak@gmail.com
+                </a>
+              </p>
               <p className="opacity-90">Información general</p>
             </div>
           </div>
@@ -203,48 +235,48 @@ export default function DirectorioTelefonico() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Buscar por nombre o cargo
+          Buscar por nombre o cargo
               </label>
               <input
-                type="text"
-                value={busqueda}
-                onChange={(e) => setBusqueda(e.target.value)}
-                placeholder="Buscar contacto..."
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          type="text"
+          value={busqueda}
+          onChange={(e) => setBusqueda(e.target.value)}
+          placeholder="Buscar contacto..."
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
               />
             </div>
-            
+
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Filtrar por sede
+          Filtrar por sede
               </label>
               <select
-                value={filtroSede}
-                onChange={(e) => setFiltroSede(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          value={filtroSede}
+          onChange={(e) => setFiltroSede(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
               >
-                {sedes.map(sede => (
-                  <option key={sede} value={sede}>
-                    {sede === 'todas' ? 'Todas las sedes' : sede}
-                  </option>
-                ))}
+          {sedes.map((sede) => (
+            <option key={sede} value={sede}>
+              {sede === "todas" ? "Todas las sedes" : sede}
+            </option>
+          ))}
               </select>
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Filtrar por departamento
+          Filtrar por departamento
               </label>
               <select
-                value={filtroDepartamento}
-                onChange={(e) => setFiltroDepartamento(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+          value={filtroDepartamento}
+          onChange={(e) => setFiltroDepartamento(e.target.value)}
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
               >
-                {departamentos.map(dept => (
-                  <option key={dept} value={dept}>
-                    {dept === 'todos' ? 'Todos los departamentos' : dept}
-                  </option>
-                ))}
+          {departamentos.map((dept) => (
+            <option key={dept} value={dept}>
+              {dept === "todos" ? "Todos los departamentos" : dept}
+            </option>
+          ))}
               </select>
             </div>
           </div>
@@ -253,9 +285,14 @@ export default function DirectorioTelefonico() {
         {/* Lista de contactos */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {contactosFiltrados.map((contacto) => (
-            <div key={contacto.id} className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <div
+              key={contacto.id}
+              className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+            >
               <div className="flex items-center mb-4">
-                <span className="text-2xl mr-3">{getDepartamentoIcon(contacto.departamento)}</span>
+                <span className="text-2xl mr-3">
+                  {getDepartamentoIcon(contacto.departamento)}
+                </span>
                 <div>
                   <h3 className="font-bold text-gray-800">{contacto.nombre}</h3>
                   <p className="text-sm text-gray-600">{contacto.cargo}</p>
@@ -263,42 +300,97 @@ export default function DirectorioTelefonico() {
               </div>
 
               <div className="mb-4">
-                <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold border ${getDepartamentoColor(contacto.departamento)}`}>
+                <span
+                  className={`inline-block px-3 py-1 rounded-full text-xs font-semibold border ${getDepartamentoColor(
+                    contacto.departamento
+                  )}`}
+                >
                   {contacto.departamento}
                 </span>
               </div>
 
               <div className="space-y-3">
                 <div className="flex items-center text-gray-700">
-                  <svg className="w-4 h-4 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                  <svg
+                    className="w-4 h-4 mr-2 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                    />
                   </svg>
-                  <a href={`tel:${contacto.telefono}`} className="hover:text-green-600">
+                  <a
+                    href={`tel:${contacto.telefono}`}
+                    className="hover:text-green-600"
+                  >
                     {contacto.telefono}
                     {contacto.extension && ` Ext. ${contacto.extension}`}
                   </a>
                 </div>
 
                 <div className="flex items-center text-gray-700">
-                  <svg className="w-4 h-4 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    className="w-4 h-4 mr-2 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
-                  <a href={`mailto:${contacto.email}`} className="hover:text-green-600 text-sm truncate">
+                  <a
+                    href={`mailto:${contacto.email}`}
+                    className="hover:text-green-600 text-sm truncate"
+                  >
                     {contacto.email}
                   </a>
                 </div>
 
                 <div className="flex items-center text-gray-700">
-                  <svg className="w-4 h-4 mr-2 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <svg
+                    className="w-4 h-4 mr-2 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                    />
                   </svg>
                   <span className="text-sm">Sede {contacto.sede}</span>
                 </div>
 
                 <div className="flex items-start text-gray-700">
-                  <svg className="w-4 h-4 mr-2 mt-1 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <svg
+                    className="w-4 h-4 mr-2 mt-1 text-green-600"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
                   </svg>
                   <span className="text-xs">{contacto.horarioAtencion}</span>
                 </div>
@@ -324,12 +416,14 @@ export default function DirectorioTelefonico() {
 
         {contactosFiltrados.length === 0 && (
           <div className="text-center py-12">
-            <p className="text-gray-500 text-lg">No se encontraron contactos con los criterios seleccionados.</p>
+            <p className="text-gray-500 text-lg">
+              No se encontraron contactos con los criterios seleccionados.
+            </p>
             <button
               onClick={() => {
-                setBusqueda('');
-                setFiltroSede('todas');
-                setFiltroDepartamento('todos');
+                setBusqueda("");
+                setFiltroSede("todas");
+                setFiltroDepartamento("todos");
               }}
               className="mt-4 text-green-600 hover:text-green-800 font-semibold"
             >

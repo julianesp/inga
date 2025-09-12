@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 interface Evento {
   id: string;
   titulo: string;
   fecha: string;
   hora: string;
-  tipo: 'jornada' | 'capacitacion' | 'celebracion' | 'anuncio';
+  tipo: "jornada" | "capacitacion" | "celebracion" | "anuncio";
   descripcion: string;
   sede: string;
   imagen?: string;
@@ -16,115 +16,139 @@ interface Evento {
 
 const eventos: Evento[] = [
   {
-    id: '1',
-    titulo: 'Jornada de Vacunación Infantil',
-    fecha: '2025-01-15',
-    hora: '8:00 AM - 4:00 PM',
-    tipo: 'jornada',
-    descripcion: 'Jornada especial de vacunación para niños de 0 a 5 años. Incluye todas las vacunas del esquema nacional.',
-    sede: 'Sibundoy',
-    registro: true
+    id: "1",
+    titulo: "Jornada de Vacunación Infantil",
+    fecha: "2025-01-15",
+    hora: "8:00 AM - 4:00 PM",
+    tipo: "jornada",
+    descripcion:
+      "Jornada especial de vacunación para niños de 0 a 5 años. Incluye todas las vacunas del esquema nacional.",
+    sede: "Sibundoy",
+    registro: true,
   },
   {
-    id: '2',
-    titulo: 'Taller de Medicina Tradicional',
-    fecha: '2025-01-20',
-    hora: '2:00 PM - 5:00 PM',
-    tipo: 'capacitacion',
-    descripcion: 'Taller sobre el uso adecuado de plantas medicinales dirigido por los sabedores tradicionales.',
-    sede: 'Colón',
-    registro: true
+    id: "2",
+    titulo: "Taller de Medicina Tradicional",
+    fecha: "2025-01-20",
+    hora: "2:00 PM - 5:00 PM",
+    tipo: "capacitacion",
+    descripcion:
+      "Taller sobre el uso adecuado de plantas medicinales dirigido por los sabedores tradicionales.",
+    sede: "Colón",
+    registro: true,
   },
   {
-    id: '3',
-    titulo: 'Celebración Día de la Medicina Ancestral',
-    fecha: '2025-01-25',
-    hora: '9:00 AM - 12:00 PM',
-    tipo: 'celebracion',
-    descripcion: 'Encuentro cultural celebrando la medicina tradicional inga y kamëntsá.',
-    sede: 'Santiago',
-    registro: false
+    id: "3",
+    titulo: "Celebración Día de la Medicina Ancestral",
+    fecha: "2025-01-25",
+    hora: "9:00 AM - 12:00 PM",
+    tipo: "celebracion",
+    descripcion:
+      "Encuentro cultural celebrando la medicina tradicional inga y kamëntsá.",
+    sede: "Santiago",
+    registro: false,
   },
   {
-    id: '4',
-    titulo: 'Brigada de Salud Rural',
-    fecha: '2025-02-01',
-    hora: '7:00 AM - 3:00 PM',
-    tipo: 'jornada',
-    descripcion: 'Atención médica en veredas alejadas con servicios de medicina general y odontología.',
-    sede: 'San Andrés',
-    registro: false
+    id: "4",
+    titulo: "Brigada de Salud Rural",
+    fecha: "2025-02-01",
+    hora: "7:00 AM - 3:00 PM",
+    tipo: "jornada",
+    descripcion:
+      "Atención médica en veredas alejadas con servicios de medicina general y odontología.",
+    sede: "San Andrés",
+    registro: false,
   },
   {
-    id: '5',
-    titulo: 'Capacitación en Primeros Auxilios',
-    fecha: '2025-02-10',
-    hora: '8:00 AM - 12:00 PM',
-    tipo: 'capacitacion',
-    descripcion: 'Curso básico de primeros auxilios para líderes comunitarios.',
-    sede: 'Sibundoy',
-    registro: true
-  }
+    id: "5",
+    titulo: "Capacitación en Primeros Auxilios",
+    fecha: "2025-02-10",
+    hora: "8:00 AM - 12:00 PM",
+    tipo: "capacitacion",
+    descripcion: "Curso básico de primeros auxilios para líderes comunitarios.",
+    sede: "Sibundoy",
+    registro: true,
+  },
 ];
 
 const anuncios = [
   {
-    id: '1',
-    titulo: 'Nuevos Horarios de Atención',
-    fecha: '2025-01-08',
-    contenido: 'A partir del 15 de enero, la sede Colón ampliará su horario de atención hasta las 6:00 PM.',
-    tipo: 'info'
+    id: "1",
+    titulo: "Nuevos Horarios de Atención",
+    fecha: "2025-01-08",
+    contenido:
+      "A partir del 15 de enero, la sede Colón ampliará su horario de atención hasta las 6:00 PM.",
+    tipo: "info",
   },
   {
-    id: '2',
-    titulo: 'Mantenimiento Sistema de Citas',
-    fecha: '2025-01-12',
-    contenido: 'El sistema de citas en línea estará en mantenimiento el 20 de enero de 6:00 AM a 12:00 PM.',
-    tipo: 'alerta'
+    id: "2",
+    titulo: "Mantenimiento Sistema de Citas",
+    fecha: "2025-01-12",
+    contenido:
+      "El sistema de citas en línea estará en mantenimiento el 20 de enero de 6:00 AM a 12:00 PM.",
+    tipo: "alerta",
   },
   {
-    id: '3',
-    titulo: 'Nueva Especialidad Disponible',
-    fecha: '2025-01-10',
-    contenido: 'Ya está disponible el servicio de psicología en la sede principal de Sibundoy.',
-    tipo: 'novedad'
-  }
+    id: "3",
+    titulo: "Nueva Especialidad Disponible",
+    fecha: "2025-01-10",
+    contenido:
+      "Ya está disponible el servicio de psicología en la sede principal de Sibundoy.",
+    tipo: "novedad",
+  },
 ];
 
 export default function EventosCalendario() {
-  const [filtroTipo, setFiltroTipo] = useState<string>('todos');
-  const [vistaActiva, setVistaActiva] = useState<'eventos' | 'anuncios'>('eventos');
+  const [filtroTipo, setFiltroTipo] = useState<string>("todos");
+  const [vistaActiva, setVistaActiva] = useState<"eventos" | "anuncios">(
+    "eventos"
+  );
 
-  const eventosFiltrados = filtroTipo === 'todos' 
-    ? eventos 
-    : eventos.filter(evento => evento.tipo === filtroTipo);
+  const eventosFiltrados =
+    filtroTipo === "todos"
+      ? eventos
+      : eventos.filter((evento) => evento.tipo === filtroTipo);
 
   const getTipoColor = (tipo: string) => {
     switch (tipo) {
-      case 'jornada': return 'bg-blue-100 text-blue-800 border-blue-200';
-      case 'capacitacion': return 'bg-green-100 text-green-800 border-green-200';
-      case 'celebracion': return 'bg-purple-100 text-purple-800 border-purple-200';
-      case 'anuncio': return 'bg-yellow-100 text-yellow-800 border-yellow-200';
-      default: return 'bg-gray-100 text-gray-800 border-gray-200';
+      case "jornada":
+        return "bg-blue-100 text-blue-800 border-blue-200";
+      case "capacitacion":
+        return "bg-green-100 text-green-800 border-green-200";
+      case "celebracion":
+        return "bg-purple-100 text-purple-800 border-purple-200";
+      case "anuncio":
+        return "bg-yellow-100 text-yellow-800 border-yellow-200";
+      default:
+        return "bg-gray-100 text-gray-800 border-gray-200";
     }
   };
 
   const getTipoIcon = (tipo: string) => {
     switch (tipo) {
-      case 'jornada': return '🏥';
-      case 'capacitacion': return '📚';
-      case 'celebracion': return '🎉';
-      case 'anuncio': return '📢';
-      default: return '📅';
+      case "jornada":
+        return "🏥";
+      case "capacitacion":
+        return "📚";
+      case "celebracion":
+        return "🎉";
+      case "anuncio":
+        return "📢";
+      default:
+        return "📅";
     }
   };
 
   const getAnuncioColor = (tipo: string) => {
     switch (tipo) {
-      case 'info': return 'border-l-blue-500 bg-blue-50';
-      case 'alerta': return 'border-l-yellow-500 bg-yellow-50';
-      case 'novedad': return 'border-l-green-500 bg-green-50';
-      default: return 'border-l-gray-500 bg-gray-50';
+      case "info":
+        return "border-l-blue-500 bg-blue-50";
+      case "alerta":
+        return "border-l-yellow-500 bg-yellow-50";
+      case "novedad":
+        return "border-l-green-500 bg-green-50";
+      default:
+        return "border-l-gray-500 bg-gray-50";
     }
   };
 
@@ -139,21 +163,21 @@ export default function EventosCalendario() {
         <div className="flex justify-center mb-8">
           <div className="bg-white rounded-lg shadow-md p-1 flex">
             <button
-              onClick={() => setVistaActiva('eventos')}
+              onClick={() => setVistaActiva("eventos")}
               className={`px-6 py-3 rounded-lg transition-colors ${
-                vistaActiva === 'eventos'
-                  ? 'bg-green-600 text-white'
-                  : 'text-gray-600 hover:text-green-600'
+                vistaActiva === "eventos"
+                  ? "bg-green-600 text-white"
+                  : "text-gray-600 hover:text-green-600"
               }`}
             >
               📅 Eventos Programados
             </button>
             <button
-              onClick={() => setVistaActiva('anuncios')}
+              onClick={() => setVistaActiva("anuncios")}
               className={`px-6 py-3 rounded-lg transition-colors ${
-                vistaActiva === 'anuncios'
-                  ? 'bg-green-600 text-white'
-                  : 'text-gray-600 hover:text-green-600'
+                vistaActiva === "anuncios"
+                  ? "bg-green-600 text-white"
+                  : "text-gray-600 hover:text-green-600"
               }`}
             >
               📢 Anuncios
@@ -161,46 +185,46 @@ export default function EventosCalendario() {
           </div>
         </div>
 
-        {vistaActiva === 'eventos' && (
+        {vistaActiva === "eventos" && (
           <>
             {/* Filtros */}
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <button
-                onClick={() => setFiltroTipo('todos')}
+                onClick={() => setFiltroTipo("todos")}
                 className={`px-4 py-2 rounded-lg transition-colors ${
-                  filtroTipo === 'todos'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-green-50'
+                  filtroTipo === "todos"
+                    ? "bg-green-600 text-white"
+                    : "bg-white text-gray-600 hover:bg-green-50"
                 }`}
               >
                 Todos los Eventos
               </button>
               <button
-                onClick={() => setFiltroTipo('jornada')}
+                onClick={() => setFiltroTipo("jornada")}
                 className={`px-4 py-2 rounded-lg transition-colors ${
-                  filtroTipo === 'jornada'
-                    ? 'bg-blue-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-blue-50'
+                  filtroTipo === "jornada"
+                    ? "bg-blue-600 text-white"
+                    : "bg-white text-gray-600 hover:bg-blue-50"
                 }`}
               >
                 🏥 Jornadas de Salud
               </button>
               <button
-                onClick={() => setFiltroTipo('capacitacion')}
+                onClick={() => setFiltroTipo("capacitacion")}
                 className={`px-4 py-2 rounded-lg transition-colors ${
-                  filtroTipo === 'capacitacion'
-                    ? 'bg-green-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-green-50'
+                  filtroTipo === "capacitacion"
+                    ? "bg-green-600 text-white"
+                    : "bg-white text-gray-600 hover:bg-green-50"
                 }`}
               >
                 📚 Capacitaciones
               </button>
               <button
-                onClick={() => setFiltroTipo('celebracion')}
+                onClick={() => setFiltroTipo("celebracion")}
                 className={`px-4 py-2 rounded-lg transition-colors ${
-                  filtroTipo === 'celebracion'
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-white text-gray-600 hover:bg-purple-50'
+                  filtroTipo === "celebracion"
+                    ? "bg-purple-600 text-white"
+                    : "bg-white text-gray-600 hover:bg-purple-50"
                 }`}
               >
                 🎉 Celebraciones
@@ -210,15 +234,27 @@ export default function EventosCalendario() {
             {/* Lista de eventos */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {eventosFiltrados.map((evento) => (
-                <div key={evento.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
+                <div
+                  key={evento.id}
+                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                >
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
                       <div className="flex items-center">
-                        <span className="text-2xl mr-3">{getTipoIcon(evento.tipo)}</span>
+                        <span className="text-2xl mr-3">
+                          {getTipoIcon(evento.tipo)}
+                        </span>
                         <div>
-                          <h3 className="text-xl font-bold text-gray-800 mb-1">{evento.titulo}</h3>
-                          <span className={`inline-block px-3 py-1 rounded-full text-sm font-semibold border ${getTipoColor(evento.tipo)}`}>
-                            {evento.tipo.charAt(0).toUpperCase() + evento.tipo.slice(1)}
+                          <h3 className="text-xl font-bold text-gray-800 mb-1">
+                            {evento.titulo}
+                          </h3>
+                          <span
+                            className={`inline-block px-3 py-1 rounded-full text-sm font-semibold border ${getTipoColor(
+                              evento.tipo
+                            )}`}
+                          >
+                            {evento.tipo.charAt(0).toUpperCase() +
+                              evento.tipo.slice(1)}
                           </span>
                         </div>
                       </div>
@@ -226,27 +262,64 @@ export default function EventosCalendario() {
 
                     <div className="space-y-3 mb-4">
                       <div className="flex items-center text-gray-600">
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
                         </svg>
-                        <span>{new Date(evento.fecha).toLocaleDateString('es-CO', { 
-                          year: 'numeric', 
-                          month: 'long', 
-                          day: 'numeric' 
-                        })}</span>
+                        <span>
+                          {new Date(evento.fecha).toLocaleDateString("es-CO", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+                        </span>
                       </div>
-                      
+
                       <div className="flex items-center text-gray-600">
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
                         </svg>
                         <span>{evento.hora}</span>
                       </div>
 
                       <div className="flex items-center text-gray-600">
-                        <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <svg
+                          className="w-5 h-5 mr-2"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
                         </svg>
                         <span>Sede {evento.sede}</span>
                       </div>
@@ -255,7 +328,40 @@ export default function EventosCalendario() {
                     <p className="text-gray-600 mb-4">{evento.descripcion}</p>
 
                     {evento.registro && (
-                      <button className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                      <button
+                        onClick={() => {
+                          const mensaje = `🏥 *REGISTRO EVENTO - IPS INGA KAMËNTSÁ* 🏥
+
+📅 *Evento:* ${evento.titulo}
+📍 *Sede:* ${evento.sede}
+📆 *Fecha:* ${new Date(evento.fecha).toLocaleDateString("es-CO", {
+                            year: "numeric",
+                            month: "long",
+                            day: "numeric",
+                          })}
+🕐 *Hora:* ${evento.hora}
+
+👤 Solicito registrarme para este evento.
+
+---
+Fecha de solicitud: ${new Date().toLocaleString("es-CO", {
+                            timeZone: "America/Bogota",
+                          })}
+#RegistroEvento #IPSIngaKamentsa`;
+
+                          const mensajeCodificado = encodeURIComponent(mensaje);
+                          const urlWhatsApp = `https://wa.me/573118487680?text=${mensajeCodificado}`;
+                          window.open(urlWhatsApp, "_blank");
+                        }}
+                        className="w-full bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-700 transition-colors font-semibold flex items-center justify-center gap-2"
+                      >
+                        <svg
+                          className="w-5 h-5"
+                          fill="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.382" />
+                        </svg>
                         Registrarse al Evento
                       </button>
                     )}
@@ -266,28 +372,36 @@ export default function EventosCalendario() {
           </>
         )}
 
-        {vistaActiva === 'anuncios' && (
+        {vistaActiva === "anuncios" && (
           <div className="max-w-4xl mx-auto">
             <div className="space-y-6">
               {anuncios.map((anuncio) => (
-                <div key={anuncio.id} className={`rounded-lg p-6 border-l-4 ${getAnuncioColor(anuncio.tipo)}`}>
+                <div
+                  key={anuncio.id}
+                  className={`rounded-lg p-6 border-l-4 ${getAnuncioColor(
+                    anuncio.tipo
+                  )}`}
+                >
                   <div className="flex items-start justify-between">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-800 mb-2">{anuncio.titulo}</h3>
+                      <h3 className="text-xl font-bold text-gray-800 mb-2">
+                        {anuncio.titulo}
+                      </h3>
                       <p className="text-gray-700 mb-3">{anuncio.contenido}</p>
                       <p className="text-sm text-gray-500">
-                        Publicado el {new Date(anuncio.fecha).toLocaleDateString('es-CO', {
-                          year: 'numeric',
-                          month: 'long',
-                          day: 'numeric'
+                        Publicado el{" "}
+                        {new Date(anuncio.fecha).toLocaleDateString("es-CO", {
+                          year: "numeric",
+                          month: "long",
+                          day: "numeric",
                         })}
                       </p>
                     </div>
                     <div className="ml-4">
                       <span className="text-2xl">
-                        {anuncio.tipo === 'info' && '📝'}
-                        {anuncio.tipo === 'alerta' && '⚠️'}
-                        {anuncio.tipo === 'novedad' && '🆕'}
+                        {anuncio.tipo === "info" && "📝"}
+                        {anuncio.tipo === "alerta" && "⚠️"}
+                        {anuncio.tipo === "novedad" && "🆕"}
                       </span>
                     </div>
                   </div>
@@ -301,7 +415,8 @@ export default function EventosCalendario() {
                 ¿Quiere recibir notificaciones de anuncios importantes?
               </h3>
               <p className="text-gray-600 mb-6">
-                Suscríbase para recibir por correo electrónico los anuncios más relevantes de la IPS.
+                Suscríbase para recibir por correo electrónico los anuncios más
+                relevantes de la IPS.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
                 <input
