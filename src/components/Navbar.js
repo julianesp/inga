@@ -4,21 +4,26 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import ThemeToggle from "./ThemeToggle";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "@/contexts/LanguageContext";
+import { translations } from "@/data/translations";
 import styles from "../styles/Navbar.module.scss";
 
-const navigationLinks = [
-  { href: "/", label: "Inicio" },
-  { href: "/institucional", label: "Institucional" },
-  { href: "/servicios", label: "Servicios" },
-  { href: "/sedes", label: "Sedes" },
-  { href: "/directorio", label: "Directorio" },
-  { href: "/eventos", label: "Eventos" },
-  { href: "/atencion-usuario", label: "Atención al Usuario" },
-  { href: "/contacto", label: "Contacto" },
+const getNavigationLinks = (t) => [
+  { href: "/", label: t(translations.nav.home) },
+  { href: "/institucional", label: t(translations.nav.institutional) },
+  { href: "/servicios", label: t(translations.nav.services) },
+  { href: "/sedes", label: t(translations.nav.locations) },
+  { href: "/directorio", label: t(translations.nav.directory) },
+  { href: "/eventos", label: t(translations.nav.events) },
+  { href: "/atencion-usuario", label: t(translations.nav.userSupport) },
+  { href: "/contacto", label: t(translations.nav.contact) },
 ];
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
+  const navigationLinks = getNavigationLinks(t);
 
   // backdrop-blur-md
   return (
@@ -39,7 +44,7 @@ export default function Navbar() {
             />
             <Link href="/" className="flex items-center space-x-2">
               <span className="text-xl font-bold text-green-600 dark:text-green-400">
-                IPS INGA KAMËNTSÁ
+                {t(translations.organization.name)}
               </span>
             </Link>
           </div>
@@ -57,11 +62,13 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <LanguageToggle />
             {/* <ThemeToggle /> */}
           </div>
 
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <ThemeToggle />
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
