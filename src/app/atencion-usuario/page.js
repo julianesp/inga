@@ -1,4 +1,5 @@
 import AtencionUsuario from "@/components/AtencionUsuario";
+import Link from "next/link";
 
 export const metadata = {
   title: "Atención al Usuario - IPS INGA KAMËNTSÁ",
@@ -190,12 +191,12 @@ export default function AtencionUsuarioPage() {
                 <p className="text-gray-600 mb-4">
                   Visítenos en cualquiera de nuestras sedes
                 </p>
-                <a
+                <Link
                   href="/sedes"
                   className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors inline-block"
                 >
                   Ver Sedes
-                </a>
+                </Link>
               </div>
             </div>
           </div>

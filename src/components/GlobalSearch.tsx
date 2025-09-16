@@ -119,11 +119,11 @@ export default function GlobalSearch() {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white"
+                  className="px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 bg-white text-black"
                 >
-                  <option value="">Todas las categorías</option>
+                  <option value="" className="text-black">Todas las categorías</option>
                   {categories.map((category) => (
-                    <option key={category} value={category}>
+                    <option key={category} value={category} className="text-black">
                       {category}
                     </option>
                   ))}
@@ -136,7 +136,7 @@ export default function GlobalSearch() {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     placeholder="Buscar servicios, trámites, información..."
-                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500"
+                    className="flex-1 px-4 py-3 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 text-black placeholder-gray-500"
                   />
                   <button
                     type="submit"
