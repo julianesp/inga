@@ -1,4 +1,5 @@
 import ContactoSedes from "@/components/ContactoSedes";
+import Link from "next/link";
 
 export const metadata = {
   title: "Contacto - IPS INGA KAMËNTSÁ",
@@ -23,31 +24,6 @@ export default function ContactoPage() {
         </div>
       </section>
 
-      {/* Información de Emergencia */}
-      <section className="py-12 bg-red-50 border-t-4 border-red-500">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold text-red-800 mb-4">
-              🚨 EMERGENCIAS MÉDICAS
-            </h2>
-            <p className="text-red-700 mb-4">
-              Para situaciones de emergencia médica, contáctenos inmediatamente:
-            </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <a
-                href="tel:+57842000000"
-                className="bg-red-600 text-white px-8 py-4 rounded-lg font-bold text-xl hover:bg-red-700 transition-colors"
-              >
-                📞 (8) 420-0000
-              </a>
-              <p className="text-red-700 font-semibold">
-                Disponible 24 horas, 7 días a la semana
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <ContactoSedes />
 
       {/* Información Adicional de Contacto */}
@@ -65,14 +41,14 @@ export default function ContactoPage() {
                 Comuníquese con nosotros a través de WhatsApp para consultas
                 rápidas
               </p>
-              <a
-                href="https://wa.me/573123456789"
+              <Link
+                href="https://wa.me/573132863398"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors inline-block"
               >
                 Escribir por WhatsApp
-              </a>
+              </Link>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -83,12 +59,12 @@ export default function ContactoPage() {
               <p className="text-gray-600 mb-4">
                 Envíenos sus consultas por correo electrónico
               </p>
-              <a
-                href="mailto:contacto@ips-inga-kamentsa.org"
+              <Link
+                href="mailto:ipsingakamentsa@gmail.com"
                 className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
               >
                 Enviar Email
-              </a>
+              </Link>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
@@ -101,22 +77,27 @@ export default function ContactoPage() {
                 actualizaciones
               </p>
               <div className="flex gap-4 justify-center">
-                <a
-                  href="https://facebook.com/ips-inga-kamentsa"
+                <Link
+                  href={
+                    typeof window !== "undefined" &&
+                    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+                      ? "fb://profile/100008728661876"
+                      : "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy"
+                  }
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors"
                 >
                   Facebook
-                </a>
-                <a
+                </Link>
+                <Link
                   href="https://instagram.com/ips.inga.kamentsa"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors"
                 >
                   Instagram
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -138,7 +119,9 @@ export default function ContactoPage() {
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="font-semibold text-black">Lunes a Viernes:</span>
+                    <span className="font-semibold text-black">
+                      Lunes a Viernes:
+                    </span>
                     <span className="text-black">7:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
@@ -157,7 +140,9 @@ export default function ContactoPage() {
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="font-semibold text-black">Todos los días:</span>
+                    <span className="font-semibold text-black">
+                      Todos los días:
+                    </span>
                     <span className="text-black">24 horas</span>
                   </div>
                   <div className="flex justify-between">
