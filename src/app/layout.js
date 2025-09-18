@@ -21,11 +21,73 @@ const geistMono = Geist_Mono({
 //     "IPS INGA KAMËNTSÁ - Servicios de salud en Sibundoy, Colón, Santiago y San Andrés. Atención médica integral para la comunidad indígena.",
 // };
 
-// app/layout.tsx
 export const metadata = {
-  title: { default: "IPS Inga-Kamentsa", template: "%s | IPS Inga-Kamentsa" },
-  description: "Asociación IPS Indígena Inga-Kamentsa Valle de Sibundoy | Allpa Kaugsana Rurakuna Wasi Inga-Kamentsa Sibundui Mamapi",
-  metadataBase: new URL("https://tudominio.ejemplo"),
+  title: {
+    default: "IPS Inga-Kamentsa | Servicios de Salud Integral Sibundoy Putumayo",
+    template: "%s | IPS Inga-Kamentsa"
+  },
+  description: "🏥 IPS Inga-Kamentsa ➤ Servicios de salud integral en Sibundoy, Putumayo. Medicina occidental + tradicional indígena. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
+  keywords: [
+    "IPS Inga Kamentsa",
+    "servicios salud Sibundoy",
+    "medicina general Putumayo",
+    "urgencias médicas Sibundoy",
+    "consulta médica Putumayo",
+    "medicina tradicional indígena",
+    "EPS Sibundoy",
+    "centro médico Putumayo",
+    "atención médica integral",
+    "salud indígena Colombia",
+    "medicina ancestral",
+    "consulta especializada",
+    "servicios PQRS salud",
+    "agendar cita médica"
+  ],
+  authors: [{ name: "IPS Inga-Kamentsa" }],
+  creator: "IPS Inga-Kamentsa",
+  publisher: "IPS Inga-Kamentsa",
+  metadataBase: new URL("https://ips-inga-kamentsá.co"),
+  alternates: {
+    canonical: "https://ips-inga-kamentsá.co",
+    languages: {
+      'es-CO': 'https://ips-inga-kamentsá.co',
+      'ik': 'https://ips-inga-kamentsá.co'
+    }
+  },
+  openGraph: {
+    title: "IPS Inga-Kamentsa | Medicina con Identidad Cultural",
+    description: "🏥 Servicios de salud integral combinando medicina occidental con conocimientos ancestrales. Sibundoy, Putumayo. ✅ Consultas ✅ Urgencias ✅ Especialidades",
+    url: "https://ips-inga-kamentsá.co",
+    siteName: "IPS Inga-Kamentsa",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "IPS Inga-Kamentsa - Servicios de Salud Integral"
+      }
+    ],
+    locale: "es_CO",
+    type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IPS Inga-Kamentsa | Medicina con Identidad Cultural",
+    description: "🏥 Servicios de salud integral combinando medicina occidental con conocimientos ancestrales en Sibundoy, Putumayo",
+    images: ["/twitter-image.jpg"],
+    creator: "@ips_inga_kamentsá"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   manifest: "/site.webmanifest",
   icons: {
     icon: [
@@ -43,12 +105,16 @@ export const metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "IPS IKVS",
+    title: "IPS Inga-Kamentsa",
   },
   other: {
-    "apple-mobile-web-app-title": "IngaKa",
+    "apple-mobile-web-app-title": "IPS Inga-Kamentsa",
     "apple-mobile-web-app-capable": "yes",
-    "apple-mobile-web-app-status-bar-style": "default"
+    "apple-mobile-web-app-status-bar-style": "default",
+    "geo.region": "CO-PUT",
+    "geo.placename": "Sibundoy, Putumayo",
+    "geo.position": "1.149861;-76.832611",
+    "ICBM": "1.149861, -76.832611"
   },
 };
 
@@ -60,8 +126,110 @@ export const viewport = {
 };
 
 export default function RootLayout({ children }) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://ips-inga-kamentsá.co/#organization",
+        "name": "IPS Inga-Kamentsa",
+        "alternateName": "Asociación IPS Indígena Inga-Kamentsa Valle de Sibundoy",
+        "url": "https://ips-inga-kamentsá.co",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ips-inga-kamentsá.co/logo.png"
+        },
+        "sameAs": [
+          "https://www.facebook.com/ips.inga.kamentsá"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+57-8-4206789",
+          "contactType": "customer service",
+          "areaServed": "CO",
+          "availableLanguage": ["Spanish", "Inga"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Calle 15 N° 15-69",
+          "addressLocality": "Sibundoy",
+          "addressRegion": "Putumayo",
+          "addressCountry": "CO"
+        }
+      },
+      {
+        "@type": "MedicalOrganization",
+        "@id": "https://ips-inga-kamentsá.co/#medical",
+        "name": "IPS Inga-Kamentsa",
+        "description": "Institución Prestadora de Servicios de Salud especializada en medicina occidental y tradicional indígena",
+        "medicalSpecialty": [
+          "General Medicine",
+          "Traditional Indigenous Medicine",
+          "Emergency Services",
+          "Preventive Care"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Servicios de Salud",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Consulta Medicina General"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Medicina Tradicional Indígena"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Servicios de Urgencias"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "MedicalProcedure",
+                "name": "Consulta de Especialidades"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://ips-inga-kamentsá.co/#website",
+        "url": "https://ips-inga-kamentsá.co",
+        "name": "IPS Inga-Kamentsa",
+        "description": "Servicios de salud integral combinando medicina occidental con conocimientos ancestrales de los pueblos Inga y Kamëntsá",
+        "publisher": {
+          "@id": "https://ips-inga-kamentsá.co/#organization"
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://ips-inga-kamentsá.co/busqueda?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "inLanguage": "es-CO"
+      }
+    ]
+  };
+
   return (
     <html lang="es">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200`}
       >
