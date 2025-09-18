@@ -10,7 +10,8 @@ const slides = [
     subtitle: "IPS INGA KAMËNTSÁ",
     description:
       "Combinamos la medicina occidental con los conocimientos ancestrales de los pueblos Inga y Kamëntsá.",
-    image: "/api/placeholder/1200/600",
+    image:
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/portada.jpg",
     cta: {
       primary: { text: "Conocer Servicios", href: "/servicios" },
       secondary: { text: "Nuestras Sedes", href: "/sedes" },
@@ -87,9 +88,21 @@ export default function PresentacionCarousel() {
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
-          {/* Background gradient */}
+          {/* Background image (for first slide) */}
+          {index === 0 && (
+            <div
+              className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+              style={{
+                backgroundImage: `url('${slide.image}')`,
+              }}
+            ></div>
+          )}
+
+          {/* Background gradient overlay */}
           <div
-            className={`absolute inset-0 bg-gradient-to-br ${slide.bgColor}`}
+            className={`absolute inset-0 bg-gradient-to-br ${slide.bgColor} ${
+              index === 0 ? "opacity-75" : "opacity-100"
+            }`}
           ></div>
 
           {/* Background pattern */}
