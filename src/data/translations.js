@@ -115,45 +115,45 @@ export const translations = {
   home: {
     hero: {
       title: { es: "IPS INGA KAMËNTSÁ", inga: "IPS INGA KAMËNTSÁ" },
-      subtitle: { es: "Institución Prestadora de Servicios de Salud", inga: "Allpa Kaugsana Rurakuna Wasi" },
-      description: { es: "Brindamos atención médica integral combinando la medicina occidental con los conocimientos ancestrales de los pueblos Inga y Kamëntsá del Valle de Sibundoy, Putumayo.", inga: "Jambi rurakuna karan, occidentalkunapas, nukanchipa ñawpa iachaikunawanpas, Inga Kamëntsá runakuna Sibundui mamapi, Putumayo suyupi." },
-      viewLocations: { es: "Ver Nuestras Sedes", inga: "Nukanchipa Tiakuna Kawaii" },
-      scheduleAppointment: { es: "Agendar Cita", inga: "Tupanakui Churaii" }
+      subtitle: { es: "Medicina con Identidad Cultural", inga: "Allpa Kaugsana Rurakuna Wasi" },
+      description: { es: "🏥 Centro médico integral en Sibundoy, Putumayo. Combinamos medicina occidental con sabiduría ancestral Inga y Kamëntsá. ✅ Consulta médica general ✅ Urgencias médicas 24/7 ✅ Medicina tradicional indígena ✅ Especialidades médicas. Agenda tu cita médica hoy.", inga: "Jambi rurakuna karan, occidentalkunapas, nukanchipa ñawpa iachaikunawanpas, Inga Kamëntsá runakuna Sibundui mamapi, Putumayo suyupi." },
+      viewLocations: { es: "Conocer Nuestras Sedes", inga: "Nukanchipa Tiakuna Kawaii" },
+      scheduleAppointment: { es: "☎️ Agendar Cita Médica", inga: "Tupanakui Churaii" }
     },
     services: {
-      title: { es: "Nuestros Servicios", inga: "Nukanchipa Rurakuna" },
+      title: { es: "Servicios de Salud Integral", inga: "Nukanchipa Rurakuna" },
       generalMedicine: {
-        title: { es: "Medicina General", inga: "Tukui Jambi" },
-        description: { es: "Atención médica integral para toda la familia", inga: "Tukui aillu jambichii" }
+        title: { es: "🩺 Medicina General", inga: "Tukui Jambi" },
+        description: { es: "Consulta médica integral para toda la familia en Sibundoy. Atención médica de calidad con enfoque intercultural.", inga: "Tukui aillu jambichii" }
       },
       traditionalMedicine: {
-        title: { es: "Medicina Tradicional", inga: "Ñawpa Jambi" },
-        description: { es: "Sabiduría ancestral para el bienestar integral", inga: "Ñawpa iachaikuna suma kaugsangapa" }
+        title: { es: "🌿 Medicina Tradicional Indígena", inga: "Ñawpa Jambi" },
+        description: { es: "Sabiduría ancestral de los pueblos Inga y Kamëntsá. Medicina natural y plantas medicinales.", inga: "Ñawpa iachaikuna suma kaugsangapa" }
       },
       specialties: {
-        title: { es: "Especialidades", inga: "Sapan Rurakuna" },
-        description: { es: "Pediatría, ginecología, odontología y más", inga: "Wawakuna jambi, warmikuna jambi, kiru jambi" }
+        title: { es: "👩‍⚕️ Especialidades Médicas", inga: "Sapan Rurakuna" },
+        description: { es: "Pediatría, ginecología, odontología, psicología. Especialistas médicos en Putumayo.", inga: "Wawakuna jambi, warmikuna jambi, kiru jambi" }
       },
       emergencies: {
-        title: { es: "Emergencias", inga: "Utka Jambi" },
-        description: { es: "Atención de urgencias las 24 horas", inga: "Tukui pacha utka jambi" }
+        title: { es: "🚨 Urgencias Médicas 24/7", inga: "Utka Jambi" },
+        description: { es: "Servicio de urgencias médicas las 24 horas en Sibundoy. Atención inmediata de emergencias.", inga: "Tukui pacha utka jambi" }
       },
-      seeMore: { es: "Ver más →", inga: "Astuan kawaii →" },
-      contact: { es: "Contactar →", inga: "Rimaii →" }
+      seeMore: { es: "Ver todos los servicios →", inga: "Astuan kawaii →" },
+      contact: { es: "Contactar ahora →", inga: "Rimaii →" }
     },
     quickAccess: {
-      title: { es: "Acceso Rápido", inga: "Utka Iaikui" },
+      title: { es: "🔍 Encuentra lo que necesitas", inga: "Utka Iaikui" },
       locations: {
-        title: { es: "Nuestras Sedes", inga: "Nukanchipa Tiakuna" },
-        description: { es: "Sibundoy, Colón, Santiago y San Andrés", inga: "Sibundui, Kulun, Santiagu, San Andris" }
+        title: { es: "📍 Sedes en Putumayo", inga: "Nukanchipa Tiakuna" },
+        description: { es: "Sibundoy sede principal, Colón, Santiago y San Andrés. Centros médicos cerca de ti.", inga: "Sibundui, Kulun, Santiagu, San Andris" }
       },
       directory: {
-        title: { es: "Directorio", inga: "Sutikuna" },
-        description: { es: "Contactos de todas nuestras áreas", inga: "Tukui rurakuna rimai" }
+        title: { es: "📞 Directorio Telefónico", inga: "Sutikuna" },
+        description: { es: "Números telefónicos y contactos de todas nuestras áreas médicas y administrativas.", inga: "Tukui rurakuna rimai" }
       },
       pqrs: {
-        title: { es: "PQRSF", inga: "Mañakuna" },
-        description: { es: "Peticiones, quejas, reclamos y sugerencias", inga: "Mañakuna, llakikuna, willakuna" }
+        title: { es: "📝 PQRS - Atención al Usuario", inga: "Mañakuna" },
+        description: { es: "Sistema de peticiones, quejas, reclamos y sugerencias. Tu opinión es importante.", inga: "Mañakuna, llakikuna, willakuna" }
       }
     }
   },

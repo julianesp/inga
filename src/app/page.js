@@ -3,6 +3,7 @@
 import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
+import HealthInfoSection from "@/components/HealthInfoSection";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/data/translations";
 
@@ -12,6 +13,8 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <PresentacionCarousel />
+
+      <HealthInfoSection />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-blue-800 text-white py-20">
@@ -136,7 +139,9 @@ export default function Home() {
               className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-8 text-center hover:from-green-600 hover:to-green-700 transition-colors"
             >
               <div className="text-4xl mb-4">🏢</div>
-              <h3 className="text-2xl font-bold mb-2">{t(translations.home.quickAccess.locations.title)}</h3>
+              <h3 className="text-2xl font-bold mb-2">
+                {t(translations.home.quickAccess.locations.title)}
+              </h3>
               <p>{t(translations.home.quickAccess.locations.description)}</p>
             </Link>
 
@@ -145,7 +150,9 @@ export default function Home() {
               className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-8 text-center hover:from-blue-600 hover:to-blue-700 transition-colors"
             >
               <div className="text-4xl mb-4">📞</div>
-              <h3 className="text-2xl font-bold mb-2">{t(translations.home.quickAccess.directory.title)}</h3>
+              <h3 className="text-2xl font-bold mb-2">
+                {t(translations.home.quickAccess.directory.title)}
+              </h3>
               <p>{t(translations.home.quickAccess.directory.description)}</p>
             </Link>
 
@@ -154,7 +161,9 @@ export default function Home() {
               className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-8 text-center hover:from-purple-600 hover:to-purple-700 transition-colors"
             >
               <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-2xl font-bold mb-2">{t(translations.home.quickAccess.pqrs.title)}</h3>
+              <h3 className="text-2xl font-bold mb-2">
+                {t(translations.home.quickAccess.pqrs.title)}
+              </h3>
               <p>{t(translations.home.quickAccess.pqrs.description)}</p>
             </Link>
           </div>

@@ -1,0 +1,36 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ips-inga-kamentsá.co/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Specific rules for different bots
+User-agent: Googlebot
+Crawl-delay: 0
+Allow: /
+
+User-agent: Bingbot
+Crawl-delay: 1
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Disallow admin areas (if any in future)
+Disallow: /admin-citas/
+
+# Allow all other pages
+Allow: /servicios/
+Allow: /sedes/
+Allow: /directorio/
+Allow: /contacto/
+Allow: /atencion-usuario/
+Allow: /institucional/
+Allow: /eventos/
+Allow: /busqueda/
