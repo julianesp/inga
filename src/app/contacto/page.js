@@ -2,7 +2,7 @@ import ContactoSedes from "@/components/ContactoSedes";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Contacto - IPS INGA KAMËNTSÁ",
+  title: "Contacto",
   description:
     "Contacta con nosotros para agendar citas, obtener información o llegar a nuestras sedes en Sibundoy, Colón, Santiago y San Andrés.",
 };

@@ -2,7 +2,7 @@ import InformacionInstitucional from '@/components/InformacionInstitucional';
 import GestionClinica from '@/components/GestionClinica';
 
 export const metadata = {
-  title: 'Servicios - IPS INGA KAMËNTSÁ',
+  title: 'Servicios',
   description: 'Conoce nuestro portafolio completo de servicios de salud: medicina general, especialidades, medicina tradicional y más.',
 };
 

@@ -1,7 +1,7 @@
 import InformacionInstitucional from '@/components/InformacionInstitucional';
 
 export const metadata = {
-  title: 'Información Institucional - IPS INGA KAMËNTSÁ',
+  title: 'Institucional',
   description: 'Conozca la historia, misión, visión y portafolio de servicios de IPS INGA KAMËNTSÁ. Medicina intercultural desde 1995.',
 };
 
