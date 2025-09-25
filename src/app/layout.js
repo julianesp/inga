@@ -4,6 +4,7 @@ import { Navbar } from "@/components";
 import { Footer } from "@/containers";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import Breadcrumbs from "@/components/Breadcrumbs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,8 +24,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "IPS Inga-Kamentsa | Servicios de Salud Integral Sibundoy Putumayo",
-    template: "%s | IPS Inga-Kamentsa"
+    default: "Inicio",
+    template: "%s"
   },
   description: "🏥 IPS Inga-Kamentsa ➤ Servicios de salud integral en Sibundoy, Putumayo. Medicina occidental + tradicional indígena. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
   keywords: [
@@ -55,8 +56,8 @@ export const metadata = {
     }
   },
   openGraph: {
-    title: "IPS Inga-Kamentsa | Medicina con Identidad Cultural",
-    description: "🏥 Servicios de salud integral combinando medicina occidental con conocimientos ancestrales. Sibundoy, Putumayo. ✅ Consultas ✅ Urgencias ✅ Especialidades",
+    title: "IPS Inga-Kamentsa | Servicios de Salud Integral Sibundoy Putumayo",
+    description: "🏥 IPS Inga-Kamentsa ➤ Servicios de salud integral en Sibundoy, Putumayo. Medicina occidental + tradicional indígena. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
     url: "https://ips-inga-kamentsá.co",
     siteName: "IPS Inga-Kamentsa",
     images: [
@@ -64,7 +65,7 @@ export const metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "IPS Inga-Kamentsa - Servicios de Salud Integral"
+        alt: "IPS Inga-Kamentsa - Servicios de Salud Integral Sibundoy Putumayo"
       }
     ],
     locale: "es_CO",
@@ -217,7 +218,55 @@ export default function RootLayout({ children }) {
           "target": "https://ips-inga-kamentsá.co/busqueda?q={search_term_string}",
           "query-input": "required name=search_term_string"
         },
-        "inLanguage": "es-CO"
+        "inLanguage": "es-CO",
+        "mainEntity": {
+          "@type": "ItemList",
+          "name": "Navegación Principal",
+          "itemListElement": [
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Servicios",
+              "url": "https://ips-inga-kamentsá.co/servicios",
+              "description": "Conoce nuestro portafolio completo de servicios de salud"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Sedes",
+              "url": "https://ips-inga-kamentsá.co/sedes",
+              "description": "Nuestras sedes en Sibundoy, Colón, Santiago y San Andrés"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Institucional",
+              "url": "https://ips-inga-kamentsá.co/institucional",
+              "description": "Historia, misión, visión y portafolio de servicios"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Contacto",
+              "url": "https://ips-inga-kamentsá.co/contacto",
+              "description": "Contacta con nosotros para agendar citas"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Directorio",
+              "url": "https://ips-inga-kamentsá.co/directorio",
+              "description": "Directorio completo de contactos"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Eventos",
+              "url": "https://ips-inga-kamentsá.co/eventos",
+              "description": "Eventos programados y anuncios importantes"
+            },
+            {
+              "@type": "SiteNavigationElement",
+              "name": "Atención al Usuario",
+              "url": "https://ips-inga-kamentsá.co/atencion-usuario",
+              "description": "PQRSF y Asociación de Usuarios"
+            }
+          ]
+        }
       }
     ]
   };
@@ -236,6 +285,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider>
           <LanguageProvider>
             <Navbar />
+            <Breadcrumbs />
             {children}
             <Footer />
           </LanguageProvider>
