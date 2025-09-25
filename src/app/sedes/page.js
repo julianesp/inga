@@ -1,7 +1,7 @@
 import SedesSection from "@/components/SedesSection";
 
 export const metadata = {
-  title: "Sedes - IPS INGA KAMËNTSÁ",
+  title: "Sedes",
   description:
     "Conoce nuestras sedes en Sibundoy, Colón, Santiago y San Andrés. Información sobre horarios, servicios y cómo llegar.",
 };

@@ -2,7 +2,7 @@ import AtencionUsuario from "@/components/AtencionUsuario";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Atención al Usuario - IPS INGA KAMËNTSÁ",
+  title: "Atención al Usuario",
   description:
     "Área de Atención al Usuario: PQRSF, información de contacto y Asociación de Usuarios de la IPS INGA KAMËNTSÁ.",
 };

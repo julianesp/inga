@@ -1,7 +1,7 @@
 import DirectorioTelefonico from "@/components/DirectorioTelefonico";
 
 export const metadata = {
-  title: "Directorio Telefónico - IPS INGA KAMËNTSÁ",
+  title: "Directorio",
   description:
     "Directorio completo de contactos de todas las áreas y departamentos de IPS INGA KAMËNTSÁ.",
 };
