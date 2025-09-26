@@ -62,6 +62,7 @@ const contactoSedes: ContactoSede[] = [
 export default function ContactoSedes() {
   const [selectedSede, setSelectedSede] = useState<string>("sibundoy");
   const [showCitasForm, setShowCitasForm] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const [formData, setFormData] = useState({
     nombres: "",
     apellidos: "",
@@ -85,6 +86,18 @@ export default function ContactoSedes() {
     });
   };
 
+  const handleOpenForm = () => {
+    setShowCitasForm(true);
+  };
+
+  const handleCloseForm = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowCitasForm(false);
+      setIsClosing(false);
+    }, 300); // Duración de la animación
+  };
+
   const handleSubmitCita = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Solicitud de cita:", formData);
@@ -102,7 +115,7 @@ export default function ContactoSedes() {
       especialidad: "",
       observaciones: "",
     });
-    setShowCitasForm(false);
+    handleCloseForm();
   };
 
   const selectedSedeData = contactoSedes.find(
@@ -110,11 +123,12 @@ export default function ContactoSedes() {
   );
 
   return (
-    <section id="contacto" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-          Contactos y Sedes
-        </h2>
+    <>
+      <section id="contacto" className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+            Contactos y Sedes
+          </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Lista de sedes */}
@@ -142,8 +156,8 @@ export default function ContactoSedes() {
             {/* Botón para agendar citas */}
             <div className="mt-6">
               <button
-                onClick={() => setShowCitasForm(!showCitasForm)}
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
+                onClick={showCitasForm ? handleCloseForm : handleOpenForm}
+                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer"
               >
                 {showCitasForm ? "Cerrar Formulario" : "Programar Cita"}
               </button>
@@ -303,176 +317,201 @@ export default function ContactoSedes() {
               </div>
             )}
 
-            {/* Formulario de citas */}
-            {showCitasForm && (
-              <div className="mt-8 bg-white rounded-lg shadow-lg p-8 border border-gray-200">
-                <h4 className="text-xl font-bold text-gray-800 mb-6">
-                  Programar Cita
-                </h4>
-                <form onSubmit={handleSubmitCita} className="space-y-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Nombres *
-                      </label>
-                      <input
-                        type="text"
-                        name="nombres"
-                        value={formData.nombres}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Apellidos *
-                      </label>
-                      <input
-                        type="text"
-                        name="apellidos"
-                        value={formData.apellidos}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Teléfono *
-                      </label>
-                      <input
-                        type="tel"
-                        name="telefono"
-                        value={formData.telefono}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Email *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Sede *
-                    </label>
-                    <select
-                      name="sede"
-                      value={formData.sede}
-                      onChange={handleInputChange}
-                      required
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                      <option value="">Seleccionar sede...</option>
-                      <option value="sibundoy">Sibundoy</option>
-                      <option value="colon">Colón</option>
-                      <option value="santiago">Santiago</option>
-                      <option value="san-andres">San Andrés</option>
-                    </select>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Fecha Preferida *
-                      </label>
-                      <input
-                        type="date"
-                        name="fechaPreferida"
-                        value={formData.fechaPreferida}
-                        onChange={handleInputChange}
-                        required
-                        min={new Date().toISOString().split("T")[0]}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Hora Preferida *
-                      </label>
-                      <select
-                        name="horaPreferida"
-                        value={formData.horaPreferida}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      >
-                        <option value="">Seleccionar...</option>
-                        <option value="08:00">8:00 AM</option>
-                        <option value="09:00">9:00 AM</option>
-                        <option value="10:00">10:00 AM</option>
-                        <option value="11:00">11:00 AM</option>
-                        <option value="14:00">2:00 PM</option>
-                        <option value="15:00">3:00 PM</option>
-                        <option value="16:00">4:00 PM</option>
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">
-                        Especialidad
-                      </label>
-                      <select
-                        name="especialidad"
-                        value={formData.especialidad}
-                        onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      >
-                        <option value="">Seleccionar...</option>
-                        <option value="medicina-general">
-                          Medicina General
-                        </option>
-                        <option value="pediatria">Pediatría</option>
-                        <option value="ginecologia">Ginecología</option>
-                        <option value="odontologia">Odontología</option>
-                        <option value="medicina-tradicional">
-                          Medicina Tradicional
-                        </option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">
-                      Observaciones
-                    </label>
-                    <textarea
-                      name="observaciones"
-                      value={formData.observaciones}
-                      onChange={handleInputChange}
-                      rows={3}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder="Motivo de la consulta o información adicional..."
-                    ></textarea>
-                  </div>
-
-                  <button
-                    type="submit"
-                    className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-                  >
-                    Enviar Solicitud de Cita
-                  </button>
-                </form>
-              </div>
-            )}
+          </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Modal de formulario de citas */}
+      {showCitasForm && (
+        <div className={`fixed inset-0 z-40 flex items-end justify-center p-4 bg-opacity-50 backdrop-blur-sm  transition-all duration-300 ease-in-out ${
+          isClosing ? 'opacity-0' : 'opacity-100'
+        }`}>
+          <div className={`relative bg-white rounded-lg shadow-xl shadow-gray-500  p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto border-black border-1  transition-all duration-300 ease-in-out ${
+            isClosing ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 -translate-y-3'
+          }`}>
+            {/* Botón de cerrar */}
+              <button
+                onClick={handleCloseForm}
+                className="absolute top-4 right-4 text-black  text-2xl font-bold border border-black rounded-full w-8 cursor-pointer hover:scale-120 transition-all duration-300 ease-in-out hover:bg-black hover:text-white "
+              >
+              ×
+            </button>
+
+            <h4 className="text-2xl font-bold text-gray-800 mb-6">
+              Programar Cita
+            </h4>
+            <form onSubmit={handleSubmitCita} className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Nombres *
+                  </label>
+                  <input
+                    type="text"
+                    name="nombres"
+                    value={formData.nombres}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 "
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Apellidos *
+                  </label>
+                  <input
+                    type="text"
+                    name="apellidos"
+                    value={formData.apellidos}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Teléfono *
+                  </label>
+                  <input
+                    type="tel"
+                    name="telefono"
+                    value={formData.telefono}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Email *
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Sede *
+                </label>
+                <select
+                  name="sede"
+                  value={formData.sede}
+                  onChange={handleInputChange}
+                  required
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                >
+                  <option value="" className="text-gray-500">Seleccionar sede...</option>
+                  <option value="sibundoy">Sibundoy</option>
+                  <option value="colon">Colón</option>
+                  <option value="santiago">Santiago</option>
+                  <option value="san-andres">San Andrés</option>
+                </select>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Fecha Preferida *
+                  </label>
+                  <input
+                    type="date"
+                    name="fechaPreferida"
+                    value={formData.fechaPreferida}
+                    onChange={handleInputChange}
+                    required
+                    min={new Date().toISOString().split("T")[0]}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Hora Preferida *
+                  </label>
+                  <select
+                    name="horaPreferida"
+                    value={formData.horaPreferida}
+                    onChange={handleInputChange}
+                    required
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                  >
+                    <option value="" className="text-gray-500">Seleccionar...</option>
+                    <option value="08:00">8:00 AM</option>
+                    <option value="09:00">9:00 AM</option>
+                    <option value="10:00">10:00 AM</option>
+                    <option value="11:00">11:00 AM</option>
+                    <option value="14:00">2:00 PM</option>
+                    <option value="15:00">3:00 PM</option>
+                    <option value="16:00">4:00 PM</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-2">
+                    Especialidad
+                  </label>
+                  <select
+                    name="especialidad"
+                    value={formData.especialidad}
+                    onChange={handleInputChange}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
+                  >
+                    <option value="">Seleccionar...</option>
+                    <option value="medicina-general">
+                      Medicina General
+                    </option>
+                    <option value="pediatria">Pediatría</option>
+                    <option value="ginecologia">Ginecología</option>
+                    <option value="odontologia">Odontología</option>
+                    <option value="medicina-tradicional">
+                      Medicina Tradicional
+                    </option>
+                  </select>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-semibold text-gray-700 mb-2">
+                  Observaciones
+                </label>
+                <textarea
+                  name="observaciones"
+                  value={formData.observaciones}
+                  onChange={handleInputChange}
+                  rows={3}
+                  className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700 placeholder-gray-500"
+                  placeholder="Motivo de la consulta o información adicional..."
+                ></textarea>
+              </div>
+
+              <div className="flex gap-4 pt-4">
+                <button
+                  type="button"
+                  onClick={handleCloseForm}
+                  className="flex-1 bg-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-400 transition-colors font-semibold cursor-pointer"
+                >
+                  Cancelar
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer"
+                >
+                  Enviar Solicitud
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
+    </>
   );
 }

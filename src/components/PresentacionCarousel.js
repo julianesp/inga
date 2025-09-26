@@ -80,13 +80,12 @@ export default function PresentacionCarousel() {
   };
 
   return (
-    <div className="relative h-[600px] overflow-hidden -top-2.5">
+    <div className="relative h-[600px] overflow-hidden -top-12">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === currentSlide ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
+            }`}
         >
           {/* Background image (for first slide) */}
           {index === 0 && (
@@ -100,9 +99,8 @@ export default function PresentacionCarousel() {
 
           {/* Background gradient overlay */}
           <div
-            className={`absolute inset-0 bg-gradient-to-br ${slide.bgColor} ${
-              index === 0 ? "opacity-75" : "opacity-100"
-            }`}
+            className={`absolute inset-0 bg-gradient-to-br ${slide.bgColor} ${index === 0 ? "opacity-75" : "opacity-100"
+              }`}
           ></div>
 
           {/* Background pattern */}
@@ -274,24 +272,22 @@ export default function PresentacionCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
-              index === currentSlide
-                ? "bg-yellow-400"
-                : "bg-white bg-opacity-50 hover:bg-opacity-75"
-            }`}
+            className={`w-3 h-3 rounded-full transition-colors duration-200 ${index === currentSlide
+              ? "bg-yellow-400"
+              : "bg-white bg-opacity-50 hover:bg-opacity-75"
+              }`}
           />
         ))}
       </div>
 
       {/* Auto-play indicator */}
-      <div className="absolute top-4 right-4 z-20">
+      <div className="absolute bottom-6 right-4 z-20">
         <button
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-          className={`px-3 py-1 rounded-full text-sm transition-colors ${
-            isAutoPlaying
-              ? "bg-green-500 text-white"
-              : "bg-gray-500 text-white hover:bg-gray-400"
-          }`}
+          className={`px-3 py-1 rounded-full text-sm transition-colors ${isAutoPlaying
+            ? "bg-green-500 text-white"
+            : "bg-gray-500 text-white hover:bg-gray-400"
+            }`}
         >
           {isAutoPlaying ? "⏸️ Pausa" : "▶️ Auto"}
         </button>

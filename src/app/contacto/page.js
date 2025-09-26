@@ -1,4 +1,5 @@
 import ContactoSedes from "@/components/ContactoSedes";
+import ModalInstagram from "@/components/ModalInstagram";
 import Link from "next/link";
 
 export const metadata = {
@@ -80,7 +81,7 @@ export default function ContactoPage() {
                 <Link
                   href={
                     typeof window !== "undefined" &&
-                    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+                      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
                       ? "fb://profile/100008728661876"
                       : "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy"
                   }
@@ -90,14 +91,8 @@ export default function ContactoPage() {
                 >
                   Facebook
                 </Link>
-                <Link
-                  href="https://instagram.com/ips.inga.kamentsa"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors"
-                >
-                  Instagram
-                </Link>
+
+                <ModalInstagram />
               </div>
             </div>
           </div>
@@ -112,8 +107,8 @@ export default function ContactoPage() {
               Horarios Generales de Atención
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-green-50 rounded-lg p-8 border border-green-200">
+            <div className="flex justify-center">
+              <div className="bg-green-50 rounded-lg p-8 border border-green-200 w-3/5">
                 <h3 className="text-xl font-bold text-green-800 mb-4">
                   📅 Días Hábiles
                 </h3>
@@ -122,7 +117,7 @@ export default function ContactoPage() {
                     <span className="font-semibold text-black">
                       Lunes a Viernes:
                     </span>
-                    <span className="text-black">7:00 AM - 5:00 PM</span>
+                    <span className="text-black">8:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="font-semibold text-black">Sábados:</span>
@@ -134,26 +129,7 @@ export default function ContactoPage() {
                 </div>
               </div>
 
-              <div className="bg-red-50 rounded-lg p-8 border border-red-200">
-                <h3 className="text-xl font-bold text-red-800 mb-4">
-                  🚨 Emergencias (¿hay servicio de emergencias?)
-                </h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="font-semibold text-black">
-                      Todos los días:
-                    </span>
-                    <span className="text-black">24 horas</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="font-semibold text-black">Festivos:</span>
-                    <span className="text-black">24 horas</span>
-                  </div>
-                  <p className="text-sm text-red-700 mt-4">
-                    * Servicio de emergencias disponible solo en sede principal
-                  </p>
-                </div>
-              </div>
+
             </div>
 
             <div className="mt-8 bg-blue-50 rounded-lg p-8 border border-blue-200 text-center">
