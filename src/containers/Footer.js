@@ -17,12 +17,11 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-gray-300 mb-4">
-              Institución Prestadora de Servicios de Salud comprometida con el bienestar 
+              Institución Prestadora de Servicios de Salud comprometida con el bienestar
               de la comunidad indígena Inga Kamëntsá en el Valle de Sibundoy, Putumayo.
             </p>
             <div className="text-sm text-gray-400">
-              <p>NIT: 900.123.456-7</p>
-              <p>Código habilitación: 76001234567</p>
+              <p>NIT: 846001214-3</p>
             </div>
           </div>
 
@@ -60,21 +59,22 @@ export default function Footer() {
               <div className="flex items-start space-x-2">
                 <span>📍</span>
                 <div>
-                  <p>Carrera 12 #10-15</p>
+                  <p>Calle 15 # 15 - 69</p>
                   <p>Sibundoy, Putumayo</p>
                 </div>
               </div>
               <div className="flex items-center space-x-2">
                 <span>📞</span>
-                <p>(8) 420-4123</p>
+                <Link href="tel:+573132863398" className="hover:text-white transition-colors">
+                  313-286-3398
+                </Link>
               </div>
-              <div className="flex items-center space-x-2">
-                <span>🚨</span>
-                <p>Urgencias: (8) 420-4199</p>
-              </div>
+
               <div className="flex items-center space-x-2">
                 <span>📧</span>
-                <p>contacto@ipsinga.gov.co</p>
+                <Link href="mailto:ipsingakamentsa@gmail.com" className="hover:text-white transition-colors">
+                  ipsingakamentsa@gmail.com
+                </Link>
               </div>
             </div>
           </div>
@@ -86,10 +86,12 @@ export default function Footer() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
             <div className="bg-gray-700 p-3 rounded">
               <h5 className="font-semibold text-green-400">Sede Sibundoy</h5>
-              <p className="text-gray-300">Carrera 12 #10-15</p>
+              <p>Barrio Recreo</p>
+              <p className="text-gray-300">Calle 15 # 15 - 69</p>
             </div>
             <div className="bg-gray-700 p-3 rounded">
               <h5 className="font-semibold text-green-400">Sede Colón</h5>
+              <p>Barrio Centro</p>
               <p className="text-gray-300">Calle 8 #5-23</p>
             </div>
             <div className="bg-gray-700 p-3 rounded">
@@ -106,7 +108,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 IPS INGA KAMËNTSÁ. Todos los derechos reservados.
+            © 2025 IPS INGA KAMËNTSÁ. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
             <Link href="/atencion-usuario" className="text-gray-400 hover:text-white text-sm transition-colors">
