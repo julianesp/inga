@@ -1,7 +1,6 @@
 "use client";
 
 import ImageCarousel from "./ImageCarousel";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const healthImages = [
   {
@@ -60,7 +59,6 @@ const meetingImages = [
 ];
 
 export default function HealthInfoSection() {
-  const { t } = useLanguage();
 
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
