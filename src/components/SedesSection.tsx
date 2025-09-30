@@ -17,37 +17,37 @@ const sedes: Sede[] = [
     id: "sibundoy",
     nombre: "Sede Principal Sibundoy",
     municipio: "Sibundoy",
-    direccion: "Calle Principal #123, Sibundoy, Putumayo",
-    telefono: "+573174503604",
-    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:30 PM",
-    servicios: ["Medicina General", "Odontología", "Enfermería"],
+    direccion: "Calle 15 # 15 - 69",
+    telefono: "+573132863398",
+    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
+    servicios: ["Medicina General", "Odontología"],
   },
   {
     id: "colon",
     nombre: "Sede Colón",
     municipio: "Colón",
     direccion: "Carrera 5 #67-89, Colón, Putumayo",
-    telefono: "+573174503604",
-    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:30 PM",
-    servicios: ["Medicina General", "Odontología", "Enfermería"],
+    telefono: "+573132863398",
+    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
+    servicios: ["Medicina General", "Odontología"],
   },
   {
     id: "santiago",
     nombre: "Sede Santiago",
     municipio: "Santiago",
     direccion: "Calle 12 #34-56, Santiago, Putumayo",
-    telefono: "+573174503604",
-    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:30 PM",
-    servicios: ["Medicina General", "Odontología", "Enfermería"],
+    telefono: "+573132863398",
+    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
+    servicios: ["Medicina General", "Odontología"],
   },
   {
     id: "san-andres",
     nombre: "Sede San Andrés",
     municipio: "San Andrés",
     direccion: "Avenida Central #78-90, San Andrés, Putumayo",
-    telefono: "+573174503604",
-    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:30 PM",
-    servicios: ["Medicina General", "Odontología", "Enfermería"],
+    telefono: "+573132863398",
+    horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
+    servicios: ["Medicina General", "Odontología"],
   },
 ];
 
@@ -151,9 +151,12 @@ export default function SedesSection() {
                               d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                             />
                           </svg>
-                          {sede.telefono}
+
+                          {sede.telefono}c
+
                         </p>
                       </div>
+                      
                       <button
                         onClick={() => handleAgendarCita(sede)}
                         className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors whitespace-nowrap flex items-center gap-2 cursor-pointer"
