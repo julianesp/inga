@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import ThemeToggle from "./ThemeToggle";
+// import ThemeToggle from "./ThemeToggle";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { translations } from "@/data/translations";
@@ -28,24 +28,21 @@ export default function Navbar() {
   // backdrop-blur-md
   return (
     <nav
-      className={`border-white border-b-4 sticky top-0 z-50 rounded-bl-2xl rounded-br-2xl bg-slate-900/75 dark:bg-slate-800/75 ${styles.navbar}`}
+      className={`border-white border-b-1 sticky top-0 z-50 rounded-bl-2xl rounded-br-2xl  dark:bg-slate-800/75 ${styles.navbar}`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
-              alt="Logo IPS INGA KAMËNTSÁ"
-              width={50}
-              height={50}
-              className="mr-2 rounded-4xl"
-              priority
-            />
-            <Link href="/" className="flex items-center space-x-2">
-              <span className="text-xl font-bold text-green-600 dark:text-green-400">
-                {t(translations.organization.name)}
-              </span>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
+                alt="Logo IPS INGA KAMËNTSÁ"
+                width={50}
+                height={50}
+                className="rounded-4xl"
+                priority
+              />
             </Link>
           </div>
 
@@ -69,7 +66,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <div className="lg:hidden flex items-center space-x-2">
             <LanguageToggle />
-            <ThemeToggle />
+            {/* <ThemeToggle /> */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 focus:outline-none focus:text-green-600"

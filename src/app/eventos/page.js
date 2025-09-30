@@ -1,7 +1,7 @@
 import EventosCalendario from "@/components/EventosCalendario";
 
 export const metadata = {
-  title: "Eventos",
+  title: "Eventos y Anuncios - IPS INGA KAMËNTSÁ",
   description:
     "Eventos programados, jornadas de salud, capacitaciones y anuncios importantes de IPS INGA KAMËNTSÁ.",
 };
