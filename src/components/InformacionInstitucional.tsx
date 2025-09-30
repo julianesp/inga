@@ -1,12 +1,12 @@
+import Link from "next/link";
+
 export default function InformacionInstitucional() {
   const servicios = [
     'Medicina General',
     'Pediatría',
-    'Ginecología y Obstetricia',
     'Odontología',
     'Enfermería',
     'Laboratorio Clínico',
-    'Medicina Tradicional Indígena',
     'Promoción y Prevención',
     'Control Prenatal',
     'Vacunación',
@@ -25,38 +25,23 @@ export default function InformacionInstitucional() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Nuestra Historia</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              La IPS INGA KAMËNTSÁ nació como respuesta a la necesidad de brindar servicios de salud 
-              culturalmente apropiados para la comunidad indígena Inga del Valle de Sibundoy, Putumayo.
-            </p>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              Fundada en 1995, nuestra institución ha crecido para servir no solo a la población indígena 
-              Inga y Kamëntsá, sino también a toda la comunidad del Valle de Sibundoy y municipios aledaños.
-            </p>
-            <p className="text-gray-600 leading-relaxed">
-              Durante más de 25 años, hemos trabajado incansablemente para integrar la medicina occidental 
-              con los conocimientos ancestrales de medicina tradicional, ofreciendo un modelo de atención 
-              integral y respetuoso de la diversidad cultural.
+
+            <p className="text-black mb-4 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             </p>
           </div>
 
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">Atención Intercultural</h3>
-            <p className="text-gray-600 mb-4 leading-relaxed">
-              Reconocemos y valoramos la riqueza cultural de nuestros pueblos. Nuestro equipo incluye 
-              médicos tradicionales y profesionales de la salud que hablan inga y kamëntsá.
-            </p>
-            <div className="bg-green-50 border-l-4 border-green-400 p-4 mb-4">
-              <p className="text-green-800 font-semibold">
-                &ldquo;Bëngbe kwa iachingana atun yachaikuna suma jambi&rdquo; 
-              </p>
-              <p className="text-green-700 text-sm mt-1">
-                &ldquo;Aquí encontrará buenos médicos y buena medicina&rdquo;
-              </p>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              Trabajamos bajo el principio de complementariedad entre sistemas médicos, 
-              respetando las decisiones de nuestros usuarios sobre el tipo de atención que desean recibir.
+
+            <p className="text-black mb-4 leading-relaxed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             </p>
           </div>
         </div>
@@ -70,11 +55,12 @@ export default function InformacionInstitucional() {
               </svg>
               Misión
             </h3>
-            <p className="leading-relaxed text-green-50">
-              Brindar servicios integrales de salud con calidad, calidez y pertinencia cultural, 
-              combinando la medicina occidental con los saberes ancestrales de los pueblos indígenas 
-              Inga y Kamëntsá, contribuyendo al bienestar físico, mental y espiritual de nuestras 
-              comunidades del Valle de Sibundoy y región.
+            
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             </p>
           </div>
 
@@ -86,11 +72,11 @@ export default function InformacionInstitucional() {
               </svg>
               Visión
             </h3>
-            <p className="leading-relaxed text-blue-50">
-              Ser reconocidos como la institución líder en salud intercultural del sur de Colombia, 
-              modelo de referencia en la integración exitosa de sistemas médicos, contribuyendo a la 
-              preservación de la cultura y mejoramiento de la calidad de vida de los pueblos indígenas 
-              y comunidades campesinas de nuestra región.
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos. 
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.
             </p>
           </div>
         </div>
@@ -120,12 +106,14 @@ export default function InformacionInstitucional() {
             <p className="text-gray-600 mb-4">
               ¿Necesita información específica sobre algún servicio?
             </p>
-            <a 
-              href="#contacto" 
+            < Link
+              href="tel:+573132863398" 
               className="inline-block bg-green-600 text-white px-8 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              Contactar Ahora
-            </a>
+              Contactar Ahora 📱
+            </Link>
           </div>
         </div>
       </div>

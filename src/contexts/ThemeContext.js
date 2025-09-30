@@ -9,16 +9,25 @@ export function ThemeProvider({ children }) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+
     try {
       const storedTheme = localStorage.getItem('theme');
       const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      
-      setTheme(storedTheme || systemPreference);
-      setMounted(true);
+      const initialTheme = storedTheme || systemPreference;
+
+      setTheme(initialTheme);
+
+      // Apply theme immediately
+      if (initialTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
     } catch {
       // Fallback if localStorage is not available
       setTheme('light');
-      setMounted(true);
+      document.documentElement.classList.remove('dark');
     }
   }, []);
 
@@ -29,7 +38,7 @@ export function ThemeProvider({ children }) {
       } catch {
         // Ignore localStorage errors
       }
-      
+
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
       } else {
@@ -42,13 +51,8 @@ export function ThemeProvider({ children }) {
     setTheme(prev => prev === 'light' ? 'dark' : 'light');
   };
 
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return <div style={{ visibility: 'hidden' }}>{children}</div>;
-  }
-
   return (
-    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+    <ThemeContext.Provider value={{ theme, toggleTheme, mounted }}>
       {children}
     </ThemeContext.Provider>
   );

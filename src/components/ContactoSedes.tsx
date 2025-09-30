@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface ContactoSede {
   id: string;
@@ -21,11 +22,11 @@ const contactoSedes: ContactoSede[] = [
     id: "sibundoy",
     nombre: "Sede Principal Sibundoy",
     municipio: "Sibundoy, Putumayo",
-    direccion: "Calle Principal #123, Centro",
+    direccion: "Calle 15 # 15 - 69",
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
     horarios: "Lunes a Viernes: 7:00 AM - 5:00 PM\nSábados: 8:00 AM - 12:00 PM",
-    coordenadas: { lat: 1.1585, lng: -76.9386 },
+    coordenadas: { lat: 1.2025376, lng: -76.9180384 },
   },
   {
     id: "colon",
@@ -116,6 +117,47 @@ export default function ContactoSedes() {
       observaciones: "",
     });
     handleCloseForm();
+  };
+
+  const handleMapClick = (lat: number, lng: number, nombreSede: string) => {
+    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+      typeof window !== "undefined" ? navigator.userAgent : ""
+    );
+
+    const coordinates = `${lat},${lng}`;
+    const query = encodeURIComponent(`${nombreSede}, ${coordinates}`);
+
+    if (isMobile) {
+      // Para dispositivos móviles, intenta abrir la app nativa
+      const googleMapsApp = `comgooglemaps://?q=${coordinates}&center=${coordinates}&zoom=16`;
+      const appleMapsApp = `maps://maps.apple.com/?q=${query}&ll=${coordinates}`;
+      const googleMapsWeb = `https://maps.google.com/maps?q=${coordinates}&ll=${coordinates}&z=16`;
+
+      // Detectar iOS o Android
+      const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+      const isAndroid = /Android/.test(navigator.userAgent);
+
+      if (isIOS) {
+        // Intenta abrir Apple Maps primero, luego Google Maps
+        window.location.href = appleMapsApp;
+        setTimeout(() => {
+          window.open(googleMapsWeb, '_blank');
+        }, 500);
+      } else if (isAndroid) {
+        // Intenta abrir Google Maps app, luego web
+        window.location.href = googleMapsApp;
+        setTimeout(() => {
+          window.open(googleMapsWeb, '_blank');
+        }, 500);
+      } else {
+        // Fallback para otros dispositivos móviles
+        window.open(googleMapsWeb, '_blank');
+      }
+    } else {
+      // Para desktop, abre Google Maps en nueva pestaña
+      const googleMapsWeb = `https://maps.google.com/maps?q=${coordinates}&ll=${coordinates}&z=16`;
+      window.open(googleMapsWeb, '_blank');
+    }
   };
 
   const selectedSedeData = contactoSedes.find(
@@ -221,12 +263,13 @@ export default function ContactoSedes() {
                       </svg>
                       <div>
                         <p className="font-semibold text-gray-800">Teléfono</p>
-                        <a
+                        <Link
                           href={`tel:${selectedSedeData.telefono}`}
                           className="text-green-600 hover:underline"
                         >
                           {selectedSedeData.telefono}
-                        </a>
+                          
+                        </Link>
                       </div>
                     </div>
 
@@ -248,12 +291,12 @@ export default function ContactoSedes() {
                         <p className="font-semibold text-gray-800">
                           Correo Electrónico
                         </p>
-                        <a
+                        <Link
                           href={`mailto:${selectedSedeData.email}`}
                           className="text-green-600 hover:underline"
                         >
                           {selectedSedeData.email}
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>
@@ -285,33 +328,74 @@ export default function ContactoSedes() {
                   </div>
                 </div>
 
-                {/* Mapa placeholder */}
-                <div className="bg-gray-300 h-64 rounded-lg flex items-center justify-center mb-4">
-                  <div className="text-center text-gray-600">
-                    <svg
-                      className="w-16 h-16 mx-auto mb-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <p>Mapa de ubicación</p>
-                    <p className="text-sm">
-                      Lat: {selectedSedeData.coordenadas.lat}, Lng:{" "}
-                      {selectedSedeData.coordenadas.lng}
-                    </p>
+                {/* Mapa interactivo */}
+                <div
+                  className="bg-gradient-to-br from-green-100 to-blue-100 h-64 rounded-lg cursor-pointer hover:from-green-200 hover:to-blue-200 transition-all duration-300 relative overflow-hidden border-2 border-green-200 hover:border-green-300"
+                  onClick={() => handleMapClick(selectedSedeData.coordenadas.lat, selectedSedeData.coordenadas.lng, selectedSedeData.nombre)}
+                >
+                  {/* Contenido del mapa sin iframe */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                    <div className="text-center">
+                      <svg
+                        className="w-16 h-16 mx-auto mb-4 text-green-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <h4 className="text-lg font-bold text-gray-800 mb-2">
+                        {selectedSedeData.nombre}
+                      </h4>
+                      <p className="text-gray-600 mb-4">
+                        {selectedSedeData.direccion}
+                      </p>
+                      <div className="bg-white bg-opacity-90 rounded-lg p-3 shadow-lg">
+                        <p className="text-sm font-semibold text-green-600 mb-1">
+                          Haz clic para abrir en mapas
+                        </p>
+                        <p className="text-xs text-gray-500">
+                          Se abrirá en tu aplicación de mapas preferida
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Efecto hover */}
+                  <div className="absolute inset-0  bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center">
+                    <div className="bg-white bg-opacity-90 rounded-lg p-3 text-center shadow-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
+                      <svg
+                        className="w-8 h-8 mx-auto mb-1 text-green-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                      <p className="text-sm font-semibold text-gray-800">Abrir en Mapas</p>
+                    </div>
                   </div>
                 </div>
               </div>

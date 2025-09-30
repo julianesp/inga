@@ -6,7 +6,7 @@ module.exports = {
     './src/containers/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-  darkMode: 'class',
+  // darkMode: 'class', // Deshabilitado temporalmente
   theme: {
     extend: {
       colors: {

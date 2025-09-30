@@ -6,10 +6,10 @@ import Link from "next/link";
 const slides = [
   {
     id: 1,
-    title: "Medicina con Identidad Cultural",
-    subtitle: "IPS INGA KAMËNTSÁ",
+    title: "Medicina Integral y Personalizada",
+    subtitle: "CENTRO MÉDICO ESPECIALIZADO",
     description:
-      "Combinamos la medicina occidental con los conocimientos ancestrales de los pueblos Inga y Kamëntsá.",
+      "Ofrecemos atención médica integral con un enfoque personalizado, combinando tecnología avanzada con un trato humano de calidad.",
     image:
       "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/portada.jpg",
     cta: {
@@ -20,23 +20,23 @@ const slides = [
   },
   {
     id: 2,
-    title: "Atención 24/7",
-    subtitle: "Servicios de Urgencias",
+    title: "Atención Médica y Odontológica",
+    subtitle: "Especialistas en Salud",
     description:
-      "Estamos disponibles las 24 horas para atender sus emergencias médicas en todas nuestras sedes.",
-    image: "/api/placeholder/1200/600",
+      "Contamos con un equipo profesional de médicos y odontólogos especializados para brindar atención integral de calidad.",
+    image: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/portada.jpg",
     cta: {
-      primary: { text: "Contactar Urgencias", href: "tel:+57842041199" },
+      primary: { text: "Agendar Cita", href: "tel:+57842041199" },
       secondary: { text: "Ver Sedes", href: "/sedes" },
     },
-    bgColor: "from-red-600 to-orange-700",
+    bgColor: "from-blue-600 to-indigo-700",
   },
   {
     id: 3,
-    title: "Medicina Ancestral",
-    subtitle: "Sabiduría Tradicional",
+    title: "Medicina Preventiva",
+    subtitle: "Cuidado de la Salud",
     description:
-      "Preservamos y aplicamos los conocimientos medicinales ancestrales de nuestros pueblos originarios.",
+      "Promovemos la medicina preventiva y el bienestar integral a través de programas de salud personalizados y seguimiento continuo.",
     image: "/api/placeholder/1200/600",
     cta: {
       primary: { text: "Conocer Más", href: "/servicios" },
@@ -99,7 +99,9 @@ export default function PresentacionCarousel() {
 
           {/* Background gradient overlay */}
           <div
-            className={`absolute inset-0 bg-gradient-to-br ${slide.bgColor} ${index === 0 ? "opacity-75" : "opacity-100"
+            className={`absolute inset-0 ${index === 0
+              ? `bg-gradient-to-br ${slide.bgColor} opacity-75`
+              : "bg-gray-500 opacity-30"
               }`}
           ></div>
 
@@ -112,10 +114,10 @@ export default function PresentacionCarousel() {
           ></div>
 
           {/* Content */}
-          <div className="relative z-10 h-full flex items-center">
+          <div className="relative z-10 h-full flex items-center p-24">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="text-white space-y-6">
+                <div className="text-white dark:text-gray-100 space-y-6">
                   <div>
                     <p className="text-lg font-medium text-yellow-300 mb-2">
                       {slide.subtitle}
@@ -183,29 +185,29 @@ export default function PresentacionCarousel() {
                 {/* Illustration/Icon area */}
                 <div className="hidden lg:flex justify-center items-center">
                   <div className="relative">
-                    <div className="w-80 h-80 bg-white bg-opacity-10 backdrop-blur-sm rounded-full flex items-center justify-center">
+                    <div className="w-80 h-80 bg-white  backdrop-blur-sm rounded-full flex items-center justify-center">
                       <div className="text-center">
                         {index === 0 && (
                           <div>
                             <div className="text-8xl mb-4">🏥</div>
                             <p className="text-white font-semibold text-lg">
-                              Salud Integral
+                              Medicina Integral
                             </p>
                           </div>
                         )}
                         {index === 1 && (
                           <div>
-                            <div className="text-8xl mb-4">🚨</div>
+                            <div className="text-8xl mb-4">👨‍⚕️</div>
                             <p className="text-white font-semibold text-lg">
-                              Urgencias 24/7
+                              Médicos y Odontólogos
                             </p>
                           </div>
                         )}
                         {index === 2 && (
                           <div>
-                            <div className="text-8xl mb-4">🌿</div>
+                            <div className="text-8xl mb-4">💊</div>
                             <p className="text-white font-semibold text-lg">
-                              Medicina Ancestral
+                              Medicina Preventiva
                             </p>
                           </div>
                         )}
