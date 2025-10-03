@@ -54,12 +54,12 @@ export default function Home() {
       <GlobalSearch />
 
       {/* Services Preview */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
+      <section className="py-16 bg-gray-50 transition-colors duration-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 ">
             {t(translations.home.services.title)}
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-center lg:max-w-5xl lg:mx-auto">
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
               <div className="text-4xl mb-4">👩‍⚕️</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
@@ -77,28 +77,12 @@ export default function Home() {
             </div>
 
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
-              <div className="text-4xl mb-4">🌿</div>
+              <div className="text-4xl mb-4">🦷</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-                {t(translations.home.services.traditionalMedicine.title)}
+                {t(translations.home.services.dentistry.title)}
               </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {t(translations.home.services.traditionalMedicine.description)}
-              </p>
-              <Link
-                href="/servicios"
-                className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-semibold"
-              >
-                {t(translations.home.services.seeMore)}
-              </Link>
-            </div>
-
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
-              <div className="text-4xl mb-4">🏥</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
-                {t(translations.home.services.specialties.title)}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                {t(translations.home.services.specialties.description)}
+                {t(translations.home.services.dentistry.description)}
               </p>
               <Link
                 href="/servicios"
@@ -127,8 +111,67 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Detailed Services Info */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+            ¿Por qué elegir IPS Inga Kamëntsá?
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="bg-gray-50 rounded-lg p-6">
+              <div className="text-4xl mb-4 text-center">⏰</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Horarios Flexibles</h3>
+              <p className="text-gray-600 text-center">
+                Atención de lunes a viernes y servicio de urgencias disponible 24/7 para tu tranquilidad.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <div className="text-4xl mb-4 text-center">👨‍⚕️</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Personal Calificado</h3>
+              <p className="text-gray-600 text-center">
+                Médicos y odontólogos con experiencia comprometidos con tu salud y bienestar.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <div className="text-4xl mb-4 text-center">📍</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Múltiples Sedes</h3>
+              <p className="text-gray-600 text-center">
+                Presencia en Sibundoy, Colón, Santiago y San Andrés para estar cerca de ti.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <div className="text-4xl mb-4 text-center">💰</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Tarifas Accesibles</h3>
+              <p className="text-gray-600 text-center">
+                Servicios de salud de calidad a precios justos y asequibles para toda la comunidad.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <div className="text-4xl mb-4 text-center">🏥</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Atención Integral</h3>
+              <p className="text-gray-600 text-center">
+                Desde consulta general hasta tratamientos odontológicos especializados.
+              </p>
+            </div>
+
+            <div className="bg-gray-50 rounded-lg p-6">
+              <div className="text-4xl mb-4 text-center">📋</div>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Fácil Acceso</h3>
+              <p className="text-gray-600 text-center">
+                Proceso de agendamiento sencillo y atención oportuna para todos nuestros pacientes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Quick Access */}
-      <section className="py-16 bg-white dark:bg-gray-900 transition-colors duration-200">
+      <section className="py-16 bg-gray-50 transition-colors duration-200">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">
             {t(translations.home.quickAccess.title)}
