@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components";
 import { Footer } from "@/containers";
-// import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
@@ -282,14 +281,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
-        {/* <ThemeProvider> */}
-          <LanguageProvider>
-            <Navbar />
-            <Breadcrumbs />
-            {children}
-            <Footer />
-          </LanguageProvider>
-        {/* </ThemeProvider> */}
+        <LanguageProvider>
+          <Navbar />
+          <Breadcrumbs />
+          {children}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

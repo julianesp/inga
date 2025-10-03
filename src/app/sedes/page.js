@@ -35,8 +35,8 @@ export default function SedesPage() {
               Cobertura y Alcance
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg shadow-lg p-8">
+            <div className="flex justify-center">
+              <div className="bg-white rounded-lg shadow-lg p-8 max-w-md w-full">
                 <h3 className="text-xl font-bold text-gray-800 mb-4">
                   📍 Ubicación Estratégica
                 </h3>
@@ -46,41 +46,22 @@ export default function SedesPage() {
                   todas las comunidades indígenas y campesinas de la región.
                 </p>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• Sede Principal: Sibundoy (Centro administrativo)</li>
-                  <li>• Sede Colón: Atención especializada</li>
-                  <li>• Sede Santiago: Servicios básicos</li>
-                  <li>• Sede San Andrés: Medicina comunitaria</li>
-                </ul>
-              </div>
-
-              <div className="bg-white rounded-lg shadow-lg p-8">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
-                  🚐 Transporte y Acceso
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Facilitamos el acceso a nuestros servicios mediante diferentes
-                  opciones de transporte y programas de atención móvil para
-                  comunidades alejadas.
-                </p>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• Transporte público regular</li>
-                  <li>• Servicio de ambulancia</li>
-                  <li>• Brigadas de salud móviles</li>
-                  <li>• Atención domiciliaria</li>
+                  <li>• Sede Principal: Sibundoy</li>
+                  <li>• Sede Colón</li>
+                  <li>• Sede Santiago</li>
+                  <li>• Sede San Andrés</li>
                 </ul>
               </div>
             </div>
 
             <div className="mt-12 bg-green-50 rounded-lg p-8 border border-green-200">
               <h3 className="text-xl font-bold text-green-800 mb-4 text-center">
-                🌍 Compromiso con la Comunidad
+                🌍 Compromiso con la Calidad
               </h3>
               <p className="text-green-700 text-center max-w-3xl mx-auto">
                 Cada una de nuestras sedes refleja nuestro compromiso con la
-                atención integral y respetuosa de la diversidad cultural.
-                Trabajamos de la mano con las autoridades indígenas y líderes
-                comunitarios para garantizar servicios de calidad que honren
-                nuestras tradiciones.
+                atención integral en salud. Trabajamos constantemente para
+                garantizar servicios de calidad y accesibles para todos.
               </p>
             </div>
           </div>

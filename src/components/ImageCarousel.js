@@ -28,7 +28,7 @@ export default function ImageCarousel({ images, title, description }) {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-colors duration-200">
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden transition-colors duration-200">
       {/* Image Container */}
       <div className="relative h-64 overflow-hidden group">
         {images.map((image, index) => (
@@ -58,9 +58,9 @@ export default function ImageCarousel({ images, title, description }) {
           <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
 
           {/* Zoom icon - appears on hover */}
-          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-95 dark:bg-gray-800 dark:bg-opacity-95 rounded-full p-3 transform scale-90 group-hover:scale-100 shadow-lg border-2 border-blue-500">
+          <div className="opacity-0 group-hover:opacity-100 transition-all duration-300 bg-white bg-opacity-95 rounded-full p-3 transform scale-90 group-hover:scale-100 shadow-lg border-2 border-blue-500">
             <svg
-              className="w-6 h-6 text-blue-600 dark:text-blue-400"
+              className="w-6 h-6 text-blue-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -155,14 +155,14 @@ export default function ImageCarousel({ images, title, description }) {
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-3">
+        <h3 className="text-xl font-bold text-gray-800 mb-3">
           {title}
         </h3>
-        <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+        <p className="text-gray-600 leading-relaxed">
           {description}
         </p>
         {images[currentImage].description && (
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-3 italic">
+          <p className="text-sm text-gray-500 mt-3 italic">
             {images[currentImage].description}
           </p>
         )}
@@ -175,7 +175,7 @@ export default function ImageCarousel({ images, title, description }) {
           onClick={closeModal}
         >
           <div
-            className="relative bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-[95vw] lg:max-w-4xl max-h-[80vh] lg:max-h-[75vh] w-full overflow-auto"
+            className="relative bg-white rounded-xl shadow-2xl max-w-[95vw] lg:max-w-4xl max-h-[80vh] lg:max-h-[75vh] w-full overflow-auto"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Close button */}
@@ -212,8 +212,8 @@ export default function ImageCarousel({ images, title, description }) {
 
               {/* Image description in modal */}
               {images[currentImage].description && (
-                <div className="bg-gray-50 dark:bg-gray-700 px-6 py-4 border-t dark:border-gray-600">
-                  <p className="text-gray-800 dark:text-gray-200 text-center font-medium">
+                <div className="bg-gray-50 px-6 py-4 border-t">
+                  <p className="text-gray-800 text-center font-medium">
                     {images[currentImage].description}
                   </p>
                 </div>

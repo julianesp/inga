@@ -3,13 +3,8 @@ import Link from "next/link";
 export default function InformacionInstitucional() {
   const servicios = [
     'Medicina General',
-    'Pediatría',
     'Odontología',
-    'Enfermería',
-    'Laboratorio Clínico',
     'Promoción y Prevención',
-    'Control Prenatal',
-    'Vacunación',
     'Primeros Auxilios',
     'Atención Domiciliaria',
     'Consulta Externa',
