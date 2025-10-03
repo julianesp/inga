@@ -111,7 +111,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
     const alertaDiv = document.createElement("div");
     alertaDiv.innerHTML = `
       <div class="fixed inset-0 backdrop-blur-md bg-white/20 z-40 flex items-center justify-center p-4">
-        <div class="bg-white dark:bg-white rounded-lg shadow-xl max-w-md w-full p-6 text-center">
+        <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 text-center">
           <div class="text-green-600 text-4xl mb-4">✅</div>
           <h3 class="text-xl font-bold text-gray-800 mb-2">¡PQRSF Enviada Exitosamente!</h3>
           <p class="text-gray-700 mb-6">Su solicitud será enviada por WhatsApp. Recibirás respuesta lo más pronto posible.</p>
@@ -263,7 +263,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                       value={formData.tipo}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black"
                     >
                       <option value="">Seleccionar...</option>
                       <option value="peticion">Petición</option>
@@ -285,7 +285,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                         value={formData.nombres}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                       />
                     </div>
                     <div>
@@ -298,7 +298,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                         value={formData.apellidos}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                       />
                     </div>
                   </div>
@@ -313,7 +313,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                         value={formData.tipoDocumento}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                       >
                         <option value="">Seleccionar...</option>
                         <option value="CC">Cédula de Ciudadanía</option>
@@ -332,7 +332,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                         value={formData.numeroDocumento}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                       />
                     </div>
                   </div>
@@ -348,7 +348,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                         value={formData.telefono}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                       />
                     </div>
                     <div>
@@ -361,7 +361,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                       />
                     </div>
                   </div>
@@ -374,7 +374,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                       name="sede"
                       value={formData.sede}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                     >
                       <option value="">Seleccionar...</option>
                       <option value="sibundoy">Sibundoy</option>
@@ -394,7 +394,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black dark:bg-white dark:text-black"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-black "
                       placeholder="Describa detalladamente su petición, queja, reclamo, sugerencia o felicitación..."
                     ></textarea>
                   </div>

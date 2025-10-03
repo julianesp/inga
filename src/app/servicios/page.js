@@ -1,9 +1,10 @@
-import InformacionInstitucional from '@/components/InformacionInstitucional';
-import GestionClinica from '@/components/GestionClinica';
+import InformacionInstitucional from "@/components/InformacionInstitucional";
+import GestionClinica from "@/components/GestionClinica";
 
 export const metadata = {
-  title: 'Servicios',
-  description: 'Conoce nuestro portafolio completo de servicios de salud: medicina general, especialidades, medicina tradicional y más.',
+  title: "Servicios",
+  description:
+    "Conoce nuestro portafolio completo de servicios de salud: medicina general, especialidades, medicina tradicional y más.",
 };
 
 export default function ServiciosPage() {
@@ -17,7 +18,8 @@ export default function ServiciosPage() {
               Nuestros Servicios
             </h1>
             <p className="text-xl leading-relaxed">
-              Ofrecemos servicios de salud integral con atención médica general y odontológica de calidad.
+              Ofrecemos servicios de salud integral con atención médica general
+              y odontológica de calidad.
             </p>
           </div>
         </div>
@@ -27,7 +29,6 @@ export default function ServiciosPage() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-
             {/* Medicina General */}
             <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
               <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
@@ -36,24 +37,17 @@ export default function ServiciosPage() {
 
               <div className="space-y-6">
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Consulta Externa</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    Consulta Externa
+                  </h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Diagnóstico y tratamiento de enfermedades generales</li>
+                    <li>
+                      • Diagnóstico y tratamiento de enfermedades generales
+                    </li>
                     <li>• Control y seguimiento de patologías crónicas</li>
                     <li>• Medicina preventiva</li>
                     <li>• Atención integral para toda la familia</li>
                     <li>• Certificados médicos</li>
-                  </ul>
-                </div>
-
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Urgencias 24/7</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Atención de urgencias médicas</li>
-                    <li>• Servicio disponible las 24 horas</li>
-                    <li>• Primeros auxilios</li>
-                    <li>• Estabilización de pacientes</li>
-                    <li>• Remisión a centros especializados</li>
                   </ul>
                 </div>
               </div>
@@ -67,7 +61,9 @@ export default function ServiciosPage() {
 
               <div className="space-y-6">
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Servicios Odontológicos</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    Servicios Odontológicos
+                  </h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• Odontología general</li>
                     <li>• Limpieza dental (profilaxis)</li>
@@ -78,7 +74,9 @@ export default function ServiciosPage() {
                 </div>
 
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Odontología Preventiva</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    Odontología Preventiva
+                  </h3>
                   <ul className="space-y-2 text-gray-600">
                     <li>• Valoración odontológica</li>
                     <li>• Educación en salud oral</li>
@@ -99,11 +97,13 @@ export default function ServiciosPage() {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             Programas Especiales
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">👶</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Programa Materno Infantil</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                Programa Materno Infantil
+              </h3>
               <ul className="text-gray-600 text-sm space-y-1 text-left">
                 <li>• Control prenatal</li>
                 <li>• Atención del parto</li>
@@ -112,10 +112,12 @@ export default function ServiciosPage() {
                 <li>• Lactancia materna</li>
               </ul>
             </div>
-            
+
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">🏃‍♂️</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Promoción y Prevención</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                Promoción y Prevención
+              </h3>
               <ul className="text-gray-600 text-sm space-y-1 text-left">
                 <li>• Jornadas de salud comunitaria</li>
                 <li>• Educación en salud</li>
@@ -124,10 +126,12 @@ export default function ServiciosPage() {
                 <li>• Saneamiento básico</li>
               </ul>
             </div>
-            
+
             <div className="bg-white rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">👴</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Atención Domiciliaria</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                Atención Domiciliaria
+              </h3>
               <ul className="text-gray-600 text-sm space-y-1 text-left">
                 <li>• Visitas médicas domiciliarias</li>
                 <li>• Cuidado de pacientes crónicos</li>
@@ -150,17 +154,17 @@ export default function ServiciosPage() {
             ¿Necesita Información Específica?
           </h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
-            Nuestro equipo está disponible para brindarle información detallada 
+            Nuestro equipo está disponible para brindarle información detallada
             sobre cualquiera de nuestros servicios.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
+            <a
               href="/contacto"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
             >
               Contactar Ahora
             </a>
-            <a 
+            <a
               href="/directorio"
               className="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors inline-block"
             >

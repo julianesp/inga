@@ -114,18 +114,18 @@ export default function PresentacionCarousel() {
           ></div>
 
           {/* Content */}
-          <div className="relative z-10 h-full flex items-center p-24">
+          <div className="relative z-10 h-full flex items-center px-6 py-12 sm:px-12 sm:py-16">
             <div className="container mx-auto px-4">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div className="text-white dark:text-gray-100 space-y-6">
+                <div className="text-white space-y-6 max-w-2xl mx-auto lg:mx-0">
                   <div>
-                    <p className="text-lg font-medium text-yellow-300 mb-2">
+                    <p className="text-base sm:text-lg font-medium text-yellow-300 mb-2">
                       {slide.subtitle}
                     </p>
-                    <h1 className="text-4xl lg:text-6xl font-bold leading-tight mb-6">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
                       {slide.title}
                     </h1>
-                    <p className="text-xl text-gray-100 leading-relaxed">
+                    <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
                       {slide.description}
                     </p>
                   </div>
@@ -232,10 +232,10 @@ export default function PresentacionCarousel() {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-black dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-80 text-white p-3 rounded-full hover:bg-opacity-75 dark:hover:bg-opacity-90 transition-colors z-20"
+        className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 sm:p-3 rounded-full hover:bg-opacity-75 transition-colors z-20"
       >
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5 sm:w-6 sm:h-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -251,10 +251,10 @@ export default function PresentacionCarousel() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-black dark:bg-gray-800 bg-opacity-50 dark:bg-opacity-80 text-white p-3 rounded-full hover:bg-opacity-75 dark:hover:bg-opacity-90 transition-colors z-20"
+        className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 sm:p-3 rounded-full hover:bg-opacity-75 transition-colors z-20"
       >
         <svg
-          className="w-6 h-6"
+          className="w-5 h-5 sm:w-6 sm:h-6"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"

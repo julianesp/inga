@@ -60,49 +60,49 @@ export default function Home() {
             {t(translations.home.services.title)}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-center lg:max-w-5xl lg:mx-auto">
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
               <div className="text-4xl mb-4">👩‍⚕️</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
                 {t(translations.home.services.generalMedicine.title)}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-600 mb-4">
                 {t(translations.home.services.generalMedicine.description)}
               </p>
               <Link
                 href="/servicios"
-                className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-semibold"
+                className="text-green-600 hover:text-green-800 font-semibold"
               >
                 {t(translations.home.services.seeMore)}
               </Link>
             </div>
 
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
               <div className="text-4xl mb-4">🦷</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
                 {t(translations.home.services.dentistry.title)}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-600 mb-4">
                 {t(translations.home.services.dentistry.description)}
               </p>
               <Link
                 href="/servicios"
-                className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-semibold"
+                className="text-green-600 hover:text-green-800 font-semibold"
               >
                 {t(translations.home.services.seeMore)}
               </Link>
             </div>
 
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
+            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
               <div className="text-4xl mb-4">🚨</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">
                 {t(translations.home.services.emergencies.title)}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-600 mb-4">
                 {t(translations.home.services.emergencies.description)}
               </p>
               <Link
                 href="/contacto"
-                className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 font-semibold"
+                className="text-green-600 hover:text-green-800 font-semibold"
               >
                 {t(translations.home.services.contact)}
               </Link>
@@ -173,7 +173,7 @@ export default function Home() {
       {/* Quick Access */}
       <section className="py-16 bg-gray-50 transition-colors duration-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             {t(translations.home.quickAccess.title)}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
