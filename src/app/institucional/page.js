@@ -1,14 +1,14 @@
-import InformacionInstitucional from '@/components/InformacionInstitucional';
+import InformacionInstitucional from "@/components/InformacionInstitucional";
 
 export const metadata = {
-  title: 'Institucional',
-  description: 'Conozca la historia, misión, visión y portafolio de servicios de IPS INGA KAMËNTSÁ. Atención médica profesional desde 1995.',
+  title: "Institucional",
+  description:
+    "Conozca la historia, misión, visión y portafolio de servicios de IPS INGA KAMËNTSÁ. Atención médica profesional desde 1995.",
 };
 
 export default function InstitucionalPage() {
   return (
     <div className="min-h-screen">
-
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
         <div className="container mx-auto px-4">
@@ -17,8 +17,8 @@ export default function InstitucionalPage() {
               Información Institucional
             </h1>
             <p className="text-xl leading-relaxed">
-              Conoce nuestra historia, misión, visión y el compromiso que tenemos
-              con la salud integral de nuestras comunidades.
+              Conoce nuestra historia, misión, visión y el compromiso que
+              tenemos con la salud integral de nuestras comunidades.
             </p>
           </div>
         </div>
@@ -32,10 +32,10 @@ export default function InstitucionalPage() {
               Más de 20 años al servicio de la salud integral
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
-              La IPS INGA KAMËNTSÁ es una institución de salud comprometida con brindar
-              atención médica de calidad, contando con profesionales altamente capacitados
-              y especialistas en diferentes áreas de la medicina para ofrecer servicios
-              integrales a nuestros usuarios.
+              La IPS INGA KAMËNTSÁ es una institución de salud comprometida con
+              brindar atención médica de calidad, contando con profesionales
+              altamente capacitados y especialistas en diferentes áreas de la
+              medicina para ofrecer servicios integrales a nuestros usuarios.
             </p>
           </div>
         </div>
@@ -71,16 +71,20 @@ export default function InstitucionalPage() {
 
             <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
               <div className="text-4xl mb-4">🌱</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Integridad</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                Integridad
+              </h3>
               <p className="text-gray-600">
-                Actuamos con honestidad, transparencia y compromiso ético
-                en todas nuestras acciones.
+                Actuamos con honestidad, transparencia y compromiso ético en
+                todas nuestras acciones.
               </p>
             </div>
 
             <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
               <div className="text-4xl mb-4">🌍</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">Solidaridad</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                Solidaridad
+              </h3>
               <p className="text-gray-600">
                 Trabajamos unidos para el bienestar común de nuestras
                 comunidades y territorio.
@@ -104,8 +108,9 @@ export default function InstitucionalPage() {
                   🏆 Certificación de Calidad (2010)
                 </h3>
                 <p className="text-yellow-700">
-                  Reconocimiento del Ministerio de Salud como institución de referencia
-                  en atención médica de calidad para la región del Putumayo.
+                  Reconocimiento del Ministerio de Salud como institución de
+                  referencia en atención médica de calidad para la región del
+                  Putumayo.
                 </p>
               </div>
 
@@ -114,8 +119,8 @@ export default function InstitucionalPage() {
                   🏥 Acreditación en Servicios Médicos (2015)
                 </h3>
                 <p className="text-green-700">
-                  Primera IPS de la región en obtener acreditación completa
-                  en servicios de medicina general y especializada.
+                  Primera IPS de la región en obtener acreditación completa en
+                  servicios de medicina general y especializada.
                 </p>
               </div>
 
@@ -134,8 +139,8 @@ export default function InstitucionalPage() {
                   🤝 Alianza Estratégica (2020)
                 </h3>
                 <p className="text-purple-700">
-                  Alianza con universidades nacionales e internacionales para
-                  la investigación médica y formación profesional.
+                  Alianza con universidades nacionales e internacionales para la
+                  investigación médica y formación profesional.
                 </p>
               </div>
             </div>
@@ -153,33 +158,47 @@ export default function InstitucionalPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:scale-105 transition-all duration-300">
-                <div className="text-4xl mb-4">👨‍💼</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Nohelly Puerchambud</h3>
+                {/* <div className="text-4xl mb-4">👩🏽</div> */}
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Nohelly Puerchambud
+                </h3>
                 <p className="text-green-600 font-semibold mb-3">Gerente</p>
                 <p className="text-gray-600 text-sm">
-                  Profesional con amplia experiencia en administración de instituciones
-                  de salud, liderando la gestión estratégica y operativa de la IPS
-                  para garantizar servicios médicos de calidad a la comunidad.
+                  Profesional con amplia experiencia en administración de
+                  instituciones de salud, liderando la gestión estratégica y
+                  operativa de la IPS para garantizar servicios médicos de
+                  calidad a la comunidad.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:scale-105 transition-all duration-300">
-                <div className="text-4xl mb-4">👩‍⚕️</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Dra. Carmen Chindoy</h3>
-                <p className="text-green-600 font-semibold mb-3">Directora Científica</p>
+                {/* <div className="text-4xl mb-4">👩🏽</div> */}
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  Angela Mojomboy
+                </h3>
+                <p className="text-green-600 font-semibold mb-3">Tesorera</p>
                 <p className="text-gray-600 text-sm">
-                  Especialista en medicina familiar y comunitaria,
-                  coordinadora de programas de atención integral.
+                  Profesional responsable de la gestión financiera y
+                  administrativa de la entidad de salud, asegurando el manejo
+                  eficiente de los recursos, la transparencia en los procesos
+                  contables y el cumplimiento de las normativas para el
+                  sostenimiento y desarrollo institucional.
                 </p>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-8 text-center hover:scale-105 transition-all duration-300">
-                <div className="text-4xl mb-4">🌿</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-2">Dr. Domingo Tandioy</h3>
-                <p className="text-green-600 font-semibold mb-3">Coordinador de Servicios Médicos</p>
+                {/* <div className="text-4xl mb-4">👩🏽</div> */}
+                <h3 className="text-xl font-bold text-gray-800 mb-2">
+                  María Angélica
+                </h3>
+                <p className="text-green-600 font-semibold mb-3">Secretaria</p>
+
                 <p className="text-gray-600 text-sm">
-                  Médico especialista con amplia experiencia en medicina comunitaria
-                  y coordinación de servicios de salud.
+                  Encargada de la organización administrativa, gestión
+                  documental y atención a usuarios en la entidad de salud. Su
+                  labor garantiza el correcto flujo de información, la
+                  coordinación de agendas y el soporte eficiente a los procesos
+                  internos, contribuyendo al buen funcionamiento institucional.
                 </p>
               </div>
             </div>
@@ -187,7 +206,6 @@ export default function InstitucionalPage() {
         </div>
       </section>
 
-      {/* Compromiso Social */}
       <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -205,34 +223,33 @@ export default function InstitucionalPage() {
               <div>
                 <div className="text-3xl mb-2">🌱</div>
                 <h3 className="text-lg font-bold mb-2">Gestión Eficiente</h3>
-                <p className="text-sm opacity-90">
-                  Optimizamos recursos y procesos para brindar servicios
-                  médicos de calidad de manera sostenible
+                <p className="text-sm ">
+                  Optimizamos recursos y procesos para brindar servicios médicos
+                  de calidad de manera sostenible
                 </p>
               </div>
 
               <div>
                 <div className="text-3xl mb-2">👨‍👩‍👧‍👦</div>
                 <h3 className="text-lg font-bold mb-2">Atención Integral</h3>
-                <p className="text-sm opacity-90">
-                  Coordinamos servicios médicos especializados para
-                  brindar atención completa a nuestros pacientes
+                <p className="text-sm">
+                  Coordinamos servicios médicos especializados para brindar
+                  atención completa a nuestros pacientes
                 </p>
               </div>
 
               <div>
                 <div className="text-3xl mb-2">📚</div>
                 <h3 className="text-lg font-bold mb-2">Formación Continua</h3>
-                <p className="text-sm opacity-90">
-                  Capacitamos constantemente a nuestro equipo médico
-                  para mantener los más altos estándares de atención
+                <p className="text-sm">
+                  Capacitamos constantemente a nuestro equipo médico para
+                  mantener los más altos estándares de atención
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   );
 }

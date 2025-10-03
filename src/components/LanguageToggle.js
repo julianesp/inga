@@ -8,7 +8,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center space-x-2 px-3 py-2 rounded-md bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 hover:bg-green-200 dark:hover:bg-green-800 transition-colors duration-200 text-sm font-medium"
+      className="flex items-center space-x-2 px-3 py-2 rounded-md bg-green-100 text-green-800 hover:bg-green-200 transition-colors duration-200 text-sm font-medium"
       title={language === "es" ? "Cambiar a Inga" : "Tikrachii Kastillanu simi"}
     >
       <span className="text-lg">🌍</span>
