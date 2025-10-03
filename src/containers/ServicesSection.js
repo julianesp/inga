@@ -4,44 +4,23 @@ const services = [
   {
     id: 1,
     title: 'Medicina General',
-    description: 'Consultas médicas generales con enfoque intercultural y atención personalizada.',
+    description: 'Consultas médicas generales con atención personalizada para toda la familia.',
     icon: '🩺',
-    features: ['Consulta externa', 'Diagnóstico', 'Tratamiento', 'Seguimiento']
+    features: ['Consulta externa', 'Diagnóstico', 'Tratamiento', 'Certificados médicos']
   },
   {
     id: 2,
-    title: 'Medicina Ancestral',
-    description: 'Tratamientos tradicionales con plantas medicinales y rituales de sanación.',
-    icon: '🌿',
-    features: ['Plantas medicinales', 'Rituales de sanación', 'Limpiezas', 'Harmonización']
-  },
-  {
-    id: 3,
     title: 'Odontología',
     description: 'Servicios odontológicos integrales para toda la familia.',
     icon: '🦷',
-    features: ['Odontología general', 'Pediatría dental', 'Prevención', 'Urgencias']
+    features: ['Odontología general', 'Limpieza dental', 'Prevención', 'Tratamiento de caries']
   },
   {
-    id: 4,
-    title: 'Enfermería',
-    description: 'Cuidados de enfermería especializados y promoción de la salud.',
-    icon: '💉',
-    features: ['Procedimientos', 'Vacunación', 'Curaciones', 'Educación en salud']
-  },
-  {
-    id: 5,
+    id: 3,
     title: 'Urgencias 24/7',
     description: 'Atención de urgencias médicas las 24 horas del día.',
     icon: '🚨',
-    features: ['Emergencias', 'Urgencias', 'Estabilización', 'Traslados']
-  },
-  {
-    id: 6,
-    title: 'Laboratorio Clínico',
-    description: 'Exámenes de laboratorio con tecnología moderna y resultados rápidos.',
-    icon: '🔬',
-    features: ['Hematología', 'Química sanguínea', 'Microbiología', 'Uroanálisis']
+    features: ['Emergencias', 'Atención inmediata', 'Estabilización', 'Remisiones']
   }
 ];
 
@@ -55,8 +34,7 @@ export default function ServicesSection() {
             Nuestros Servicios de Salud
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Ofrecemos una amplia gama de servicios médicos que combinan la medicina 
-            occidental con el conocimiento ancestral de la comunidad Inga Kamëntsá
+            Ofrecemos servicios médicos integrales con atención de calidad para toda la comunidad
           </p>
         </div>
 

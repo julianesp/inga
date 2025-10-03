@@ -8,7 +8,7 @@ export const translations = {
     directory: { es: "Directorio", inga: "Sutikuna" },
     events: { es: "Eventos", inga: "Raymikuna" },
     userSupport: { es: "Atención al Usuario", inga: "Runakuna Kuidai" },
-    contact: { es: "Contacto", inga: "Rimangapa" }
+    contact: { es: "Contacto", inga: "Rimangapa" },
   },
 
   // Common words
@@ -36,14 +36,20 @@ export const translations = {
     place: { es: "lugar", inga: "mama" },
     email: { es: "correo", inga: "kuchui" },
     phone: { es: "teléfono", inga: "rimana" },
-    address: { es: "dirección", inga: "ñambi" }
+    address: { es: "dirección", inga: "ñambi" },
   },
 
   // Organization name and motto
   organization: {
     name: { es: "IPS INGA KAMËNTSÁ", inga: "IPS INGA KAMËNTSÁ" },
-    fullName: { es: "Institución Prestadora de Servicios de Salud", inga: "Allpa Kaugsana Rurakuna Wasi" },
-    motto: { es: "Salud integral para la comunidad indígena", inga: "Tukui allpa runakuna jambi" }
+    fullName: {
+      es: "Institución Prestadora de Servicios de Salud",
+      inga: "Allpa Kaugsana Rurakuna Wasi",
+    },
+    motto: {
+      es: "Salud integral para la comunidad indígena",
+      inga: "Tukui allpa runakuna jambi",
+    },
   },
 
   // Health terms
@@ -57,7 +63,7 @@ export const translations = {
     treatment: { es: "tratamiento", inga: "jambi" },
     hospital: { es: "hospital", inga: "jambi wasi" },
     clinic: { es: "clínica", inga: "jambi wasi" },
-    emergency: { es: "emergencia", inga: "utka jambi" }
+    emergency: { es: "emergencia", inga: "utka jambi" },
   },
 
   // Buttons and actions
@@ -72,7 +78,7 @@ export const translations = {
     schedule: { es: "Agendar", inga: "Churaii" },
     book: { es: "Reservar", inga: "Churanii" },
     view: { es: "Ver", inga: "Kawaii" },
-    download: { es: "Descargar", inga: "Urakuchii" }
+    download: { es: "Descargar", inga: "Urakuchii" },
   },
 
   // Days of the week
@@ -83,7 +89,7 @@ export const translations = {
     thursday: { es: "Jueves", inga: "Illapaska" },
     friday: { es: "Viernes", inga: "Chuaska" },
     saturday: { es: "Sábado", inga: "Kuiaska" },
-    sunday: { es: "Domingo", inga: "Intiraimiska" }
+    sunday: { es: "Domingo", inga: "Intiraimiska" },
   },
 
   // Months
@@ -99,7 +105,7 @@ export const translations = {
     september: { es: "Septiembre", inga: "Kulla killa" },
     october: { es: "Octubre", inga: "Uma raimi killa" },
     november: { es: "Noviembre", inga: "Aya markay killa" },
-    december: { es: "Diciembre", inga: "Kapak raimi killa" }
+    december: { es: "Diciembre", inga: "Kapak raimi killa" },
   },
 
   // Page titles
@@ -108,54 +114,81 @@ export const translations = {
     about: { es: "Acerca de nosotros", inga: "Nukanchimanda" },
     services: { es: "Nuestros servicios", inga: "Nukanchipa rurakuna" },
     contact: { es: "Contáctanos", inga: "Nukanchiman rimamui" },
-    locations: { es: "Nuestras sedes", inga: "Nukanchipa tiakuna" }
+    locations: { es: "Nuestras sedes", inga: "Nukanchipa tiakuna" },
   },
 
   // Home page content
   home: {
     hero: {
       title: { es: "IPS INGA KAMËNTSÁ", inga: "IPS INGA KAMËNTSÁ" },
-      subtitle: { es: "Medicina con Identidad Cultural", inga: "Allpa Kaugsana Rurakuna Wasi" },
-      description: { es: "🏥 Centro médico integral en Sibundoy, Putumayo. Combinamos medicina occidental con sabiduría ancestral Inga y Kamëntsá. ✅ Consulta médica general ✅ Urgencias médicas 24/7 ✅ Medicina tradicional indígena ✅ Especialidades médicas. Agenda tu cita médica hoy.", inga: "Jambi rurakuna karan, occidentalkunapas, nukanchipa ñawpa iachaikunawanpas, Inga Kamëntsá runakuna Sibundui mamapi, Putumayo suyupi." },
-      viewLocations: { es: "Conocer Nuestras Sedes", inga: "Nukanchipa Tiakuna Kawaii" },
-      scheduleAppointment: { es: "☎️ Agendar Cita Médica", inga: "Tupanakui Churaii" }
+      subtitle: {
+        es: "Servicios de Salud Integral",
+        inga: "Allpa Kaugsana Rurakuna Wasi",
+      },
+      description: {
+        es: "🏥 Institución Prestadora de Servicios de Salud en Sibundoy, Putumayo. ✅ Consulta médica general ✅ Especialidades médicas ✅ Atención de calidad. Agenda tu cita médica hoy.",
+        inga: "Jambi rurakuna wasi Sibundui mamapi, Putumayo suyupi.",
+      },
+      viewLocations: {
+        es: "Conocer Nuestras Sedes",
+        inga: "Nukanchipa Tiakuna Kawaii",
+      },
+      scheduleAppointment: {
+        es: "☎️ Agendar Cita Médica",
+        inga: "Tupanakui Churaii",
+      },
     },
     services: {
       title: { es: "Servicios de Salud Integral", inga: "Nukanchipa Rurakuna" },
       generalMedicine: {
         title: { es: "🩺 Medicina General", inga: "Tukui Jambi" },
-        description: { es: "Consulta médica integral para toda la familia en Sibundoy. Atención médica de calidad con enfoque intercultural.", inga: "Tukui aillu jambichii" }
+        description: {
+          es: "Consulta médica integral para toda la familia en Sibundoy. Atención médica de calidad con enfoque intercultural.",
+          inga: "Tukui aillu jambichii",
+        },
       },
-      traditionalMedicine: {
-        title: { es: "🌿 Medicina Tradicional Indígena", inga: "Ñawpa Jambi" },
-        description: { es: "Sabiduría ancestral de los pueblos Inga y Kamëntsá. Medicina natural y plantas medicinales.", inga: "Ñawpa iachaikuna suma kaugsangapa" }
-      },
-      specialties: {
-        title: { es: "👩‍⚕️ Especialidades Médicas", inga: "Sapan Rurakuna" },
-        description: { es: "Pediatría, ginecología, odontología, psicología. Especialistas médicos en Putumayo.", inga: "Wawakuna jambi, warmikuna jambi, kiru jambi" }
+
+      dentistry: {
+        title: { es: "🦷 Odontología", inga: "Kiru Jambi" },
+        description: {
+          es: "Servicios odontológicos integrales para toda la familia. Atención dental de calidad.",
+          inga: "Kiru jambi",
+        },
       },
       emergencies: {
         title: { es: "🚨 Urgencias Médicas 24/7", inga: "Utka Jambi" },
-        description: { es: "Servicio de urgencias médicas las 24 horas en Sibundoy. Atención inmediata de emergencias.", inga: "Tukui pacha utka jambi" }
+        description: {
+          es: "Servicio de urgencias médicas las 24 horas en Sibundoy. Atención inmediata de emergencias.",
+          inga: "Tukui pacha utka jambi",
+        },
       },
       seeMore: { es: "Ver todos los servicios →", inga: "Astuan kawaii →" },
-      contact: { es: "Contactar ahora →", inga: "Rimaii →" }
+      contact: { es: "Contactar ahora →", inga: "Rimaii →" },
     },
     quickAccess: {
       title: { es: "🔍 Encuentra lo que necesitas", inga: "Utka Iaikui" },
       locations: {
         title: { es: "📍 Sedes en Putumayo", inga: "Nukanchipa Tiakuna" },
-        description: { es: "Sibundoy sede principal, Colón, Santiago y San Andrés. Centros médicos cerca de ti.", inga: "Sibundui, Kulun, Santiagu, San Andris" }
+        description: {
+          es: "Sibundoy sede principal, Colón, Santiago y San Andrés. Centros médicos cerca de ti.",
+          inga: "Sibundui, Kulun, Santiagu, San Andris",
+        },
       },
       directory: {
         title: { es: "📞 Directorio Telefónico", inga: "Sutikuna" },
-        description: { es: "Números telefónicos y contactos de todas nuestras áreas médicas y administrativas.", inga: "Tukui rurakuna rimai" }
+        description: {
+          es: "Números telefónicos y contactos de todas nuestras áreas médicas y administrativas.",
+          inga: "Tukui rurakuna rimai",
+        },
       },
       pqrs: {
         title: { es: "📝 PQRS - Atención al Usuario", inga: "Mañakuna" },
-        description: { es: "Sistema de peticiones, quejas, reclamos y sugerencias. Tu opinión es importante.", inga: "Mañakuna, llakikuna, willakuna" }
-      }
-    }
+        description: {
+          es: "Sistema de peticiones, quejas, reclamos y sugerencias. Tu opinión es importante.",
+          inga: "Mañakuna, llakikuna, willakuna",
+        },
+      },
+    },
   },
 
   // Location names (keeping original names but with descriptions)
@@ -163,7 +196,7 @@ export const translations = {
     sibundoy: { es: "Sibundoy", inga: "Sibundui" },
     colon: { es: "Colón", inga: "Kulun" },
     santiago: { es: "Santiago", inga: "Santiagu" },
-    sanAndres: { es: "San Andrés", inga: "San Andris" }
+    sanAndres: { es: "San Andrés", inga: "San Andris" },
   },
 
   // Extended vocabulary from dictionary pages 40-89
@@ -276,7 +309,7 @@ export const translations = {
     sew: { es: "sirai", inga: "sirai" },
     weave: { es: "awai", inga: "awai" },
     paint: { es: "llimpii", inga: "llimpii" },
-    draw: { es: "sirai", inga: "sirai" }
+    draw: { es: "sirai", inga: "sirai" },
   },
 
   nouns: {
@@ -532,7 +565,7 @@ export const translations = {
     cold: { es: "chiri", inga: "chiri" },
     dry: { es: "ch'aki", inga: "ch'aki" },
     wet: { es: "juk'u", inga: "juk'u" },
-    humid: { es: "humedo", inga: "humedo" }
+    humid: { es: "humedo", inga: "humedo" },
   },
 
   adjectives: {
@@ -642,6 +675,6 @@ export const translations = {
     hungry: { es: "yarqay", inga: "yarqay" },
     thirsty: { es: "ch'akiy", inga: "ch'akiy" },
     full: { es: "hunt'a", inga: "hunt'a" },
-    satisfied: { es: "hunt'a", inga: "hunt'a" }
-  }
+    satisfied: { es: "hunt'a", inga: "hunt'a" },
+  },
 };

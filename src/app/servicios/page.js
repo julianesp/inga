@@ -17,8 +17,7 @@ export default function ServiciosPage() {
               Nuestros Servicios
             </h1>
             <p className="text-xl leading-relaxed">
-              Ofrecemos una amplia gama de servicios de salud que combinan la medicina 
-              occidental con los conocimientos ancestrales de los pueblos Inga y Kamëntsá.
+              Ofrecemos servicios de salud integral con atención médica general y odontológica de calidad.
             </p>
           </div>
         </div>
@@ -27,85 +26,65 @@ export default function ServiciosPage() {
       {/* Servicios Detallados */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            
-            {/* Medicina Occidental */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+
+            {/* Medicina General */}
             <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
               <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
-                🏥 Medicina Occidental
+                🩺 Medicina General
               </h2>
-              
+
               <div className="space-y-6">
                 <div className="bg-white rounded-lg p-6 shadow-md">
                   <h3 className="text-xl font-bold text-gray-800 mb-3">Consulta Externa</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Medicina General</li>
-                    <li>• Pediatría</li>
-                    <li>• Ginecología y Obstetricia</li>
-                    <li>• Medicina Interna</li>
-                    <li>• Psicología</li>
+                    <li>• Diagnóstico y tratamiento de enfermedades generales</li>
+                    <li>• Control y seguimiento de patologías crónicas</li>
+                    <li>• Medicina preventiva</li>
+                    <li>• Atención integral para toda la familia</li>
+                    <li>• Certificados médicos</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Servicios Especializados</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Urgencias 24/7</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Odontología</li>
-                    <li>• Laboratorio Clínico</li>
-                    <li>• Enfermería</li>
-                    <li>• Fisioterapia</li>
-                    <li>• Nutrición</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Urgencias y Emergencias</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Atención 24/7 en sede principal</li>
-                    <li>• Servicio de ambulancia</li>
+                    <li>• Atención de urgencias médicas</li>
+                    <li>• Servicio disponible las 24 horas</li>
                     <li>• Primeros auxilios</li>
-                    <li>• Estabilización y remisión</li>
+                    <li>• Estabilización de pacientes</li>
+                    <li>• Remisión a centros especializados</li>
                   </ul>
                 </div>
               </div>
             </div>
 
-            {/* Medicina Tradicional */}
+            {/* Odontología */}
             <div className="bg-green-50 rounded-lg p-8 border border-green-200">
               <h2 className="text-3xl font-bold text-green-800 mb-6 text-center">
-                🌿 Medicina Tradicional
+                🦷 Odontología
               </h2>
-              
+
               <div className="space-y-6">
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Consulta Tradicional</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Servicios Odontológicos</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Diagnóstico ancestral</li>
-                    <li>• Toma del pulso tradicional</li>
-                    <li>• Lectura de signos y símbolos</li>
-                    <li>• Consulta con sobanderos</li>
-                    <li>• Parteras tradicionales</li>
+                    <li>• Odontología general</li>
+                    <li>• Limpieza dental (profilaxis)</li>
+                    <li>• Extracción de piezas dentales</li>
+                    <li>• Obturaciones (calzas)</li>
+                    <li>• Tratamiento de caries</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Tratamientos Ancestrales</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">Odontología Preventiva</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Fitoterapia (plantas medicinales)</li>
-                    <li>• Limpias y rituales de sanación</li>
-                    <li>• Medicina del yagé (bajo supervisión)</li>
-                    <li>• Terapias energéticas</li>
-                    <li>• Armonización espiritual</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">Medicina Integral</h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Complementariedad terapéutica</li>
-                    <li>• Seguimiento intercultural</li>
-                    <li>• Preparación de remedios naturales</li>
-                    <li>• Formación en medicina ancestral</li>
+                    <li>• Valoración odontológica</li>
+                    <li>• Educación en salud oral</li>
+                    <li>• Aplicación de flúor</li>
+                    <li>• Sellantes dentales</li>
+                    <li>• Control periódico</li>
                   </ul>
                 </div>
               </div>
