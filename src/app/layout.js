@@ -33,12 +33,10 @@ export const metadata = {
     "medicina general Putumayo",
     "urgencias médicas Sibundoy",
     "consulta médica Putumayo",
-    "medicina tradicional indígena",
     "EPS Sibundoy",
     "centro médico Putumayo",
     "atención médica integral",
     "salud indígena Colombia",
-    "medicina ancestral",
     "consulta especializada",
     "servicios PQRS salud",
     "agendar cita médica"
@@ -177,13 +175,6 @@ export default function RootLayout({ children }) {
               "itemOffered": {
                 "@type": "MedicalProcedure",
                 "name": "Consulta Medicina General"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "MedicalProcedure",
-                "name": "Medicina Tradicional Indígena"
               }
             },
             {

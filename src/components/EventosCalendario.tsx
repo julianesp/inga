@@ -22,29 +22,29 @@ const eventos: Evento[] = [
     hora: "8:00 AM - 4:00 PM",
     tipo: "jornada",
     descripcion:
-      "Jornada especial de vacunación para niños de 0 a 5 años. Incluye todas las vacunas del esquema nacional.",
+      "Invitamos a todas las familias de la comunidad a participar en la jornada de vacunación para niños y niñas de 0 a 5 años. Protejamos juntos la salud de nuestros pequeños.",
     sede: "Sibundoy",
     registro: true,
   },
   {
     id: "2",
-    titulo: "Taller de Medicina Tradicional",
+    titulo: "Taller de Promoción y Prevención en Salud",
     fecha: "2025-01-20",
     hora: "2:00 PM - 5:00 PM",
     tipo: "capacitacion",
     descripcion:
-      "Taller sobre el uso adecuado de plantas medicinales dirigido por los sabedores tradicionales.",
+      "Espacio formativo dirigido a la comunidad para fortalecer los conocimientos sobre hábitos saludables, prevención de enfermedades y autocuidado. ¡Participa y contribuye a una mejor calidad de vida!",
     sede: "Colón",
     registro: true,
   },
   {
     id: "3",
-    titulo: "Celebración Día de la Medicina Ancestral",
+    titulo: "Celebración Día de la Salud Comunitaria",
     fecha: "2025-01-25",
     hora: "9:00 AM - 12:00 PM",
     tipo: "celebracion",
     descripcion:
-      "Encuentro cultural celebrando la medicina tradicional inga y kamëntsá.",
+      "Acompáñenos a celebrar el bienestar y la salud de nuestra comunidad con actividades culturales y recreativas para todas las edades.",
     sede: "Santiago",
     registro: false,
   },
@@ -55,7 +55,7 @@ const eventos: Evento[] = [
     hora: "7:00 AM - 3:00 PM",
     tipo: "jornada",
     descripcion:
-      "Atención médica en veredas alejadas con servicios de medicina general y odontología.",
+      "La comunidad está invitada a la brigada de salud en veredas rurales, donde se ofrecerán servicios médicos y odontológicos gratuitos.",
     sede: "San Andrés",
     registro: false,
   },
@@ -65,7 +65,8 @@ const eventos: Evento[] = [
     fecha: "2025-02-10",
     hora: "8:00 AM - 12:00 PM",
     tipo: "capacitacion",
-    descripcion: "Curso básico de primeros auxilios para líderes comunitarios.",
+    descripcion:
+      "Curso básico de primeros auxilios dirigido a toda la comunidad. Aprenda a actuar en situaciones de emergencia y cuide a quienes le rodean.",
     sede: "Sibundoy",
     registro: true,
   },
