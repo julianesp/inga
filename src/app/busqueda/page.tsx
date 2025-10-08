@@ -281,7 +281,7 @@ export default function SearchPage() {
                 Utiliza el buscador para encontrar servicios, trámites e información institucional
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                {['Citas médicas', 'Urgencias', 'PQRSF', 'Directorio', 'Afiliaciones', 'Medicina tradicional'].map((suggestion) => (
+                {['Citas médicas', 'Urgencias', 'PQRSF', 'Directorio', 'Afiliaciones', 'Odontología'].map((suggestion) => (
                   <button
                     key={suggestion}
                     onClick={() => setSearchTerm(suggestion)}

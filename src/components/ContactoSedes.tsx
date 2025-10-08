@@ -556,9 +556,6 @@ export default function ContactoSedes() {
                     <option value="pediatria">Pediatría</option>
                     <option value="ginecologia">Ginecología</option>
                     <option value="odontologia">Odontología</option>
-                    <option value="medicina-tradicional">
-                      Medicina Tradicional
-                    </option>
                   </select>
                 </div>
               </div>

@@ -56,7 +56,6 @@ export default function DirectorioPage() {
                 <ul className="space-y-2 text-gray-600 text-sm">
                   <li>• Gerencia: 8:00 AM - 12:00 PM</li>
                   <li>• Citas: 7:00 AM - 4:00 PM</li>
-                  <li>• Medicina tradicional: Martes y jueves</li>
                   <li>• Atención al usuario: 7:00 AM - 5:00 PM</li>
                 </ul>
               </div>

@@ -42,7 +42,6 @@ export const SERVICIOS_DISPONIBLES = [
   'Odontología',
   'Control Prenatal',
   'Vacunación',
-  'Medicina Tradicional',
   'Enfermería',
   'Laboratorio Clínico'
 ];
