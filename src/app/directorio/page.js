@@ -3,7 +3,7 @@ import DirectorioTelefonico from "@/components/DirectorioTelefonico";
 export const metadata = {
   title: "Directorio",
   description:
-    "Directorio completo de contactos de todas las áreas y departamentos de IPS INGA KAMËNTSÁ.",
+    "Directorio completo de contactos de todas las áreas y departamentos de IPS Salud Integral.",
 };
 
 export default function DirectorioPage() {

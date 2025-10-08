@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components";
 import { Footer } from "@/containers";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 const geistSans = Geist({
@@ -26,9 +25,9 @@ export const metadata = {
     default: "Inicio",
     template: "%s"
   },
-  description: "🏥 IPS Inga-Kamentsa ➤ Servicios de salud integral en Sibundoy, Putumayo. Medicina occidental + tradicional indígena. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
+  description: "🏥 IPS Salud Integral ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
   keywords: [
-    "IPS Inga Kamentsa",
+    "IPS salud",
     "servicios salud Sibundoy",
     "medicina general Putumayo",
     "urgencias médicas Sibundoy",
@@ -36,33 +35,29 @@ export const metadata = {
     "EPS Sibundoy",
     "centro médico Putumayo",
     "atención médica integral",
-    "salud indígena Colombia",
+    "salud Colombia",
     "consulta especializada",
     "servicios PQRS salud",
     "agendar cita médica"
   ],
-  authors: [{ name: "IPS Inga-Kamentsa" }],
-  creator: "IPS Inga-Kamentsa",
-  publisher: "IPS Inga-Kamentsa",
-  metadataBase: new URL("https://ips-inga-kamentsá.co"),
+  authors: [{ name: "IPS Salud Integral" }],
+  creator: "IPS Salud Integral",
+  publisher: "IPS Salud Integral",
+  metadataBase: new URL("https://ips-salud-integral.co"),
   alternates: {
-    canonical: "https://ips-inga-kamentsá.co",
-    languages: {
-      'es-CO': 'https://ips-inga-kamentsá.co',
-      'ik': 'https://ips-inga-kamentsá.co'
-    }
+    canonical: "https://ips-salud-integral.co"
   },
   openGraph: {
-    title: "IPS Inga-Kamentsa | Servicios de Salud Integral Sibundoy Putumayo",
-    description: "🏥 IPS Inga-Kamentsa ➤ Servicios de salud integral en Sibundoy, Putumayo. Medicina occidental + tradicional indígena. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
-    url: "https://ips-inga-kamentsá.co",
-    siteName: "IPS Inga-Kamentsa",
+    title: "IPS Salud Integral | Servicios de Salud Sibundoy Putumayo",
+    description: "🏥 IPS Salud Integral ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
+    url: "https://ips-salud-integral.co",
+    siteName: "IPS Salud Integral",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "IPS Inga-Kamentsa - Servicios de Salud Integral Sibundoy Putumayo"
+        alt: "IPS Salud Integral - Servicios de Salud Sibundoy Putumayo"
       }
     ],
     locale: "es_CO",
@@ -103,10 +98,10 @@ export const metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "IPS Inga-Kamentsa",
+    title: "IPS Salud Integral",
   },
   other: {
-    "apple-mobile-web-app-title": "IPS Inga-Kamentsa",
+    "apple-mobile-web-app-title": "IPS Salud Integral",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "geo.region": "CO-PUT",
@@ -129,23 +124,23 @@ export default function RootLayout({ children }) {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://ips-inga-kamentsá.co/#organization",
-        "name": "IPS Inga-Kamentsa",
-        "alternateName": "Asociación IPS Indígena Inga-Kamentsa Valle de Sibundoy",
-        "url": "https://ips-inga-kamentsá.co",
+        "@id": "https://ips-salud-integral.co/#organization",
+        "name": "IPS Salud Integral",
+        "alternateName": "Institución Prestadora de Servicios de Salud Valle de Sibundoy",
+        "url": "https://ips-salud-integral.co",
         "logo": {
           "@type": "ImageObject",
-          "url": "https://ips-inga-kamentsá.co/logo.png"
+          "url": "https://ips-salud-integral.co/logo.png"
         },
         "sameAs": [
-          "https://www.facebook.com/ips.inga.kamentsá"
+          "https://www.facebook.com/ips.salud.integral"
         ],
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+57-8-4206789",
           "contactType": "customer service",
           "areaServed": "CO",
-          "availableLanguage": ["Spanish", "Inga"]
+          "availableLanguage": ["Spanish"]
         },
         "address": {
           "@type": "PostalAddress",
@@ -157,8 +152,8 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://ips-inga-kamentsá.co/#medical",
-        "name": "IPS Inga-Kamentsa",
+        "@id": "https://ips-salud-integral.co/#medical",
+        "name": "IPS Salud Integral",
         "description": "Institución Prestadora de Servicios de Salud especializada en medicina occidental y tradicional indígena",
         "medicalSpecialty": [
           "General Medicine",
@@ -196,16 +191,16 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "WebSite",
-        "@id": "https://ips-inga-kamentsá.co/#website",
-        "url": "https://ips-inga-kamentsá.co",
-        "name": "IPS Inga-Kamentsa",
-        "description": "Servicios de salud integral combinando medicina occidental con conocimientos ancestrales de los pueblos Inga y Kamëntsá",
+        "@id": "https://ips-salud-integral.co/#website",
+        "url": "https://ips-salud-integral.co",
+        "name": "IPS Salud Integral",
+        "description": "Servicios de salud integral para toda la comunidad",
         "publisher": {
-          "@id": "https://ips-inga-kamentsá.co/#organization"
+          "@id": "https://ips-salud-integral.co/#organization"
         },
         "potentialAction": {
           "@type": "SearchAction",
-          "target": "https://ips-inga-kamentsá.co/busqueda?q={search_term_string}",
+          "target": "https://ips-salud-integral.co/busqueda?q={search_term_string}",
           "query-input": "required name=search_term_string"
         },
         "inLanguage": "es-CO",
@@ -216,43 +211,43 @@ export default function RootLayout({ children }) {
             {
               "@type": "SiteNavigationElement",
               "name": "Servicios",
-              "url": "https://ips-inga-kamentsá.co/servicios",
+              "url": "https://ips-salud-integral.co/servicios",
               "description": "Conoce nuestro portafolio completo de servicios de salud"
             },
             {
               "@type": "SiteNavigationElement",
               "name": "Sedes",
-              "url": "https://ips-inga-kamentsá.co/sedes",
+              "url": "https://ips-salud-integral.co/sedes",
               "description": "Nuestras sedes en Sibundoy, Colón, Santiago y San Andrés"
             },
             {
               "@type": "SiteNavigationElement",
               "name": "Institucional",
-              "url": "https://ips-inga-kamentsá.co/institucional",
+              "url": "https://ips-salud-integral.co/institucional",
               "description": "Historia, misión, visión y portafolio de servicios"
             },
             {
               "@type": "SiteNavigationElement",
               "name": "Contacto",
-              "url": "https://ips-inga-kamentsá.co/contacto",
+              "url": "https://ips-salud-integral.co/contacto",
               "description": "Contacta con nosotros para agendar citas"
             },
             {
               "@type": "SiteNavigationElement",
               "name": "Directorio",
-              "url": "https://ips-inga-kamentsá.co/directorio",
+              "url": "https://ips-salud-integral.co/directorio",
               "description": "Directorio completo de contactos"
             },
             {
               "@type": "SiteNavigationElement",
               "name": "Eventos",
-              "url": "https://ips-inga-kamentsá.co/eventos",
+              "url": "https://ips-salud-integral.co/eventos",
               "description": "Eventos programados y anuncios importantes"
             },
             {
               "@type": "SiteNavigationElement",
               "name": "Atención al Usuario",
-              "url": "https://ips-inga-kamentsá.co/atencion-usuario",
+              "url": "https://ips-salud-integral.co/atencion-usuario",
               "description": "PQRSF y Asociación de Usuarios"
             }
           ]
@@ -272,12 +267,10 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
-        <LanguageProvider>
-          <Navbar />
-          <Breadcrumbs />
-          {children}
-          <Footer />
-        </LanguageProvider>
+        <Navbar />
+        <Breadcrumbs />
+        {children}
+        <Footer />
       </body>
     </html>
   );
