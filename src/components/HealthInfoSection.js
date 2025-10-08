@@ -59,7 +59,6 @@ const meetingImages = [
 ];
 
 export default function HealthInfoSection() {
-
   return (
     <section className="py-16 bg-gray-50 transition-colors duration-200">
       <div className="container mx-auto px-4">

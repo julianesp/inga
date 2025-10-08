@@ -4,16 +4,16 @@ import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { translations } from "@/data/translations";
+
 
 export default function Home() {
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
 
   return (
     <div className="min-h-screen">
       <PresentacionCarousel />
 
+      
       <HealthInfoSection />
 
       {/* Hero Section */}
@@ -121,49 +121,67 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">⏰</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Horarios Flexibles</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+                Horarios Flexibles
+              </h3>
               <p className="text-gray-600 text-center">
-                Atención de lunes a viernes y servicio de urgencias disponible 24/7 para tu tranquilidad.
+                Atención de lunes a viernes y servicio de urgencias disponible
+                24/7 para tu tranquilidad.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">👨‍⚕️</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Personal Calificado</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+                Personal Calificado
+              </h3>
               <p className="text-gray-600 text-center">
-                Médicos y odontólogos con experiencia comprometidos con tu salud y bienestar.
+                Médicos y odontólogos con experiencia comprometidos con tu salud
+                y bienestar.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">📍</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Múltiples Sedes</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+                Múltiples Sedes
+              </h3>
               <p className="text-gray-600 text-center">
-                Presencia en Sibundoy, Colón, Santiago y San Andrés para estar cerca de ti.
+                Presencia en Sibundoy, Colón, Santiago y San Andrés para estar
+                cerca de ti.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">💰</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Tarifas Accesibles</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+                Tarifas Accesibles
+              </h3>
               <p className="text-gray-600 text-center">
-                Servicios de salud de calidad a precios justos y asequibles para toda la comunidad.
+                Servicios de salud de calidad a precios justos y asequibles para
+                toda la comunidad.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">🏥</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Atención Integral</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+                Atención Integral
+              </h3>
               <p className="text-gray-600 text-center">
-                Desde consulta general hasta tratamientos odontológicos especializados.
+                Desde consulta general hasta tratamientos odontológicos
+                especializados.
               </p>
             </div>
 
             <div className="bg-gray-50 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">📋</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">Fácil Acceso</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+                Fácil Acceso
+              </h3>
               <p className="text-gray-600 text-center">
-                Proceso de agendamiento sencillo y atención oportuna para todos nuestros pacientes.
+                Proceso de agendamiento sencillo y atención oportuna para todos
+                nuestros pacientes.
               </p>
             </div>
           </div>

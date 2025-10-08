@@ -24,7 +24,8 @@ const slides = [
     subtitle: "Especialistas en Salud",
     description:
       "Contamos con un equipo profesional de médicos y odontólogos especializados para brindar atención integral de calidad.",
-    image: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/portada.jpg",
+    image:
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/portada.jpg",
     cta: {
       primary: { text: "Agendar Cita", href: "tel:+57842041199" },
       secondary: { text: "Ver Sedes", href: "/sedes" },
@@ -84,8 +85,9 @@ export default function PresentacionCarousel() {
       {slides.map((slide, index) => (
         <div
           key={slide.id}
-          className={`absolute inset-0 transition-opacity duration-1000 ${index === currentSlide ? "opacity-100" : "opacity-0"
-            }`}
+          className={`absolute inset-0 transition-opacity duration-1000 ${
+            index === currentSlide ? "opacity-100" : "opacity-0"
+          }`}
         >
           {/* Background image (for first slide) */}
           {index === 0 && (
@@ -99,10 +101,11 @@ export default function PresentacionCarousel() {
 
           {/* Background gradient overlay */}
           <div
-            className={`absolute inset-0 ${index === 0
-              ? `bg-gradient-to-br ${slide.bgColor} opacity-75`
-              : "bg-gray-500 opacity-30"
-              }`}
+            className={`absolute inset-0 ${
+              index === 0
+                ? `bg-gradient-to-br ${slide.bgColor} opacity-75`
+                : "bg-gray-500 opacity-30"
+            }`}
           ></div>
 
           {/* Background pattern */}
@@ -274,10 +277,11 @@ export default function PresentacionCarousel() {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-colors duration-200 ${index === currentSlide
-              ? "bg-yellow-400"
-              : "bg-white bg-opacity-50 hover:bg-opacity-75"
-              }`}
+            className={`w-3 h-3 rounded-full transition-colors duration-200 ${
+              index === currentSlide
+                ? "bg-yellow-400"
+                : "bg-white bg-opacity-50 hover:bg-opacity-75"
+            }`}
           />
         ))}
       </div>
@@ -286,10 +290,11 @@ export default function PresentacionCarousel() {
       <div className="absolute bottom-6 right-4 z-20">
         <button
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-          className={`px-3 py-1 rounded-full text-sm transition-colors ${isAutoPlaying
-            ? "bg-green-500 text-white"
-            : "bg-gray-500 text-white hover:bg-gray-400"
-            }`}
+          className={`px-3 py-1 rounded-full text-sm transition-colors ${
+            isAutoPlaying
+              ? "bg-green-500 text-white"
+              : "bg-gray-500 text-white hover:bg-gray-400"
+          }`}
         >
           {isAutoPlaying ? "⏸️ Pausa" : "▶️ Auto"}
         </button>
