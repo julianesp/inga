@@ -2,17 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { translations } from "@/data/translations";
 
 export default function Breadcrumbs() {
   const pathname = usePathname();
-  const { t } = useLanguage();
 
   const getBreadcrumbs = () => {
     const paths = pathname.split('/').filter(Boolean);
     const breadcrumbs = [
-      { name: t(translations.nav.home), href: '/' }
+      { name: 'Inicio', href: '/' }
     ];
 
     let currentPath = '';
@@ -82,7 +79,7 @@ export default function Breadcrumbs() {
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
-      "item": `https://ips-inga-kamentsá.co${crumb.href}`
+      "item": `https://ips-salud-integral.co${crumb.href}`
     }))
   };
 
