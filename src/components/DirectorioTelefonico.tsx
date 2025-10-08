@@ -18,111 +18,34 @@ interface Contacto {
 const directorioContactos: Contacto[] = [
   {
     id: "1",
-    nombre: "Dr. Miguel Tandioy",
+    nombre: "Colocar nombre aquí",
     cargo: "Gerente General",
     departamento: "Gerencia",
-    telefono: "(8) 420-1234",
-    extension: "101",
-    email: "gerencia@ips-inga-kamentsa.org",
+    telefono: "3132863398",
+
+    email: "ipsingakamentsa@gmail.com",
     sede: "Sibundoy",
     horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
   },
   {
     id: "2",
-    nombre: "Dra. Carmen Chindoy",
+    nombre: "Colocar nombre aquí",
     cargo: "Directora Científica",
     departamento: "Asistencial",
-    telefono: "(8) 420-1234",
-    extension: "102",
-    email: "direccion.cientifica@ips-inga-kamentsa.org",
+    telefono: "3132863398",
+
+    email: "ipsingakamentsa@gmail.com",
     sede: "Sibundoy",
     horarioAtencion: "Lunes a Viernes 7:00 AM - 4:00 PM",
   },
   {
     id: "3",
-    nombre: "Lic. Ana Jamioy",
+    nombre: "Colocar nombre aquí",
     cargo: "Coordinadora Administrativa",
     departamento: "Secretaría",
-    telefono: "(8) 420-1234",
-    extension: "103",
-    email: "secretaria@ips-inga-kamentsa.org",
-    sede: "Sibundoy",
-    horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
-  },
-  {
-    id: "4",
-    nombre: "Sra. María Muchachasoy",
-    cargo: "Coordinadora Atención al Usuario",
-    departamento: "Atención al Usuario",
-    telefono: "(8) 420-1111",
-    extension: "104",
-    email: "atencion.usuario@ips-inga-kamentsa.org",
-    sede: "Sibundoy",
-    horarioAtencion: "Lunes a Viernes 7:00 AM - 5:00 PM",
-  },
-  {
-    id: "5",
-    nombre: "Enf. Carlos Tisoy",
-    cargo: "Coordinador Enfermería",
-    departamento: "Asistencial",
-    telefono: "(8) 420-1234",
-    extension: "105",
-    email: "enfermeria@ips-inga-kamentsa.org",
-    sede: "Sibundoy",
-    horarioAtencion: "Lunes a Sábado 7:00 AM - 7:00 PM",
-  },
-  {
-    id: "6",
-    nombre: "Taita Domingo Tandioy",
-    cargo: "Médico Tradicional Principal",
-    departamento: "Medicina Tradicional",
-    telefono: "(8) 420-1234",
-    extension: "106",
-    email: "medicina.tradicional@ips-inga-kamentsa.org",
-    sede: "Sibundoy",
-    horarioAtencion: "Martes y Jueves 8:00 AM - 12:00 PM",
-  },
-  {
-    id: "7",
-    nombre: "Dr. Roberto Quinchoa",
-    cargo: "Coordinador Sede Colón",
-    departamento: "Asistencial",
-    telefono: "(8) 420-5678",
-    extension: "201",
-    email: "colon@ips-inga-kamentsa.org",
-    sede: "Colón",
-    horarioAtencion: "Lunes a Viernes 8:00 AM - 4:00 PM",
-  },
-  {
-    id: "8",
-    nombre: "Enf. Patricia Muyuy",
-    cargo: "Coordinadora Sede Santiago",
-    departamento: "Asistencial",
-    telefono: "(8) 420-9012",
-    extension: "301",
-    email: "santiago@ips-inga-kamentsa.org",
-    sede: "Santiago",
-    horarioAtencion: "Lunes a Viernes 8:00 AM - 4:00 PM",
-  },
-  {
-    id: "9",
-    nombre: "Aux. Luis Jojoa",
-    cargo: "Coordinador Sede San Andrés",
-    departamento: "Asistencial",
-    telefono: "(8) 420-3456",
-    extension: "401",
-    email: "sanandres@ips-inga-kamentsa.org",
-    sede: "San Andrés",
-    horarioAtencion: "Lunes a Viernes 8:00 AM - 4:00 PM",
-  },
-  {
-    id: "10",
-    nombre: "Cont. Jorge Chicangana",
-    cargo: "Coordinador Financiero",
-    departamento: "Administrativo",
-    telefono: "(8) 420-1234",
-    extension: "107",
-    email: "financiero@ips-inga-kamentsa.org",
+    telefono: "3132863398",
+
+    email: "ipsingakamentsa@gmail.com",
     sede: "Sibundoy",
     horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
   },
@@ -166,8 +89,6 @@ export default function DirectorioTelefonico() {
         return "bg-green-100 text-green-800 border-green-200";
       case "Atención al Usuario":
         return "bg-yellow-100 text-yellow-800 border-yellow-200";
-      case "Medicina Tradicional":
-        return "bg-orange-100 text-orange-800 border-orange-200";
       case "Administrativo":
         return "bg-gray-100 text-gray-800 border-gray-200";
       default:
@@ -185,8 +106,6 @@ export default function DirectorioTelefonico() {
         return "📝";
       case "Atención al Usuario":
         return "🤝";
-      case "Medicina Tradicional":
-        return "🌿";
       case "Administrativo":
         return "💼";
       default:
@@ -207,10 +126,10 @@ export default function DirectorioTelefonico() {
             <div className="flex-1 flex flex-col items-center">
               <h3 className="text-xl font-bold mb-2">📞 Línea Principal</h3>
               <Link
-                href="tel:3118487680"
+                href="tel:3132863398"
                 className="text-2xl font-bold hover:text-green-200 transition-colors"
               >
-                311 848 7680
+                3132863398
               </Link>
               <p className="opacity-90">Todas las sedes</p>
             </div>
@@ -218,12 +137,12 @@ export default function DirectorioTelefonico() {
             <div className="flex-1 flex flex-col items-center">
               <h3 className="text-xl font-bold mb-2">📧 Email General</h3>
               <p className="text-lg font-bold">
-                <a
-                  href="mailto:atencionalusuarioipsingak@gmail.com"
+                <Link
+                  href="mailto:ipsingakamentsa@gmail.com"
                   className="hover:text-green-200 transition-colors"
                 >
-                  atencionalusuarioipsingak@gmail.com
-                </a>
+                  ipsingakamentsa@gmail.com
+                </Link>
               </p>
               <p className="opacity-90">Información general</p>
             </div>
@@ -235,48 +154,48 @@ export default function DirectorioTelefonico() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-          Buscar por nombre o cargo
+                Buscar por nombre o cargo
               </label>
               <input
-          type="text"
-          value={busqueda}
-          onChange={(e) => setBusqueda(e.target.value)}
-          placeholder="Buscar contacto..."
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
+                type="text"
+                value={busqueda}
+                onChange={(e) => setBusqueda(e.target.value)}
+                placeholder="Buscar contacto..."
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
               />
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-          Filtrar por sede
+                Filtrar por sede
               </label>
               <select
-          value={filtroSede}
-          onChange={(e) => setFiltroSede(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
+                value={filtroSede}
+                onChange={(e) => setFiltroSede(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
               >
-          {sedes.map((sede) => (
-            <option key={sede} value={sede}>
-              {sede === "todas" ? "Todas las sedes" : sede}
-            </option>
-          ))}
+                {sedes.map((sede) => (
+                  <option key={sede} value={sede}>
+                    {sede === "todas" ? "Todas las sedes" : sede}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2">
-          Filtrar por departamento
+                Filtrar por departamento
               </label>
               <select
-          value={filtroDepartamento}
-          onChange={(e) => setFiltroDepartamento(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
+                value={filtroDepartamento}
+                onChange={(e) => setFiltroDepartamento(e.target.value)}
+                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 text-black"
               >
-          {departamentos.map((dept) => (
-            <option key={dept} value={dept}>
-              {dept === "todos" ? "Todos los departamentos" : dept}
-            </option>
-          ))}
+                {departamentos.map((dept) => (
+                  <option key={dept} value={dept}>
+                    {dept === "todos" ? "Todos los departamentos" : dept}
+                  </option>
+                ))}
               </select>
             </div>
           </div>

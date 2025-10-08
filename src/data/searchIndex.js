@@ -11,15 +11,6 @@ export const searchIndex = [
     priority: 'high'
   },
   {
-    id: 'medicina-tradicional',
-    title: 'Medicina Tradicional',
-    description: 'Sabiduría ancestral de los pueblos Inga y Kamëntsá para el bienestar integral',
-    category: 'Servicios Médicos',
-    tags: ['tradicional', 'ancestral', 'inga', 'kamëntsá', 'plantas medicinales', 'sabiduria'],
-    url: '/servicios/medicina-tradicional',
-    priority: 'high'
-  },
-  {
     id: 'pediatria',
     title: 'Pediatría',
     description: 'Atención médica especializada para niños y adolescentes',

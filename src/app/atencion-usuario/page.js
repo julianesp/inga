@@ -159,12 +159,12 @@ export default function AtencionUsuarioPage() {
                 <p className="text-gray-600 mb-4">
                   Atención directa por teléfono
                 </p>
-                <a
-                  href="tel:+57842011111"
+                <Link
+                  href="tel:+573132863398"
                   className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors inline-block"
                 >
-                  (8) 420-1111
-                </a>
+                  3132863398
+                </Link>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">
@@ -175,12 +175,12 @@ export default function AtencionUsuarioPage() {
                 <p className="text-gray-600 mb-4">
                   Envíenos sus consultas por email
                 </p>
-                <a
-                  href="mailto:atencion.usuario@ips-inga-kamentsa.org"
+                <Link
+                  href="mailto:ipsingakamentsa@gmail.com"
                   className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
                 >
                   Escribir Email
-                </a>
+                </Link>
               </div>
 
               <div className="bg-white rounded-lg shadow-lg p-6 text-center">

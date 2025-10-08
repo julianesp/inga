@@ -81,7 +81,7 @@ export default function PresentacionCarousel() {
   };
 
   return (
-    <div className="relative h-[600px] overflow-hidden -top-12">
+    <div className="relative h-[600px] overflow-hidden -top-16">
       {slides.map((slide, index) => (
         <div
           key={slide.id}
