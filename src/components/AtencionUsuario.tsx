@@ -17,22 +17,22 @@ interface PQRSF {
 
 const asociacionUsuarios = [
   {
-    nombre: "María Tandioy",
+    nombre: "Colocar nombre",
     cargo: "Presidenta",
-    telefono: "(8) 420-1111",
-    email: "presidencia@asociacionusuarios-inga.org",
+    telefono: "3132863398",
+    email: "ipsingakamentsa@gmail.com",
   },
   {
-    nombre: "Carlos Jamioy",
-    cargo: "Vicepresidente",
-    telefono: "(8) 420-2222",
-    email: "vicepresidencia@asociacionusuarios-inga.org",
+    nombre: "Colocar nombre",
+    cargo: "Almacenista",
+    telefono: "3132863398",
+    email: "ipsingakamentsa@gmail.com",
   },
   {
-    nombre: "Ana Chindoy",
+    nombre: "Colocar nombre",
     cargo: "Secretaria",
-    telefono: "(8) 420-3333",
-    email: "secretaria@asociacionusuarios-inga.org",
+    telefono: "3132863398",
+    email: "ipsingakamentsa@gmail.com",
   },
 ];
 

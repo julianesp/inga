@@ -10,8 +10,8 @@ const healthImages = [
   },
   {
     url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/images%20aside/2.jpg",
-    alt: "Medicina tradicional indígena",
-    description: "Combinamos sabiduría ancestral con medicina moderna",
+    alt: "Servicios médicos especializados",
+    description: "Atención médica integral con enfoque en la comunidad",
   },
   {
     url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/images%20aside/3.jpg",

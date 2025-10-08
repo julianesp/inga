@@ -224,7 +224,7 @@ export default function GlobalSearch() {
             <div className="mt-6 text-center">
               <p className="text-sm text-gray-600 mb-3">Búsquedas frecuentes:</p>
               <div className="flex flex-wrap justify-center gap-2 mb-4">
-                {['Citas médicas', 'Urgencias', 'PQRSF', 'Directorio', 'Afiliaciones', 'Medicina tradicional'].map((suggestion) => (
+                {['Citas médicas', 'Urgencias', 'PQRSF', 'Directorio', 'Afiliaciones', 'Odontología'].map((suggestion) => (
                   <button
                     key={suggestion}
                     onClick={() => setSearchTerm(suggestion)}

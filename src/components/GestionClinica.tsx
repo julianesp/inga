@@ -20,7 +20,7 @@ export default function GestionClinica() {
         "Manejo de enfermedades crónicas",
       ],
     },
-    
+
     {
       categoria: "Seguridad del Paciente",
       contenido: [
@@ -324,7 +324,6 @@ export default function GestionClinica() {
             </ul>
           </div>
         </div>
-
       </div>
     </section>
   );
