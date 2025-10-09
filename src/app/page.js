@@ -4,14 +4,11 @@ import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
-
 export default function Home() {
-
   return (
     <div className="min-h-screen">
       <PresentacionCarousel />
 
-      
       <HealthInfoSection />
 
       {/* Hero Section */}
@@ -26,7 +23,8 @@ export default function Home() {
               Tu salud es nuestra prioridad
             </p>
             <p className="text-lg mb-8 leading-relaxed">
-              Ofrecemos servicios de salud integral con atención médica y odontológica de calidad para toda la comunidad
+              Ofrecemos servicios de salud integral con atención médica y
+              odontológica de calidad para toda la comunidad
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -198,9 +196,7 @@ export default function Home() {
               className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-8 text-center hover:from-green-600 hover:to-green-700 transition-colors"
             >
               <div className="text-4xl mb-4">🏢</div>
-              <h3 className="text-2xl font-bold mb-2">
-                Nuestras Sedes
-              </h3>
+              <h3 className="text-2xl font-bold mb-2">Nuestras Sedes</h3>
               <p>Encuentra la sede más cercana a ti</p>
             </Link>
 
@@ -209,9 +205,7 @@ export default function Home() {
               className="bg-gradient-to-r from-blue-500 to-blue-600 text-white rounded-lg p-8 text-center hover:from-blue-600 hover:to-blue-700 transition-colors"
             >
               <div className="text-4xl mb-4">📞</div>
-              <h3 className="text-2xl font-bold mb-2">
-                Directorio
-              </h3>
+              <h3 className="text-2xl font-bold mb-2">Directorio</h3>
               <p>Contacta a nuestro personal</p>
             </Link>
 
@@ -220,9 +214,7 @@ export default function Home() {
               className="bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-lg p-8 text-center hover:from-purple-600 hover:to-purple-700 transition-colors"
             >
               <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-2xl font-bold mb-2">
-                PQRS
-              </h3>
+              <h3 className="text-2xl font-bold mb-2">PQRS</h3>
               <p>Envía tus peticiones, quejas o reclamos</p>
             </Link>
           </div>
