@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -13,12 +13,13 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-lg font-bold">IPS INGA KAMËNTSÁ</h3>
-                <p className="text-sm text-gray-300">Servicios de Salud Indígena</p>
+                <p className="text-sm text-gray-300">Servicios de Salud</p>
               </div>
             </div>
             <p className="text-gray-300 mb-4">
-              Institución Prestadora de Servicios de Salud comprometida con el bienestar
-              de la comunidad indígena Inga Kamëntsá en el Valle de Sibundoy, Putumayo.
+              Institución Prestadora de Servicios de Salud comprometida con el
+              bienestar de la comunidad indígena Inga Kamëntsá en el Valle de
+              Sibundoy, Putumayo.
             </p>
             <div className="text-sm text-gray-400">
               <p>NIT: 846001214-3</p>
@@ -30,22 +31,34 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/servicios" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/servicios"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Servicios
                 </Link>
               </li>
               <li>
-                <Link href="/sedes" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/sedes"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Sedes
                 </Link>
               </li>
               <li>
-                <Link href="/directorio" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/directorio"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Directorio Médico
                 </Link>
               </li>
               <li>
-                <Link href="/eventos" className="text-gray-300 hover:text-white transition-colors">
+                <Link
+                  href="/eventos"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
                   Eventos
                 </Link>
               </li>
@@ -65,14 +78,20 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-2">
                 <span>📞</span>
-                <Link href="tel:+573132863398" className="hover:text-white transition-colors">
+                <Link
+                  href="tel:+573132863398"
+                  className="hover:text-white transition-colors"
+                >
                   313-286-3398
                 </Link>
               </div>
 
               <div className="flex items-center space-x-2">
                 <span>📧</span>
-                <Link href="mailto:ipsingakamentsa@gmail.com" className="hover:text-white transition-colors">
+                <Link
+                  href="mailto:ipsingakamentsa@gmail.com"
+                  className="hover:text-white transition-colors"
+                >
                   ipsingakamentsa@gmail.com
                 </Link>
               </div>
@@ -111,10 +130,16 @@ export default function Footer() {
             © 2025 IPS INGA KAMËNTSÁ. Todos los derechos reservados.
           </p>
           <div className="flex space-x-6 mt-4 sm:mt-0">
-            <Link href="/atencion-usuario" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link
+              href="/atencion-usuario"
+              className="text-gray-400 hover:text-white text-sm transition-colors"
+            >
               Atención al Usuario
             </Link>
-            <Link href="/contacto" className="text-gray-400 hover:text-white text-sm transition-colors">
+            <Link
+              href="/contacto"
+              className="text-gray-400 hover:text-white text-sm transition-colors"
+            >
               Contacto
             </Link>
           </div>

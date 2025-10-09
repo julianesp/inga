@@ -55,7 +55,7 @@ export default function SedesSection() {
   const [selectedSede, setSelectedSede] = useState<string>("sibundoy");
 
   const handleAgendarCita = (sede: Sede) => {
-    const numeroWhatsApp = "573174503604"; // Número de WhatsApp de la IPS INGA
+    const numeroWhatsApp = "573132863398"; // Número de WhatsApp de la IPS INGA
     const mensaje = encodeURIComponent(
       `¡Hola! 👋\n\nQuiero agendar una cita médica en ${sede.nombre}.\n\n` +
         `📍 Sede: ${sede.nombre} - ${sede.municipio}\n` +

@@ -18,13 +18,19 @@ interface PQRSF {
 const asociacionUsuarios = [
   {
     nombre: "Colocar nombre",
-    cargo: "Presidenta",
+    cargo: "Empleado de la Asociación",
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
   },
   {
     nombre: "Colocar nombre",
-    cargo: "Almacenista",
+    cargo: "Empleado de la Asociación",
+    telefono: "3132863398",
+    email: "ipsingakamentsa@gmail.com",
+  },
+  {
+    nombre: "Colocar nombre",
+    cargo: "Empleado de la Asociación",
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
   },
@@ -88,7 +94,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
 
     // Codificar mensaje para URL de WhatsApp
     const mensajeCodificado = encodeURIComponent(mensaje);
-    const urlWhatsApp = `https://wa.me/573174503604?text=${mensajeCodificado}`;
+    const urlWhatsApp = `https://wa.me/573132863398?text=${mensajeCodificado}`;
 
     // Abrir WhatsApp
     window.open(urlWhatsApp, "_blank");
@@ -160,10 +166,10 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                       Correo Institucional
                     </p>
                     <Link
-                      href="mailto:atencionalusuarioipsingak@gmail.com"
+                      href="mailto:ipsingakamentsa@gmail.com"
                       className="text-green-600 hover:underline"
                     >
-                      atencionalusuarioipsingak@gmail.com
+                      ipsingakamentsa@gmail.com
                     </Link>
                   </div>
                 </div>
@@ -187,10 +193,10 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                       Línea Principal
                     </p>
                     <Link
-                      href="tel:3118487680"
+                      href="tel:3132863398"
                       className="text-green-600 hover:underline"
                     >
-                      3118487680
+                      3132863398
                     </Link>
                   </div>
                 </div>
