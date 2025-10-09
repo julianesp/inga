@@ -1,9 +1,10 @@
 "use client";
 
-import GlobalSearch from "@/components/GlobalSearch";
 import Link from "next/link";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
+import GlobalSearch from "@/components/GlobalSearch";
+
 export default function Home() {
   return (
     <div className="min-h-screen">
@@ -17,7 +18,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Bienvenidos a IPS Salud Integral
+              Bienvenidos a la IPS Inga Kametsa
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Tu salud es nuestra prioridad
@@ -55,7 +56,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 ">
             Nuestros Servicios
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:justify-center lg:max-w-5xl lg:mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
               <div className="text-4xl mb-4">👩‍⚕️</div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">
@@ -85,22 +86,6 @@ export default function Home() {
                 className="text-green-600 hover:text-green-800 font-semibold"
               >
                 Ver más
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
-              <div className="text-4xl mb-4">🚨</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
-                Urgencias
-              </h3>
-              <p className="text-gray-600 mb-4">
-                Atención médica de emergencia 24/7
-              </p>
-              <Link
-                href="/contacto"
-                className="text-green-600 hover:text-green-800 font-semibold"
-              >
-                Contactar
               </Link>
             </div>
           </div>

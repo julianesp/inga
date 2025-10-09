@@ -104,6 +104,7 @@ export default function EventosCalendario() {
   const [vistaActiva, setVistaActiva] = useState<"eventos" | "anuncios">(
     "eventos"
   );
+  const [emailSuscripcion, setEmailSuscripcion] = useState<string>("");
 
   const eventosFiltrados =
     filtroTipo === "todos"
@@ -151,6 +152,42 @@ export default function EventosCalendario() {
       default:
         return "border-l-gray-500 bg-gray-50";
     }
+  };
+
+  const handleSuscripcion = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    // Validar formato de email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailSuscripcion)) {
+      alert("Por favor ingrese un correo electrónico válido");
+      return;
+    }
+
+    // Crear mensaje para WhatsApp
+    const mensaje = `🔔 *NUEVA SUSCRIPCIÓN - NOTIFICACIONES IPS INGA KAMËNTSÁ* 🔔
+
+📧 *Correo Electrónico:* ${emailSuscripcion}
+
+El usuario desea suscribirse para recibir notificaciones de anuncios importantes de la IPS.
+
+---
+Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
+      timeZone: "America/Bogota",
+    })}
+#Suscripcion #Notificaciones #IPSIngaKamentsa`;
+
+    const mensajeCodificado = encodeURIComponent(mensaje);
+    const urlWhatsApp = `https://wa.me/573132863398?text=${mensajeCodificado}`;
+
+    // Abrir WhatsApp
+    window.open(urlWhatsApp, "_blank");
+
+    // Limpiar campo y mostrar confirmación
+    setEmailSuscripcion("");
+    alert(
+      "¡Gracias por suscribirte! Tu correo será registrado y comenzarás a recibir nuestras notificaciones importantes."
+    );
   };
 
   return (
@@ -419,16 +456,25 @@ Fecha de solicitud: ${new Date().toLocaleString("es-CO", {
                 Suscríbase para recibir por correo electrónico los anuncios más
                 relevantes de la IPS.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto">
+              <form
+                onSubmit={handleSuscripcion}
+                className="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto"
+              >
                 <input
                   type="email"
                   placeholder="Su correo electrónico"
-                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                  value={emailSuscripcion}
+                  onChange={(e) => setEmailSuscripcion(e.target.value)}
+                  className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white text-gray-800"
+                  required
                 />
-                <button className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                <button
+                  type="submit"
+                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+                >
                   Suscribirse
                 </button>
-              </div>
+              </form>
             </div>
           </div>
         )}

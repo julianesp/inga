@@ -21,7 +21,7 @@ export default function InformacionInstitucional() {
         </h2>
 
         {/* Historia y presentación */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="bg-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold text-gray-800 mb-6">
               Nuestra Historia
@@ -51,10 +51,10 @@ export default function InformacionInstitucional() {
               consectetur adipisicing elit. Quisquam, quos.
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Misión y Visión */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
           <div className="bg-green-600 text-white rounded-lg shadow-lg p-8">
             <h3 className="text-2xl font-bold mb-6 flex items-center">
               <svg
@@ -115,7 +115,7 @@ export default function InformacionInstitucional() {
               consectetur adipisicing elit. Quisquam, quos.
             </p>
           </div>
-        </div>
+        </div> */}
 
         {/* Portafolio de Servicios */}
         <div className="bg-white rounded-lg shadow-lg p-8">

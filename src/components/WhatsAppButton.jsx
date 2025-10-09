@@ -2,7 +2,7 @@
 
 export default function WhatsAppButton({ sede }) {
   const handleAgendarCita = () => {
-    const numeroWhatsApp = "573174503604";
+    const numeroWhatsApp = "573132863398";
     const mensaje = encodeURIComponent(
       `¡Hola! 👋\n\nQuiero agendar una cita médica en ${sede.nombre}.\n\n` +
         `📍 Sede: ${sede.nombre} - ${sede.municipio}\n` +
