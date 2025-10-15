@@ -11,10 +11,10 @@
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
 
-  // box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.12);
-  // border-bottom: 2px solid rgba(27, 255, 6, 0.25); /* línea sutil */
-  box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.55),
-    0 8px 18px -12px rgba(255, 255, 255, 0.9);
+  // Sin sombras
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9); 
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 /* Fallback si el navegador no soporta backdrop-filter (Firefox sin flag) */
