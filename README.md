@@ -263,4 +263,4 @@ Este proyecto está bajo la licencia especificada en el archivo `LICENSE`.
 
 ---
 
-**Desarrollado con 💙 por neurai.dev para IPS Inga Kamëntsá**
+**Desarrollado con 💙 por [neurai.dev](https://neurai.dev/) para IPS Inga Kamëntsá**
