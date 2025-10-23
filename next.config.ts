@@ -36,7 +36,11 @@ const nextConfig: NextConfig = {
       {
         protocol: "https",
         hostname: "ghx22gzm9l6t5pgk.public.blob.vercel-storage.com",
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "cdn-icons-png.flaticon.com",
+      },
     ],
   },
 };
