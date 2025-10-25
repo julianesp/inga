@@ -4,11 +4,52 @@ import Link from "next/link";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
 import GlobalSearch from "@/components/GlobalSearch";
+import ImageCarousel from "../components/ImageCarousel";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <PresentacionCarousel />
+
+      <section className="flex flex-col justify-center items-center bg-gray-50 transition-colors duration-200">
+        <h1 className="text-3xl font-bold my-4">Servicios</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
+          <div className="w-full px-0 md:px-2">
+            <ImageCarousel
+              images={[
+                {
+                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/col%C3%B3n_service.jpeg",
+                  alt: "Image 1",
+                  description: "Servicios en la sede de Colón",
+                },
+              ]}
+            />
+          </div>
+          <div className="w-full px-0 md:px-2">
+            <ImageCarousel
+              images={[
+                {
+                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/santiago_servicio.jpeg",
+                  alt: "Image 2",
+                  description: "Servicios en la sede de Santiago",
+                },
+              ]}
+            />
+          </div>
+          <div className="w-full px-0 md:px-2">
+            <ImageCarousel
+              images={[
+                {
+                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/sibundoy_service.jpeg",
+                  alt: "Image 3",
+                  description: "Servicios en la sede de Sibundoy",
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
 
       <HealthInfoSection />
 

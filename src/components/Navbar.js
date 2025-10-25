@@ -28,18 +28,17 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`sticky top-0 z-50 ${styles.navbar}`}>
+    <nav className={` top-0 z-50 ${styles.navbar}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          {/* Logo */}
-          <div className="flex items-center">
+          <div className="flex items-center" style={{ perspective: "1000px" }}>
             <Link href="/" className="flex items-center">
               <Image
                 src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
                 alt="Logo IPS Inga Kametsa"
                 width={50}
                 height={50}
-                className="rounded-4xl hover:scale-125 transition-transform duration-500 hover:rotate-y-180"
+                className="rounded-4xl rounded-full hover:scale-125 hover:rotate-y-360 transition-transform duration-300 "
                 priority
               />
             </Link>

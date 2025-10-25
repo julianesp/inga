@@ -25,10 +25,10 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* Servicios Detallados */}
+      {/* /* Servicios Detallados */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Medicina General */}
             <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
               <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
@@ -40,7 +40,7 @@ export default function ServiciosPage() {
                   <h3 className="text-xl font-bold text-gray-800 mb-3">
                     Consulta Externa
                   </h3>
-                  <ul className="space-y-2 text-gray-600">
+                  <ul className="space-y-2 text-gray-900">
                     <li>
                       • Diagnóstico y tratamiento de enfermedades generales
                     </li>
@@ -50,10 +50,20 @@ export default function ServiciosPage() {
                     <li>• Certificados médicos</li>
                   </ul>
                 </div>
+
+                <div className="bg-white rounded-lg p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    Atención domiciliaria
+                  </h3>
+                  <ul className="space-y-2 text-gray-900">
+                    <li>• Sibundoy: 2 visitas mensuales</li>
+                    <li>• Santiago: 2 visitas mensuales</li>
+                    <li>• Colón: 1 visita domiciliaria</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
-            {/* Odontología */}
             <div className="bg-green-50 rounded-lg p-8 border border-green-200">
               <h2 className="text-3xl font-bold text-green-800 mb-6 text-center">
                 🦷 Odontología
@@ -64,12 +74,12 @@ export default function ServiciosPage() {
                   <h3 className="text-xl font-bold text-gray-800 mb-3">
                     Servicios Odontológicos
                   </h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Odontología general</li>
-                    <li>• Limpieza dental (profilaxis)</li>
-                    <li>• Extracción de piezas dentales</li>
-                    <li>• Obturaciones (calzas)</li>
-                    <li>• Tratamiento de caries</li>
+                  <ul className="list-disc pl-5 space-y-2 text-gray-900">
+                    <li>Odontología general</li>
+                    <li>Limpieza dental (profilaxis)</li>
+                    <li>Extracción de piezas dentales</li>
+                    <li>Obturaciones (calzas)</li>
+                    <li>Tratamiento de caries</li>
                   </ul>
                 </div>
 
@@ -77,15 +87,41 @@ export default function ServiciosPage() {
                   <h3 className="text-xl font-bold text-gray-800 mb-3">
                     Odontología Preventiva
                   </h3>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• Valoración odontológica</li>
-                    <li>• Educación en salud oral</li>
-                    <li>• Aplicación de flúor</li>
-                    <li>• Sellantes dentales</li>
-                    <li>• Control periódico</li>
+                  <ul className="list-disc pl-5 space-y-2 text-gray-900">
+                    <li>Valoración odontológica</li>
+                    <li>Educación en salud oral</li>
+                    <li>Aplicación de flúor</li>
+                    <li>Sellantes dentales</li>
+                    <li>Control periódico</li>
+                  </ul>
+                </div>
+
+                <div className="bg-white rounded-lg p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                    Atención domiciliaria
+                  </h3>
+                  <ul className="space-y-2 text-gray-900">
+                    <li>• Sibundoy: 2 visitas mensuales</li>
+                    <li>• Santiago: 2 visitas mensuales</li>
+                    <li>• Colón: 1 visita domiciliaria</li>
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Información para solicitar visita - Span completo */}
+          <div className="mt-12 max-w-6xl mx-auto">
+            <div className="bg-white rounded-lg p-8 shadow-md">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+                Información para solicitar visita
+              </h3>
+              <p className="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+                Enviar información relevante: nombres completos del paciente y
+                familiares, contacto telefónico y relación con el paciente.
+                Estos datos permiten coordinar la atención domiciliaria de forma
+                eficiente.
+              </p>
             </div>
           </div>
         </div>

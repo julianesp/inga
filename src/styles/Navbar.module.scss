@@ -3,18 +3,21 @@
 //     backdrop-filter: blur(1px);
 // }
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 50;
+
+  width: 100%;
 
   /* Blur notorio y un poco de saturación para efecto "glass" */
   -webkit-backdrop-filter: saturate(140%) blur(8px);
   backdrop-filter: saturate(140%) blur(8px);
 
-  // Sin sombras
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  
+  border-bottom: 1px solid rgba(64, 151, 44, 0.9);
   border-bottom-left-radius: 25px;
   border-bottom-right-radius: 25px;
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Fallback si el navegador no soporta backdrop-filter (Firefox sin flag) */

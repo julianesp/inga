@@ -5,7 +5,6 @@ import { useState } from "react";
 interface Sede {
   id: string;
   nombre: string;
-  municipio: string;
   direccion: string;
   telefono: string;
   horarios: string;
@@ -16,8 +15,8 @@ const sedes: Sede[] = [
   {
     id: "sibundoy",
     nombre: "Sede Principal Sibundoy",
-    municipio: "Sibundoy",
-    direccion: "Calle 15 # 15 - 69",
+
+    direccion: "Calle 15 # 15 - 69 - Diagonal al mercado",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
     servicios: ["Medicina General", "Odontología"],
@@ -25,8 +24,8 @@ const sedes: Sede[] = [
   {
     id: "colon",
     nombre: "Sede Colón",
-    municipio: "Colón",
-    direccion: "Carrera 5 #67-89, Colón, Putumayo",
+
+    direccion: "Barrio Centro - Cerca a Centro Cultural",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
     servicios: ["Medicina General", "Odontología"],
@@ -34,8 +33,8 @@ const sedes: Sede[] = [
   {
     id: "santiago",
     nombre: "Sede Santiago",
-    municipio: "Santiago",
-    direccion: "Calle 12 #34-56, Santiago, Putumayo",
+
+    direccion: "Sede Nazareth",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
     servicios: ["Medicina General", "Odontología"],
@@ -43,8 +42,8 @@ const sedes: Sede[] = [
   {
     id: "san-andres",
     nombre: "Sede San Andrés",
-    municipio: "San Andrés",
-    direccion: "Avenida Central #78-90, San Andrés, Putumayo",
+
+    direccion: "Chorro San Jose",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
     servicios: ["Medicina General", "Odontología"],
@@ -58,7 +57,7 @@ export default function SedesSection() {
     const numeroWhatsApp = "573132863398"; // Número de WhatsApp de la IPS INGA
     const mensaje = encodeURIComponent(
       `¡Hola! 👋\n\nQuiero agendar una cita médica en ${sede.nombre}.\n\n` +
-        `📍 Sede: ${sede.nombre} - ${sede.municipio}\n` +
+        `📍 Sede: ${sede.nombre}\n` +
         `📞 Teléfono sede: ${sede.telefono}\n` +
         `🕐 Horarios: ${sede.horarios}\n\n` +
         `Por favor, ayúdame con la disponibilidad de citas. ¡Gracias!`
@@ -94,7 +93,6 @@ export default function SedesSection() {
                     }`}
                   >
                     <div className="font-medium">{sede.nombre}</div>
-                    <div className="text-sm opacity-75">{sede.municipio}</div>
                   </button>
                 ))}
               </div>
@@ -151,7 +149,7 @@ export default function SedesSection() {
                               d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                             />
                           </svg>
-                          {sede.telefono}c
+                          {sede.telefono}
                         </p>
                       </div>
 
@@ -295,7 +293,9 @@ export default function SedesSection() {
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-green-600">•</span>
-                    <span>Horario disponible de lunes a viernes de 8:00 a 5:00 p.m</span>
+                    <span>
+                      Horario disponible de lunes a viernes de 8:00 a 5:00 p.m
+                    </span>
                   </li>
                   <li className="flex items-center gap-2">
                     <span className="text-green-600">•</span>
