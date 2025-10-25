@@ -1,7 +1,17 @@
-import type { NextConfig } from "next";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const nextConfig: NextConfig = {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const nextConfig = {
   /* config options here */
+
+  // Configurar la raíz del proyecto para Turbopack
+  turbopack: {
+    root: __dirname,
+  },
+
   // Configuración de imágenes remotas
   images: {
     remotePatterns: [

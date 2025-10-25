@@ -18,7 +18,7 @@ export default function Home() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Bienvenidos a la IPS Inga Kametsa
+              Bienvenidos a la IPS Inga Kamentsa
             </h1>
             <p className="text-xl md:text-2xl mb-8 opacity-90">
               Tu salud es nuestra prioridad
