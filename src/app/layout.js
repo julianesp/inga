@@ -1,4 +1,5 @@
 import { Geist, Geist_Mono } from "next/font/google";
+// import "./globals.css";
 import "./globals.css";
 import { Navbar } from "@/components";
 import { Footer } from "@/containers";
@@ -14,23 +15,18 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// export const metadata = {
-//   title: "IPS INGA KAMËNTSÁ - Institución Prestadora de Servicios de Salud",
-//   description:
-//     "IPS INGA KAMËNTSÁ - Servicios de salud en Sibundoy, Colón, Santiago y San Andrés. Atención médica integral para la comunidad indígena.",
-// };
-
 export const metadata = {
   title: {
     default: "Inicio",
-    template: "%s"
+    template: "%s",
   },
-  description: "🏥 IPS Salud Integral ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
+  description:
+    "🏥 IPS Inga - Kamentsá ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
   keywords: [
-    "IPS salud",
+    "IPS Inga Kamentsá",
     "servicios salud Sibundoy",
     "medicina general Putumayo",
-    "urgencias médicas Sibundoy",
+    "médicas Sibundoy",
     "consulta médica Putumayo",
     "EPS Sibundoy",
     "centro médico Putumayo",
@@ -38,37 +34,43 @@ export const metadata = {
     "salud Colombia",
     "consulta especializada",
     "servicios PQRS salud",
-    "agendar cita médica"
+    "agendar cita médica",
+    "Sibundoy Putumayo",
+    "Colón Putumayo",
+    "Santiago Putumayo",
+    "San Andrés Putumayo",
   ],
-  authors: [{ name: "IPS Salud Integral" }],
-  creator: "IPS Salud Integral",
-  publisher: "IPS Salud Integral",
+  authors: [{ name: "IPS Inga Kamentsá" }],
+  creator: "IPS Inga Kamentsá",
+  publisher: "IPS Inga Kamentsá",
   metadataBase: new URL("https://ips-salud-integral.co"),
   alternates: {
-    canonical: "https://ips-salud-integral.co"
+    canonical: "https://inga-tawny.vercel.app/",
   },
   openGraph: {
-    title: "IPS Salud Integral | Servicios de Salud Sibundoy Putumayo",
-    description: "🏥 IPS Salud Integral ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general ✅ Urgencias ✅ Especialidades ✅ PQRS ☎️ Agenda tu cita",
-    url: "https://ips-salud-integral.co",
-    siteName: "IPS Salud Integral",
+    title: "IPS Inga Kamentsá | Servicios de Salud Valle de Sibundoy Putumayo",
+    description:
+      "🏥 IPS Inga Kamentsá ➤ Servicios de Inga Kamentsá en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
+    url: "https://inga-tawny.vercel.app/",
+    siteName: "IPS Inga Kamentsá",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "IPS Salud Integral - Servicios de Salud Sibundoy Putumayo"
-      }
+        alt: "IPS Inga Kamentsá - Servicios de Salud Valle de Sibundoy Putumayo",
+      },
     ],
     locale: "es_CO",
-    type: "website"
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "IPS Inga-Kamentsa | Medicina con Identidad Cultural",
-    description: "🏥 Servicios de salud integral combinando medicina occidental con conocimientos ancestrales en Sibundoy, Putumayo",
+    description:
+      "🏥 Servicios de salud integral combinando medicina occidental con conocimientos ancestrales en Sibundoy, Putumayo",
     images: ["/twitter-image.jpg"],
-    creator: "@ips_inga_kamentsá"
+    creator: "@ips_inga_kamentsá",
   },
   robots: {
     index: true,
@@ -76,9 +78,9 @@ export const metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   manifest: "/site.webmanifest",
@@ -89,25 +91,35 @@ export const metadata = {
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
     other: [
-      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
-      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
+      {
+        url: "/android-chrome-192x192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/android-chrome-512x512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
   },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "IPS Salud Integral",
+    title: "IPS Inga Kamentsá",
   },
   other: {
-    "apple-mobile-web-app-title": "IPS Salud Integral",
+    "apple-mobile-web-app-title": "IPS Inga Kamentsá",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "geo.region": "CO-PUT",
     "geo.placename": "Sibundoy, Putumayo",
     "geo.position": "1.149861;-76.832611",
-    "ICBM": "1.149861, -76.832611"
+    ICBM: "1.149861, -76.832611",
   },
 };
 
@@ -124,136 +136,140 @@ export default function RootLayout({ children }) {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://ips-salud-integral.co/#organization",
-        "name": "IPS Salud Integral",
-        "alternateName": "Institución Prestadora de Servicios de Salud Valle de Sibundoy",
-        "url": "https://ips-salud-integral.co",
-        "logo": {
+        "@id": "https://inga-tawny.vercel.app/#organization",
+        name: "IPS Inga Kamentsá",
+        alternateName:
+          "Institución Prestadora de Servicios de Salud Valle de Sibundoy",
+        url: "https://inga-tawny.vercel.app/",
+        logo: {
           "@type": "ImageObject",
-          "url": "https://ips-salud-integral.co/logo.png"
+          url: "https://inga-tawny.vercel.app/logo.png",
         },
-        "sameAs": [
-          "https://www.facebook.com/ips.salud.integral"
+        sameAs: [
+          "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy",
         ],
-        "contactPoint": {
+        contactPoint: {
           "@type": "ContactPoint",
-          "telephone": "+57-8-4206789",
-          "contactType": "customer service",
-          "areaServed": "CO",
-          "availableLanguage": ["Spanish"]
+          telephone: "+57-8-4206789",
+          contactType: "customer service",
+          areaServed: "CO",
+          availableLanguage: ["Spanish"],
         },
-        "address": {
+        address: {
           "@type": "PostalAddress",
-          "streetAddress": "Calle 15 N° 15-69",
-          "addressLocality": "Sibundoy",
-          "addressRegion": "Putumayo",
-          "addressCountry": "CO"
-        }
+          streetAddress: "Calle 15 N° 15-69",
+          addressLocality: "Sibundoy",
+          addressRegion: "Putumayo",
+          addressCountry: "CO",
+        },
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://ips-salud-integral.co/#medical",
-        "name": "IPS Salud Integral",
-        "description": "Institución Prestadora de Servicios de Salud especializada en medicina occidental y tradicional indígena",
-        "medicalSpecialty": [
+        "@id": "https://inga-tawny.vercel.app/#medical",
+        name: "IPS Inga Kamentsá",
+        description: "Institución Prestadora de Servicios de Salud",
+        medicalSpecialty: [
           "General Medicine",
           "Traditional Indigenous Medicine",
           "Emergency Services",
-          "Preventive Care"
+          "Preventive Care",
         ],
-        "hasOfferCatalog": {
+        hasOfferCatalog: {
           "@type": "OfferCatalog",
-          "name": "Servicios de Salud",
-          "itemListElement": [
+          name: "Servicios de Salud",
+          itemListElement: [
             {
               "@type": "Offer",
-              "itemOffered": {
+              itemOffered: {
                 "@type": "MedicalProcedure",
-                "name": "Consulta Medicina General"
-              }
+                name: "Consulta Medicina General",
+              },
             },
             {
               "@type": "Offer",
-              "itemOffered": {
+              itemOffered: {
                 "@type": "MedicalProcedure",
-                "name": "Servicios de Urgencias"
-              }
+                name: "Servicios de Urgencias",
+              },
             },
             {
               "@type": "Offer",
-              "itemOffered": {
+              itemOffered: {
                 "@type": "MedicalProcedure",
-                "name": "Consulta de Especialidades"
-              }
-            }
-          ]
-        }
+                name: "Consulta de Especialidades",
+              },
+            },
+          ],
+        },
       },
       {
         "@type": "WebSite",
-        "@id": "https://ips-salud-integral.co/#website",
-        "url": "https://ips-salud-integral.co",
-        "name": "IPS Salud Integral",
-        "description": "Servicios de salud integral para toda la comunidad",
-        "publisher": {
-          "@id": "https://ips-salud-integral.co/#organization"
+        "@id": "/#website",
+        url: "https://inga-tawny.vercel.app/",
+        name: "IPS Inga Kamentsá",
+        description: "Servicios de salud integral para toda la comunidad",
+        publisher: {
+          "@id": "https://inga-tawny.vercel.app/#organization",
         },
-        "potentialAction": {
+        potentialAction: {
           "@type": "SearchAction",
-          "target": "https://ips-salud-integral.co/busqueda?q={search_term_string}",
-          "query-input": "required name=search_term_string"
+          target:
+            "https://inga-tawny.vercel.app/busqueda?q={search_term_string}",
+          "query-input": "required name=search_term_string",
         },
-        "inLanguage": "es-CO",
-        "mainEntity": {
+        inLanguage: "es-CO",
+        mainEntity: {
           "@type": "ItemList",
-          "name": "Navegación Principal",
-          "itemListElement": [
+          name: "Navegación Principal",
+          itemListElement: [
             {
               "@type": "SiteNavigationElement",
-              "name": "Servicios",
-              "url": "https://ips-salud-integral.co/servicios",
-              "description": "Conoce nuestro portafolio completo de servicios de salud"
+              name: "Servicios",
+              url: "https://inga-tawny.vercel.app/servicios",
+              description:
+                "Conoce nuestro portafolio completo de servicios de salud",
             },
             {
               "@type": "SiteNavigationElement",
-              "name": "Sedes",
-              "url": "https://ips-salud-integral.co/sedes",
-              "description": "Nuestras sedes en Sibundoy, Colón, Santiago y San Andrés"
+              name: "Sedes",
+              url: "https://inga-tawny.vercel.app/sedes",
+              description:
+                "Nuestras sedes en Sibundoy, Colón, Santiago y San Andrés",
             },
             {
               "@type": "SiteNavigationElement",
-              "name": "Institucional",
-              "url": "https://ips-salud-integral.co/institucional",
-              "description": "Historia, misión, visión y portafolio de servicios"
+              name: "Institucional",
+              url: "https://inga-tawny.vercel.app/institucional",
+              description: "Historia, misión, visión y portafolio de servicios",
             },
             {
               "@type": "SiteNavigationElement",
-              "name": "Contacto",
-              "url": "https://ips-salud-integral.co/contacto",
-              "description": "Contacta con nosotros para agendar citas"
+              name: "Contacto",
+              url: "https://inga-tawny.vercel.app/contacto",
+              description: "Contacta con nosotros para agendar citas",
             },
             {
               "@type": "SiteNavigationElement",
-              "name": "Directorio",
-              "url": "https://ips-salud-integral.co/directorio",
-              "description": "Directorio completo de contactos"
+              name: "Directorio",
+              url: "https://inga-tawny.vercel.app/directorio",
+              description: "Directorio completo de contactos",
             },
             {
               "@type": "SiteNavigationElement",
-              "name": "Eventos",
-              "url": "https://ips-salud-integral.co/eventos",
-              "description": "Eventos programados y anuncios importantes"
+              name: "Eventos",
+              url: "https://inga-tawny.vercel.app/eventos",
+              description: "Eventos programados y anuncios importantes",
             },
             {
               "@type": "SiteNavigationElement",
-              "name": "Atención al Usuario",
-              "url": "https://ips-salud-integral.co/atencion-usuario",
-              "description": "PQRSF y Asociación de Usuarios"
-            }
-          ]
-        }
-      }
-    ]
+              name: "Atención al Usuario",
+              url: "https://inga-tawny.vercel.app/atencion-usuario",
+              description: "PQRSF y Asociación de Usuarios",
+            },
+          ],
+        },
+      },
+    ],
   };
 
   return (
