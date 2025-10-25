@@ -10,9 +10,9 @@ export const metadata = {
 
 export default function ContactoPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+      <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">Contacto</h1>
@@ -28,17 +28,17 @@ export default function ContactoPage() {
       <ContactoSedes />
 
       {/* Información Adicional de Contacto */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
             Otras Formas de Contacto
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">📱</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">WhatsApp</h3>
-              <p className="text-gray-600 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">WhatsApp</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Comuníquese con nosotros a través de WhatsApp para consultas
                 rápidas
               </p>
@@ -52,12 +52,12 @@ export default function ContactoPage() {
               </Link>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">📧</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                 Correo Electrónico
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Envíenos sus consultas por correo electrónico
               </p>
               <Link
@@ -68,12 +68,12 @@ export default function ContactoPage() {
               </Link>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">🌐</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                 Redes Sociales
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Síguenos en nuestras redes sociales para noticias y
                 actualizaciones
               </p>
@@ -100,30 +100,30 @@ export default function ContactoPage() {
       </section>
 
       {/* Horarios Generales */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
               Horarios Generales de Atención
             </h2>
 
             <div className="flex justify-center">
-              <div className="bg-green-50 rounded-lg p-8 border border-green-200 w-3/5">
-                <h3 className="text-xl font-bold text-green-800 mb-4">
+              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800 w-3/5">
+                <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-4">
                   📅 Días Hábiles
                 </h3>
                 <div className="space-y-3">
                   <div className="flex justify-between">
-                    <span className="font-semibold text-black">
+                    <span className="font-semibold text-black dark:text-white">
                       Lunes a Viernes:
                     </span>
-                    <span className="text-black">8:00 AM - 5:00 PM</span>
+                    <span className="text-black dark:text-gray-300">8:00 AM - 5:00 PM</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-semibold text-black">Sábados:</span>
-                    <span className="text-black">8:00 AM - 12:00 PM</span>
+                    <span className="font-semibold text-black dark:text-white">Sábados:</span>
+                    <span className="text-black dark:text-gray-300">8:00 AM - 12:00 PM</span>
                   </div>
-                  <p className="text-sm text-green-700 mt-4">
+                  <p className="text-sm text-green-700 dark:text-green-300 mt-4">
                     * Los sábados solo en sedes de Sibundoy y Colón (ejemplo)
                   </p>
                 </div>
@@ -132,18 +132,18 @@ export default function ContactoPage() {
 
             </div>
 
-            <div className="mt-8 bg-blue-50 rounded-lg p-8 border border-blue-200 text-center">
-              <h3 className="text-xl font-bold text-blue-800 mb-4">
+            <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800 text-center">
+              <h3 className="text-xl font-bold text-blue-800 dark:text-blue-300 mb-4">
                 💡 Recomendaciones para su Visita
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                <ul className="space-y-2 text-blue-700">
+                <ul className="space-y-2 text-blue-700 dark:text-blue-300">
                   <li>• Llegue 15 minutos antes de su cita</li>
                   <li>• Traiga documento de identidad</li>
                   <li>• Porte su carné de afiliación a salud</li>
                   <li>• Traiga exámenes médicos previos</li>
                 </ul>
-                <ul className="space-y-2 text-blue-700">
+                <ul className="space-y-2 text-blue-700 dark:text-blue-300">
                   <li>• Use tapabocas en todas las áreas</li>
                   <li>• Mantenga distanciamiento social</li>
                   <li>• Informe síntomas respiratorios</li>

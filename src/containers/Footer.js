@@ -64,7 +64,7 @@ export default function Footer() {
           }
         }
       `}</style>
-      <footer className="bg-gray-800 text-white transition-colors duration-200">
+      <footer className="bg-gray-800 text-white dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="col-span-1 lg:col-span-2">
@@ -74,15 +74,17 @@ export default function Footer() {
                 </div>
                 <div>
                   <h3 className="text-lg font-bold">IPS INGA KAMËNTSÁ</h3>
-                  <p className="text-sm text-gray-300">Servicios de Salud</p>
+                  <p className="text-sm text-gray-300 dark:text-gray-400">
+                    Servicios de Salud
+                  </p>
                 </div>
               </div>
-              <p className="text-gray-300 mb-4">
+              <p className="text-gray-300 dark:text-gray-400 mb-4">
                 Institución Prestadora de Servicios de Salud comprometida con el
                 bienestar de la comunidad indígena Inga Kamëntsá en el Valle de
                 Sibundoy, Putumayo.
               </p>
-              <div className="text-sm text-gray-400">
+              <div className="text-sm text-gray-400 dark:text-gray-500">
                 <p>NIT: 846001214-3</p>
               </div>
             </div>
@@ -94,7 +96,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/servicios"
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
                   >
                     Servicios
                   </Link>
@@ -102,7 +104,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/sedes"
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
                   >
                     Sedes
                   </Link>
@@ -110,7 +112,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/directorio"
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
                   >
                     Directorio Médico
                   </Link>
@@ -118,7 +120,7 @@ export default function Footer() {
                 <li>
                   <Link
                     href="/eventos"
-                    className="text-gray-300 hover:text-white transition-colors"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
                   >
                     Eventos
                   </Link>
@@ -129,7 +131,7 @@ export default function Footer() {
             {/* Contacto */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Contacto</h4>
-              <div className="space-y-3 text-gray-300">
+              <div className="space-y-3 text-gray-300 dark:text-gray-400">
                 <div className="flex items-start space-x-2">
                   <span>📍</span>
                   <div>
@@ -141,7 +143,7 @@ export default function Footer() {
                   <span>📞</span>
                   <Link
                     href="tel:+573132863398"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white dark:hover:text-green-400 transition-colors"
                   >
                     313-286-3398
                   </Link>
@@ -151,7 +153,7 @@ export default function Footer() {
                   <span>📧</span>
                   <Link
                     href="mailto:ipsingakamentsa@gmail.com"
-                    className="hover:text-white transition-colors"
+                    className="hover:text-white dark:hover:text-green-400 transition-colors"
                   >
                     ipsingakamentsa@gmail.com
                   </Link>
@@ -161,47 +163,61 @@ export default function Footer() {
           </div>
 
           {/* Sedes */}
-          <div className="border-t border-gray-700 mt-8 pt-8">
+          <div className="border-t border-gray-700 dark:border-gray-600 mt-8 pt-8">
             <h4 className="text-lg font-semibold mb-4">Nuestras Sedes</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
-              <div className="bg-gray-700 p-3 rounded">
-                <h5 className="font-semibold text-green-400">Sede Sibundoy</h5>
+              <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
+                <h5 className="font-semibold text-green-400 dark:text-green-500">
+                  Sede Sibundoy
+                </h5>
                 <p>Barrio Recreo</p>
-                <p className="text-gray-300">Calle 15 # 15 - 69</p>
+                <p className="text-gray-300 dark:text-gray-400">
+                  Calle 15 # 15 - 69
+                </p>
               </div>
-              <div className="bg-gray-700 p-3 rounded">
-                <h5 className="font-semibold text-green-400">Sede Colón</h5>
+              <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
+                <h5 className="font-semibold text-green-400 dark:text-green-500">
+                  Sede Colón
+                </h5>
                 <p>Barrio Centro</p>
-                <p className="text-gray-300">Calle 8 #5-23</p>
+                <p className="text-gray-300 dark:text-gray-400">
+                  Calle 8 #5-23
+                </p>
               </div>
-              <div className="bg-gray-700 p-3 rounded">
-                <h5 className="font-semibold text-green-400">Sede Santiago</h5>
-                <p className="text-gray-300">Carrera 15 #7-45</p>
+              <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
+                <h5 className="font-semibold text-green-400 dark:text-green-500">
+                  Sede Santiago
+                </h5>
+                <p className="text-gray-300 dark:text-gray-400">
+                  Carrera 15 #7-45
+                </p>
               </div>
-              <div className="bg-gray-700 p-3 rounded">
-                <h5 className="font-semibold text-green-400">
+              <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
+                <h5 className="font-semibold text-green-400 dark:text-green-500">
                   Sede San Andrés
                 </h5>
-                <p className="text-gray-300">Calle 6 #12-18</p>
+                <p className="text-gray-300 dark:text-gray-400">
+                  Calle 6 #12-18
+                </p>
               </div>
             </div>
           </div>
 
           {/* Copyright */}
-          <div className="border-t border-gray-700 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm">
+          <div className="border-t border-gray-700 dark:border-gray-600 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center">
+            <p className="text-gray-400 dark:text-gray-500 text-sm">
               © 2025 IPS INGA KAMËNTSÁ. Todos los derechos reservados.
             </p>
             <div className="flex space-x-6 mt-4 sm:mt-0">
               <Link
                 href="/atencion-usuario"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-gray-400 hover:text-white dark:text-gray-500 dark:hover:text-green-400 text-sm transition-colors"
               >
                 Atención al Usuario
               </Link>
               <Link
                 href="/contacto"
-                className="text-gray-400 hover:text-white text-sm transition-colors"
+                className="text-gray-400 hover:text-white dark:text-gray-500 dark:hover:text-green-400 text-sm transition-colors"
               >
                 Contacto
               </Link>
@@ -302,7 +318,8 @@ export default function Footer() {
                 )}
               </Link>
             </li>
-            <li style={socialItemStyle}>
+
+            {/* <li style={socialItemStyle}>
               <Link
                 href="https://www.instagram.com/julianrio95/"
                 target="_blank"
@@ -326,10 +343,11 @@ export default function Footer() {
                   />
                 )}
               </Link>
-            </li>
+            </li> */}
+
             <li style={socialItemStyle}>
               <Link
-                href="https://wa.me/573174503604"
+                href="https://wa.me/573132863398"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -353,7 +371,7 @@ export default function Footer() {
               </Link>
             </li>
 
-            <li style={socialItemStyle}>
+            {/* <li style={socialItemStyle}>
               <Link
                 href="https://www.tiktok.com/@julii1295?_t=8n2OQ52Q4aD&_r=1"
                 target="_blank"
@@ -377,7 +395,7 @@ export default function Footer() {
                   />
                 )}
               </Link>
-            </li>
+            </li> */}
           </ul>
         </article>
       </footer>

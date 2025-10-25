@@ -8,9 +8,9 @@ export const metadata = {
 
 export default function DirectorioPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+      <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -27,10 +27,10 @@ export default function DirectorioPage() {
       <DirectorioTelefonico />
 
       {/* Información Útil */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
               Información Útil
             </h2>
 
@@ -49,22 +49,22 @@ export default function DirectorioPage() {
                 </ul>
               </div> */}
 
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                   🕐 Mejores Horarios
                 </h3>
-                <ul className="space-y-2 text-gray-600 text-sm">
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
                   <li>• Gerencia: 10:00 AM - 12:00 PM</li>
                   <li>• Citas: 8:00 AM - 12:00 PM</li>
                   <li>• Atención al usuario: 8:00 AM - 5:00 PM</li>
                 </ul>
               </div>
 
-              <div className="bg-white rounded-lg shadow-lg p-6">
-                <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                   📝 Para Citas
                 </h3>
-                <ul className="space-y-2 text-gray-600 text-sm">
+                <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
                   <li>• Use el número directo de cada sede</li>
                   <li>• Proporcione su información completa</li>
                   <li>• Indique la especialidad requerida</li>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/Navbar.module.scss";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const navigationLinks = [
   { href: "/", label: "Inicio" },
@@ -42,6 +43,10 @@ export default function Navbar() {
                 priority
               />
             </Link>
+          </div>
+
+          <div className={styles.themeSwitcher}>
+            <ThemeSwitcher />
           </div>
 
           {/* Desktop Navigation */}

@@ -8,11 +8,11 @@ import ImageCarousel from "../components/ImageCarousel";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       <PresentacionCarousel />
 
-      <section className="flex flex-col justify-center items-center bg-gray-50 transition-colors duration-200">
-        <h1 className="text-3xl font-bold my-4">Servicios</h1>
+      <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 bg-gray-100 dark:bg-gray-800">
+        <h1 className="text-3xl font-bold my-4 dark:text-white">Servicios</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
           <div className="w-full px-0 md:px-2">
@@ -54,8 +54,8 @@ export default function Home() {
       <HealthInfoSection />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-blue-800 text-white py-20">
-        <div className="absolute inset-0 bg-black opacity-20"></div>
+      <section className="relative bg-gradient-to-br from-green-600 via-green-700 to-blue-800 dark:from-black dark:via-black dark:bg-black text-white py-20">
+        <div className="absolute inset-0 bg-black opacity-20 dark:opacity-40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
@@ -86,45 +86,45 @@ export default function Home() {
         </div>
 
         {/* Decorative elements */}
-        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white to-transparent"></div>
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-white dark:from-gray-900 to-transparent"></div>
       </section>
 
       <GlobalSearch />
 
       {/* Services Preview */}
-      <section className="py-16 bg-gray-50 transition-colors duration-200">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 ">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
             Nuestros Servicios
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
               <div className="text-4xl mb-4">👩‍⚕️</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                 Medicina General
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Atención médica integral para toda la familia
               </p>
               <Link
                 href="/servicios"
-                className="text-green-600 hover:text-green-800 font-semibold"
+                className="text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300 font-semibold"
               >
                 Ver más
               </Link>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200">
               <div className="text-4xl mb-4">🦷</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                 Odontología
               </h3>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Servicios dentales especializados y preventivos
               </p>
               <Link
                 href="/servicios"
-                className="text-green-600 hover:text-green-800 font-semibold"
+                className="text-green-600 hover:text-green-800 dark:text-green-400 dark:hover:text-green-300 font-semibold"
               >
                 Ver más
               </Link>
@@ -134,74 +134,74 @@ export default function Home() {
       </section>
 
       {/* Detailed Services Info */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
             ¿Por qué elegir IPS Salud Integral?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">⏰</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Horarios Flexibles
               </h3>
-              <p className="text-gray-600 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-center">
                 Atención de lunes a viernes y servicio de urgencias disponible
                 24/7 para tu tranquilidad.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">👨‍⚕️</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Personal Calificado
               </h3>
-              <p className="text-gray-600 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-center">
                 Médicos y odontólogos con experiencia comprometidos con tu salud
                 y bienestar.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">📍</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Múltiples Sedes
               </h3>
-              <p className="text-gray-600 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-center">
                 Presencia en Sibundoy, Colón, Santiago y San Andrés para estar
                 cerca de ti.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">💰</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Tarifas Accesibles
               </h3>
-              <p className="text-gray-600 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-center">
                 Servicios de salud de calidad a precios justos y asequibles para
                 toda la comunidad.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">🏥</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Atención Integral
               </h3>
-              <p className="text-gray-600 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-center">
                 Desde consulta general hasta tratamientos odontológicos
                 especializados.
               </p>
             </div>
 
-            <div className="bg-gray-50 rounded-lg p-6">
+            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6">
               <div className="text-4xl mb-4 text-center">📋</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3 text-center">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Fácil Acceso
               </h3>
-              <p className="text-gray-600 text-center">
+              <p className="text-gray-600 dark:text-gray-300 text-center">
                 Proceso de agendamiento sencillo y atención oportuna para todos
                 nuestros pacientes.
               </p>
@@ -211,9 +211,9 @@ export default function Home() {
       </section>
 
       {/* Quick Access */}
-      <section className="py-16 bg-gray-50 transition-colors duration-200">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
             Acceso Rápido
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
