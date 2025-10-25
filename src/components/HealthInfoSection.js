@@ -60,13 +60,13 @@ const meetingImages = [
 
 export default function HealthInfoSection() {
   return (
-    <section className="py-16 bg-gray-50 transition-colors duration-200">
+    <section className="py-16 bg-gray-50 transition-colors duration-200 dark:bg-gray-800 dark:text-white dark:border-solid dark:border-zinc-50/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">
             Conoce Más Sobre Nuestros Servicios
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto dark:text-white">
             Descubre cómo trabajamos para brindar atención médica integral y
             transparente a nuestra comunidad
           </p>

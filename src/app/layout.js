@@ -1,13 +1,14 @@
 import { Geist, Geist_Mono } from "next/font/google";
-// import "./globals.css";
 import "./globals.css";
 import { Navbar } from "@/components";
 import { Footer } from "@/containers";
 import Breadcrumbs from "@/components/Breadcrumbs";
+import { ThemeProvider } from "next-themes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
@@ -273,20 +274,27 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
-      >
-        <Navbar />
-        <Breadcrumbs />
-        {children}
-        <Footer />
+      <body>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <div className="relative flex min-h-screen flex-col">
+            <Navbar />
+            <Breadcrumbs />
+            <div className="flex-1">{children}</div>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );

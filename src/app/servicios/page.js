@@ -9,9 +9,9 @@ export const metadata = {
 
 export default function ServiciosPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+      <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -26,21 +26,21 @@ export default function ServiciosPage() {
       </section>
 
       {/* /* Servicios Detallados */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Medicina General */}
-            <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
-              <h2 className="text-3xl font-bold text-blue-800 mb-6 text-center">
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800">
+              <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-300 mb-6 text-center">
                 🩺 Medicina General
               </h2>
 
               <div className="space-y-6">
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                     Consulta Externa
                   </h3>
-                  <ul className="space-y-2 text-gray-900">
+                  <ul className="space-y-2 text-gray-900 dark:text-gray-300">
                     <li>
                       • Diagnóstico y tratamiento de enfermedades generales
                     </li>
@@ -51,11 +51,11 @@ export default function ServiciosPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                     Atención domiciliaria
                   </h3>
-                  <ul className="space-y-2 text-gray-900">
+                  <ul className="space-y-2 text-gray-900 dark:text-gray-300">
                     <li>• Sibundoy: 2 visitas mensuales</li>
                     <li>• Santiago: 2 visitas mensuales</li>
                     <li>• Colón: 1 visita domiciliaria</li>
@@ -64,17 +64,17 @@ export default function ServiciosPage() {
               </div>
             </div>
 
-            <div className="bg-green-50 rounded-lg p-8 border border-green-200">
-              <h2 className="text-3xl font-bold text-green-800 mb-6 text-center">
+            <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800">
+              <h2 className="text-3xl font-bold text-green-800 dark:text-green-300 mb-6 text-center">
                 🦷 Odontología
               </h2>
 
               <div className="space-y-6">
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                     Servicios Odontológicos
                   </h3>
-                  <ul className="list-disc pl-5 space-y-2 text-gray-900">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-300">
                     <li>Odontología general</li>
                     <li>Limpieza dental (profilaxis)</li>
                     <li>Extracción de piezas dentales</li>
@@ -83,11 +83,11 @@ export default function ServiciosPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                     Odontología Preventiva
                   </h3>
-                  <ul className="list-disc pl-5 space-y-2 text-gray-900">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-300">
                     <li>Valoración odontológica</li>
                     <li>Educación en salud oral</li>
                     <li>Aplicación de flúor</li>
@@ -96,11 +96,11 @@ export default function ServiciosPage() {
                   </ul>
                 </div>
 
-                <div className="bg-white rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                     Atención domiciliaria
                   </h3>
-                  <ul className="space-y-2 text-gray-900">
+                  <ul className="space-y-2 text-gray-900 dark:text-gray-300">
                     <li>• Sibundoy: 2 visitas mensuales</li>
                     <li>• Santiago: 2 visitas mensuales</li>
                     <li>• Colón: 1 visita domiciliaria</li>
@@ -112,11 +112,11 @@ export default function ServiciosPage() {
 
           {/* Información para solicitar visita - Span completo */}
           <div className="mt-12 max-w-6xl mx-auto">
-            <div className="bg-white rounded-lg p-8 shadow-md">
-              <h3 className="text-2xl font-bold text-gray-800 mb-4 text-center">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md">
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 text-center">
                 Información para solicitar visita
               </h3>
-              <p className="text-gray-700 text-lg leading-relaxed text-center max-w-3xl mx-auto">
+              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
                 Enviar información relevante: nombres completos del paciente y
                 familiares, contacto telefónico y relación con el paciente.
                 Estos datos permiten coordinar la atención domiciliaria de forma
@@ -128,19 +128,19 @@ export default function ServiciosPage() {
       </section>
 
       {/* Programas Especiales */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
             Programas Especiales
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">👶</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                 Programa Materno Infantil
               </h3>
-              <ul className="text-gray-600 text-sm space-y-1 text-left">
+              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1 text-left">
                 <li>• Control prenatal</li>
                 <li>• Atención del parto</li>
                 <li>• Control de crecimiento y desarrollo</li>
@@ -149,12 +149,12 @@ export default function ServiciosPage() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">🏃‍♂️</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                 Promoción y Prevención
               </h3>
-              <ul className="text-gray-600 text-sm space-y-1 text-left">
+              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1 text-left">
                 <li>• Jornadas de salud comunitaria</li>
                 <li>• Educación en salud</li>
                 <li>• Prevención de enfermedades</li>
@@ -163,12 +163,12 @@ export default function ServiciosPage() {
               </ul>
             </div>
 
-            <div className="bg-white rounded-lg shadow-lg p-8 text-center">
+            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">👴</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                 Atención Domiciliaria
               </h3>
-              <ul className="text-gray-600 text-sm space-y-1 text-left">
+              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1 text-left">
                 <li>• Visitas médicas domiciliarias</li>
                 <li>• Cuidado de pacientes crónicos</li>
                 <li>• Atención a adultos mayores</li>
@@ -184,7 +184,7 @@ export default function ServiciosPage() {
       <GestionClinica />
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">
             ¿Necesita Información Específica?

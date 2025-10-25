@@ -9,9 +9,9 @@ export const metadata = {
 
 export default function AtencionUsuarioPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-green-600 to-blue-600 text-white py-16">
+      <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -27,50 +27,50 @@ export default function AtencionUsuarioPage() {
       </section>
 
       {/* PQRSF Info */}
-      <section className="py-12 bg-blue-50">
+      <section className="py-12 bg-blue-50 dark:bg-blue-900/20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-8 text-blue-800">
+            <h2 className="text-3xl font-bold text-center mb-8 text-blue-800 dark:text-blue-300">
               ¿Qué es PQRSF?
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-              <div className="bg-white rounded-lg p-6 text-center shadow-lg">
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">📝</div>
-                <h3 className="font-bold text-blue-800 mb-2">Peticiones</h3>
-                <p className="text-sm text-gray-600">
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Peticiones</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   Solicitudes de información, documentos o servicios
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg p-6 text-center shadow-lg">
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">😞</div>
-                <h3 className="font-bold text-blue-800 mb-2">Quejas</h3>
-                <p className="text-sm text-gray-600">
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Quejas</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   Manifestaciones de insatisfacción con el servicio
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg p-6 text-center shadow-lg">
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">⚠️</div>
-                <h3 className="font-bold text-blue-800 mb-2">Reclamos</h3>
-                <p className="text-sm text-gray-600">
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Reclamos</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   Manifestaciones sobre presunta falta de calidad
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg p-6 text-center shadow-lg">
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">💡</div>
-                <h3 className="font-bold text-blue-800 mb-2">Sugerencias</h3>
-                <p className="text-sm text-gray-600">
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Sugerencias</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   Propuestas para mejorar nuestros servicios
                 </p>
               </div>
 
-              <div className="bg-white rounded-lg p-6 text-center shadow-lg">
+              <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">👏</div>
-                <h3 className="font-bold text-blue-800 mb-2">Felicitaciones</h3>
-                <p className="text-sm text-gray-600">
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Felicitaciones</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-300">
                   Reconocimientos por la calidad del servicio
                 </p>
               </div>
@@ -82,58 +82,58 @@ export default function AtencionUsuarioPage() {
       <AtencionUsuario />
 
       {/* Proceso PQRSF */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
               Proceso de Atención PQRSF
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div className="text-center">
-                <div className="bg-green-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-green-100 dark:bg-green-900/30 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">1️⃣</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   Recepción
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Recibimos su PQRSF y le asignamos un número de radicado
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="bg-blue-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-blue-100 dark:bg-blue-900/30 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">2️⃣</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   Análisis
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Analizamos su caso y lo direccionamos al área competente
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="bg-yellow-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-yellow-100 dark:bg-yellow-900/30 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">3️⃣</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   Gestión
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
                   El área responsable gestiona y busca la solución apropiada
                 </p>
               </div>
 
               <div className="text-center">
-                <div className="bg-purple-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <div className="bg-purple-100 dark:bg-purple-900/30 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
                   <span className="text-3xl">4️⃣</span>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">
+                <h3 className="text-lg font-bold text-gray-800 dark:text-white mb-2">
                   Respuesta
                 </h3>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Le enviamos la respuesta en máximo 15 días hábiles
                 </p>
               </div>
@@ -143,20 +143,20 @@ export default function AtencionUsuarioPage() {
       </section>
 
       {/* Canales de Comunicación */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
               Otros Canales de Comunicación
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
                 <div className="text-4xl mb-4">📞</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                   Línea Telefónica
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Atención directa por teléfono
                 </p>
                 <Link
@@ -167,12 +167,12 @@ export default function AtencionUsuarioPage() {
                 </Link>
               </div>
 
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
                 <div className="text-4xl mb-4">📧</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                   Correo Electrónico
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Envíenos sus consultas por email
                 </p>
                 <Link
@@ -183,12 +183,12 @@ export default function AtencionUsuarioPage() {
                 </Link>
               </div>
 
-              <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
                 <div className="text-4xl mb-4">🏢</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                   Presencial
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
                   Visítenos en cualquiera de nuestras sedes
                 </p>
                 <Link
@@ -204,96 +204,96 @@ export default function AtencionUsuarioPage() {
       </section>
 
       {/* Derechos y Deberes */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-blue-50">
+      <section className="py-16 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
               Sus Derechos y Deberes como Usuario
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
-                <h3 className="text-2xl font-bold text-blue-800 mb-6 text-center">
+              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800">
+                <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-6 text-center">
                   📋 Sus Derechos
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span className="text-blue-700">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
+                    <span className="text-blue-700 dark:text-blue-200">
                       Recibir atención de calidad sin discriminación
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span className="text-blue-700">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
+                    <span className="text-blue-700 dark:text-blue-200">
                       Ser informado sobre su estado de salud
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span className="text-blue-700">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
+                    <span className="text-blue-700 dark:text-blue-200">
                       Confidencialidad de su información médica
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span className="text-blue-700">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
+                    <span className="text-blue-700 dark:text-blue-200">
                       Participar en decisiones sobre su tratamiento
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span className="text-blue-700">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
+                    <span className="text-blue-700 dark:text-blue-200">
                       Recibir atención culturalmente apropiada
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 mr-2">✓</span>
-                    <span className="text-blue-700">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
+                    <span className="text-blue-700 dark:text-blue-200">
                       Presentar peticiones, quejas y reclamos
                     </span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-green-50 rounded-lg p-8 border border-green-200">
-                <h3 className="text-2xl font-bold text-green-800 mb-6 text-center">
+              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800">
+                <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-6 text-center">
                   🤝 Sus Deberes
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-green-700">
+                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
+                    <span className="text-green-700 dark:text-green-200">
                       Proporcionar información veraz sobre su salud
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-green-700">
+                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
+                    <span className="text-green-700 dark:text-green-200">
                       Cumplir con los tratamientos prescritos
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-green-700">
+                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
+                    <span className="text-green-700 dark:text-green-200">
                       Respetar al personal y otros pacientes
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-green-700">
+                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
+                    <span className="text-green-700 dark:text-green-200">
                       Asistir puntualmente a las citas
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-green-700">
+                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
+                    <span className="text-green-700 dark:text-green-200">
                       Cuidar las instalaciones y equipos
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 mr-2">•</span>
-                    <span className="text-green-700">
+                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
+                    <span className="text-green-700 dark:text-green-200">
                       Seguir las normas de bioseguridad
                     </span>
                   </li>

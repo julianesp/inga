@@ -155,10 +155,10 @@ export default function ImageCarousel({ images, title, description }) {
 
       {/* Content */}
       <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-3">
+        <h3 className="text-xl font-bold text-gray-800 mb-3 dark:text-black">
           {title}
         </h3>
-        <p className="text-gray-600 leading-relaxed">
+        <p className="text-gray-900 leading-relaxed">
           {description}
         </p>
         {images[currentImage].description && (

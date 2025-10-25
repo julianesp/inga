@@ -287,7 +287,7 @@ export default function PresentacionCarousel() {
       </div>
 
       {/* Auto-play indicator */}
-      <div className="absolute bottom-6 right-4 z-20">
+      <div className="absolute bottom-16 right-4 z-20">
         <button
           onClick={() => setIsAutoPlaying(!isAutoPlaying)}
           className={`px-3 py-1 rounded-full text-sm transition-colors ${
