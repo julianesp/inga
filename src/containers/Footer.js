@@ -79,13 +79,13 @@ export default function Footer() {
                   </p>
                 </div>
               </div>
-              <p className="text-gray-300 dark:text-gray-400 mb-4">
+              <p className="text-white dark:text-gray-400 mb-4">
                 Institución Prestadora de Servicios de Salud comprometida con el
                 bienestar de la comunidad indígena Inga Kamëntsá en el Valle de
                 Sibundoy, Putumayo.
               </p>
               <div className="text-sm text-gray-400 dark:text-gray-500">
-                <p>NIT: 846001214-3</p>
+                <p className="text-white">NIT: 846001214-3</p>
               </div>
             </div>
 
@@ -93,6 +93,14 @@ export default function Footer() {
             <div>
               <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
               <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/institucional"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Institucional
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/servicios"
@@ -123,6 +131,22 @@ export default function Footer() {
                     className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
                   >
                     Eventos
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/atencion-usuario"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Atención al Usuario
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contacto"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Contacto
                   </Link>
                 </li>
               </ul>
@@ -170,7 +194,7 @@ export default function Footer() {
                 <h5 className="font-semibold text-green-400 dark:text-green-500">
                   Sede Sibundoy
                 </h5>
-                <p>Barrio Recreo</p>
+                <p>Diagonal al mercado</p>
                 <p className="text-gray-300 dark:text-gray-400">
                   Calle 15 # 15 - 69
                 </p>
@@ -181,7 +205,7 @@ export default function Footer() {
                 </h5>
                 <p>Barrio Centro</p>
                 <p className="text-gray-300 dark:text-gray-400">
-                  Calle 8 #5-23
+                  Cerca al centro cultural
                 </p>
               </div>
               <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
@@ -189,7 +213,7 @@ export default function Footer() {
                   Sede Santiago
                 </h5>
                 <p className="text-gray-300 dark:text-gray-400">
-                  Carrera 15 #7-45
+                  Sede Nazareth
                 </p>
               </div>
               <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
@@ -197,7 +221,7 @@ export default function Footer() {
                   Sede San Andrés
                 </h5>
                 <p className="text-gray-300 dark:text-gray-400">
-                  Calle 6 #12-18
+                  Chorro San Jose
                 </p>
               </div>
             </div>
@@ -208,18 +232,23 @@ export default function Footer() {
             <p className="text-gray-400 dark:text-gray-500 text-sm">
               © 2025 IPS INGA KAMËNTSÁ. Todos los derechos reservados.
             </p>
-            <div className="flex space-x-6 mt-4 sm:mt-0">
+
+            <div className=" space-x-6 mt-4 sm:mt-0 ">
               <Link
-                href="/atencion-usuario"
-                className="text-gray-400 hover:text-white dark:text-gray-500 dark:hover:text-green-400 text-sm transition-colors"
+                href="https://neurai.dev/"
+                title="Abrir sitio web"
+                className="flex items-center space-x-2 text-gray-400 hover:text-white dark:text-gray-500 dark:hover:text-green-400 text-sm transition-colors"
+                aria-label="Desarrollado por neurai.dev"
+                target="_blank"
               >
-                Atención al Usuario
-              </Link>
-              <Link
-                href="/contacto"
-                className="text-gray-400 hover:text-white dark:text-gray-500 dark:hover:text-green-400 text-sm transition-colors"
-              >
-                Contacto
+                <span className="font-medium">Desarrollado por neurai.dev</span>
+                <Image
+                  alt="Logo neurai.dev"
+                  src="https://0dwas2ied3dcs14f.public.blob.vercel-storage.com/logo.png"
+                  width={20}
+                  height={30}
+                  className="rounded-full"
+                />
               </Link>
             </div>
           </div>

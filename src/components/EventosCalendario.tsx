@@ -24,7 +24,7 @@ const eventos: Evento[] = [
     descripcion:
       "Invitamos a todas las familias de la comunidad a participar en la jornada de vacunación para niños y niñas de 0 a 5 años. Protejamos juntos la salud de nuestros pequeños.",
     sede: "Sibundoy",
-    registro: true,
+    registro: false,
   },
   {
     id: "2",
@@ -35,7 +35,7 @@ const eventos: Evento[] = [
     descripcion:
       "Espacio formativo dirigido a la comunidad para fortalecer los conocimientos sobre hábitos saludables, prevención de enfermedades y autocuidado. ¡Participa y contribuye a una mejor calidad de vida!",
     sede: "Colón",
-    registro: true,
+    registro: false,
   },
   {
     id: "3",
@@ -58,18 +58,7 @@ const eventos: Evento[] = [
       "La comunidad está invitada a la brigada de salud en veredas rurales, donde se ofrecerán servicios médicos y odontológicos gratuitos.",
     sede: "San Andrés",
     registro: false,
-  },
-  {
-    id: "5",
-    titulo: "Capacitación en Primeros Auxilios",
-    fecha: "2025-02-10",
-    hora: "8:00 AM - 12:00 PM",
-    tipo: "capacitacion",
-    descripcion:
-      "Curso básico de primeros auxilios dirigido a toda la comunidad. Aprenda a actuar en situaciones de emergencia y cuide a quienes le rodean.",
-    sede: "Sibundoy",
-    registro: true,
-  },
+  }
 ];
 
 const anuncios = [
@@ -191,7 +180,10 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
   };
 
   return (
-    <section id="eventos-calendario" className="py-16 bg-gray-50">
+    <section
+      id="eventos-calendario"
+      className="py-16 bg-gray-50 dark:bg-gray-800"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Eventos y Anuncios
@@ -229,7 +221,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <button
                 onClick={() => setFiltroTipo("todos")}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors dark:border-white border ${
                   filtroTipo === "todos"
                     ? "bg-green-600 text-white"
                     : "bg-white text-gray-600 hover:bg-green-50"
@@ -239,7 +231,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
               </button>
               <button
                 onClick={() => setFiltroTipo("jornada")}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors dark:border-white border ${
                   filtroTipo === "jornada"
                     ? "bg-blue-600 text-white"
                     : "bg-white text-gray-600 hover:bg-blue-50"
@@ -249,7 +241,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
               </button>
               <button
                 onClick={() => setFiltroTipo("capacitacion")}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors dark:border-white border ${
                   filtroTipo === "capacitacion"
                     ? "bg-green-600 text-white"
                     : "bg-white text-gray-600 hover:bg-green-50"
@@ -259,7 +251,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
               </button>
               <button
                 onClick={() => setFiltroTipo("celebracion")}
-                className={`px-4 py-2 rounded-lg transition-colors ${
+                className={`px-4 py-2 rounded-lg transition-colors dark:border-white border ${
                   filtroTipo === "celebracion"
                     ? "bg-purple-600 text-white"
                     : "bg-white text-gray-600 hover:bg-purple-50"
@@ -274,7 +266,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
               {eventosFiltrados.map((evento) => (
                 <div
                   key={evento.id}
-                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+                  className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow dark:bg-gray-800 border dark:border-white"
                 >
                   <div className="p-6">
                     <div className="flex items-start justify-between mb-4">
@@ -298,8 +290,8 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
                       </div>
                     </div>
 
-                    <div className="space-y-3 mb-4">
-                      <div className="flex items-center text-gray-600">
+                    <div className="space-y-3 mb-4 ">
+                      <div className="flex items-center text-gray-600 dark:text-white">
                         <svg
                           className="w-5 h-5 mr-2"
                           fill="none"
@@ -322,7 +314,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
                         </span>
                       </div>
 
-                      <div className="flex items-center text-gray-600">
+                      <div className="flex items-center text-gray-600 dark:text-white">
                         <svg
                           className="w-5 h-5 mr-2"
                           fill="none"
@@ -339,7 +331,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
                         <span>{evento.hora}</span>
                       </div>
 
-                      <div className="flex items-center text-gray-600">
+                      <div className="flex items-center text-gray-600 dark:text-white">
                         <svg
                           className="w-5 h-5 mr-2"
                           fill="none"
@@ -363,7 +355,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
                       </div>
                     </div>
 
-                    <p className="text-gray-600 mb-4">{evento.descripcion}</p>
+                    <p className="text-gray-600 mb-4 dark:text-white">{evento.descripcion}</p>
 
                     {evento.registro && (
                       <button

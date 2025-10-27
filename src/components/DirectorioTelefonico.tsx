@@ -114,15 +114,15 @@ export default function DirectorioTelefonico() {
   };
 
   return (
-    <section id="directorio" className="py-16 bg-white">
+    <section id="directorio" className="py-16 bg-white dark:bg-gray-800">
       <div className="container mx-auto px-4">
         {/* <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Directorio Telefónico
         </h2> */}
 
         {/* Información de contacto principal */}
-        <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg p-8 mb-12">
-          <div className="flex flex-col md:flex-row gap-8 text-center items-center justify-center w-full">
+        <div className="bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-lg p-8 mb-12 dark:from-gray-400">
+          <div className="flex flex-col md:flex-row gap-8 text-center items-center justify-center w-full dark:bg-gray-800">
             <div className="flex-1 flex flex-col items-center">
               <h3 className="text-xl font-bold mb-2">📞 Línea Principal</h3>
               <Link
@@ -150,10 +150,10 @@ export default function DirectorioTelefonico() {
         </div>
 
         {/* Filtros y búsqueda */}
-        <div className="bg-gray-50 rounded-lg p-6 mb-8">
+        <div className="bg-gray-50 rounded-lg p-6 mb-8 dark:bg-gray-800 border dark:border-white shadow-white shadow-md">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">
                 Buscar por nombre o cargo
               </label>
               <input
@@ -166,7 +166,7 @@ export default function DirectorioTelefonico() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">
                 Filtrar por sede
               </label>
               <select
@@ -183,7 +183,7 @@ export default function DirectorioTelefonico() {
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">
                 Filtrar por departamento
               </label>
               <select
@@ -202,19 +202,23 @@ export default function DirectorioTelefonico() {
         </div>
 
         {/* Lista de contactos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {contactosFiltrados.map((contacto) => (
             <div
               key={contacto.id}
-              className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+              className="bg-white border border-gray-200 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow dark:bg-gray-800 dark:border-white"
             >
-              <div className="flex items-center mb-4">
-                <span className="text-2xl mr-3">
+              <div className="flex items-center mb-4 ">
+                <span className="text-2xl mr-3 ">
                   {getDepartamentoIcon(contacto.departamento)}
                 </span>
                 <div>
-                  <h3 className="font-bold text-gray-800">{contacto.nombre}</h3>
-                  <p className="text-sm text-gray-600">{contacto.cargo}</p>
+                  <h3 className="font-bold text-gray-800 ">
+                    {contacto.nombre}
+                  </h3>
+                  <p className="text-sm text-gray-600 dark:text-white">
+                    {contacto.cargo}
+                  </p>
                 </div>
               </div>
 
@@ -245,7 +249,7 @@ export default function DirectorioTelefonico() {
                   </svg>
                   <a
                     href={`tel:${contacto.telefono}`}
-                    className="hover:text-green-600"
+                    className="hover:text-green-600 dark:text-white"
                   >
                     {contacto.telefono}
                     {contacto.extension && ` Ext. ${contacto.extension}`}
@@ -268,13 +272,13 @@ export default function DirectorioTelefonico() {
                   </svg>
                   <a
                     href={`mailto:${contacto.email}`}
-                    className="hover:text-green-600 text-sm truncate"
+                    className="hover:text-green-600 text-sm truncate dark:text-white"
                   >
                     {contacto.email}
                   </a>
                 </div>
 
-                <div className="flex items-center text-gray-700">
+                <div className="flex items-center text-gray-700 dark:text-white">
                   <svg
                     className="w-4 h-4 mr-2 text-green-600"
                     fill="none"
@@ -297,7 +301,7 @@ export default function DirectorioTelefonico() {
                   <span className="text-sm">Sede {contacto.sede}</span>
                 </div>
 
-                <div className="flex items-start text-gray-700">
+                <div className="flex items-start text-gray-700 dark:text-white">
                   <svg
                     className="w-4 h-4 mr-2 mt-1 text-green-600"
                     fill="none"
@@ -311,7 +315,7 @@ export default function DirectorioTelefonico() {
                       d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
-                  <span className="text-xs">{contacto.horarioAtencion}</span>
+                  <span className="text-sm">{contacto.horarioAtencion}</span>
                 </div>
               </div>
 
@@ -352,11 +356,11 @@ export default function DirectorioTelefonico() {
         )}
 
         {/* Información adicional */}
-        <div className="mt-12 bg-blue-50 rounded-lg p-8 border border-blue-200">
+        <div className="mt-12 bg-blue-50 rounded-lg p-8 border border-blue-200 dark:bg-gray-800 dark:border-white">
           <h3 className="text-xl font-bold text-blue-800 mb-4 text-center">
             📋 Información Importante
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-700">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-blue-700 dark:text-white">
             <div>
               <h4 className="font-semibold mb-2">Horarios Generales:</h4>
               <ul className="space-y-1">
