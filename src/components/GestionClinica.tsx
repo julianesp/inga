@@ -73,9 +73,12 @@ export default function GestionClinica() {
   ];
 
   return (
-    <section id="gestion-clinica" className="py-16 bg-gray-50">
+    <section
+      id="gestion-clinica"
+      className="py-16 bg-gray-50 dark:text-white dark:bg-gray-900 dark:border-white dark:border-opacity-10"
+    >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           Gestión Clínica y Seguridad del Paciente
         </h2>
 
@@ -85,16 +88,16 @@ export default function GestionClinica() {
             {educacionPaciente.map((tema, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500"
+                className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-green-500 dark:bg-gray-800"
               >
-                <h4 className="text-xl font-bold text-gray-800 mb-4">
+                <h4 className="text-xl font-bold text-gray-800 mb-4 dark:text-white">
                   {tema.categoria}
                 </h4>
                 <ul className="space-y-2">
                   {tema.contenido.map((item, itemIndex) => (
                     <li
                       key={itemIndex}
-                      className="flex items-center text-gray-700"
+                      className="flex items-center text-gray-700 dark:text-white"
                     >
                       <svg
                         className="w-4 h-4 text-green-600 mr-2"
@@ -126,11 +129,11 @@ export default function GestionClinica() {
             paciente, adaptadas a nuestro contexto cultural y geográfico.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 dark:text-white ">
             {protocolosSeguridad.map((protocolo, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
+                className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow dark:bg-gray-800"
               >
                 <div className="text-4xl mb-4 text-center">
                   {protocolo.icono}
@@ -138,7 +141,7 @@ export default function GestionClinica() {
                 <h4 className="text-lg font-bold text-gray-800 mb-3 text-center">
                   {protocolo.titulo}
                 </h4>
-                <p className="text-gray-600 text-center text-sm">
+                <p className="text-gray-600 text-center text-sm dark:text-white">
                   {protocolo.descripcion}
                 </p>
               </div>
@@ -148,14 +151,14 @@ export default function GestionClinica() {
 
         {/* Derechos y Deberes del Paciente */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div className="bg-blue-50 rounded-lg p-8 border border-blue-200">
+          <div className="bg-blue-50 rounded-lg p-8 border border-blue-200 dark:bg-gray-800">
             <h4 className="text-2xl font-bold text-blue-800 mb-6">
               Derechos del Paciente
             </h4>
             <ul className="space-y-3">
               <li className="flex items-start">
                 <svg
-                  className="w-5 h-5 text-blue-600 mr-2 mt-1"
+                  className="w-5 h-5 text-blue-600 mr-2 mt-1 "
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -165,7 +168,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-blue-700">
+                <span className="text-blue-700 dark:text-white">
                   Recibir atención médica de calidad sin discriminación
                 </span>
               </li>
@@ -181,7 +184,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-blue-700">
+                <span className="text-blue-700 dark:text-white">
                   Ser informado sobre su estado de salud y tratamientos
                 </span>
               </li>
@@ -197,7 +200,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-blue-700">
+                <span className="text-blue-700 dark:text-white">
                   Confidencialidad y privacidad de su información médica
                 </span>
               </li>
@@ -213,7 +216,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-blue-700">
+                <span className="text-blue-700 dark:text-white">
                   Participar en decisiones sobre su atención médica
                 </span>
               </li>
@@ -229,14 +232,14 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-blue-700">
+                <span className="text-blue-700 dark:text-white">
                   Recibir atención culturalmente apropiada
                 </span>
               </li>
             </ul>
           </div>
 
-          <div className="bg-green-50 rounded-lg p-8 border border-green-200">
+          <div className="bg-green-50 rounded-lg p-8 border border-green-200 dark:bg-gray-800">
             <h4 className="text-2xl font-bold text-green-800 mb-6">
               Deberes del Paciente
             </h4>
@@ -253,7 +256,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-green-700">
+                <span className="text-green-700 dark:text-white">
                   Proporcionar información veraz sobre su estado de salud
                 </span>
               </li>
@@ -269,7 +272,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-green-700">
+                <span className="text-green-700 dark:text-white">
                   Cumplir con los tratamientos y recomendaciones médicas
                 </span>
               </li>
@@ -285,7 +288,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-green-700">
+                <span className="text-green-700 dark:text-white">
                   Respetar al personal de salud y otros pacientes
                 </span>
               </li>
@@ -301,7 +304,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-green-700">
+                <span className="text-green-700 dark:text-white">
                   Asistir puntualmente a las citas programadas
                 </span>
               </li>
@@ -317,7 +320,7 @@ export default function GestionClinica() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="text-green-700">
+                <span className="text-green-700 dark:text-white">
                   Cuidar y hacer buen uso de las instalaciones
                 </span>
               </li>

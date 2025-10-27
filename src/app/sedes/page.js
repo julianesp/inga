@@ -40,12 +40,12 @@ export default function SedesPage() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                   📍 Ubicación Estratégica
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                <p className="text-gray-600 dark:text-white mb-4">
                   Nuestras sedes están ubicadas estratégicamente en el Valle de
                   Sibundoy para garantizar el acceso a servicios de salud a
                   todas las comunidades indígenas y campesinas de la región.
                 </p>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                <ul className="space-y-2 text-gray-600 dark:text-white">
                   <li>• Sede Principal: Sibundoy</li>
                   <li>• Sede Colón</li>
                   <li>• Sede Santiago</li>
@@ -54,11 +54,11 @@ export default function SedesPage() {
               </div>
             </div>
 
-            <div className="mt-12 bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800">
-              <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-4 text-center">
+            <div className="mt-12 bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-white">
+              <h3 className="text-xl font-bold text-green-800  mb-4 text-center dark:text-white">
                 🌍 Compromiso con la Calidad
               </h3>
-              <p className="text-green-700 dark:text-green-300 text-center max-w-3xl mx-auto">
+              <p className="text-green-700  text-center max-w-3xl mx-auto dark:text-white">
                 Cada una de nuestras sedes refleja nuestro compromiso con la
                 atención integral en salud. Trabajamos constantemente para
                 garantizar servicios de calidad y accesibles para todos.
