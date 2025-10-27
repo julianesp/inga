@@ -37,7 +37,9 @@ export default function ContactoPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">📱</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">WhatsApp</h3>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                WhatsApp
+              </h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Comuníquese con nosotros a través de WhatsApp para consultas
                 rápidas
@@ -81,7 +83,7 @@ export default function ContactoPage() {
                 <Link
                   href={
                     typeof window !== "undefined" &&
-                      /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
+                    /Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
                       ? "fb://profile/100008728661876"
                       : "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy"
                   }
@@ -117,19 +119,23 @@ export default function ContactoPage() {
                     <span className="font-semibold text-black dark:text-white">
                       Lunes a Viernes:
                     </span>
-                    <span className="text-black dark:text-gray-300">8:00 AM - 5:00 PM</span>
+                    <span className="text-black dark:text-gray-300">
+                      8:00 AM - 5:00 PM
+                    </span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="font-semibold text-black dark:text-white">Sábados:</span>
-                    <span className="text-black dark:text-gray-300">8:00 AM - 12:00 PM</span>
+                    <span className="font-semibold text-black dark:text-white">
+                      Sábados:
+                    </span>
+                    <span className="text-black dark:text-gray-300">
+                      8:00 AM - 12:00 PM
+                    </span>
                   </div>
                   <p className="text-sm text-green-700 dark:text-green-300 mt-4">
                     * Los sábados solo en sedes de Sibundoy y Colón (ejemplo)
                   </p>
                 </div>
               </div>
-
-
             </div>
 
             <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800 text-center">

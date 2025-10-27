@@ -53,7 +53,7 @@ export default function DirectorioPage() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                   🕐 Mejores Horarios
                 </h3>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+                <ul className="space-y-2 text-gray-600 dark:text-white text-sm">
                   <li>• Gerencia: 10:00 AM - 12:00 PM</li>
                   <li>• Citas: 8:00 AM - 12:00 PM</li>
                   <li>• Atención al usuario: 8:00 AM - 5:00 PM</li>
@@ -64,7 +64,7 @@ export default function DirectorioPage() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                   📝 Para Citas
                 </h3>
-                <ul className="space-y-2 text-gray-600 dark:text-gray-300 text-sm">
+                <ul className="space-y-2 text-gray-600 dark:text-white text-sm">
                   <li>• Use el número directo de cada sede</li>
                   <li>• Proporcione su información completa</li>
                   <li>• Indique la especialidad requerida</li>

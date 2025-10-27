@@ -36,7 +36,7 @@ const contactoSedes: ContactoSede[] = [
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
     horarios: "Lunes a Viernes: 8:00 AM - 4:00 PM\nSábados: 8:00 AM - 12:00 PM",
-    coordenadas: { lat: 1.2047, lng: -76.9847 },
+    coordenadas: { lat: 1.189163, lng: -76.975512 },
   },
   {
     id: "santiago",
@@ -120,9 +120,10 @@ export default function ContactoSedes() {
   };
 
   const handleMapClick = (lat: number, lng: number, nombreSede: string) => {
-    const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-      typeof window !== "undefined" ? navigator.userAgent : ""
-    );
+    const isMobile =
+      /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        typeof window !== "undefined" ? navigator.userAgent : ""
+      );
 
     const coordinates = `${lat},${lng}`;
     const query = encodeURIComponent(`${nombreSede}, ${coordinates}`);
@@ -141,22 +142,22 @@ export default function ContactoSedes() {
         // Intenta abrir Apple Maps primero, luego Google Maps
         window.location.href = appleMapsApp;
         setTimeout(() => {
-          window.open(googleMapsWeb, '_blank');
+          window.open(googleMapsWeb, "_blank");
         }, 500);
       } else if (isAndroid) {
         // Intenta abrir Google Maps app, luego web
         window.location.href = googleMapsApp;
         setTimeout(() => {
-          window.open(googleMapsWeb, '_blank');
+          window.open(googleMapsWeb, "_blank");
         }, 500);
       } else {
         // Fallback para otros dispositivos móviles
-        window.open(googleMapsWeb, '_blank');
+        window.open(googleMapsWeb, "_blank");
       }
     } else {
       // Para desktop, abre Google Maps en nueva pestaña
       const googleMapsWeb = `https://maps.google.com/maps?q=${coordinates}&ll=${coordinates}&z=16`;
-      window.open(googleMapsWeb, '_blank');
+      window.open(googleMapsWeb, "_blank");
     }
   };
 
@@ -172,253 +173,269 @@ export default function ContactoSedes() {
             Contactos y Sedes
           </h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Lista de sedes */}
-          <div className="lg:col-span-1">
-            <h3 className="text-xl font-bold text-gray-800 mb-4">
-              Seleccionar Sede
-            </h3>
-            <div className="space-y-3">
-              {contactoSedes.map((sede) => (
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {/* Lista de sedes */}
+            <div className="lg:col-span-1">
+              <h3 className="text-xl font-bold text-gray-800 mb-4">
+                Seleccionar Sede
+              </h3>
+              <div className="space-y-3">
+                {contactoSedes.map((sede) => (
+                  <button
+                    key={sede.id}
+                    onClick={() => setSelectedSede(sede.id)}
+                    className={`w-full text-left p-4 rounded-lg transition-colors ${
+                      selectedSede === sede.id
+                        ? "bg-green-600 text-white shadow-lg"
+                        : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                    }`}
+                  >
+                    <div className="font-semibold">{sede.nombre}</div>
+                    <div className="text-sm opacity-90">{sede.municipio}</div>
+                  </button>
+                ))}
+              </div>
+
+              {/* Botón para agendar citas */}
+              <div className="mt-6">
                 <button
-                  key={sede.id}
-                  onClick={() => setSelectedSede(sede.id)}
-                  className={`w-full text-left p-4 rounded-lg transition-colors ${
-                    selectedSede === sede.id
-                      ? "bg-green-600 text-white shadow-lg"
-                      : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                  }`}
+                  onClick={showCitasForm ? handleCloseForm : handleOpenForm}
+                  className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer"
                 >
-                  <div className="font-semibold">{sede.nombre}</div>
-                  <div className="text-sm opacity-90">{sede.municipio}</div>
+                  {showCitasForm ? "Cerrar Formulario" : "Programar Cita"}
                 </button>
-              ))}
+              </div>
             </div>
 
-            {/* Botón para agendar citas */}
-            <div className="mt-6">
-              <button
-                onClick={showCitasForm ? handleCloseForm : handleOpenForm}
-                className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer"
-              >
-                {showCitasForm ? "Cerrar Formulario" : "Programar Cita"}
-              </button>
-            </div>
-          </div>
+            {/* Información de la sede seleccionada */}
+            <div className="lg:col-span-2">
+              {selectedSedeData && (
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8 shadow-lg">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                    {selectedSedeData.nombre}
+                  </h3>
 
-          {/* Información de la sede seleccionada */}
-          <div className="lg:col-span-2">
-            {selectedSedeData && (
-              <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                  {selectedSedeData.nombre}
-                </h3>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-                  <div className="space-y-4">
-                    <div className="flex items-start">
-                      <svg
-                        className="w-6 h-6 text-green-600 mr-3 mt-1 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      <div>
-                        <p className="font-semibold text-gray-800">Dirección</p>
-                        <p className="text-gray-600">
-                          {selectedSedeData.direccion}
-                        </p>
-                        <p className="text-gray-600">
-                          {selectedSedeData.municipio}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-center">
-                      <svg
-                        className="w-6 h-6 text-green-600 mr-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        />
-                      </svg>
-                      <div>
-                        <p className="font-semibold text-gray-800">Teléfono</p>
-                        <Link
-                          href={`tel:${selectedSedeData.telefono}`}
-                          className="text-green-600 hover:underline"
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div className="space-y-4">
+                      <div className="flex items-start">
+                        <svg
+                          className="w-6 h-6 text-green-600 mr-3 mt-1 flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                         >
-                          {selectedSedeData.telefono}
-                          
-                        </Link>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                        <div>
+                          <p className="font-semibold text-gray-800">
+                            Dirección
+                          </p>
+                          <p className="text-gray-600">
+                            {selectedSedeData.direccion}
+                          </p>
+                          <p className="text-gray-600">
+                            {selectedSedeData.municipio}
+                          </p>
+                        </div>
                       </div>
-                    </div>
 
-                    <div className="flex items-center">
-                      <svg
-                        className="w-6 h-6 text-green-600 mr-3"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-                      <div>
-                        <p className="font-semibold text-gray-800">
-                          Correo Electrónico
-                        </p>
-                        <Link
-                          href={`mailto:${selectedSedeData.email}`}
-                          className="text-green-600 hover:underline"
+                      <div className="flex items-center">
+                        <svg
+                          className="w-6 h-6 text-green-600 mr-3"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
                         >
-                          {selectedSedeData.email}
-                        </Link>
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                          />
+                        </svg>
+                        <div>
+                          <p className="font-semibold text-gray-800">
+                            Teléfono
+                          </p>
+                          <Link
+                            href={`tel:${selectedSedeData.telefono}`}
+                            className="text-green-600 hover:underline"
+                          >
+                            {selectedSedeData.telefono}
+                          </Link>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center">
+                        <svg
+                          className="w-6 h-6 text-green-600 mr-3"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                          />
+                        </svg>
+                        <div>
+                          <p className="font-semibold text-gray-800">
+                            Correo Electrónico
+                          </p>
+                          <Link
+                            href={`mailto:${selectedSedeData.email}`}
+                            className="text-green-600 hover:underline"
+                          >
+                            {selectedSedeData.email}
+                          </Link>
+                        </div>
                       </div>
                     </div>
-                  </div>
 
-                  <div>
-                    <div className="flex items-start">
-                      <svg
-                        className="w-6 h-6 text-green-600 mr-3 mt-1 flex-shrink-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      <div>
-                        <p className="font-semibold text-gray-800 mb-2">
-                          Horarios de Atención
-                        </p>
-                        <div className="text-gray-600 whitespace-pre-line">
-                          {selectedSedeData.horarios}
+                    <div>
+                      <div className="flex items-start">
+                        <svg
+                          className="w-6 h-6 text-green-600 mr-3 mt-1 flex-shrink-0"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                        <div>
+                          <p className="font-semibold text-gray-800 mb-2">
+                            Horarios de Atención
+                          </p>
+                          <div className="text-gray-600 whitespace-pre-line">
+                            {selectedSedeData.horarios}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                {/* Mapa interactivo */}
-                <div
-                  className="bg-gradient-to-br from-green-100 to-blue-100 h-64 rounded-lg cursor-pointer hover:from-green-200 hover:to-blue-200 transition-all duration-300 relative overflow-hidden border-2 border-green-200 hover:border-green-300"
-                  onClick={() => handleMapClick(selectedSedeData.coordenadas.lat, selectedSedeData.coordenadas.lng, selectedSedeData.nombre)}
-                >
-                  {/* Contenido del mapa sin iframe */}
-                  <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                    <div className="text-center">
-                      <svg
-                        className="w-16 h-16 mx-auto mb-4 text-green-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      <h4 className="text-lg font-bold text-gray-800 mb-2">
-                        {selectedSedeData.nombre}
-                      </h4>
-                      <p className="text-gray-600 mb-4">
-                        {selectedSedeData.direccion}
-                      </p>
-                      <div className="bg-white bg-opacity-90 rounded-lg p-3 shadow-lg">
-                        <p className="text-sm font-semibold text-green-600 mb-1">
-                          Haz clic para abrir en mapas
+                  {/* Mapa interactivo */}
+                  <div
+                    className="bg-gradient-to-br from-green-100 to-blue-100 h-64 rounded-lg cursor-pointer hover:from-green-200 hover:to-blue-200 transition-all duration-300 relative overflow-hidden border-2 border-green-200 hover:border-green-300"
+                    onClick={() =>
+                      handleMapClick(
+                        selectedSedeData.coordenadas.lat,
+                        selectedSedeData.coordenadas.lng,
+                        selectedSedeData.nombre
+                      )
+                    }
+                  >
+                    {/* Contenido del mapa sin iframe */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center p-6">
+                      <div className="text-center">
+                        <svg
+                          className="w-16 h-16 mx-auto mb-4 text-green-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                        <h4 className="text-lg font-bold text-gray-800 mb-2">
+                          {selectedSedeData.nombre}
+                        </h4>
+                        <p className="text-gray-600 mb-4">
+                          {selectedSedeData.direccion}
                         </p>
-                        <p className="text-xs text-gray-500">
-                          Se abrirá en tu aplicación de mapas preferida
+                        <div className="bg-white bg-opacity-90 rounded-lg p-3 shadow-lg">
+                          <p className="text-sm font-semibold text-green-600 mb-1">
+                            Haz clic para abrir en mapas
+                          </p>
+                          <p className="text-xs text-gray-500">
+                            Se abrirá en tu aplicación de mapas preferida
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Efecto hover */}
+                    <div className="absolute inset-0  bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center">
+                      <div className="bg-white bg-opacity-90 rounded-lg p-3 text-center shadow-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
+                        <svg
+                          className="w-8 h-8 mx-auto mb-1 text-green-600"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                        <p className="text-sm font-semibold text-gray-800">
+                          Abrir en Mapas
                         </p>
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Efecto hover */}
-                  <div className="absolute inset-0  bg-opacity-0 hover:bg-opacity-5 transition-all duration-300 flex items-center justify-center">
-                    <div className="bg-white bg-opacity-90 rounded-lg p-3 text-center shadow-lg opacity-0 hover:opacity-100 transition-opacity duration-300">
-                      <svg
-                        className="w-8 h-8 mx-auto mb-1 text-green-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                        />
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                        />
-                      </svg>
-                      <p className="text-sm font-semibold text-gray-800">Abrir en Mapas</p>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            )}
-
-          </div>
+              )}
+            </div>
           </div>
         </div>
       </section>
 
       {/* Modal de formulario de citas */}
       {showCitasForm && (
-        <div className={`fixed inset-0 z-40 flex items-end justify-center p-4 bg-opacity-50 backdrop-blur-sm  transition-all duration-300 ease-in-out ${
-          isClosing ? 'opacity-0' : 'opacity-100'
-        }`}>
-          <div className={`relative bg-white rounded-lg shadow-xl shadow-gray-500  p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto border-black border-1  transition-all duration-300 ease-in-out ${
-            isClosing ? 'opacity-0 scale-95 translate-y-4' : 'opacity-100 scale-100 -translate-y-3'
-          }`}>
+        <div
+          className={`fixed inset-0 z-40 flex items-end justify-center p-4 bg-opacity-50 backdrop-blur-sm  transition-all duration-300 ease-in-out ${
+            isClosing ? "opacity-0" : "opacity-100"
+          }`}
+        >
+          <div
+            className={`relative bg-white rounded-lg shadow-xl shadow-gray-500  p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto border-black border-1  transition-all duration-300 ease-in-out ${
+              isClosing
+                ? "opacity-0 scale-95 translate-y-4"
+                : "opacity-100 scale-100 -translate-y-3"
+            }`}
+          >
             {/* Botón de cerrar */}
-              <button
-                onClick={handleCloseForm}
-                className="absolute top-4 right-4 text-black  text-2xl font-bold border border-black rounded-full w-8 cursor-pointer hover:scale-120 transition-all duration-300 ease-in-out hover:bg-black hover:text-white "
-              >
+            <button
+              onClick={handleCloseForm}
+              className="absolute top-4 right-4 text-black  text-2xl font-bold border border-black rounded-full w-8 cursor-pointer hover:scale-120 transition-all duration-300 ease-in-out hover:bg-black hover:text-white "
+            >
               ×
             </button>
 
@@ -495,7 +512,9 @@ export default function ContactoSedes() {
                   required
                   className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
                 >
-                  <option value="" className="text-gray-500">Seleccionar sede...</option>
+                  <option value="" className="text-gray-500">
+                    Seleccionar sede...
+                  </option>
                   <option value="sibundoy">Sibundoy</option>
                   <option value="colon">Colón</option>
                   <option value="santiago">Santiago</option>
@@ -529,7 +548,9 @@ export default function ContactoSedes() {
                     required
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
                   >
-                    <option value="" className="text-gray-500">Seleccionar...</option>
+                    <option value="" className="text-gray-500">
+                      Seleccionar...
+                    </option>
                     <option value="08:00">8:00 AM</option>
                     <option value="09:00">9:00 AM</option>
                     <option value="10:00">10:00 AM</option>
@@ -550,9 +571,7 @@ export default function ContactoSedes() {
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-700"
                   >
                     <option value="">Seleccionar...</option>
-                    <option value="medicina-general">
-                      Medicina General
-                    </option>
+                    <option value="medicina-general">Medicina General</option>
                     <option value="pediatria">Pediatría</option>
                     <option value="ginecologia">Ginecología</option>
                     <option value="odontologia">Odontología</option>
