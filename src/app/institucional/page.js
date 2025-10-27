@@ -53,7 +53,9 @@ export default function InstitucionalPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
               <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Respeto</h3>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                Respeto
+              </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 Respetamos la diversidad cultural y las necesidades específicas
                 de cada paciente y comunidad.
@@ -62,7 +64,9 @@ export default function InstitucionalPage() {
 
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
               <div className="text-4xl mb-4">⚡</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">Calidad</h3>
+              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
+                Calidad
+              </h3>
               <p className="text-gray-600 dark:text-gray-300">
                 Brindamos servicios de salud con los más altos estándares de
                 calidad y seguridad.
@@ -162,7 +166,9 @@ export default function InstitucionalPage() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                   Nohelly Puerchambud
                 </h3>
-                <p className="text-green-600 dark:text-green-400 font-semibold mb-3">Gerente</p>
+                <p className="text-green-600 dark:text-green-400 font-semibold mb-3">
+                  Gerente
+                </p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Profesional con amplia experiencia en administración de
                   instituciones de salud, liderando la gestión estratégica y
@@ -176,7 +182,9 @@ export default function InstitucionalPage() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                   Angela Mojomboy
                 </h3>
-                <p className="text-green-600 dark:text-green-400 font-semibold mb-3">Tesorera</p>
+                <p className="text-green-600 dark:text-green-400 font-semibold mb-3">
+                  Tesorera
+                </p>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Profesional responsable de la gestión financiera y
                   administrativa de la entidad de salud, asegurando el manejo
@@ -191,7 +199,9 @@ export default function InstitucionalPage() {
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                   María Angélica
                 </h3>
-                <p className="text-green-600 dark:text-green-400 font-semibold mb-3">Secretaria</p>
+                <p className="text-green-600 dark:text-green-400 font-semibold mb-3">
+                  Secretaria
+                </p>
 
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
                   Encargada de la organización administrativa, gestión

@@ -13,19 +13,19 @@ export default function InformacionInstitucional() {
   return (
     <section
       id="institucional"
-      className="py-16 bg-gradient-to-br from-green-50 to-blue-50"
+      className="py-16 bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-900"
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
+      <div className="container mx-auto px-4 dark:text-gray-300">
+        <h2 className="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">
           Información Institucional
         </h2>
 
         {/* Portafolio de Servicios */}
-        <div className="bg-white rounded-lg shadow-lg p-8">
-          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center">
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-12 border border-transparent dark:border-white dark:bg-gray-800">
+          <h3 className="text-3xl font-bold text-gray-800 mb-8 text-center dark:text-white">
             Portafolio de Servicios
           </h3>
-          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto">
+          <p className="text-gray-600 text-center mb-8 max-w-3xl mx-auto dark:text-white">
             Ofrecemos una amplia gama de servicios de salud diseñados para
             atender las necesidades específicas de nuestra población, combinando
             la medicina moderna con prácticas tradicionales.
@@ -56,7 +56,7 @@ export default function InformacionInstitucional() {
           </div>
 
           <div className="mt-8 text-center">
-            <p className="text-gray-600 mb-4">
+            <p className="text-gray-600 mb-4 dark:text-white">
               ¿Necesita información específica sobre algún servicio?
             </p>
             <Link
