@@ -37,7 +37,9 @@ export default function AtencionUsuarioPage() {
             <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">📝</div>
-                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Peticiones</h3>
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">
+                  Peticiones
+                </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Solicitudes de información, documentos o servicios
                 </p>
@@ -45,7 +47,9 @@ export default function AtencionUsuarioPage() {
 
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">😞</div>
-                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Quejas</h3>
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">
+                  Quejas
+                </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Manifestaciones de insatisfacción con el servicio
                 </p>
@@ -53,7 +57,9 @@ export default function AtencionUsuarioPage() {
 
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">⚠️</div>
-                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Reclamos</h3>
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">
+                  Reclamos
+                </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Manifestaciones sobre presunta falta de calidad
                 </p>
@@ -61,7 +67,9 @@ export default function AtencionUsuarioPage() {
 
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">💡</div>
-                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Sugerencias</h3>
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">
+                  Sugerencias
+                </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Propuestas para mejorar nuestros servicios
                 </p>
@@ -69,7 +77,9 @@ export default function AtencionUsuarioPage() {
 
               <div className="bg-white dark:bg-gray-700 rounded-lg p-6 text-center shadow-lg">
                 <div className="text-3xl mb-3">👏</div>
-                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">Felicitaciones</h3>
+                <h3 className="font-bold text-blue-800 dark:text-blue-300 mb-2">
+                  Felicitaciones
+                </h3>
                 <p className="text-sm text-gray-600 dark:text-gray-300">
                   Reconocimientos por la calidad del servicio
                 </p>
@@ -82,7 +92,7 @@ export default function AtencionUsuarioPage() {
       <AtencionUsuario />
 
       {/* Proceso PQRSF */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
@@ -161,7 +171,7 @@ export default function AtencionUsuarioPage() {
                 </p>
                 <Link
                   href="tel:+573132863398"
-                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors inline-block"
+                  className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700  inline-block dark:bg-gray-800 border dark:border-white hover:scale-90 transition-all duration-300"
                 >
                   3132863398
                 </Link>
@@ -177,7 +187,7 @@ export default function AtencionUsuarioPage() {
                 </p>
                 <Link
                   href="mailto:ipsingakamentsa@gmail.com"
-                  className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
+                  className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700  inline-block dark:bg-gray-800 border dark:border-white hover:scale-90 transition-all duration-300"
                 >
                   Escribir Email
                 </Link>
@@ -193,7 +203,7 @@ export default function AtencionUsuarioPage() {
                 </p>
                 <Link
                   href="/sedes"
-                  className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors inline-block"
+                  className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700  inline-block dark:bg-gray-800 border dark:border-white hover:scale-90 transition-all duration-300"
                 >
                   Ver Sedes
                 </Link>
@@ -212,88 +222,113 @@ export default function AtencionUsuarioPage() {
             </h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800">
-                <h3 className="text-2xl font-bold text-blue-800 dark:text-blue-300 mb-6 text-center">
+              <div className="bg-blue-50 dark:bg-gray-800 rounded-lg p-8 border border-blue-200 dark:border-white">
+                <h3 className="text-2xl font-bold text-blue-800 dark:text-white mb-6 text-center">
                   📋 Sus Derechos
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                    <span className="text-blue-700 dark:text-blue-200">
+                    <span className="text-blue-600 dark:text-white mr-2">
+                      ✓
+                    </span>
+                    <span className="text-blue-700 dark:text-white">
                       Recibir atención de calidad sin discriminación
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                    <span className="text-blue-700 dark:text-blue-200">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">
+                      ✓
+                    </span>
+                    <span className="text-blue-700 dark:text-white">
                       Ser informado sobre su estado de salud
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                    <span className="text-blue-700 dark:text-blue-200">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">
+                      ✓
+                    </span>
+                    <span className="text-blue-700 dark:text-white">
                       Confidencialidad de su información médica
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                    <span className="text-blue-700 dark:text-blue-200">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">
+                      ✓
+                    </span>
+                    <span className="text-blue-700 dark:text-white">
                       Participar en decisiones sobre su tratamiento
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                    <span className="text-blue-700 dark:text-blue-200">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">
+                      ✓
+                    </span>
+                    <span className="text-blue-700 dark:text-white">
                       Recibir atención culturalmente apropiada
                     </span>
                   </li>
+
                   <li className="flex items-start">
-                    <span className="text-blue-600 dark:text-blue-400 mr-2">✓</span>
-                    <span className="text-blue-700 dark:text-blue-200">
+                    <span className="text-blue-600 dark:text-blue-400 mr-2">
+                      ✓
+                    </span>
+                    <span className="text-blue-700 dark:text-white">
                       Presentar peticiones, quejas y reclamos
                     </span>
                   </li>
                 </ul>
               </div>
 
-              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800">
-                <h3 className="text-2xl font-bold text-green-800 dark:text-green-300 mb-6 text-center">
+              <div className="bg-green-50 dark:bg-gray-800 rounded-lg p-8 border border-green-200 dark:border-white">
+                <h3 className="text-2xl font-bold text-green-800 dark:text-white mb-6 text-center">
                   🤝 Sus Deberes
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
-                    <span className="text-green-700 dark:text-green-200">
+                    <span className="text-green-600 dark:text-green-400 mr-2">
+                      •
+                    </span>
+                    <span className="text-green-700 dark:text-white">
                       Proporcionar información veraz sobre su salud
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
-                    <span className="text-green-700 dark:text-green-200">
+                    <span className="text-green-600 dark:text-green-400 mr-2">
+                      •
+                    </span>
+                    <span className="text-green-700 dark:text-white">
                       Cumplir con los tratamientos prescritos
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
-                    <span className="text-green-700 dark:text-green-200">
+                    <span className="text-green-600 dark:text-green-400 mr-2">
+                      •
+                    </span>
+                    <span className="text-green-700 dark:text-white">
                       Respetar al personal y otros pacientes
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
-                    <span className="text-green-700 dark:text-green-200">
+                    <span className="text-green-600 dark:text-green-400 mr-2">
+                      •
+                    </span>
+                    <span className="text-green-700 dark:text-white">
                       Asistir puntualmente a las citas
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
-                    <span className="text-green-700 dark:text-green-200">
+                    <span className="text-green-600 dark:text-green-400 mr-2">
+                      •
+                    </span>
+                    <span className="text-green-700 dark:text-white">
                       Cuidar las instalaciones y equipos
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-green-600 dark:text-green-400 mr-2">•</span>
-                    <span className="text-green-700 dark:text-green-200">
+                    <span className="text-green-600 dark:text-green-400 mr-2">
+                      •
+                    </span>
+                    <span className="text-green-700 dark:text-white">
                       Seguir las normas de bioseguridad
                     </span>
                   </li>

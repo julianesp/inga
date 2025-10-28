@@ -132,7 +132,10 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
   };
 
   return (
-    <section id="atencion-usuario" className="py-16 bg-white">
+    <section
+      id="atencion-usuario"
+      className="py-16 bg-white dark:bg-gray-800 border dark:border-white rounded-3xl"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Atención al Usuario
@@ -141,7 +144,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Información de contacto */}
           <div>
-            <div className="bg-green-50 rounded-lg p-8 mb-8">
+            <div className="bg-green-50 rounded-lg p-8 mb-8 dark:bg-gray-800 border dark:border-white">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
                 Información de Contacto
               </h3>
@@ -162,12 +165,12 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                     />
                   </svg>
                   <div>
-                    <p className="font-semibold text-gray-800">
+                    <p className="font-semibold text-gray-800 dark:text-white">
                       Correo Institucional
                     </p>
                     <Link
                       href="mailto:ipsingakamentsa@gmail.com"
-                      className="text-green-600 hover:underline"
+                      className="text-green-600 hover:underline dark:text-white"
                     >
                       ipsingakamentsa@gmail.com
                     </Link>
@@ -189,12 +192,12 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                     />
                   </svg>
                   <div>
-                    <p className="font-semibold text-gray-800">
+                    <p className="font-semibold text-gray-800 dark:text-white">
                       Línea Principal
                     </p>
                     <Link
                       href="tel:3132863398"
-                      className="text-green-600 hover:underline"
+                      className="text-green-600 hover:underline dark:text-whicte"
                     >
                       3132863398
                     </Link>
@@ -204,11 +207,11 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
             </div>
 
             {/* Asociación de Usuarios */}
-            <div className="bg-blue-50 rounded-lg p-8">
+            <div className="bg-blue-50 rounded-lg p-8 dark:bg-gray-800 border dark:border-white">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
                 Asociación de Usuarios
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 dark:text-white">
                 La Asociación de Usuarios de la IPS INGA KAMËNTSÁ representa los
                 intereses y derechos de nuestros usuarios, velando por la
                 calidad y accesibilidad de los servicios de salud.
@@ -217,18 +220,18 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
               <div className="space-y-4">
                 {asociacionUsuarios.map((miembro, index) => (
                   <div key={index} className="border-l-4 border-blue-400 pl-4">
-                    <h4 className="font-semibold text-gray-800">
+                    <h4 className="font-semibold text-gray-800 dark:text-white">
                       {miembro.nombre}
                     </h4>
-                    <p className="text-sm text-gray-600 mb-1">
+                    <p className="text-sm text-gray-600 mb-1 dark:text-white">
                       {miembro.cargo}
                     </p>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-white">
                       Tel: {miembro.telefono}
                     </p>
                     <Link
                       href={`mailto:${miembro.email}`}
-                      className="text-sm text-blue-600 hover:underline"
+                      className="text-sm text-blue-600 hover:underline dark:text-white"
                     >
                       {miembro.email}
                     </Link>
@@ -240,11 +243,11 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
 
           {/* PQRSF */}
           <div>
-            <div className="bg-gray-50 rounded-lg p-8">
+            <div className="bg-gray-50 rounded-lg p-8 dark:bg-gray-800 border dark:border-white">
               <h3 className="text-2xl font-bold text-gray-800 mb-6">
                 Gestión PQRSF
               </h3>
-              <p className="text-gray-600 mb-6">
+              <p className="text-gray-600 mb-6 dark:text-white">
                 Peticiones, Quejas, Reclamos, Sugerencias y Felicitaciones. Su
                 opinión es importante para mejorar nuestros servicios.
               </p>
@@ -253,7 +256,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                 <div className="text-center">
                   <button
                     onClick={() => setShowForm(true)}
-                    className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700 transition-colors font-semibold"
+                    className="bg-green-600 text-white px-8 py-4 rounded-lg hover:bg-green-700  font-semibold border dark:border-white hover:scale-90 duration-300 transition-all"
                   >
                     Enviar PQRSF
                   </button>
