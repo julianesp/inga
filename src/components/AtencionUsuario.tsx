@@ -15,33 +15,6 @@ interface PQRSF {
   descripcion: string;
 }
 
-const asociacionUsuarios = [
-  {
-    nombre: "Colocar nombre",
-    cargo: "Empleado de la Asociación",
-    telefono: "3132863398",
-    email: "ipsingakamentsa@gmail.com",
-  },
-  {
-    nombre: "Colocar nombre",
-    cargo: "Empleado de la Asociación",
-    telefono: "3132863398",
-    email: "ipsingakamentsa@gmail.com",
-  },
-  {
-    nombre: "Colocar nombre",
-    cargo: "Empleado de la Asociación",
-    telefono: "3132863398",
-    email: "ipsingakamentsa@gmail.com",
-  },
-  {
-    nombre: "Colocar nombre",
-    cargo: "Secretaria",
-    telefono: "3132863398",
-    email: "ipsingakamentsa@gmail.com",
-  },
-];
-
 export default function AtencionUsuario() {
   const [formData, setFormData] = useState<PQRSF>({
     tipo: "",
@@ -203,40 +176,6 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                     </Link>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            {/* Asociación de Usuarios */}
-            <div className="bg-blue-50 rounded-lg p-8 dark:bg-gray-800 border dark:border-white">
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">
-                Asociación de Usuarios
-              </h3>
-              <p className="text-gray-600 mb-6 dark:text-white">
-                La Asociación de Usuarios de la IPS INGA KAMËNTSÁ representa los
-                intereses y derechos de nuestros usuarios, velando por la
-                calidad y accesibilidad de los servicios de salud.
-              </p>
-
-              <div className="space-y-4">
-                {asociacionUsuarios.map((miembro, index) => (
-                  <div key={index} className="border-l-4 border-blue-400 pl-4">
-                    <h4 className="font-semibold text-gray-800 dark:text-white">
-                      {miembro.nombre}
-                    </h4>
-                    <p className="text-sm text-gray-600 mb-1 dark:text-white">
-                      {miembro.cargo}
-                    </p>
-                    <p className="text-sm text-gray-600 dark:text-white">
-                      Tel: {miembro.telefono}
-                    </p>
-                    <Link
-                      href={`mailto:${miembro.email}`}
-                      className="text-sm text-blue-600 hover:underline dark:text-white"
-                    >
-                      {miembro.email}
-                    </Link>
-                  </div>
-                ))}
               </div>
             </div>
           </div>

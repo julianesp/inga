@@ -216,6 +216,63 @@ export default function InstitucionalPage() {
         </div>
       </section>
 
+      {/* Asociación de Usuarios */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+              Asociación de Usuarios
+            </h2>
+
+            <div className="bg-blue-50 rounded-lg p-8 dark:bg-gray-800 border dark:border-white">
+              <p className="text-gray-600 mb-8 text-center dark:text-white">
+                La Asociación de Usuarios de la IPS INGA KAMËNTSÁ representa los
+                intereses y derechos de nuestros usuarios, velando por la
+                calidad y accesibilidad de los servicios de salud.
+              </p>
+
+              <div className="space-y-6">
+                <div className="border-l-4 border-blue-400 pl-6 py-4 bg-white dark:bg-gray-700 rounded-r-lg">
+                  <h4 className="font-semibold text-lg text-gray-800 dark:text-white">
+                    Marcos Camilo Castro Caicedo
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Doctor - Sede Santiago
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-blue-400 pl-6 py-4 bg-white dark:bg-gray-700 rounded-r-lg">
+                  <h4 className="font-semibold text-lg text-gray-800 dark:text-white">
+                    Jose Victor Perez
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Doctor - Sede Colón
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-blue-400 pl-6 py-4 bg-white dark:bg-gray-700 rounded-r-lg">
+                  <h4 className="font-semibold text-lg text-gray-800 dark:text-white">
+                    María Camila Ruales Ceballos
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Odontóloga - Sede Santiago
+                  </p>
+                </div>
+
+                <div className="border-l-4 border-blue-400 pl-6 py-4 bg-white dark:bg-gray-700 rounded-r-lg">
+                  <h4 className="font-semibold text-lg text-gray-800 dark:text-white">
+                    María Fernanda Moreno Guerra
+                  </h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-300">
+                    Odontóloga - Sede Sibundoy
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">

@@ -52,7 +52,9 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 ml-4 mr-4 mt-7 bg-gray-100 dark:bg-gray-800 border rounded-">
-        <h1 className="text-3xl font-bold my-4 dark:text-white">Consulta médica</h1>
+        <h1 className="text-3xl font-bold my-4 dark:text-white">
+          Consulta médica
+        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
           <div className="w-full px-0 md:px-2">
@@ -101,6 +103,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <PresentacionCarousel/>
 
       <HealthInfoSection />
 

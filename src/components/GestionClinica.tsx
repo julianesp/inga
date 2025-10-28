@@ -12,13 +12,7 @@ export default function GestionClinica() {
     },
     {
       categoria: "Cuidados Específicos",
-      contenido: [
-        "Cuidado prenatal y postnatal",
-        "Lactancia materna",
-        "Crecimiento y desarrollo infantil",
-        "Cuidados del adulto mayor",
-        "Manejo de enfermedades crónicas",
-      ],
+      contenido: ["Manejo de enfermedades crónicas"],
     },
 
     {

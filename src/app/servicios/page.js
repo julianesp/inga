@@ -50,15 +50,19 @@ export default function ServiciosPage() {
                     <li>• Certificados médicos</li>
                   </ul>
                 </div>
+              </div>
+            </div>
 
+            {/* Medicina tradicional */}
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800">
+              <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-300 mb-6 text-center">
+                🌿 Medicina tradicional
+              </h2>
+
+              <div className="space-y-6">
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
-                    Atención domiciliaria
-                  </h3>
                   <ul className="space-y-2 text-gray-900 dark:text-gray-300">
-                    <li>• Sibundoy: 2 visitas mensuales</li>
-                    <li>• Santiago: 2 visitas mensuales</li>
-                    <li>• Colón: 1 visita domiciliaria</li>
+                    <li>Atenciones individuales y grupales</li>
                   </ul>
                 </div>
               </div>
@@ -90,20 +94,23 @@ export default function ServiciosPage() {
                   <ul className="list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-300">
                     <li>Valoración odontológica</li>
                     <li>Educación en salud oral</li>
-                    <li>Aplicación de flúor</li>
-                    <li>Sellantes dentales</li>
-                    <li>Control periódico</li>
                   </ul>
                 </div>
+              </div>
+            </div>
 
-                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
-                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
-                    Atención domiciliaria
-                  </h3>
-                  <ul className="space-y-2 text-gray-900 dark:text-gray-300">
-                    <li>• Sibundoy: 2 visitas mensuales</li>
-                    <li>• Santiago: 2 visitas mensuales</li>
-                    <li>• Colón: 1 visita domiciliaria</li>
+            <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800 ">
+              <h2 className="text-3xl font-bold text-green-800 dark:text-green-300 mb-6 text-center">
+                💊 Servicio farmacéutico
+              </h2>
+
+              <div className="space-y-6 ">
+                <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md ">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-300">
+                    <li>
+                      Dispensación de medicamentos incluidos en el plan de salud
+                    </li>
+                    <li>Servicio de mediana y baja complejidad</li>
                   </ul>
                 </div>
               </div>
@@ -111,70 +118,26 @@ export default function ServiciosPage() {
           </div>
 
           {/* Información para solicitar visita - Span completo */}
-          <div className="mt-12 max-w-6xl mx-auto">
+          <div className="mt-12 max-w-3xl mx-auto dark:border-white border rounded-lg">
             <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 text-center">
-                Información para solicitar visita
+                Información para solicitar visita médica domiciliaria a usuarios
+                afiliados a EPS MALLAMAS
               </h3>
-              <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed text-center max-w-3xl mx-auto">
-                Enviar información relevante: nombres completos del paciente y
-                familiares, contacto telefónico y relación con el paciente.
-                Estos datos permiten coordinar la atención domiciliaria de forma
-                eficiente.
+              <h4 className="text-black dark:text-white text-lg leading-relaxed text-left max-w-3xl mx-auto">
+                Gestionar y enviar datos relevantes como:
+              </h4>
+              <ul className="list-disc pl-8 space-y-2 text-black dark:text-white">
+                <li>Nombre completo del paciente</li>
+                <li>Número de identificación</li>
+                <li>Datos de familiares y/o adulto responsable</li>
+                <li>Contacto telefónico</li>
+                <li>Tipo de parentesco con el usuario</li>
+              </ul>
+
+              <p className="flex items-center justify-center m-auto h-10 w-9/12 mt-6 text-center border border-black rounded-lg bg-black text-white dark:bg-white dark:text-black">
+                Esta información es importante para brindar un oportuno servicio
               </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Programas Especiales */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
-            Programas Especiales
-          </h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
-              <div className="text-4xl mb-4">👶</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
-                Programa Materno Infantil
-              </h3>
-              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1 text-left">
-                <li>• Control prenatal</li>
-                <li>• Atención del parto</li>
-                <li>• Control de crecimiento y desarrollo</li>
-                <li>• Programa de vacunación</li>
-                <li>• Lactancia materna</li>
-              </ul>
-            </div>
-
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
-              <div className="text-4xl mb-4">🏃‍♂️</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
-                Promoción y Prevención
-              </h3>
-              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1 text-left">
-                <li>• Jornadas de salud comunitaria</li>
-                <li>• Educación en salud</li>
-                <li>• Prevención de enfermedades</li>
-                <li>• Estilos de vida saludable</li>
-                <li>• Saneamiento básico</li>
-              </ul>
-            </div>
-
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
-              <div className="text-4xl mb-4">👴</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
-                Atención Domiciliaria
-              </h3>
-              <ul className="text-gray-600 dark:text-gray-300 text-sm space-y-1 text-left">
-                <li>• Visitas médicas domiciliarias</li>
-                <li>• Cuidado de pacientes crónicos</li>
-                <li>• Atención a adultos mayores</li>
-                <li>• Rehabilitación en el hogar</li>
-                <li>• Cuidados paliativos</li>
-              </ul>
             </div>
           </div>
         </div>

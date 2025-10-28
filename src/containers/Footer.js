@@ -74,11 +74,15 @@ export default function Footer() {
                   <span className="text-white font-bold">IK</span>
                 </div> */}
 
+                <Link href="/" title="Ir a inicio">
                   <Image
-                  alt="Logo IPS Inga Kamentsá"
-                  width={40}
-                  height={40}
+                    alt="Logo IPS Inga Kamentsá"
+                    width={40}
+                    height={40}
+                    src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
+                    className="rounded-full"
                   />
+                </Link>
 
                 <div>
                   <h3 className="text-lg font-bold">IPS INGA KAMËNTSÁ</h3>
@@ -87,10 +91,10 @@ export default function Footer() {
                   </p>
                 </div>
               </div>
-              <p className="text-white dark:text-gray-400 mb-4">
-                Institución Prestadora de Servicios de Salud comprometida con el
-                bienestar de la comunidad indígena Inga Kamëntsá en el Valle de
-                Sibundoy, Putumayo.
+              <p className="text-white dark:text-white mb-4">
+                Institución prestadora de servicios de salud, comprometida con
+                la salud y el bienestar de la comunidad indígena Inga Kamentsa
+                en el Alto Putumayo
               </p>
               <div className="text-sm text-gray-400 dark:text-gray-500">
                 <p className="text-white">NIT: 846001214-3</p>
@@ -314,15 +318,18 @@ export default function Footer() {
                 <h5 className="font-semibold text-green-400 dark:text-green-500">
                   Sede Santiago
                 </h5>
+                <p className="text-gray-300 dark:text-white">
+                  Barrio Nazareth
+                </p>
                 <p className="text-gray-300 dark:text-gray-400">
-                  Sede Nazareth
+                  Calle 6 Carrera 5 - 6
                 </p>
               </div>
               <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
                 <h5 className="font-semibold text-green-400 dark:text-green-500">
                   Sede San Andrés
                 </h5>
-                <p className="text-gray-300 dark:text-gray-400">
+                <p className="text-gray-300 dark:text-white">
                   Chorro San Jose
                 </p>
               </div>
