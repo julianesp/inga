@@ -8,6 +8,7 @@ export default function InformacionInstitucional() {
     "Atención Domiciliaria",
     "Consulta Externa",
     "Procedimientos Menores",
+    "Medicina tradicional"
   ];
 
   return (
