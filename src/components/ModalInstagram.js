@@ -44,7 +44,7 @@ export default function ModalInstagram() {
             {/* Botón que abre el modal */}
             <button
                 onClick={openModal}
-                className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700 transition-colors cursor-pointer"
+                className="bg-pink-600 text-white p-3 rounded-lg hover:bg-pink-700  cursor-pointer dark:bg-gray-800 border dark:border-white duration-300 transition-all hover:scale-90"
             >
                 Instagram
             </button>

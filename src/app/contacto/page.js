@@ -48,7 +48,7 @@ export default function ContactoPage() {
                 href="https://wa.me/573132863398"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors inline-block"
+                className="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700  inline-block dark:bg-gray-800 border dark:border-white transition-all duration-300 hover:scale-90"
               >
                 Escribir por WhatsApp
               </Link>
@@ -64,7 +64,7 @@ export default function ContactoPage() {
               </p>
               <Link
                 href="mailto:ipsingakamentsa@gmail.com"
-                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors inline-block"
+                className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700  inline-block dark:bg-gray-800 border dark:border-white transition-all duration-300 hover:scale-90"
               >
                 Enviar Email
               </Link>
@@ -89,7 +89,7 @@ export default function ContactoPage() {
                   }
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700  dark:bg-gray-800 border dark:border-white hover:scale-90 transition-all duration-300"
                 >
                   Facebook
                 </Link>
@@ -110,8 +110,8 @@ export default function ContactoPage() {
             </h2>
 
             <div className="flex justify-center">
-              <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800 w-3/5">
-                <h3 className="text-xl font-bold text-green-800 dark:text-green-300 mb-4">
+              <div className="bg-green-50 dark:bg-gray-800 rounded-lg p-8 border border-green-200 dark:border-white border w-3/5">
+                <h3 className="text-xl font-bold text-green-800 dark:text-white mb-4">
                   📅 Días Hábiles
                 </h3>
                 <div className="space-y-3">
@@ -119,37 +119,29 @@ export default function ContactoPage() {
                     <span className="font-semibold text-black dark:text-white">
                       Lunes a Viernes:
                     </span>
-                    <span className="text-black dark:text-gray-300">
+                    <span className="text-black dark:text-white">
                       8:00 AM - 5:00 PM
                     </span>
                   </div>
-                  <div className="flex justify-between">
-                    <span className="font-semibold text-black dark:text-white">
-                      Sábados:
-                    </span>
-                    <span className="text-black dark:text-gray-300">
-                      8:00 AM - 12:00 PM
-                    </span>
-                  </div>
-                  <p className="text-sm text-green-700 dark:text-green-300 mt-4">
-                    * Los sábados solo en sedes de Sibundoy y Colón (ejemplo)
+                  <p className="text-sm text-green-700 dark:text-white text-center border dark:border-white rounded-lg w-4/5 mx-auto p-2 dark:hover:bg-white dark:hover:text-black">
+                    No hay atención el fin de semana
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800 text-center">
-              <h3 className="text-xl font-bold text-blue-800 dark:text-blue-300 mb-4">
+            <div className="mt-8 bg-blue-50 dark:bg-gray-800 rounded-lg p-8 border border-blue-200 dark:border-white text-center">
+              <h3 className="text-xl font-bold text-blue-800 dark:text-white mb-4">
                 💡 Recomendaciones para su Visita
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
-                <ul className="space-y-2 text-blue-700 dark:text-blue-300">
+                <ul className="space-y-2 text-blue-700 dark:text-white">
                   <li>• Llegue 15 minutos antes de su cita</li>
                   <li>• Traiga documento de identidad</li>
                   <li>• Porte su carné de afiliación a salud</li>
                   <li>• Traiga exámenes médicos previos</li>
                 </ul>
-                <ul className="space-y-2 text-blue-700 dark:text-blue-300">
+                <ul className="space-y-2 text-blue-700 dark:text-white">
                   <li>• Use tapabocas en todas las áreas</li>
                   <li>• Mantenga distanciamiento social</li>
                   <li>• Informe síntomas respiratorios</li>

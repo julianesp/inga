@@ -6,7 +6,6 @@ import Link from "next/link";
 interface ContactoSede {
   id: string;
   nombre: string;
-  municipio: string;
   direccion: string;
   telefono: string;
   email: string;
@@ -21,41 +20,37 @@ const contactoSedes: ContactoSede[] = [
   {
     id: "sibundoy",
     nombre: "Sede Principal Sibundoy",
-    municipio: "Sibundoy, Putumayo",
-    direccion: "Calle 15 # 15 - 69",
+    direccion: "Diagonal al mercado municipal",
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
-    horarios: "Lunes a Viernes: 7:00 AM - 5:00 PM\nSábados: 8:00 AM - 12:00 PM",
+    horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM\nSábados: no disponible",
     coordenadas: { lat: 1.2025376, lng: -76.9180384 },
   },
   {
     id: "colon",
     nombre: "Sede Colón",
-    municipio: "Colón, Putumayo",
-    direccion: "Carrera 5 #67-89, Barrio Centro",
+    direccion: "Barrio Centro - Cerca al Centro Cultural",
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
-    horarios: "Lunes a Viernes: 8:00 AM - 4:00 PM\nSábados: 8:00 AM - 12:00 PM",
+    horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM\nSábados: no disponible",
     coordenadas: { lat: 1.189163, lng: -76.975512 },
   },
   {
     id: "santiago",
     nombre: "Sede Santiago",
-    municipio: "Santiago, Putumayo",
-    direccion: "Calle 12 #34-56, Zona Centro",
+    direccion: "Sede Nazareth",
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
-    horarios: "Lunes a Viernes: 8:00 AM - 4:00 PM",
+    horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM",
     coordenadas: { lat: 1.1889, lng: -76.8975 },
   },
   {
     id: "san-andres",
     nombre: "Sede San Andrés",
-    municipio: "San Andrés, Putumayo",
-    direccion: "Avenida Central #78-90, Centro",
+    direccion: "Chorro San Jose",
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
-    horarios: "Lunes a Viernes: 8:00 AM - 4:00 PM",
+    horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM",
     coordenadas: { lat: 1.2156, lng: -76.8567 },
   },
 ];
@@ -167,31 +162,30 @@ export default function ContactoSedes() {
 
   return (
     <>
-      <section id="contacto" className="py-16 bg-white">
+      <section id="contacto" className="py-16 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
             Contactos y Sedes
           </h2>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
             {/* Lista de sedes */}
-            <div className="lg:col-span-1">
-              <h3 className="text-xl font-bold text-gray-800 mb-4">
+            <div className="lg:col-span-1 dark:border-white border p-6 rounded-lg shadow-lg ">
+              <h3 className="text-xl font-bold text-gray-800 mb-4 ">
                 Seleccionar Sede
               </h3>
-              <div className="space-y-3">
+              <div className="space-y-3 ">
                 {contactoSedes.map((sede) => (
                   <button
                     key={sede.id}
                     onClick={() => setSelectedSede(sede.id)}
-                    className={`w-full text-left p-4 rounded-lg transition-colors ${
+                    className={`w-full text-left p-4 rounded-lg transition-colors border dark:border-white ${
                       selectedSede === sede.id
-                        ? "bg-green-600 text-white shadow-lg"
-                        : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                        ? "bg-green-600 text-white dark:bg-white dark:text-gray-900 shadow-lg"
+                        : "bg-gray-100 hover:bg-gray-200 text-gray-700 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200"
                     }`}
                   >
                     <div className="font-semibold">{sede.nombre}</div>
-                    <div className="text-sm opacity-90">{sede.municipio}</div>
                   </button>
                 ))}
               </div>
@@ -208,14 +202,14 @@ export default function ContactoSedes() {
             </div>
 
             {/* Información de la sede seleccionada */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 dark:bg-gray-800">
               {selectedSedeData && (
-                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8 shadow-lg">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6">
+                <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8 shadow-lg dark:from-gray-700 dark:to-gray-800 border dark:border-white">
+                  <h3 className="text-2xl font-bold text-gray-800 mb-6 ">
                     {selectedSedeData.nombre}
                   </h3>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 ">
                     <div className="space-y-4">
                       <div className="flex items-start">
                         <svg
@@ -238,14 +232,11 @@ export default function ContactoSedes() {
                           />
                         </svg>
                         <div>
-                          <p className="font-semibold text-gray-800">
+                          <p className="font-semibold text-gray-800 dark:text-white">
                             Dirección
                           </p>
-                          <p className="text-gray-600">
+                          <p className="text-gray-600 dark:text-white">
                             {selectedSedeData.direccion}
-                          </p>
-                          <p className="text-gray-600">
-                            {selectedSedeData.municipio}
                           </p>
                         </div>
                       </div>
@@ -265,12 +256,12 @@ export default function ContactoSedes() {
                           />
                         </svg>
                         <div>
-                          <p className="font-semibold text-gray-800">
+                          <p className="font-semibold text-gray-800 dark:text-white">
                             Teléfono
                           </p>
                           <Link
                             href={`tel:${selectedSedeData.telefono}`}
-                            className="text-green-600 hover:underline"
+                            className="text-green-600 hover:underline dark:text-white"
                           >
                             {selectedSedeData.telefono}
                           </Link>
@@ -292,12 +283,12 @@ export default function ContactoSedes() {
                           />
                         </svg>
                         <div>
-                          <p className="font-semibold text-gray-800">
+                          <p className="font-semibold text-gray-800 dark:text-white">
                             Correo Electrónico
                           </p>
                           <Link
                             href={`mailto:${selectedSedeData.email}`}
-                            className="text-green-600 hover:underline"
+                            className="text-green-600 hover:underline dark:text-white"
                           >
                             {selectedSedeData.email}
                           </Link>
@@ -321,10 +312,10 @@ export default function ContactoSedes() {
                           />
                         </svg>
                         <div>
-                          <p className="font-semibold text-gray-800 mb-2">
+                          <p className="font-semibold text-gray-800 mb-2 dark:text-white">
                             Horarios de Atención
                           </p>
-                          <div className="text-gray-600 whitespace-pre-line">
+                          <div className="text-gray-600 whitespace-pre-line dark:text-white">
                             {selectedSedeData.horarios}
                           </div>
                         </div>
