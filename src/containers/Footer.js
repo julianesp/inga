@@ -64,14 +64,22 @@ export default function Footer() {
           }
         }
       `}</style>
+
       <footer className="bg-gray-800 text-white dark:bg-gray-900 transition-colors duration-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             <div className="col-span-1 lg:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                {/* <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
                   <span className="text-white font-bold">IK</span>
-                </div>
+                </div> */}
+
+                  <Image
+                  alt="Logo IPS Inga Kamentsá"
+                  width={40}
+                  height={40}
+                  />
+
                 <div>
                   <h3 className="text-lg font-bold">IPS INGA KAMËNTSÁ</h3>
                   <p className="text-sm text-gray-300 dark:text-gray-400">
@@ -89,7 +97,6 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* Enlaces rápidos */}
             <div>
               <h4 className="text-lg font-semibold mb-4">Enlaces Rápidos</h4>
               <ul className="space-y-2">
@@ -152,7 +159,102 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Contacto */}
+            {/* Horarios de atención */}
+            <div>
+              <h4 className="text-lg font-semibold mb-4">
+                Horarios de Atención
+              </h4>
+              {/* <ul className="space-y-2">
+                <li>
+                  <Link
+                    href="/institucional"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Institucional
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/servicios"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Servicios
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/sedes"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Sedes
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/directorio"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Directorio Médico
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/eventos"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Eventos
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/atencion-usuario"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Atención al Usuario
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contacto"
+                    className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                  >
+                    Contacto
+                  </Link>
+                </li>
+              </ul> */}
+              <p className="text-gray-300 dark:text-gray-400">
+                Lunes a Viernes:
+              </p>
+              <p className="text-gray-300 dark:text-gray-400">
+                8:00 AM - 5:00 PM
+              </p>
+
+              <div className="mt-4">
+                <h4 className="text-lg font-semibold mb-2">Redes Sociales</h4>
+                <ul className="space-y-2">
+                  <li>
+                    <Link
+                      href="https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy?locale=es_LA"
+                      className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Facebook
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://wa.me/573132863398"
+                      className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      WhatsApp
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
             <div>
               <h4 className="text-lg font-semibold mb-4">Contacto</h4>
               <div className="space-y-3 text-gray-300 dark:text-gray-400">

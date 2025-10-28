@@ -51,6 +51,57 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 ml-4 mr-4 mt-7 bg-gray-100 dark:bg-gray-800 border rounded-">
+        <h1 className="text-3xl font-bold my-4 dark:text-white">Consulta médica</h1>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
+          <div className="w-full px-0 md:px-2">
+            <ImageCarousel
+              images={[
+                {
+                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/1.jpeg",
+                  alt: "Image 1",
+                  description: "Servicios en la sede de Sibundoy",
+                },
+              ]}
+            />
+          </div>
+          <div className="w-full px-0 md:px-2">
+            <ImageCarousel
+              images={[
+                {
+                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/2.jpeg",
+                  alt: "Image 2",
+                  description: "Servicios en la sede de Santiago",
+                },
+              ]}
+            />
+          </div>
+          <div className="w-full px-0 md:px-2">
+            <ImageCarousel
+              images={[
+                {
+                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/3.jpeg",
+                  alt: "Image 3",
+                  description: "Servicios en la sede de Colón",
+                },
+              ]}
+            />
+          </div>
+          <div className="w-full px-0 md:px-2">
+            <ImageCarousel
+              images={[
+                {
+                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/4.jpeg",
+                  alt: "Image 4",
+                  description: "Servicios en la sede de Chorro San José",
+                },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
       <HealthInfoSection />
 
       {/* Hero Section */}

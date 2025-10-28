@@ -154,15 +154,13 @@ export default function ImageCarousel({ images, title, description }) {
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <h3 className="text-xl font-bold text-gray-800 mb-3 dark:text-black">
+      <div className="p-6 dark:bg-gray-800 border dark:border-b-white dark:border-b-4 ">
+        <h3 className="text-xl font-bold text-black mb-3 dark:text-white">
           {title}
         </h3>
-        <p className="text-gray-900 leading-relaxed">
-          {description}
-        </p>
+        <p className="text-gray-900 leading-relaxed dark:text-white">{description}</p>
         {images[currentImage].description && (
-          <p className="text-sm text-gray-500 mt-3 italic">
+          <p className="text-sm text-black mt-3 italic dark:text-white">
             {images[currentImage].description}
           </p>
         )}
