@@ -58,7 +58,7 @@ const eventos: Evento[] = [
       "La comunidad está invitada a la brigada de salud en veredas rurales, donde se ofrecerán servicios médicos y odontológicos gratuitos.",
     sede: "San Andrés",
     registro: false,
-  }
+  },
 ];
 
 const anuncios = [
@@ -355,7 +355,9 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
                       </div>
                     </div>
 
-                    <p className="text-gray-600 mb-4 dark:text-white">{evento.descripcion}</p>
+                    <p className="text-gray-600 mb-4 dark:text-white">
+                      {evento.descripcion}
+                    </p>
 
                     {evento.registro && (
                       <button

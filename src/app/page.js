@@ -13,10 +13,19 @@ export default function Home() {
       <PresentacionCarousel />
 
       <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 bg-gray-100 dark:bg-gray-800">
-        <h1 className="text-3xl font-bold my-4 dark:text-white" data-aos="fade-down">Servicios</h1>
+        <h1
+          className="text-3xl font-bold my-4 dark:text-white"
+          data-aos="fade-down"
+        >
+          Servicios
+        </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
-          <div className="w-full px-0 md:px-2" data-aos="fade-right" data-aos-delay="100">
+          <div
+            className="w-full px-0 md:px-2"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <ImageCarousel
               images={[
                 {
@@ -27,7 +36,11 @@ export default function Home() {
               ]}
             />
           </div>
-          <div className="w-full px-0 md:px-2" data-aos="fade-up" data-aos-delay="200">
+          <div
+            className="w-full px-0 md:px-2"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <ImageCarousel
               images={[
                 {
@@ -38,7 +51,11 @@ export default function Home() {
               ]}
             />
           </div>
-          <div className="w-full px-0 md:px-2" data-aos="fade-left" data-aos-delay="300">
+          <div
+            className="w-full px-0 md:px-2"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <ImageCarousel
               images={[
                 {
@@ -53,12 +70,19 @@ export default function Home() {
       </section>
 
       <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 ml-4 mr-4 mt-7 bg-gray-100 dark:bg-gray-800 border rounded-">
-        <h1 className="text-3xl font-bold my-4 dark:text-white" data-aos="zoom-in">
+        <h1
+          className="text-3xl font-bold my-4 dark:text-white"
+          data-aos="zoom-in"
+        >
           Consulta médica
         </h1>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
-          <div className="w-full px-0 md:px-2" data-aos="flip-left" data-aos-delay="100">
+          <div
+            className="w-full px-0 md:px-2"
+            data-aos="flip-left"
+            data-aos-delay="100"
+          >
             <ImageCarousel
               images={[
                 {
@@ -69,7 +93,11 @@ export default function Home() {
               ]}
             />
           </div>
-          <div className="w-full px-0 md:px-2" data-aos="flip-left" data-aos-delay="200">
+          <div
+            className="w-full px-0 md:px-2"
+            data-aos="flip-left"
+            data-aos-delay="200"
+          >
             <ImageCarousel
               images={[
                 {
@@ -80,7 +108,11 @@ export default function Home() {
               ]}
             />
           </div>
-          <div className="w-full px-0 md:px-2" data-aos="flip-left" data-aos-delay="300">
+          <div
+            className="w-full px-0 md:px-2"
+            data-aos="flip-left"
+            data-aos-delay="300"
+          >
             <ImageCarousel
               images={[
                 {
@@ -91,7 +123,11 @@ export default function Home() {
               ]}
             />
           </div>
-          <div className="w-full px-0 md:px-2" data-aos="flip-left" data-aos-delay="400">
+          <div
+            className="w-full px-0 md:px-2"
+            data-aos="flip-left"
+            data-aos-delay="400"
+          >
             <ImageCarousel
               images={[
                 {
@@ -107,10 +143,17 @@ export default function Home() {
 
       {/* Carrusel rotativo de imágenes */}
       <section className="py-8 px-4 md:px-8">
-        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white" data-aos="fade-up">
+        <h2
+          className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
+          data-aos="fade-up"
+        >
           Galería de Imágenes
         </h2>
-        <div className="max-w-5xl mx-auto" data-aos="zoom-in" data-aos-delay="200">
+        <div
+          className="max-w-5xl mx-auto"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
           <RotatingCarousel
             images={[
               {
@@ -157,17 +200,32 @@ export default function Home() {
         <div className="absolute inset-0 bg-black opacity-20 dark:opacity-40"></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-down">
+            <h1
+              className="text-5xl md:text-6xl font-bold mb-6"
+              data-aos="fade-down"
+            >
               Bienvenidos a la IPS Inga Kamentsa
             </h1>
-            <p className="text-xl md:text-2xl mb-8 opacity-90" data-aos="fade-up" data-aos-delay="100">
+            <p
+              className="text-xl md:text-2xl mb-8 opacity-90"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               Tu salud es nuestra prioridad
             </p>
-            <p className="text-lg mb-8 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+            <p
+              className="text-lg mb-8 leading-relaxed"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               Ofrecemos servicios de salud integral con atención médica y
               odontológica de calidad para toda la comunidad
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="zoom-in" data-aos-delay="300">
+            <div
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
               <Link
                 href="/sedes"
                 className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
@@ -189,10 +247,17 @@ export default function Home() {
       </section>
 
       <section className="py-8 px-4 md:px-8">
-        <h2 className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white" data-aos="fade-down">
+        <h2
+          className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
+          data-aos="fade-down"
+        >
           Nuestra IPS
         </h2>
-        <div className="max-w-5xl mx-auto" data-aos="flip-right" data-aos-delay="200">
+        <div
+          className="max-w-5xl mx-auto"
+          data-aos="flip-right"
+          data-aos-delay="200"
+        >
           <RotatingCarousel
             images={[
               {
@@ -237,11 +302,18 @@ export default function Home() {
       {/* Services Preview */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white" data-aos="fade-up">
+          <h2
+            className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"
+            data-aos="fade-up"
+          >
             Nuestros Servicios
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200" data-aos="fade-right" data-aos-delay="100">
+            <div
+              className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200"
+              data-aos="fade-right"
+              data-aos-delay="100"
+            >
               <div className="text-4xl mb-4">👩‍⚕️</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                 Medicina General
@@ -257,7 +329,11 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200" data-aos="fade-left" data-aos-delay="200">
+            <div
+              className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-200"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            >
               <div className="text-4xl mb-4">🦷</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2">
                 Odontología
@@ -279,23 +355,19 @@ export default function Home() {
       {/* Detailed Services Info */}
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white" data-aos="zoom-in">
+          <h2
+            className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"
+            data-aos="zoom-in"
+          >
             ¿Por qué elegir IPS Salud Integral?
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6" data-aos="fade-up" data-aos-delay="100">
-              <div className="text-4xl mb-4 text-center">⏰</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
-                Horarios Flexibles
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">
-                Atención de lunes a viernes y servicio de urgencias disponible
-                24/7 para tu tranquilidad.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6" data-aos="fade-up" data-aos-delay="200">
+            <div
+              className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div className="text-4xl mb-4 text-center">👨‍⚕️</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Personal Calificado
@@ -306,7 +378,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6" data-aos="fade-up" data-aos-delay="300">
+            <div
+              className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <div className="text-4xl mb-4 text-center">📍</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Múltiples Sedes
@@ -317,18 +393,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6" data-aos="fade-up" data-aos-delay="100">
-              <div className="text-4xl mb-4 text-center">💰</div>
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
-                Tarifas Accesibles
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center">
-                Servicios de salud de calidad a precios justos y asequibles para
-                toda la comunidad.
-              </p>
-            </div>
-
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6" data-aos="fade-up" data-aos-delay="200">
+            <div
+              className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
               <div className="text-4xl mb-4 text-center">🏥</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Atención Integral
@@ -339,7 +408,11 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6" data-aos="fade-up" data-aos-delay="300">
+            <div
+              className="bg-gray-50 dark:bg-gray-800 rounded-lg p-6"
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               <div className="text-4xl mb-4 text-center">📋</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
                 Fácil Acceso
@@ -356,7 +429,10 @@ export default function Home() {
       {/* Quick Access */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
         <div className="container mx-auto px-4 dark:bg-gray-800">
-          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white" data-aos="fade-down">
+          <h2
+            className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"
+            data-aos="fade-down"
+          >
             Acceso Rápido
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 dark:bg-gray-800">
@@ -368,7 +444,9 @@ export default function Home() {
             >
               <div className="text-4xl mb-4">🏢</div>
               <h3 className="text-2xl font-bold mb-2">Nuestras Sedes</h3>
-              <p className="dark:bg-gray-800">Encuentra la sede más cercana a ti</p>
+              <p className="dark:bg-gray-800">
+                Encuentra la sede más cercana a ti
+              </p>
             </Link>
 
             <Link
