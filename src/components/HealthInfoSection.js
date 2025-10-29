@@ -60,7 +60,10 @@ const meetingImages = [
 
 export default function HealthInfoSection() {
   return (
-    <section className="py-16 bg-gray-50 transition-colors duration-200 dark:bg-gray-800 dark:text-white dark:border-solid dark:border-zinc-50/10">
+    <section
+      className="py-16 bg-gray-50 transition-colors duration-200 dark:bg-gray-800 dark:text-white dark:border-solid dark:border-zinc-50/10"
+      data-aos="fade-up"
+    >
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-gray-800 mb-4">

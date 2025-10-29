@@ -13,10 +13,10 @@ export default function InstitucionalPage() {
       <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-down">
               Información Institucional
             </h1>
-            <p className="text-xl leading-relaxed">
+            <p className="text-xl leading-relaxed" data-aos="fade-up">
               Conoce nuestra historia, misión, visión y el compromiso que
               tenemos con la salud integral de nuestras comunidades.
             </p>
@@ -28,10 +28,10 @@ export default function InstitucionalPage() {
       <section className="py-16 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">
+            <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8" data-aos="fade-up">
               Más de 20 años al servicio de la salud integral
             </h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed" data-aos="fade-up">
               La IPS INGA KAMËNTSÁ es una institución de salud comprometida con
               brindar atención médica de calidad, contando con profesionales
               altamente capacitados y especialistas en diferentes áreas de la
