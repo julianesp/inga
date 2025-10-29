@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { obtenerCitasDelLocalStorage, formatearFechaLegible, eliminarCitaDelLocalStorage, guardarCitaEnLocalStorage, generarId, validarDatosCita } from '@/utils/citasUtils';
 import { SERVICIOS_DISPONIBLES } from '@/types/citas';
 import { cargarCitasEjemplo, agregarCitasEjemplo } from '@/data/citasEjemplo';
+import { obtenerTodasLasCitas, esCitaDeProduccion } from '@/data/citasProduccion';
 
 const sedes = [
   { id: 'sibundoy', nombre: 'Sede Principal Sibundoy' },
@@ -35,11 +36,17 @@ export default function AdminCitasPage() {
   }, []);
 
   const cargarCitas = () => {
-    const citasGuardadas = obtenerCitasDelLocalStorage();
+    const citasGuardadas = obtenerTodasLasCitas();
     setCitas(citasGuardadas);
   };
 
   const eliminarCita = (citaId) => {
+    // Verificar si es una cita de producción (no se puede eliminar)
+    if (esCitaDeProduccion(citaId)) {
+      alert('⚠️ Esta cita es parte de los datos de producción y no se puede eliminar.\n\nSolo se pueden eliminar las citas creadas localmente.');
+      return;
+    }
+
     if (confirm('¿Estás seguro de que quieres eliminar esta cita?')) {
       eliminarCitaDelLocalStorage(citaId);
       cargarCitas();
@@ -285,12 +292,18 @@ export default function AdminCitasPage() {
                         </div>
                       </div>
                       
-                      <button
-                        onClick={() => eliminarCita(cita.id)}
-                        className="ml-4 px-3 py-1 bg-red-100 text-red-600 rounded-md hover:bg-red-200 text-sm"
-                      >
-                        🗑️ Eliminar
-                      </button>
+                      {esCitaDeProduccion(cita.id) ? (
+                        <div className="ml-4 px-3 py-1 bg-blue-100 text-blue-600 rounded-md text-sm flex items-center gap-1">
+                          🔒 Producción
+                        </div>
+                      ) : (
+                        <button
+                          onClick={() => eliminarCita(cita.id)}
+                          className="ml-4 px-3 py-1 bg-red-100 text-red-600 rounded-md hover:bg-red-200 text-sm"
+                        >
+                          🗑️ Eliminar
+                        </button>
+                      )}
                     </div>
                   </div>
                 ))}

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import CalendarioConsultas from '@/components/CalendarioConsultas';
-import { obtenerCitasDelLocalStorage } from '@/utils/citasUtils';
+import { obtenerTodasLasCitas } from '@/data/citasProduccion';
 import { Cita } from '@/types/citas';
 import {
   cargarCitasEjemplo,
@@ -24,9 +24,9 @@ export default function ConsultasPage() {
     { id: 'san-andres', nombre: 'Sede San Andrés' },
   ];
 
-  // Cargar consultas del LocalStorage
+  // Cargar consultas combinadas (producción + localStorage)
   const cargarConsultas = () => {
-    const citas = obtenerCitasDelLocalStorage();
+    const citas = obtenerTodasLasCitas();
     setConsultas(citas);
   };
 
