@@ -300,10 +300,8 @@ export default function GlobalSearch() {
               <div className="flex flex-wrap justify-center gap-2 mb-4">
                 {[
                   "Citas médicas",
-                  "Urgencias",
                   "PQRSF",
                   "Directorio",
-                  "Afiliaciones",
                   "Odontología",
                 ].map((suggestion) => (
                   <button

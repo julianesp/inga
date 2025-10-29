@@ -4,6 +4,7 @@ import { Navbar } from "@/components";
 import { Footer } from "@/containers";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { ThemeProvider } from "next-themes";
+import AOSInit from "@/components/AOSInit";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -288,6 +289,7 @@ export default function RootLayout({ children }) {
           enableSystem
           disableTransitionOnChange
         >
+          <AOSInit />
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
             <Breadcrumbs />

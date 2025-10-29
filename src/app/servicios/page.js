@@ -14,10 +14,10 @@ export default function ServiciosPage() {
       <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="text-center max-w-3xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6" data-aos="fade-down">
               Nuestros Servicios
             </h1>
-            <p className="text-xl leading-relaxed">
+            <p className="text-xl leading-relaxed" data-aos="fade-up" data-aos-delay="200">
               Ofrecemos servicios de salud integral con atención médica general
               y odontológica de calidad.
             </p>
@@ -30,7 +30,7 @@ export default function ServiciosPage() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Medicina General */}
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800">
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800" data-aos="fade-right" data-aos-delay="100">
               <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-300 mb-6 text-center">
                 🩺 Medicina General
               </h2>
@@ -54,7 +54,7 @@ export default function ServiciosPage() {
             </div>
 
             {/* Medicina tradicional */}
-            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800">
+            <div className="bg-blue-50 dark:bg-blue-900/20 rounded-lg p-8 border border-blue-200 dark:border-blue-800" data-aos="fade-left" data-aos-delay="200">
               <h2 className="text-3xl font-bold text-blue-800 dark:text-blue-300 mb-6 text-center">
                 🌿 Medicina tradicional
               </h2>
@@ -68,7 +68,7 @@ export default function ServiciosPage() {
               </div>
             </div>
 
-            <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800">
+            <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800" data-aos="fade-right" data-aos-delay="300">
               <h2 className="text-3xl font-bold text-green-800 dark:text-green-300 mb-6 text-center">
                 🦷 Odontología
               </h2>
@@ -99,7 +99,7 @@ export default function ServiciosPage() {
               </div>
             </div>
 
-            <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800 ">
+            <div className="bg-green-50 dark:bg-green-900/20 rounded-lg p-8 border border-green-200 dark:border-green-800 " data-aos="fade-left" data-aos-delay="400">
               <h2 className="text-3xl font-bold text-green-800 dark:text-green-300 mb-6 text-center">
                 💊 Servicio farmacéutico
               </h2>
@@ -118,7 +118,7 @@ export default function ServiciosPage() {
           </div>
 
           {/* Información para solicitar visita - Span completo */}
-          <div className="mt-12 max-w-3xl mx-auto dark:border-white border rounded-lg">
+          <div className="mt-12 max-w-3xl mx-auto dark:border-white border rounded-lg" data-aos="zoom-in" data-aos-delay="200">
             <div className="bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md">
               <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4 text-center">
                 Información para solicitar visita médica domiciliaria a usuarios
@@ -149,14 +149,14 @@ export default function ServiciosPage() {
       {/* Call to Action */}
       <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">
+          <h2 className="text-3xl font-bold mb-6" data-aos="fade-down">
             ¿Necesita Información Específica?
           </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto">
+          <p className="text-xl mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             Nuestro equipo está disponible para brindarle información detallada
             sobre cualquiera de nuestros servicios.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center" data-aos="zoom-in" data-aos-delay="200">
             <a
               href="/contacto"
               className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
