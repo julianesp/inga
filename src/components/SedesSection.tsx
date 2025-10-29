@@ -19,7 +19,12 @@ const sedes: Sede[] = [
     direccion: "Calle 15 # 15 - 69 - Diagonal al mercado",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
-    servicios: ["Medicina General", "Odontología"],
+    servicios: [
+      "Medicina General",
+      "Odontología",
+      "Servicio farmacéutico",
+      "Medicina tradicional",
+    ],
   },
   {
     id: "colon",
@@ -28,7 +33,12 @@ const sedes: Sede[] = [
     direccion: "Barrio Centro - Cerca a Centro Cultural",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
-    servicios: ["Medicina General", "Odontología"],
+    servicios: [
+      "Medicina General",
+      "Odontología",
+      "Servicio farmacéutico",
+      "Medicina tradicional",
+    ],
   },
   {
     id: "santiago",
@@ -37,7 +47,12 @@ const sedes: Sede[] = [
     direccion: "Sede Nazareth",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
-    servicios: ["Medicina General", "Odontología"],
+    servicios: [
+      "Medicina General",
+      "Odontología",
+      "Servicio farmacéutico",
+      "Medicina tradicional",
+    ],
   },
   {
     id: "san-andres",
@@ -46,7 +61,12 @@ const sedes: Sede[] = [
     direccion: "Chorro San Jose",
     telefono: "+573132863398",
     horarios: "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
-    servicios: ["Medicina General", "Odontología"],
+    servicios: [
+      "Medicina General",
+      "Odontología",
+      "Servicio farmacéutico",
+      "Medicina tradicional",
+    ],
   },
 ];
 

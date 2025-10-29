@@ -41,8 +41,8 @@ export default function SedesPage() {
                   📍 Ubicación Estratégica
                 </h3>
                 <p className="text-gray-600 dark:text-white mb-4">
-                  Nuestras sedes están ubicadas estratégicamente en el Valle de
-                  Sibundoy para garantizar el acceso a servicios de salud a
+                  Nuestras sedes están ubicadas estratégicamente en el Alto
+                  Putumayo para garantizar el acceso a servicios de salud a
                   todas las comunidades indígenas y campesinas de la región.
                 </p>
                 <ul className="space-y-2 text-gray-600 dark:text-white">
