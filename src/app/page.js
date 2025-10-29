@@ -1,16 +1,51 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
 import GlobalSearch from "@/components/GlobalSearch";
 import ImageCarousel from "../components/ImageCarousel";
 import RotatingCarousel from "@/components/RotatingCarousel";
+import CalendarioConsultas from "@/components/CalendarioConsultas";
+import { obtenerCitasDelLocalStorage } from "@/utils/citasUtils";
 
 export default function Home() {
+  const [consultas, setConsultas] = useState([]);
+
+  useEffect(() => {
+    // Cargar consultas al montar el componente
+    const citas = obtenerCitasDelLocalStorage();
+    setConsultas(citas);
+
+    // Actualizar cada 30 segundos para reflejar cambios
+    const interval = setInterval(() => {
+      const citasActualizadas = obtenerCitasDelLocalStorage();
+      setConsultas(citasActualizadas);
+    }, 30000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
       <PresentacionCarousel />
+
+      {/* Sección del Calendario de Consultas */}
+      <section className="py-16 bg-white dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
+              📅 Calendario de Consultas
+            </h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+              Consulta la disponibilidad de citas y programa tu visita.
+              Selecciona un día para ver las consultas disponibles.
+            </p>
+          </div>
+          <CalendarioConsultas consultas={consultas} />
+        </div>
+      </section>
 
       <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 bg-gray-100 dark:bg-gray-800">
         <h1
