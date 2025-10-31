@@ -69,7 +69,7 @@ export default function GestionClinica() {
   return (
     <section
       id="gestion-clinica"
-      className="py-16 bg-gray-50 dark:text-white dark:bg-gray-900 dark:border-white dark:border-opacity-10"
+      className="py-16 bg-gray-50/55 dark:text-white dark:bg-gray-900 dark:border-white dark:border-opacity-10"
     >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">

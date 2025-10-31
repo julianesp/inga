@@ -23,7 +23,7 @@ export default function EventosContent() {
       </section>
 
       {/* Próximos Eventos Destacados */}
-      <section className="py-16 my-2 rounded-xl bg-white dark:bg-gray-800 border dark:border-white">
+      <section className="py-16 my-2 rounded-xl bg-white/75 dark:bg-gray-800 border dark:border-white">
         <div className="container mx-auto px-4 dark:bg-gray-800">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
             Próximos Eventos Destacados
@@ -153,7 +153,7 @@ export default function EventosContent() {
       </section>
 
       {/* Cómo Participar */}
-      <section className="py-16 bg-white dark:bg-gray-800 border dark:border-t-white">
+      <section className="py-16 bg-white/90 dark:bg-gray-800 border dark:border-t-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
@@ -232,7 +232,7 @@ export default function EventosContent() {
       </section>
 
       {/* Galería de Eventos Pasados */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800 dark:border-t-white border">
+      <section className="py-16 bg-gray-50/85 dark:bg-gray-800 dark:border-t-white border">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
             Eventos Realizados

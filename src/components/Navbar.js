@@ -29,10 +29,10 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={` top-0 z-50 ${styles.navbar}`}>
+    <nav className={` top-0 z-50  ${styles.navbar}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
-          <div className="flex items-center" style={{ perspective: "1000px" }}>
+          <div className="flex items-center " style={{ perspective: "1000px" }}>
             <Link href="/" className="flex items-center">
               <Image
                 src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
@@ -51,7 +51,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div
-            className={`hidden lg:flex items-center space-x-3 ${styles.links}`}
+            className={`hidden lg:flex items-center space-x-3  ${styles.links}`}
           >
             {navigationLinks.map((link) => (
               <Link
@@ -65,15 +65,15 @@ export default function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="lg:hidden flex items-center space-x-2">
+          <div className="lg:hidden flex items-center space-x-2 ">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative p-1 bg-white rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg focus:outline-none border-solid border-1 border-black"
+              className="relative p-1 bg-white rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg focus:outline-none border-solid border-1 border-black dark:bg-white dark:border-white"
             >
               <svg
                 // barras menu navbar
 
-                className="h-6 w-6 text-black [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000] drop-shadow-[0_4px_3px_rgba(0,0,0,0.5)] rounded-lg duration-500  transition-transform scale-3d"
+                className="h-6 w-6 text-black [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000] drop-shadow-[0_4px_3px_rgba(0,0,0,0.5)] rounded-lg duration-500  transition-transform scale-3d "
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -103,7 +103,7 @@ export default function Navbar() {
               className={`
                 ${
                   styles.mobileMenu
-                } rounded-4xl shadow-lg w-11/12 max-w-xs mx-auto flex flex-col items-center py-6 space-y-3 z-50
+                } rounded-4xl shadow-lg w-11/12 max-w-xs mx-auto flex flex-col items-center py-6 space-y-3 z-50 
                 ${
                   isMenuOpen
                     ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"
@@ -117,7 +117,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-black text-2xl  px-4 py-2 rounded-md  font-medium transition-colors duration-200 text-center w-full ${styles.mobileLink}`}
+                  className={`text-black text-2xl  px-4 py-2 rounded-md  font-medium transition-colors duration-200 text-center w-full dark:bg-white ${styles.mobileLink}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}

@@ -107,7 +107,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
   return (
     <section
       id="atencion-usuario"
-      className="py-16 bg-white dark:bg-gray-800 border dark:border-white rounded-3xl"
+      className="py-16 bg-white/55 dark:bg-gray-800 border dark:border-white rounded-3xl"
     >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
