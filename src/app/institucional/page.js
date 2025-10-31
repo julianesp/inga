@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function InstitucionalPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen  dark:bg-gray-900">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
@@ -25,7 +25,7 @@ export default function InstitucionalPage() {
       </section>
 
       {/* Introducción */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-white/85 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-8" data-aos="fade-up">
@@ -44,7 +44,7 @@ export default function InstitucionalPage() {
       <InformacionInstitucional />
 
       {/* Valores Institucionales */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-800">
+      <section className="py-16 bg-gradient-to-r from-green-50/35 to-blue-50 dark:from-gray-800 dark:to-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">
             Nuestros Valores
