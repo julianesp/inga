@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function ServiciosPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white/45 dark:bg-gray-900">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
@@ -26,7 +26,7 @@ export default function ServiciosPage() {
       </section>
 
       {/* /* Servicios Detallados */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-white/45 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Medicina General */}

@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function AtencionUsuarioPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white/55 dark:bg-gray-900">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white py-16">
         <div className="container mx-auto px-4">
@@ -27,7 +27,7 @@ export default function AtencionUsuarioPage() {
       </section>
 
       {/* PQRSF Info */}
-      <section className="py-12 bg-blue-50 dark:bg-blue-900/20">
+      <section className="py-12 bg-blue-50/55 dark:bg-blue-900/20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8 text-blue-800 dark:text-blue-300">
@@ -92,7 +92,7 @@ export default function AtencionUsuarioPage() {
       <AtencionUsuario />
 
       {/* Proceso PQRSF */}
-      <section className="py-16 bg-white dark:bg-gray-800">
+      <section className="py-16 bg-white/75 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
@@ -153,7 +153,7 @@ export default function AtencionUsuarioPage() {
       </section>
 
       {/* Canales de Comunicación */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+      <section className="py-16 bg-gray-50/55 dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
@@ -214,7 +214,7 @@ export default function AtencionUsuarioPage() {
       </section>
 
       {/* Derechos y Deberes */}
-      <section className="py-16 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-900">
+      <section className="py-16 bg-gradient-to-r from-green-50/55 to-blue-50/55 dark:from-gray-900 dark:to-gray-900">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">

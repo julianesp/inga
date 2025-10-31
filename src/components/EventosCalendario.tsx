@@ -182,7 +182,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
   return (
     <section
       id="eventos-calendario"
-      className="py-16 bg-gray-50 dark:bg-gray-800"
+      className="py-16 bg-gray-50/85 dark:bg-gray-800"
     >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">

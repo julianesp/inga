@@ -14,9 +14,9 @@ export default function InformacionInstitucional() {
   return (
     <section
       id="institucional"
-      className="py-16 bg-gradient-to-br from-green-50/45 to-blue-50 dark:from-gray-800 dark:to-gray-900"
+      className="py-16 bg-gradient-to-br from-green-50/20 to-blue-50 dark:from-gray-800 dark:to-gray-900"
     >
-      <div className="container mx-auto px-4 dark:text-gray-300">
+      <div className="container mx-auto px-4 dark:text-gray-300 ">
         <h2 className="text-4xl font-bold text-center mb-16 text-gray-800 dark:text-white">
           Información Institucional
         </h2>
