@@ -90,7 +90,7 @@ export default function RotatingCarousel({
       {/* Modal para imagen expandida */}
       {expandedImage && (
         <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center cursor-pointer"
+          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center cursor-pointer "
           onClick={handleCloseExpandedImage}
         >
           {/* max-h-[40vh] */}

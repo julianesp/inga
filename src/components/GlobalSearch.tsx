@@ -122,7 +122,7 @@ export default function GlobalSearch() {
   };
 
   return (
-    <div className="bg-white py-8 border-b shadow-sm dark:bg-gray-900 dark:border-gray-700 transition-colors duration-200">
+    <div className=" py-8 border-b shadow-sm dark:bg-gray-900 dark:border-gray-700 transition-colors duration-200">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Título de la sección */}
