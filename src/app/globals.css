@@ -156,54 +156,54 @@ body {
 @layer components {
   /* Aplicar transparencia solo cuando NO está en modo oscuro */
   :not(.dark) .bg-white {
-    background-color: rgba(255, 255, 255, 0.7) !important;
+    /* background-color: rgba(255, 255, 255, 0.7) !important; */
   }
 
   /* Fondos grises con transparencia */
   :not(.dark) .bg-gray-50 {
-    background-color: rgba(249, 250, 251, 0.7) !important;
+    /* background-color: rgba(249, 250, 251, 0.7) !important; */
   }
 
   :not(.dark) .bg-gray-100 {
-    background-color: rgba(243, 244, 246, 0.7) !important;
+    /* background-color: rgba(243, 244, 246, 0.7) !important; */
   }
 
   :not(.dark) .bg-gray-200 {
-    background-color: rgba(229, 231, 235, 0.7) !important;
+    /* background-color: rgba(229, 231, 235, 0.7) !important; */
   }
 
   /* Fondos de colores con transparencia */
   :not(.dark) .bg-blue-50 {
-    background-color: rgba(239, 246, 255, 0.7) !important;
+    /* background-color: rgba(239, 246, 255, 0.7) !important; */
   }
 
   :not(.dark) .bg-green-50 {
-    background-color: rgba(240, 253, 244, 0.7) !important;
+    /* background-color: rgba(240, 253, 244, 0.7) !important; */
   }
 
   :not(.dark) .bg-yellow-50 {
-    background-color: rgba(254, 252, 232, 0.7) !important;
+    /* background-color: rgba(254, 252, 232, 0.7) !important; */
   }
 
   :not(.dark) .bg-purple-50 {
-    background-color: rgba(250, 245, 255, 0.7) !important;
+    /* background-color: rgba(250, 245, 255, 0.7) !important; */
   }
 
   :not(.dark) .bg-red-50 {
-    background-color: rgba(254, 242, 242, 0.7) !important;
+    /* background-color: rgba(254, 242, 242, 0.7) !important; */
   }
 
   /* Fondos de colores 100 */
   :not(.dark) .bg-blue-100 {
-    background-color: rgba(219, 234, 254, 0.7) !important;
+    /* background-color: rgba(219, 234, 254, 0.7) !important; */
   }
 
   :not(.dark) .bg-green-100 {
-    background-color: rgba(220, 252, 231, 0.7) !important;
+    /* background-color: rgba(220, 252, 231, 0.7) !important; */
   }
 
   :not(.dark) .bg-purple-100 {
-    background-color: rgba(243, 232, 255, 0.7) !important;
+    /* background-color: rgba(243, 232, 255, 0.7) !important; */
   }
 
   /* Fondos específicos de gradientes de colores */

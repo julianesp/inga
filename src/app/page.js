@@ -28,7 +28,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-slate-300/75 dark:bg-gray-900">
       <PresentacionCarousel />
 
       <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 bg-gray-100 dark:bg-gray-800">
@@ -425,7 +425,7 @@ export default function Home() {
       </section>
 
       {/* Detailed Services Info */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-white/45 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h2
             className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"
@@ -499,7 +499,7 @@ export default function Home() {
       </section>
 
       {/* Quick Access */}
-      <section className="py-16 bg-gray-50 dark:bg-gray-800 transition-colors duration-200">
+      <section className="py-16 bg-white/45 dark:bg-gray-800 transition-colors duration-200">
         <div className="container mx-auto px-4 dark:bg-gray-800">
           <h2
             className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white"

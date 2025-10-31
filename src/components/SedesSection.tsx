@@ -88,13 +88,13 @@ export default function SedesSection() {
   };
 
   return (
-    <section id="sedes" className="py-16 bg-gray-50 dark:bg-gray-800">
+    <section id="sedes" className="py-16 bg-white/45 dark:bg-gray-800">
       <div className="container mx-auto px-4 dark:text-white dark:border-white dark:bg-gray-800">
         <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
           Nuestras Sedes
         </h2>
 
-        <div className="flex flex-col lg:flex-row gap-8 dark:bg-gray-800">
+        <div className="flex flex-col lg:flex-row gap-8 dark:bg-gray-800 bg-white/45">
           {/* Selector de sedes */}
           <div className="lg:w-1/3">
             <div className="bg-white rounded-lg shadow-lg p-6 border dark:bg-gray-800 dark:border-white">

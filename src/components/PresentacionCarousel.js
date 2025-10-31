@@ -80,7 +80,7 @@ const defaultSlides = [
     description:
       "Contamos con un equipo profesional de médicos y odontólogos especializados para brindar atención integral de calidad.",
     image:
-      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/portada.jpg",
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/2.jpeg",
     cta: {
       primary: { text: "Agendar Cita", href: "tel:+57842041199" },
       secondary: { text: "Ver Sedes", href: "/sedes" },
@@ -95,7 +95,8 @@ const defaultSlides = [
     subtitle: "Cuidado de la Salud",
     description:
       "Promovemos la medicina preventiva y el bienestar integral a través de programas de salud personalizados y seguimiento continuo.",
-    image: "/api/placeholder/1200/600",
+    image:
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/4.jpeg",
     cta: {
       primary: { text: "Conocer Más", href: "/servicios" },
       secondary: { text: "Agendar Cita", href: "/contacto" },
@@ -158,14 +159,21 @@ export default function PresentacionCarousel({
   };
 
   return (
-    <div className="relative overflow-hidden -top-16" style={{ height }} data-aos="fade-down">
+    <div
+      className="relative overflow-hidden -top-16"
+      style={{ height }}
+      data-aos="fade-down"
+    >
       {/* Modal para imagen expandida */}
       {expandedImage && (
         <div
           className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center cursor-pointer"
           onClick={handleCloseExpandedImage}
         >
-          <div className="relative max-w-[90vw] max-h-[90vh]" data-aos="fade-up">
+          <div
+            className="relative max-w-[90vw] max-h-[90vh]"
+            data-aos="fade-up"
+          >
             <Image
               src={expandedImage}
               alt="Imagen expandida"
@@ -237,23 +245,23 @@ export default function PresentacionCarousel({
 
           {/* Content */}
           {showContent && (
-            <div className="relative z-10 h-full flex items-center px-6 py-12 sm:px-12 sm:py-16">
+            <div className="relative z-10 h-full flex items-center px-6 py-12 sm:px-12 sm:py-16 border-b bg-gray-400/80">
               <div className="container mx-auto px-4">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div className="text-white space-y-6 max-w-2xl mx-auto lg:mx-0">
+                  <div className="  space-y-6 max-w-2xl mx-auto lg:mx-0">
                     <div>
                       {slide.subtitle && (
-                        <p className="text-base sm:text-lg font-medium text-yellow-300 mb-2">
+                        <p className="text-base sm:text-lg  font-medium text-black mb-2 ">
                           {slide.subtitle}
                         </p>
                       )}
                       {slide.title && (
-                        <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
+                        <h1 className="text-3xl text-black dark:text-black sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6">
                           {slide.title}
                         </h1>
                       )}
                       {slide.description && (
-                        <p className="text-lg sm:text-xl text-gray-100 leading-relaxed">
+                        <p className="text-lg text-black dark:text-black sm:text-xl  leading-relaxed">
                           {slide.description}
                         </p>
                       )}
