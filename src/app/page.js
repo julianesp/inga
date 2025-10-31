@@ -266,7 +266,7 @@ export default function Home() {
       </section>
 
       {/* Sección del Calendario de Consultas */}
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16  dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-8">
             <h2 className="text-4xl font-bold text-gray-800 dark:text-white mb-4">
@@ -281,6 +281,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* RotatingCarousel */}
       <section className="py-8 px-4 md:px-8">
         <h2
           className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
@@ -384,6 +385,42 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="py-8 px-4 md:px-8">
+        <h2
+          className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
+          data-aos="fade-down"
+        >
+          Atención domiciliaria
+        </h2>
+        <div
+          className="max-w-5xl mx-auto"
+          data-aos="flip-right"
+          data-aos-delay="200"
+        >
+          <RotatingCarousel
+            images={[
+              {
+                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/1.jpeg",
+                alt: "Fotos IPS Inga Kamentsa",
+                title: "Atención domiciliaria",
+              },
+              {
+                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/2.jpeg",
+                alt: "Fotos IPS Inga Kamentsa",
+                title: "Atención domiciliaria",
+              },
+              {
+                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/3.jpeg",
+                alt: "Fotos IPS Inga Kamentsa",
+                title: "Atención domiciliaria",
+              },
+            ]}
+            interval={5000}
+            height="500px"
+          />
         </div>
       </section>
 
