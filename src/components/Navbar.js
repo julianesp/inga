@@ -68,12 +68,12 @@ export default function Navbar() {
           <div className="lg:hidden flex items-center space-x-2 ">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative p-1 bg-white rounded-full hover:bg-gray-100 transition-colors duration-200 shadow-lg focus:outline-none border-solid border-1 border-black dark:bg-white dark:border-white"
+              className="relative p-2 bg-white dark:bg-gray-800 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 shadow-lg focus:outline-none border-2 border-gray-300 dark:border-gray-100"
             >
               <svg
                 // barras menu navbar
 
-                className="h-6 w-6 text-black [text-shadow:_2px_2px_0_#000,_-2px_-2px_0_#000,_2px_-2px_0_#000,_-2px_2px_0_#000] drop-shadow-[0_4px_3px_rgba(0,0,0,0.5)] rounded-lg duration-500  transition-transform scale-3d "
+                className="h-6 w-6 text-gray-800 dark:text-white duration-500 transition-transform"
                 fill="none"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -117,7 +117,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`text-black text-2xl  px-4 py-2 rounded-md  font-medium transition-colors duration-200 text-center w-full dark:bg-white ${styles.mobileLink}`}
+                  className={`text-black text-2xl  px-4 py-2 rounded-md  font-medium transition-colors duration-200 text-center w-full dark:text-white ${styles.mobileLink}`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
