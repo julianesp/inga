@@ -150,7 +150,7 @@ export default function DirectorioTelefonico() {
         </div>
 
         {/* Filtros y búsqueda */}
-        <div className="bg-gray-50 rounded-lg p-6 mb-8 dark:bg-gray-800 border dark:border-white shadow-white shadow-md">
+        {/* <div className="bg-gray-50 rounded-lg p-6 mb-8 dark:bg-gray-800 border dark:border-white shadow-white shadow-md">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <label className="block text-sm font-semibold text-gray-700 mb-2 dark:text-white">
@@ -199,10 +199,10 @@ export default function DirectorioTelefonico() {
               </select>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Lista de contactos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {contactosFiltrados.map((contacto) => (
             <div
               key={contacto.id}
@@ -335,7 +335,7 @@ export default function DirectorioTelefonico() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
 
         {contactosFiltrados.length === 0 && (
           <div className="text-center py-12">
@@ -364,9 +364,8 @@ export default function DirectorioTelefonico() {
             <div>
               <h4 className="font-semibold mb-2">Horarios Generales:</h4>
               <ul className="space-y-1">
-                <li>• Lunes a Viernes: 7:00 AM - 5:00 PM</li>
-                <li>• Sábados: 8:00 AM - 12:00 PM (Solo Sibundoy y Colón)</li>
-                <li>• Emergencias: 24 horas todos los días</li>
+                <li>• Lunes a Viernes: 8:00 AM - 5:00 PM</li>
+                <li>• Sábados - Domingos: No hay atención</li>
               </ul>
             </div>
             <div>
