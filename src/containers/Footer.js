@@ -246,7 +246,8 @@ export default function Footer() {
                       Facebook
                     </Link>
                   </li>
-                  <li>
+                  {/* WhatsApp - Temporalmente deshabilitado */}
+                  {/* <li>
                     <Link
                       href="https://wa.me/573132863398"
                       className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-green-400 transition-colors"
@@ -255,7 +256,7 @@ export default function Footer() {
                     >
                       WhatsApp
                     </Link>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>
@@ -311,7 +312,7 @@ export default function Footer() {
                 </h5>
                 <p>Barrio Centro</p>
                 <p className="text-gray-300 dark:text-gray-400">
-                  Cerca al centro cultural
+                  Carrera 10 # 4 - 43
                 </p>
               </div>
               <div className="bg-gray-700 dark:bg-gray-800 p-3 rounded">
@@ -483,7 +484,8 @@ export default function Footer() {
               </Link>
             </li> */}
 
-            <li style={socialItemStyle}>
+            {/* WhatsApp - Temporalmente deshabilitado */}
+            {/* <li style={socialItemStyle}>
               <Link
                 href="https://wa.me/573132863398"
                 target="_blank"
@@ -507,7 +509,7 @@ export default function Footer() {
                   />
                 )}
               </Link>
-            </li>
+            </li> */}
 
             {/* <li style={socialItemStyle}>
               <Link

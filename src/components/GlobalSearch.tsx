@@ -63,8 +63,19 @@ export default function GlobalSearch() {
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
     if (results.length > 0) {
-      // Navegar al primer resultado
-      window.location.href = results[0].url;
+      // Navegar al primer resultado de forma segura
+      const firstResult = results[0];
+      // Usar router.push o Link para navegación interna de Next.js
+      if (firstResult.url.startsWith('/')) {
+        // Ruta interna
+        window.location.href = firstResult.url;
+      } else {
+        // Ruta externa
+        window.open(firstResult.url, '_blank', 'noopener,noreferrer');
+      }
+    } else if (searchTerm.trim().length >= 2) {
+      // Si no hay resultados, mostrar mensaje en lugar de redirigir
+      setIsOpen(true);
     }
   };
 
@@ -266,24 +277,76 @@ export default function GlobalSearch() {
                     ))}
                   </div>
                 ) : searchTerm.trim().length >= 2 && !isLoading ? (
-                  <div className="p-4 text-center text-gray-600">
-                    <svg
-                      className="w-12 h-12 mx-auto mb-2 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.5-.831-6.18-2.209M6.72 3.72a.5.5 0 01.708 0L9 5.293 10.572 3.72a.5.5 0 01.708.708L9.707 6 11.28 7.572a.5.5 0 01-.708.708L9 6.707 7.428 8.28a.5.5 0 01-.708-.708L8.293 6 6.72 4.428a.5.5 0 010-.708z"
-                      />
-                    </svg>
-                    <p className="font-medium">No se encontraron resultados</p>
-                    <p className="text-sm">
-                      Intenta con otros términos de búsqueda
+                  <div className="p-6 text-center">
+                    <div className="bg-blue-50 dark:bg-blue-900/20 rounded-full w-20 h-20 mx-auto mb-4 flex items-center justify-center">
+                      <svg
+                        className="w-10 h-10 text-blue-600 dark:text-blue-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                      No se encontraron resultados
+                    </h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                      No encontramos información relacionada con &quot;
+                      <span className="font-semibold text-gray-900 dark:text-white">
+                        {searchTerm}
+                      </span>
+                      &quot;
                     </p>
+                    <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mb-3">
+                        Intenta con:
+                      </p>
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {[
+                          "Citas médicas",
+                          "Servicios",
+                          "Directorio",
+                          "Sedes",
+                        ].map((suggestion) => (
+                          <button
+                            key={suggestion}
+                            onClick={() => {
+                              setSearchTerm(suggestion);
+                              setIsOpen(false);
+                            }}
+                            className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-3 py-1.5 rounded-full hover:bg-green-200 dark:hover:bg-green-900/50 transition-colors"
+                          >
+                            {suggestion}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                    <Link
+                      href="/contacto"
+                      className="mt-4 inline-flex items-center gap-2 text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                        />
+                      </svg>
+                      ¿Necesitas ayuda? Contáctanos
+                    </Link>
                   </div>
                 ) : null}
               </div>
