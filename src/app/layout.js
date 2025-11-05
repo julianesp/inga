@@ -46,34 +46,25 @@ export const metadata = {
   authors: [{ name: "IPS Inga Kamentsá" }],
   creator: "IPS Inga Kamentsá",
   publisher: "IPS Inga Kamentsá",
-  metadataBase: new URL("https://ips-salud-integral.co"),
+  metadataBase: new URL("https://inga-tawny.vercel.app"),
   alternates: {
-    canonical: "https://inga-tawny.vercel.app/",
+    canonical: "/",
   },
   openGraph: {
     title: "IPS Inga Kamentsá | Servicios de Salud Valle de Sibundoy Putumayo",
     description:
-      "🏥 IPS Inga Kamentsá ➤ Servicios de Inga Kamentsá en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
+      "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica general, Odontología, PQRS. Agenda tu cita. Atención de calidad con identidad cultural.",
     url: "https://inga-tawny.vercel.app/",
     siteName: "IPS Inga Kamentsá",
-    images: [
-      {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "IPS Inga Kamentsá - Servicios de Salud Valle de Sibundoy Putumayo",
-      },
-    ],
     locale: "es_CO",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPS Inga-Kamentsa | Medicina con Identidad Cultural",
+    title: "IPS Inga Kamentsá | Servicios de Salud Sibundoy",
     description:
-      "🏥 Servicios de salud integral combinando medicina occidental con conocimientos ancestrales en Sibundoy, Putumayo",
-    images: ["/twitter-image.jpg"],
-    creator: "@ips_inga_kamentsá",
+      "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica, Odontología, Medicina tradicional. Agenda tu cita.",
+    creator: "@ips_inga",
   },
   robots: {
     index: true,

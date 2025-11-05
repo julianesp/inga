@@ -205,6 +205,16 @@ export default function Home() {
                 alt: "Encuentros de Saberes 6",
                 title: "Encuentros Culturales",
               },
+              {
+                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/7.jpeg",
+                alt: "Encuentros de Saberes 7",
+                title: "Medicina Tradicional Santiago",
+              },
+              {
+                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/8.jpeg",
+                alt: "Encuentros de Saberes 8",
+                title: "Medicina Tradicional",
+              },
             ]}
             interval={5000}
             height="500px"
