@@ -44,6 +44,10 @@ export default function AtencionUsuario() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // PQRSF por WhatsApp - Temporalmente deshabilitado
+    // Se puede enviar por correo electrónico como alternativa
+
+    /* Código WhatsApp comentado
     // Crear mensaje estructurado para WhatsApp
     const mensaje = `🏥 *NUEVA PQRSF - IPS INGA KAMËNTSÁ* 🏥
 
@@ -71,6 +75,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
 
     // Abrir WhatsApp
     window.open(urlWhatsApp, "_blank");
+    */
 
     // Limpiar formulario
     setFormData({
@@ -91,11 +96,11 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
     alertaDiv.innerHTML = `
       <div class="fixed inset-0 backdrop-blur-md bg-white/20 z-40 flex items-center justify-center p-4">
         <div class="bg-white rounded-lg shadow-xl max-w-md w-full p-6 text-center">
-          <div class="text-green-600 text-4xl mb-4">✅</div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">¡PQRSF Enviada Exitosamente!</h3>
-          <p class="text-gray-700 mb-6">Su solicitud será enviada por WhatsApp. Recibirás respuesta lo más pronto posible.</p>
-          <button onclick="this.parentElement.parentElement.remove()" 
-                  class="bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+          <div class="text-blue-600 text-4xl mb-4">📧</div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">¡PQRSF Registrada!</h3>
+          <p class="text-gray-700 mb-6">Su solicitud ha sido registrada. Nos pondremos en contacto con usted lo más pronto posible.</p>
+          <button onclick="this.parentElement.parentElement.remove()"
+                  class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors font-semibold">
             Entendido
           </button>
         </div>

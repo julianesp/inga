@@ -34,8 +34,9 @@ export default function ContactoPage() {
             Otras Formas de Contacto
           </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {/* WhatsApp - Temporalmente deshabilitado */}
+            {/* <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">📱</div>
               <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-4">
                 WhatsApp
@@ -52,7 +53,7 @@ export default function ContactoPage() {
               >
                 Escribir por WhatsApp
               </Link>
-            </div>
+            </div> */}
 
             <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-8 text-center">
               <div className="text-4xl mb-4">📧</div>
