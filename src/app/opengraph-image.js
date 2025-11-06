@@ -35,6 +35,7 @@ export default async function Image() {
             bottom: 0,
             opacity: 0.1,
             background: 'repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255,255,255,0.1) 10px, rgba(255,255,255,0.1) 20px)',
+            display: 'flex',
           }}
         />
 
@@ -69,6 +70,8 @@ export default async function Image() {
                 padding: '20px',
                 display: 'flex',
                 marginRight: '25px',
+                alignItems: 'center',
+                justifyContent: 'center',
               }}
             >
               <svg
@@ -111,6 +114,7 @@ export default async function Image() {
                   color: '#059669',
                   lineHeight: '1',
                   marginBottom: '10px',
+                  display: 'flex',
                 }}
               >
                 IPS INGA KAMËNTSÁ
@@ -120,6 +124,7 @@ export default async function Image() {
                   fontSize: '32px',
                   color: '#0891b2',
                   fontWeight: '600',
+                  display: 'flex',
                 }}
               >
                 Servicios de Salud Integral
@@ -135,11 +140,13 @@ export default async function Image() {
               marginBottom: '40px',
               lineHeight: '1.4',
               maxWidth: '900px',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
             }}
           >
-            Atención médica de calidad en Sibundoy, Putumayo
-            <br />
-            Medicina General • Odontología • Urgencias 24/7
+            <div>Atención médica de calidad en Sibundoy, Putumayo</div>
+            <div>Medicina General • Odontología • Urgencias 24/7</div>
           </div>
 
           {/* Características */}
@@ -148,6 +155,7 @@ export default async function Image() {
               display: 'flex',
               gap: '30px',
               marginBottom: '30px',
+              flexDirection: 'row',
             }}
           >
             <div
@@ -159,6 +167,7 @@ export default async function Image() {
                 color: '#059669',
                 fontWeight: '600',
                 border: '2px solid #86efac',
+                display: 'flex',
               }}
             >
               ✅ Consulta Médica
@@ -172,6 +181,7 @@ export default async function Image() {
                 color: '#0891b2',
                 fontWeight: '600',
                 border: '2px solid #67e8f9',
+                display: 'flex',
               }}
             >
               🦷 Odontología
@@ -185,6 +195,7 @@ export default async function Image() {
                 color: '#d97706',
                 fontWeight: '600',
                 border: '2px solid #fcd34d',
+                display: 'flex',
               }}
             >
               🌿 Medicina Tradicional
@@ -200,13 +211,14 @@ export default async function Image() {
               fontSize: '24px',
               color: '#6b7280',
               marginTop: '20px',
+              flexDirection: 'row',
             }}
           >
-            <span>📞 313-286-3398</span>
-            <span>•</span>
-            <span>📍 Valle de Sibundoy</span>
-            <span>•</span>
-            <span>🌐 inga-tawny.vercel.app</span>
+            <div>📞 313-286-3398</div>
+            <div>•</div>
+            <div>📍 Valle de Sibundoy</div>
+            <div>•</div>
+            <div>🌐 inga-tawny.vercel.app</div>
           </div>
         </div>
       </div>
