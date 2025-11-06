@@ -24,7 +24,7 @@ export const metadata = {
     template: "%s",
   },
   description:
-    "🏥 IPS Inga - Kamentsá ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
+    "🏥 Asociación IPS Inga - Kamentsá ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
   keywords: [
     "IPS Inga Kamentsá",
     "servicios salud Sibundoy",
@@ -43,27 +43,37 @@ export const metadata = {
     "Santiago Putumayo",
     "San Andrés Putumayo",
   ],
-  authors: [{ name: "IPS Inga Kamentsá" }],
-  creator: "IPS Inga Kamentsá",
-  publisher: "IPS Inga Kamentsá",
+  authors: [{ name: "Asociación IPS Inga Kamentsá" }],
+  creator: "Asociación IPS Inga Kamentsá",
+  publisher: "Asociación IPS Inga Kamentsá",
   metadataBase: new URL("https://inga-tawny.vercel.app"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "IPS Inga Kamentsá | Servicios de Salud Valle de Sibundoy Putumayo",
+    title:
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Valle de Sibundoy Putumayo",
     description:
       "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica general, Odontología, PQRS. Agenda tu cita. Atención de calidad con identidad cultural.",
     url: "https://inga-tawny.vercel.app/",
-    siteName: "IPS Inga Kamentsá",
+    siteName: "Asociación IPS Indígena Inga Kamentsa",
+    images: [
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Asociación IPS Indígena Inga Kamentsa",
+      },
+    ],
     locale: "es_CO",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPS Inga Kamentsá | Servicios de Salud Sibundoy",
+    title: "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Sibundoy",
     description:
       "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica, Odontología, Medicina tradicional. Agenda tu cita.",
+    images: ["https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"],
     creator: "@ips_inga",
   },
   robots: {
@@ -104,10 +114,10 @@ export const metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "IPS Inga Kamentsá",
+    title: "Asociación IPS Indígena Inga Kamentsa",
   },
   other: {
-    "apple-mobile-web-app-title": "IPS Inga Kamentsá",
+    "apple-mobile-web-app-title": "Asociación IPS Indígena Inga Kamentsa",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
     "geo.region": "CO-PUT",
