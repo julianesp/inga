@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface ContactoSede {
   id: string;
@@ -10,6 +11,7 @@ interface ContactoSede {
   telefono: string;
   email: string;
   horarios: string;
+  imagen: string;
   coordenadas: {
     lat: number;
     lng: number;
@@ -24,6 +26,8 @@ const contactoSedes: ContactoSede[] = [
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
     horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM\nSábados: no disponible",
+    imagen:
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/sedes/1.jpeg",
     coordenadas: { lat: 1.2025376, lng: -76.9180384 },
   },
   {
@@ -33,6 +37,8 @@ const contactoSedes: ContactoSede[] = [
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
     horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM\nSábados: no disponible",
+    imagen:
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/sedes/2.jpeg",
     coordenadas: { lat: 1.189163, lng: -76.975512 },
   },
   {
@@ -42,6 +48,8 @@ const contactoSedes: ContactoSede[] = [
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
     horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM",
+    imagen:
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/sedes/3.jpeg",
     coordenadas: { lat: 1.1889, lng: -76.8975 },
   },
   {
@@ -51,6 +59,8 @@ const contactoSedes: ContactoSede[] = [
     telefono: "3132863398",
     email: "ipsingakamentsa@gmail.com",
     horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM",
+    imagen:
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/sedes/4.jpeg",
     coordenadas: { lat: 1.2156, lng: -76.8567 },
   },
 ];
@@ -205,9 +215,21 @@ export default function ContactoSedes() {
             <div className="lg:col-span-2 dark:bg-gray-800">
               {selectedSedeData && (
                 <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8 shadow-lg dark:from-gray-700 dark:to-gray-800 border dark:border-white">
-                  <h3 className="text-2xl font-bold text-gray-800 mb-6 ">
+                  <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 ">
                     {selectedSedeData.nombre}
                   </h3>
+
+                  {/* Imagen de la sede */}
+                  <div className="mb-6 rounded-lg overflow-hidden shadow-md ">
+                    <Image
+                      src={selectedSedeData.imagen}
+                      alt={`Imagen de ${selectedSedeData.nombre}`}
+                      width={800}
+                      height={400}
+                      className="w-full h-64 object-cover md:h-2/4 lg:h-3/4"
+                      priority
+                    />
+                  </div>
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 ">
                     <div className="space-y-4">
