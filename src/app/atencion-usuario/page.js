@@ -160,8 +160,9 @@ export default function AtencionUsuarioPage() {
               Otros Canales de Comunicación
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
+
+              {/* <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
                 <div className="text-4xl mb-4">📞</div>
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
                   Línea Telefónica
@@ -175,7 +176,7 @@ export default function AtencionUsuarioPage() {
                 >
                   3132863398
                 </Link>
-              </div>
+              </div> */}
 
               <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
                 <div className="text-4xl mb-4">📧</div>

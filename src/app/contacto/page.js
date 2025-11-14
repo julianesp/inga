@@ -95,7 +95,7 @@ export default function ContactoPage() {
                   Facebook
                 </Link>
 
-                <ModalInstagram />
+                {/* <ModalInstagram /> */}
               </div>
             </div>
           </div>

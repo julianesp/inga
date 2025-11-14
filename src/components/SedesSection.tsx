@@ -183,7 +183,7 @@ export default function SedesSection() {
                         </p>
                       </div>
 
-                      <button
+                      {/* <button
                         onClick={() => handleAgendarCita(sede)}
                         className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors whitespace-nowrap flex items-center gap-2 cursor-pointer border dark:border-white"
                       >
@@ -201,7 +201,7 @@ export default function SedesSection() {
                           />
                         </svg>
                         Llamar para Agendar
-                      </button>
+                      </button> */}
                     </div>
 
                     <div className="mb-6 dark:text-white">

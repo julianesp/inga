@@ -57,7 +57,7 @@ export default function InformacionInstitucional() {
             ))}
           </div>
 
-          <div className="mt-8 text-center">
+          {/* <div className="mt-8 text-center">
             <p className="text-gray-600 mb-4 dark:text-white">
               ¿Necesita información específica sobre algún servicio?
             </p>
@@ -69,7 +69,8 @@ export default function InformacionInstitucional() {
             >
               Contactar Ahora 📱
             </Link>
-          </div>
+          </div> */}
+
         </div>
       </div>
     </section>
