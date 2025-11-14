@@ -20,24 +20,29 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "Inicio",
-    template: "%s",
+    default:
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
+    template: "%s | IPS Inga Kamentsá",
   },
   description:
-    "🏥 Asociación IPS Inga - Kamentsá ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
+    "Asociación IPS Inga - Kamentsá. Servicios de salud integral del Alto Putumayo. Consulta médica general, Odontología, Medicina tradicional. Atención de calidad con identidad cultural.",
   keywords: [
     "IPS Inga Kamentsá",
+    "ipsinka",
+    "ipsinka sibundoy",
+    "ipsinka alto putumayo",
+    "ipsinka inga",
     "servicios salud Sibundoy",
     "medicina general Putumayo",
     "médicas Sibundoy",
     "consulta médica Putumayo",
-    "EPS Sibundoy",
+    "IPS Sibundoy",
     "centro médico Putumayo",
     "atención médica integral",
     "salud Colombia",
     "consulta especializada",
     "servicios PQRS salud",
-    "agendar cita médica",
+
     "Sibundoy Putumayo",
     "Colón Putumayo",
     "Santiago Putumayo",
@@ -46,23 +51,23 @@ export const metadata = {
   authors: [{ name: "Asociación IPS Inga Kamentsá" }],
   creator: "Asociación IPS Inga Kamentsá",
   publisher: "Asociación IPS Inga Kamentsá",
-  metadataBase: new URL("https://inga-tawny.vercel.app"),
+  metadataBase: new URL("https://ipsinka.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title:
-      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Valle de Sibundoy Putumayo",
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
     description:
-      "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica general, Odontología, PQRS. Agenda tu cita. Atención de calidad con identidad cultural.",
-    url: "https://inga-tawny.vercel.app/",
+      "Servicios de salud integral del Alto, Putumayo. Consulta médica general, Odontología, PQRS. Atención de calidad con identidad cultural.",
+    url: "https://ipsinka.com/",
     siteName: "Asociación IPS Indígena Inga Kamentsa",
     images: [
       {
         url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
         width: 1200,
         height: 630,
-        alt: "Asociación IPS Indígena Inga Kamentsa",
+        alt: "Asociación IPS Indígena Inga Kamentsa - Logo",
       },
     ],
     locale: "es_CO",
@@ -70,9 +75,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Sibundoy",
+    title:
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
     description:
-      "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica, Odontología, Medicina tradicional. Agenda tu cita.",
+      "Servicios de salud integral del Alto Putumayo. Consulta médica, Odontología, Medicina tradicional. Atención de calidad con identidad cultural.",
     images: ["https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"],
     creator: "@ips_inga",
   },
@@ -140,14 +146,21 @@ export default function RootLayout({ children }) {
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://inga-tawny.vercel.app/#organization",
-        name: "IPS Inga Kamentsá",
-        alternateName:
-          "Institución Prestadora de Servicios de Salud Valle de Sibundoy",
-        url: "https://inga-tawny.vercel.app/",
+        "@id": "https://ipsinka.com/#organization",
+        name: "Asociación IPS Indígena Inga Kamentsa",
+        alternateName: "IPS Inga Kamentsá",
+        url: "https://ipsinka.com/",
         logo: {
           "@type": "ImageObject",
-          url: "https://inga-tawny.vercel.app/logo.png",
+          url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
+          width: "512",
+          height: "512",
+        },
+        image: {
+          "@type": "ImageObject",
+          url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
+          width: "512",
+          height: "512",
         },
         sameAs: [
           "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy",
@@ -169,9 +182,10 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "MedicalOrganization",
-        "@id": "https://inga-tawny.vercel.app/#medical",
-        name: "IPS Inga Kamentsá",
-        description: "Institución Prestadora de Servicios de Salud",
+        "@id": "https://ipsinka.com/#medical",
+        name: "Asociación IPS Indígena Inga Kamentsa",
+        description:
+          "Institución Prestadora de Servicios de Salud del Alto Putumayo",
         medicalSpecialty: [
           "General Medicine",
           "Traditional Indigenous Medicine",
@@ -208,17 +222,17 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "WebSite",
-        "@id": "/#website",
-        url: "https://inga-tawny.vercel.app/",
-        name: "IPS Inga Kamentsá",
-        description: "Servicios de salud integral para toda la comunidad",
+        "@id": "https://ipsinka.com/#website",
+        url: "https://ipsinka.com/",
+        name: "Asociación IPS Indígena Inga Kamentsa",
+        description:
+          "Servicios de salud integral para toda la comunidad del Alto Putumayo.",
         publisher: {
-          "@id": "https://inga-tawny.vercel.app/#organization",
+          "@id": "https://ipsinka.com/#organization",
         },
         potentialAction: {
           "@type": "SearchAction",
-          target:
-            "https://inga-tawny.vercel.app/busqueda?q={search_term_string}",
+          target: "https://ipsinka.com/busqueda?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
         inLanguage: "es-CO",
@@ -229,45 +243,45 @@ export default function RootLayout({ children }) {
             {
               "@type": "SiteNavigationElement",
               name: "Servicios",
-              url: "https://inga-tawny.vercel.app/servicios",
+              url: "https://ipsinka.com/servicios",
               description:
                 "Conoce nuestro portafolio completo de servicios de salud",
             },
             {
               "@type": "SiteNavigationElement",
               name: "Sedes",
-              url: "https://inga-tawny.vercel.app/sedes",
+              url: "https://ipsinka.com/sedes",
               description:
                 "Nuestras sedes en Sibundoy, Colón, Santiago y San Andrés",
             },
             {
               "@type": "SiteNavigationElement",
               name: "Institucional",
-              url: "https://inga-tawny.vercel.app/institucional",
+              url: "https://ipsinka.com/institucional",
               description: "Historia, misión, visión y portafolio de servicios",
             },
             {
               "@type": "SiteNavigationElement",
               name: "Contacto",
-              url: "https://inga-tawny.vercel.app/contacto",
+              url: "https://ipsinka.com/contacto",
               description: "Contacta con nosotros para agendar citas",
             },
             {
               "@type": "SiteNavigationElement",
               name: "Directorio",
-              url: "https://inga-tawny.vercel.app/directorio",
+              url: "https://ipsinka.com/directorio",
               description: "Directorio completo de contactos",
             },
             {
               "@type": "SiteNavigationElement",
               name: "Eventos",
-              url: "https://inga-tawny.vercel.app/eventos",
+              url: "https://ipsinka.com/eventos",
               description: "Eventos programados y anuncios importantes",
             },
             {
               "@type": "SiteNavigationElement",
               name: "Atención al Usuario",
-              url: "https://inga-tawny.vercel.app/atencion-usuario",
+              url: "https://ipsinka.com/atencion-usuario",
               description: "PQRSF y Asociación de Usuarios",
             },
           ],
