@@ -20,24 +20,29 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Alto Putumayo",
-    template: "%s | IPS Inga Kamentsa",
+    default:
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
+    template: "%s | IPS Inga Kamentsá",
   },
   description:
-    "🏥 Asociación IPS Inga - Kamentsá ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
+    "Asociación IPS Inga - Kamentsá. Servicios de salud integral del Alto Putumayo. Consulta médica general, Odontología, Medicina tradicional. Atención de calidad con identidad cultural.",
   keywords: [
     "IPS Inga Kamentsá",
+    "ipsinka",
+    "ipsinka sibundoy",
+    "ipsinka alto putumayo",
+    "ipsinka inga",
     "servicios salud Sibundoy",
     "medicina general Putumayo",
     "médicas Sibundoy",
     "consulta médica Putumayo",
-    "EPS Sibundoy",
+    "IPS Sibundoy",
     "centro médico Putumayo",
     "atención médica integral",
     "salud Colombia",
     "consulta especializada",
     "servicios PQRS salud",
-    "agendar cita médica",
+
     "Sibundoy Putumayo",
     "Colón Putumayo",
     "Santiago Putumayo",
@@ -52,9 +57,9 @@ export const metadata = {
   },
   openGraph: {
     title:
-      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Alto Putumayo",
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
     description:
-      "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica general, Odontología, PQRS. Agenda tu cita. Atención de calidad con identidad cultural.",
+      "Servicios de salud integral del Alto Putumayo. Consulta médica general, Odontología, PQRS. Agenda tu cita. Atención de calidad con identidad cultural.",
     url: "https://ipsinka.com/",
     siteName: "Asociación IPS Indígena Inga Kamentsa",
     images: [
@@ -62,7 +67,7 @@ export const metadata = {
         url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
         width: 1200,
         height: 630,
-        alt: "Asociación IPS Indígena Inga Kamentsa",
+        alt: "Asociación IPS Indígena Inga Kamentsa - Logo",
       },
     ],
     locale: "es_CO",
@@ -70,9 +75,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Sibundoy",
+    title:
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
     description:
-      "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica, Odontología, Medicina tradicional. Agenda tu cita.",
+      "Servicios de salud integral del Alto Putumayo. Consulta médica, Odontología, Medicina tradicional. Atención de calidad con identidad cultural.",
     images: ["https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"],
     creator: "@ips_inga",
   },
@@ -141,13 +147,20 @@ export default function RootLayout({ children }) {
       {
         "@type": "Organization",
         "@id": "https://ipsinka.com/#organization",
-        name: "IPS Inga Kamentsá",
-        alternateName:
-          "Institución Prestadora de Servicios de Salud del Alto Putumayo",
+        name: "Asociación IPS Indígena Inga Kamentsa",
+        alternateName: "IPS Inga Kamentsá",
         url: "https://ipsinka.com/",
         logo: {
           "@type": "ImageObject",
-          url: "https://ipsinka.com/logo.png",
+          url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
+          width: "512",
+          height: "512",
+        },
+        image: {
+          "@type": "ImageObject",
+          url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
+          width: "512",
+          height: "512",
         },
         sameAs: [
           "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy",
@@ -170,8 +183,9 @@ export default function RootLayout({ children }) {
       {
         "@type": "MedicalOrganization",
         "@id": "https://ipsinka.com/#medical",
-        name: "IPS Inga Kamentsá",
-        description: "Institución Prestadora de Servicios de Salud",
+        name: "Asociación IPS Indígena Inga Kamentsa",
+        description:
+          "Institución Prestadora de Servicios de Salud del Alto Putumayo",
         medicalSpecialty: [
           "General Medicine",
           "Traditional Indigenous Medicine",
@@ -208,17 +222,17 @@ export default function RootLayout({ children }) {
       },
       {
         "@type": "WebSite",
-        "@id": "/#website",
+        "@id": "https://ipsinka.com/#website",
         url: "https://ipsinka.com/",
-        name: "IPS Inga Kamentsá",
-        description: "Servicios de salud integral para toda la comunidad",
+        name: "Asociación IPS Indígena Inga Kamentsa",
+        description:
+          "Servicios de salud integral para toda la comunidad del Alto Putumayo",
         publisher: {
           "@id": "https://ipsinka.com/#organization",
         },
         potentialAction: {
           "@type": "SearchAction",
-          target:
-            "https://ipsinka.com/busqueda?q={search_term_string}",
+          target: "https://ipsinka.com/busqueda?q={search_term_string}",
           "query-input": "required name=search_term_string",
         },
         inLanguage: "es-CO",
