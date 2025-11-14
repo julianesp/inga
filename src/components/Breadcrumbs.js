@@ -79,7 +79,7 @@ export default function Breadcrumbs() {
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
-      "item": `https://ips-salud-integral.co${crumb.href}`
+      "item": `https://ipsinka.com${crumb.href}`
     }))
   };
 
@@ -89,7 +89,7 @@ export default function Breadcrumbs() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
-      <nav className="hidden bg-gray-50 py-2 px-4" aria-label="Breadcrumb">
+      <nav className="bg-gray-50 dark:bg-gray-800 py-2 px-4 transition-colors duration-200" aria-label="Breadcrumb">
         <ol className="flex items-center space-x-2 text-sm">
           {breadcrumbs.map((crumb, index) => (
             <li key={crumb.href} className="flex items-center">
@@ -107,13 +107,13 @@ export default function Breadcrumbs() {
                 </svg>
               )}
               {crumb.isLast ? (
-                <span className="text-gray-600 font-medium">
+                <span className="text-gray-600 dark:text-gray-300 font-medium">
                   {crumb.name}
                 </span>
               ) : (
                 <Link
                   href={crumb.href}
-                  className="text-green-600 hover:text-green-800 transition-colors"
+                  className="text-green-600 dark:text-green-400 hover:text-green-800 dark:hover:text-green-300 transition-colors"
                 >
                   {crumb.name}
                 </Link>

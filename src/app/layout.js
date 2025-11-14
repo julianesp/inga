@@ -20,8 +20,8 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   title: {
-    default: "Inicio",
-    template: "%s",
+    default: "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Alto Putumayo",
+    template: "%s | IPS Inga Kamentsa",
   },
   description:
     "🏥 Asociación IPS Inga - Kamentsá ➤ Servicios de salud integral en Sibundoy, Putumayo. ✅ Consulta médica general  ✅ PQRS ☎️ Agenda tu cita 🌿 Medicina tradicional",
@@ -52,7 +52,7 @@ export const metadata = {
   },
   openGraph: {
     title:
-      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Valle de Sibundoy Putumayo",
+      "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud Alto Putumayo",
     description:
       "Servicios de salud integral en Sibundoy, Putumayo. Consulta médica general, Odontología, PQRS. Agenda tu cita. Atención de calidad con identidad cultural.",
     url: "https://ipsinka.com/",
@@ -143,7 +143,7 @@ export default function RootLayout({ children }) {
         "@id": "https://ipsinka.com/#organization",
         name: "IPS Inga Kamentsá",
         alternateName:
-          "Institución Prestadora de Servicios de Salud Valle de Sibundoy",
+          "Institución Prestadora de Servicios de Salud del Alto Putumayo",
         url: "https://ipsinka.com/",
         logo: {
           "@type": "ImageObject",
