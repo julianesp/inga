@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://inga-tawny.vercel.app";
+  const baseUrl = "https://ipsinka.com";
   const currentDate = new Date();
 
   const routes = [

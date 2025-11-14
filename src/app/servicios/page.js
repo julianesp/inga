@@ -1,5 +1,6 @@
 import InformacionInstitucional from "@/components/InformacionInstitucional";
 import GestionClinica from "@/components/GestionClinica";
+import Link from "next/link";
 
 export const metadata = {
   title: "Servicios",
@@ -213,18 +214,13 @@ export default function ServiciosPage() {
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            <a
-              href="/contacto"
-              className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors inline-block"
-            >
-              Contactar Ahora
-            </a>
-            <a
+            
+            <Link
               href="/directorio"
               className="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors inline-block"
             >
               Ver Directorio
-            </a>
+            </Link>
           </div>
         </div>
       </section>
