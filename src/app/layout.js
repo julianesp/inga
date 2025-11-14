@@ -126,6 +126,7 @@ export const metadata = {
     "apple-mobile-web-app-title": "Asociación IPS Indígena Inga Kamentsa",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "default",
+    "google-site-verification": "google66e0b63c9f25d263",
     "geo.region": "CO-PUT",
     "geo.placename": "Sibundoy, Putumayo",
     "geo.position": "1.149861;-76.832611",
