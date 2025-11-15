@@ -63,28 +63,43 @@ export default async function Image() {
               marginBottom: "30px",
             }}
           >
-            {/* Logo IPS */}
+            {/* Ícono médico */}
             <div
               style={{
-                borderRadius: "50%",
-                padding: "10px",
+                background: "linear-gradient(135deg, #059669, #047857)",
+                borderRadius: "20px",
+                padding: "20px",
                 display: "flex",
                 marginRight: "25px",
                 alignItems: "center",
                 justifyContent: "center",
-                backgroundColor: "white",
               }}
             >
-              <img
-                src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
-                alt="Logo IPS Inga Kamentsá"
-                width="120"
-                height="120"
-                style={{
-                  borderRadius: "50%",
-                  objectFit: "cover",
-                }}
-              />
+              <svg
+                width="80"
+                height="80"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2L2 7L12 12L22 7L12 2Z"
+                  fill="white"
+                  opacity="0.9"
+                />
+                <path
+                  d="M2 17L12 22L22 17"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M2 12L12 17L22 12"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                />
+              </svg>
             </div>
             <div
               style={{

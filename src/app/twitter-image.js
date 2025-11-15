@@ -61,80 +61,83 @@ export default async function Image() {
               marginBottom: '25px',
             }}
           >
-            {/* Ícono */}
+            {/* Logo IPS */}
             <div
               style={{
-                background: 'linear-gradient(135deg, #059669, #047857)',
-                borderRadius: '18px',
-                padding: '18px',
+                borderRadius: '50%',
+                padding: '8px',
                 display: 'flex',
                 marginRight: '20px',
+                alignItems: 'center',
+                justifyContent: 'center',
+                backgroundColor: 'white',
               }}
             >
-              <svg
-                width="60"
-                height="60"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 2L2 7L12 12L22 7L12 2Z"
-                  fill="white"
-                  opacity="0.9"
-                />
-                <path
-                  d="M2 17L12 22L22 17"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M2 12L12 17L22 12"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <img
+                src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
+                alt="Logo IPS Inga Kamentsá"
+                width="100"
+                height="100"
+                style={{
+                  borderRadius: '50%',
+                  objectFit: 'cover',
+                }}
+              />
             </div>
             <div
               style={{
-                fontSize: '58px',
+                fontSize: '52px',
                 fontWeight: 'bold',
                 color: '#059669',
-                lineHeight: '1',
+                lineHeight: '1.2',
               }}
             >
-              IPS INGA KAMËNTSÁ
+              IPS Inga Kamentsá
             </div>
           </div>
 
           {/* Subtítulo */}
           <div
             style={{
-              fontSize: '28px',
+              fontSize: '26px',
               color: '#0891b2',
               fontWeight: '600',
-              marginBottom: '30px',
+              marginBottom: '20px',
             }}
           >
-            Servicios de Salud Integral - Valle de Sibundoy
+            Servicios de Salud del Alto Putumayo
+          </div>
+
+          {/* Descripción */}
+          <div
+            style={{
+              fontSize: '20px',
+              color: '#374151',
+              marginBottom: '28px',
+              lineHeight: '1.4',
+              maxWidth: '800px',
+              textAlign: 'center',
+            }}
+          >
+            Atención médica integral con identidad cultural
           </div>
 
           {/* Características */}
           <div
             style={{
               display: 'flex',
-              gap: '25px',
-              marginBottom: '25px',
+              gap: '20px',
+              marginBottom: '20px',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
             }}
           >
             <div
               style={{
                 background: '#f0fdf4',
-                padding: '12px 25px',
+                padding: '10px 22px',
                 borderRadius: '12px',
-                fontSize: '20px',
+                fontSize: '18px',
                 color: '#059669',
                 fontWeight: '600',
                 border: '2px solid #86efac',
@@ -145,9 +148,9 @@ export default async function Image() {
             <div
               style={{
                 background: '#ecfeff',
-                padding: '12px 25px',
+                padding: '10px 22px',
                 borderRadius: '12px',
-                fontSize: '20px',
+                fontSize: '18px',
                 color: '#0891b2',
                 fontWeight: '600',
                 border: '2px solid #67e8f9',
@@ -158,15 +161,15 @@ export default async function Image() {
             <div
               style={{
                 background: '#fef3c7',
-                padding: '12px 25px',
+                padding: '10px 22px',
                 borderRadius: '12px',
-                fontSize: '20px',
+                fontSize: '18px',
                 color: '#d97706',
                 fontWeight: '600',
                 border: '2px solid #fcd34d',
               }}
             >
-              🚨 Urgencias 24/7
+              🌿 Medicina Tradicional
             </div>
           </div>
 
@@ -175,15 +178,19 @@ export default async function Image() {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '18px',
-              fontSize: '22px',
+              gap: '15px',
+              fontSize: '20px',
               color: '#6b7280',
               marginTop: '15px',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
             }}
           >
             <span>📞 313-286-3398</span>
             <span>•</span>
-            <span>📧 ipsingakamentsa@gmail.com</span>
+            <span>📍 Alto Putumayo</span>
+            <span>•</span>
+            <span>🌐 ipsinka.com</span>
           </div>
         </div>
       </div>
