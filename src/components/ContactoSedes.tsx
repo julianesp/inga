@@ -61,7 +61,7 @@ const contactoSedes: ContactoSede[] = [
     horarios: "Lunes a Viernes: 8:00 AM - 5:00 PM",
     imagen:
       "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/sedes/4.jpeg",
-    coordenadas: { lat: 1.2156, lng: -76.8567 },
+    coordenadas: { lat: 1.1275007, lng: -76.9908993 },
   },
 ];
 
