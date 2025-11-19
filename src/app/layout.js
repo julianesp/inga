@@ -2,7 +2,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components";
 import { Footer } from "@/containers";
-import Breadcrumbs from "@/components/Breadcrumbs";
 import { ThemeProvider } from "next-themes";
 import AOSInit from "@/components/AOSInit";
 import Image from "next/image";
@@ -52,15 +51,11 @@ export const metadata = {
   creator: "Asociación IPS Inga Kamentsá",
   publisher: "Asociación IPS Inga Kamentsá",
   metadataBase: new URL("https://ipsinka.com"),
-  alternates: {
-    canonical: "/",
-  },
   openGraph: {
     title:
       "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
     description:
       "Servicios de salud integral del Alto Putumayo. Consulta médica general, Odontología, PQRS. Agenda tu cita. Atención de calidad con identidad cultural.",
-    url: "https://ipsinka.com/",
     siteName: "Asociación IPS Indígena Inga Kamentsa",
     images: [
       {
@@ -79,7 +74,9 @@ export const metadata = {
       "Asociación IPS Indígena Inga Kamentsa | Servicios de Salud del Alto Putumayo",
     description:
       "Servicios de salud integral del Alto Putumayo. Consulta médica, Odontología, Medicina tradicional. Atención de calidad con identidad cultural.",
-    images: ["https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"],
+    images: [
+      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg",
+    ],
     creator: "@ips_inga",
   },
   robots: {
@@ -370,7 +367,6 @@ export default function RootLayout({ children }) {
 
           <div className="watermark-container relative flex min-h-screen flex-col">
             <Navbar />
-            <Breadcrumbs />
             <div className="flex-1">{children}</div>
             <Footer />
           </div>

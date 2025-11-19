@@ -1,10 +1,134 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import EventosCalendario from "@/components/EventosCalendario";
 import ModalInstagram from "@/components/ModalInstagram";
+import RotatingCarousel from "@/components/RotatingCarousel";
+
+// Definir categorías de eventos con sus galerías de fotos
+const eventCategories = {
+  todas: {
+    name: "Todas",
+    icon: "📅",
+    color: "gray",
+  },
+  jornadas: {
+    name: "Jornadas de Salud",
+    icon: "🏥",
+    color: "blue",
+    description:
+      "Brigadas médicas, vacunación, exámenes preventivos y atención especializada",
+    galleries: [],
+  },
+  capacitaciones: {
+    name: "Capacitaciones",
+    icon: "📚",
+    color: "green",
+    description: "Talleres de primeros auxilios y promoción de la salud",
+    galleries: [
+      {
+        title: "Aplicación Riesgo Psicosocial",
+        description:
+          "Registro fotográfico de nuestra jornada de aplicación de evaluación de riesgo psicosocial, fortaleciendo el bienestar de nuestro equipo de trabajo.",
+        images: [
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/Aplicacion%20riesgo%20psicosocial/1.jpg",
+            alt: "Aplicación Riesgo Psicosocial 1",
+            title: "Jornada de Evaluación Psicosocial",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/Aplicacion%20riesgo%20psicosocial/2.jpg",
+            alt: "Aplicación Riesgo Psicosocial 2",
+            title: "Evaluación de Bienestar Laboral",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/Aplicacion%20riesgo%20psicosocial/3.jpg",
+            alt: "Aplicación Riesgo Psicosocial 3",
+            title: "Atención al Personal de Salud",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/Aplicacion%20riesgo%20psicosocial/4.jpg",
+            alt: "Aplicación Riesgo Psicosocial 4",
+            title: "Proceso de Evaluación",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/Aplicacion%20riesgo%20psicosocial/5.jpg",
+            alt: "Aplicación Riesgo Psicosocial 5",
+            title: "Registro y Seguimiento",
+          },
+        ],
+      },
+    ],
+  },
+  celebraciones: {
+    name: "Celebraciones",
+    icon: "🎉",
+    color: "purple",
+    description: "Eventos especiales, días conmemorativos y encuentros comunitarios",
+    galleries: [],
+  },
+  encuentros: {
+    name: "Encuentros",
+    icon: "🤝",
+    color: "yellow",
+    description: "Reuniones con líderes, asambleas de usuarios y espacios de diálogo",
+    galleries: [],
+  },
+};
 
 export default function EventosContent() {
+  const [selectedCategory, setSelectedCategory] = useState("todas");
+
+  const getColorClasses = (color) => {
+    const colors = {
+      blue: {
+        bg: "bg-blue-100 dark:bg-blue-900",
+        hover: "hover:bg-blue-200 dark:hover:bg-blue-800",
+        text: "text-blue-800 dark:text-blue-200",
+        border: "border-blue-500",
+        selected: "ring-4 ring-blue-500",
+      },
+      green: {
+        bg: "bg-green-100 dark:bg-green-900",
+        hover: "hover:bg-green-200 dark:hover:bg-green-800",
+        text: "text-green-800 dark:text-green-200",
+        border: "border-green-500",
+        selected: "ring-4 ring-green-500",
+      },
+      purple: {
+        bg: "bg-purple-100 dark:bg-purple-900",
+        hover: "hover:bg-purple-200 dark:hover:bg-purple-800",
+        text: "text-purple-800 dark:text-purple-200",
+        border: "border-purple-500",
+        selected: "ring-4 ring-purple-500",
+      },
+      yellow: {
+        bg: "bg-yellow-100 dark:bg-yellow-900",
+        hover: "hover:bg-yellow-200 dark:hover:bg-yellow-800",
+        text: "text-yellow-800 dark:text-yellow-200",
+        border: "border-yellow-500",
+        selected: "ring-4 ring-yellow-500",
+      },
+      gray: {
+        bg: "bg-gray-100 dark:bg-gray-700",
+        hover: "hover:bg-gray-200 dark:hover:bg-gray-600",
+        text: "text-gray-800 dark:text-gray-200",
+        border: "border-gray-500",
+        selected: "ring-4 ring-gray-500",
+      },
+    };
+    return colors[color];
+  };
+
+  // Obtener todas las galerías si está seleccionado "todas"
+  const currentGalleries =
+    selectedCategory === "todas"
+      ? Object.values(eventCategories)
+          .filter((cat) => cat.galleries)
+          .flatMap((cat) => cat.galleries)
+      : eventCategories[selectedCategory]?.galleries || [];
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -98,62 +222,149 @@ export default function EventosContent() {
 
       <EventosCalendario />
 
-      {/* Tipos de Eventos */}
+      {/* Filtros de Categorías */}
+      <section className="py-12 bg-gradient-to-r from-green-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-8 text-gray-800 dark:text-white">
+            Filtrar Eventos por Categoría
+          </h2>
+          <div className="flex flex-wrap justify-center gap-4 max-w-5xl mx-auto">
+            {Object.entries(eventCategories).map(([key, category]) => {
+              const colors = getColorClasses(category.color);
+              const isSelected = selectedCategory === key;
+
+              return (
+                <button
+                  key={key}
+                  onClick={() => setSelectedCategory(key)}
+                  className={`
+                    ${colors.bg} ${colors.hover} ${colors.text}
+                    ${isSelected ? colors.selected : ""}
+                    px-6 py-3 rounded-lg font-semibold transition-all duration-200
+                    flex items-center gap-2 shadow-md hover:scale-105
+                  `}
+                >
+                  <span className="text-2xl">{category.icon}</span>
+                  <span>{category.name}</span>
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Mensaje de categoría seleccionada */}
+          {selectedCategory !== "todas" && (
+            <div className="mt-8 max-w-3xl mx-auto text-center">
+              <p className="text-lg text-gray-700 dark:text-gray-300">
+                Mostrando eventos y galerías de:{" "}
+                <span className="font-bold">
+                  {eventCategories[selectedCategory].name}
+                </span>
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Galerías de Fotos Filtradas */}
+      {currentGalleries.length > 0 && (
+        <section className="py-16 bg-white/90 dark:bg-gray-900">
+          <div className="container mx-auto px-4">
+            <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+              Galería de Fotos
+            </h2>
+
+            <div className="space-y-16">
+              {currentGalleries.map((gallery, index) => (
+                <div key={index} className="max-w-6xl mx-auto">
+                  <div className="text-center mb-8">
+                    <h3 className="text-3xl font-semibold mb-4 text-gray-800 dark:text-white">
+                      {gallery.title}
+                    </h3>
+                    <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                      {gallery.description}
+                    </p>
+                  </div>
+                  <div className="max-w-5xl mx-auto" data-aos="zoom-in">
+                    <RotatingCarousel
+                      images={gallery.images}
+                      interval={5000}
+                      height="500px"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Mensaje cuando no hay galerías */}
+      {currentGalleries.length === 0 &&
+        selectedCategory !== "todas" && (
+          <section className="py-16 bg-white/90 dark:bg-gray-900">
+            <div className="container mx-auto px-4">
+              <div className="text-center max-w-2xl mx-auto">
+                <div className="text-6xl mb-6">📷</div>
+                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                  No hay galerías disponibles
+                </h3>
+                <p className="text-lg text-gray-600 dark:text-gray-400">
+                  Actualmente no tenemos fotos registradas para esta categoría.
+                  Pronto agregaremos más contenido.
+                </p>
+              </div>
+            </div>
+          </section>
+        )}
+
+      {/* Tipos de Eventos - Información */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800 dark:border-t-white border">
-        <div className="container mx-auto px-4 dark:bg-gray-800">
-          <h2 className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-4 text-gray-800 dark:text-white">
             Tipos de Eventos que Organizamos
           </h2>
+          <p className="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+            Usa los filtros arriba para explorar fotos y detalles de cada
+            categoría de eventos
+          </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow dark:bg-gray-800 border dark:border-white">
-              <div className="text-4xl mb-4">🏥</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
-                Jornadas de Salud
-              </h3>
-              <p className="text-gray-600 text-sm dark:text-white">
-                Brigadas médicas, vacunación, exámenes preventivos y atención
-                especializada
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow dark:bg-gray-800 border dark:border-white">
-              <div className="text-4xl mb-4">📚</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
-                Capacitaciones
-              </h3>
-              <p className="text-gray-600 text-sm dark:text-white">
-                Talleres de primeros auxilios y promoción de la salud
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow dark:bg-gray-800 border dark:border-white">
-              <div className="text-4xl mb-4">🎉</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
-                Celebraciones
-              </h3>
-              <p className="text-gray-600 text-sm dark:text-white">
-                Eventos especiales, días conmemorativos y encuentros
-                comunitarios
-              </p>
-            </div>
-
-            <div className="bg-white rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-shadow dark:bg-gray-800 border dark:border-white">
-              <div className="text-4xl mb-4">🤝</div>
-              <h3 className="text-xl font-bold text-gray-800 mb-3">
-                Encuentros
-              </h3>
-              <p className="text-gray-600 text-sm dark:text-white">
-                Reuniones con líderes, asambleas de usuarios y espacios de
-                diálogo
-              </p>
-            </div>
+            {Object.entries(eventCategories)
+              .filter(([key]) => key !== "todas")
+              .map(([key, category]) => {
+                const colors = getColorClasses(category.color);
+                return (
+                  <div
+                    key={key}
+                    className={`bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center hover:shadow-xl transition-all duration-300 border-2 ${colors.border} cursor-pointer hover:scale-105`}
+                    onClick={() => {
+                      setSelectedCategory(key);
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
+                    <div className="text-4xl mb-4">{category.icon}</div>
+                    <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
+                      {category.name}
+                    </h3>
+                    <p className="text-gray-600 text-sm dark:text-gray-300 mb-4">
+                      {category.description}
+                    </p>
+                    {category.galleries && category.galleries.length > 0 && (
+                      <div className={`text-sm ${colors.text} font-semibold`}>
+                        {category.galleries.length} galería
+                        {category.galleries.length > 1 ? "s" : ""} disponible
+                        {category.galleries.length > 1 ? "s" : ""}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
           </div>
         </div>
       </section>
 
       {/* Cómo Participar */}
-      <section className="py-16 bg-white/90 dark:bg-gray-800 border dark:border-t-white">
+      <section className="py-16 bg-white/90 dark:bg-gray-900 border-t dark:border-t-white">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">

@@ -201,14 +201,14 @@ export default function ContactoSedes() {
               </div>
 
               {/* Botón para agendar citas */}
-              <div className="mt-6">
+              {/* <div className="mt-6">
                 <button
                   onClick={showCitasForm ? handleCloseForm : handleOpenForm}
                   className="w-full bg-blue-600 text-white py-3 px-4 rounded-lg hover:bg-blue-700 transition-colors font-semibold cursor-pointer"
                 >
                   {showCitasForm ? "Cerrar Formulario" : "Programar Cita"}
                 </button>
-              </div>
+              </div> */}
             </div>
 
             {/* Información de la sede seleccionada */}
@@ -455,7 +455,7 @@ export default function ContactoSedes() {
             <h4 className="text-2xl font-bold text-gray-800 mb-6">
               Programar Cita
             </h4>
-            <form onSubmit={handleSubmitCita} className="space-y-4">
+            {/* <form onSubmit={handleSubmitCita} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-semibold text-gray-700 mb-2">
@@ -621,7 +621,7 @@ export default function ContactoSedes() {
                   Enviar Solicitud
                 </button>
               </div>
-            </form>
+            </form> */}
           </div>
         </div>
       )}

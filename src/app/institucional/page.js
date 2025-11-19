@@ -1,9 +1,11 @@
 import InformacionInstitucional from "@/components/InformacionInstitucional";
+import SedesSection from "@/components/SedesSection";
+import DirectorioTelefonico from "@/components/DirectorioTelefonico";
 
 export const metadata = {
   title: "Institucional",
   description:
-    "Conozca la historia, misión, visión y portafolio de servicios de IPS INGA KAMËNTSÁ. Atención médica profesional desde 1995.",
+    "Conozca la historia, misión, visión, portafolio de servicios, sedes y directorio de IPS INGA KAMËNTSÁ. Atención médica profesional desde 1995.",
 };
 
 export default function InstitucionalPage() {
@@ -368,6 +370,35 @@ export default function InstitucionalPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Sedes Section */}
+      <section className="py-16 bg-white/45 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+            Nuestras Sedes
+          </h2>
+          <p className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+            Atendemos en cuatro municipios del Valle de Sibundoy, ofreciendo
+            servicios de salud accesibles y culturalmente apropiados para
+            nuestras comunidades.
+          </p>
+          <SedesSection />
+        </div>
+      </section>
+
+      {/* Directorio Section */}
+      <section className="py-16 bg-gray-50 dark:bg-gray-800">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+            Directorio Telefónico
+          </h2>
+          <p className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+            Encuentre rápidamente el contacto de cualquier área, departamento
+            o profesional de nuestra institución.
+          </p>
+          <DirectorioTelefonico />
         </div>
       </section>
 
