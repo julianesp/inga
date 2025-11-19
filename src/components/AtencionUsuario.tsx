@@ -155,7 +155,8 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                   </div>
                 </div>
 
-                <div className="flex items-center">
+                {/* Linea principal */}
+                {/* <div className="flex items-center">
                   <svg
                     className="w-6 h-6 text-green-600 mr-3"
                     fill="none"
@@ -180,7 +181,7 @@ Fecha: ${new Date().toLocaleString("es-CO", { timeZone: "America/Bogota" })}
                       3132863398
                     </Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

@@ -10,11 +10,10 @@ const navigationLinks = [
   { href: "/", label: "Inicio" },
   { href: "/institucional", label: "Institucional" },
   { href: "/servicios", label: "Servicios" },
-  { href: "/sedes", label: "Sedes" },
-  { href: "/directorio", label: "Directorio" },
+  { href: "/galeria", label: "Galería" },
+  // { href: "/transparencia", label: "Transparencia" },
   { href: "/eventos", label: "Eventos" },
   { href: "/atencion-usuario", label: "Atención al Usuario" },
-  { href: "/contacto", label: "Contacto" },
 ];
 
 export default function Navbar() {
@@ -45,10 +44,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          <div className={styles.themeSwitcher}>
-            <ThemeSwitcher />
-          </div>
-
           {/* Desktop Navigation */}
           <div
             className={`hidden lg:flex items-center space-x-3  ${styles.links}`}
@@ -62,10 +57,16 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <div className={styles.themeSwitcher}>
+              <ThemeSwitcher />
+            </div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile menu button and theme switcher */}
           <div className="lg:hidden flex items-center space-x-2 ">
+            <div className={styles.themeSwitcher}>
+              <ThemeSwitcher />
+            </div>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative p-2 bg-white dark:bg-gray-800 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200 shadow-lg focus:outline-none border-2 border-gray-300 dark:border-gray-100"
@@ -103,7 +104,7 @@ export default function Navbar() {
               className={`
                 ${
                   styles.mobileMenu
-                } rounded-4xl shadow-lg w-11/12 max-w-xs mx-auto flex flex-col items-center py-6 space-y-3 z-50 
+                } rounded-4xl shadow-lg w-11/12 max-w-xs mx-auto flex flex-col items-center py-6 space-y-3 z-50
                 ${
                   isMenuOpen
                     ? "opacity-100 scale-100 translate-y-0 pointer-events-auto"

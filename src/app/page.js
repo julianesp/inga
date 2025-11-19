@@ -6,7 +6,6 @@ import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
 import GlobalSearch from "@/components/GlobalSearch";
 import ImageCarousel from "../components/ImageCarousel";
-import RotatingCarousel from "@/components/RotatingCarousel";
 import CalendarioConsultas from "@/components/CalendarioConsultas";
 import { obtenerTodasLasCitas } from "@/data/citasProduccion";
 
@@ -160,68 +159,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Carrusel rotativo de imágenes */}
-      <section className="py-8 px-4 md:px-8">
-        <h2
-          className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
-          data-aos="fade-up"
-        >
-          Galería de Imágenes
-        </h2>
-        <div
-          className="max-w-5xl mx-auto"
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          <RotatingCarousel
-            images={[
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/1.jpeg",
-                alt: "Encuentros de Saberes 1",
-                title: "Encuentros de Saberes y Prácticas Ancestrales",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/2.jpeg",
-                alt: "Encuentros de Saberes 2",
-                title: "Prácticas Tradicionales de Salud",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/3.jpeg",
-                alt: "Encuentros de Saberes 3",
-                title: "Medicina Ancestral",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/4.jpeg",
-                alt: "Encuentros de Saberes 4",
-                title: "Comunidad y Tradición",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/5.jpeg",
-                alt: "Encuentros de Saberes 5",
-                title: "Saberes Comunitarios",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/6.jpeg",
-                alt: "Encuentros de Saberes 6",
-                title: "Encuentros Culturales",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/7.jpeg",
-                alt: "Encuentros de Saberes 7",
-                title: "Medicina Tradicional Santiago",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/8.jpeg",
-                alt: "Encuentros de Saberes 8",
-                title: "Medicina Tradicional",
-              },
-            ]}
-            interval={5000}
-            height="500px"
-          />
-        </div>
-      </section>
-
       <HealthInfoSection />
 
       {/* Hero Section */}
@@ -261,12 +198,13 @@ export default function Home() {
               >
                 Ver Nuestras Sedes
               </Link>
-              <Link
+
+              {/* <Link
                 href="/contacto"
                 className="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors inline-block"
               >
                 Agendar Cita
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -288,58 +226,6 @@ export default function Home() {
             </p>
           </div>
           <CalendarioConsultas consultas={consultas} />
-        </div>
-      </section>
-
-      {/* RotatingCarousel */}
-      <section className="py-8 px-4 md:px-8">
-        <h2
-          className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
-          data-aos="fade-down"
-        >
-          Nuestra IPS
-        </h2>
-        <div
-          className="max-w-5xl mx-auto"
-          data-aos="flip-right"
-          data-aos-delay="200"
-        >
-          <RotatingCarousel
-            images={[
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/1.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Farmacia Sibundoy",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/2.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Odontología",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/3.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Farmacia Colón",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/4.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Farmacia Sibundoy",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/5.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Atención médica",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/7.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Atención médica",
-              },
-            ]}
-            interval={5000}
-            height="500px"
-          />
         </div>
       </section>
 
@@ -395,42 +281,6 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="py-8 px-4 md:px-8">
-        <h2
-          className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
-          data-aos="fade-down"
-        >
-          Atención domiciliaria
-        </h2>
-        <div
-          className="max-w-5xl mx-auto"
-          data-aos="flip-right"
-          data-aos-delay="200"
-        >
-          <RotatingCarousel
-            images={[
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/1.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Atención domiciliaria",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/2.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Atención domiciliaria",
-              },
-              {
-                url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/3.jpeg",
-                alt: "Fotos IPS Inga Kamentsa",
-                title: "Atención domiciliaria",
-              },
-            ]}
-            interval={5000}
-            height="500px"
-          />
         </div>
       </section>
 

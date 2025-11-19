@@ -1,10 +1,12 @@
 import AtencionUsuario from "@/components/AtencionUsuario";
 import Link from "next/link";
+import ContactoSedes from "@/components/ContactoSedes";
+import ModalInstagram from "@/components/ModalInstagram";
 
 export const metadata = {
   title: "Atención al Usuario",
   description:
-    "Área de Atención al Usuario: PQRSF, información de contacto y Asociación de Usuarios de la IPS INGA KAMËNTSÁ.",
+    "Área de Atención al Usuario: PQRSF, información de contacto, Asociación de Usuarios y canales de comunicación de la IPS INGA KAMËNTSÁ.",
 };
 
 export default function AtencionUsuarioPage() {
@@ -161,7 +163,6 @@ export default function AtencionUsuarioPage() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-
               {/* <div className="bg-white dark:bg-gray-700 rounded-lg shadow-lg p-6 text-center">
                 <div className="text-4xl mb-4">📞</div>
                 <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3">
@@ -203,7 +204,7 @@ export default function AtencionUsuarioPage() {
                   Visítenos en cualquiera de nuestras sedes
                 </p>
                 <Link
-                  href="/sedes"
+                  href="/institucional"
                   className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700  inline-block dark:bg-gray-800 border dark:border-white hover:scale-90 transition-all duration-300"
                 >
                   Ver Sedes
@@ -211,6 +212,21 @@ export default function AtencionUsuarioPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Sección de Contacto */}
+      <section className="py-16 bg-white/55 dark:bg-gray-900">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+            Información de Contacto
+          </h2>
+          <p className="text-xl text-center text-gray-600 dark:text-gray-300 mb-12 max-w-3xl mx-auto">
+            Encuentre la información de contacto de todas nuestras sedes y
+            programe su cita de manera fácil y rápida.
+          </p>
+          <ContactoSedes />
+          {/* <ModalInstagram /> */}
         </div>
       </section>
 
