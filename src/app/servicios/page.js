@@ -1,12 +1,14 @@
+"use client";
+
 import InformacionInstitucional from "@/components/InformacionInstitucional";
 import GestionClinica from "@/components/GestionClinica";
 import Link from "next/link";
 
-export const metadata = {
-  title: "Servicios",
-  description:
-    "Conoce nuestro portafolio completo de servicios de salud: medicina general, especialidades y más.",
-};
+// export const metadata = {
+//   title: "Servicios",
+//   description:
+//     "Conoce nuestro portafolio completo de servicios de salud: medicina general, especialidades y más.",
+// };
 
 export default function ServiciosPage() {
   return (
@@ -33,7 +35,7 @@ export default function ServiciosPage() {
         </div>
       </section>
 
-      {/* /* Servicios Detallados */}
+      {/* Servicios Detallados */}
       <section className="py-16 bg-white/45 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -77,7 +79,7 @@ export default function ServiciosPage() {
 
               <div className="space-y-6">
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md">
-                  <ul className="space-y-2 text-gray-900 dark:text-gray-300">
+                  <ul className="list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-300">
                     <li>Atenciones individuales y grupales</li>
                   </ul>
                 </div>
@@ -153,7 +155,7 @@ export default function ServiciosPage() {
                 <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md ">
                   <ul className="list-disc pl-5 space-y-2 text-gray-900 dark:text-gray-300">
                     <li>
-                      Psicología exclusica para población crónica (hipertensos y
+                      Psicología exclusiva para población crónica (hipertensos y
                       diabéticos)
                     </li>
                   </ul>
@@ -184,7 +186,7 @@ export default function ServiciosPage() {
                 <li>Tipo de parentesco con el usuario</li>
               </ul>
 
-              <p className="flex items-center justify-center m-auto h-10 w-9/12 mt-6 text-center border border-black rounded-lg bg-black text-white dark:bg-white dark:text-black">
+              <p className="visit-note flex items-center justify-center m-auto w-9/12 mt-6 text-center border border-black rounded-lg bg-black text-white dark:bg-white dark:text-black">
                 Esta información es importante para brindar un oportuno servicio
               </p>
             </div>
@@ -195,7 +197,18 @@ export default function ServiciosPage() {
       <InformacionInstitucional />
       <GestionClinica />
 
-      {/* Call to Action */}
+      {/* Scoped styles to increase the paragraph height for screens between 320px and 425px */}
+
+      <style jsx>{`
+        .visit-note {
+          height: 2.5rem; /* default height for larger screens */
+        }
+        @media (min-width: 320px) and (max-width: 425px) {
+          .visit-note {
+            height: 4rem; /* increased height for 320px - 425px */
+          }
+        }
+      `}</style>
       <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600 dark:from-green-800 dark:to-blue-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6" data-aos="fade-down">
@@ -214,7 +227,6 @@ export default function ServiciosPage() {
             data-aos="zoom-in"
             data-aos-delay="200"
           >
-            
             <Link
               href="/directorio"
               className="border-2 border-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-600 transition-colors inline-block"
