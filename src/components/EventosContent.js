@@ -443,7 +443,7 @@ export default function EventosContent() {
       </section>
 
       {/* Galería de Eventos Pasados */}
-      <section className="py-16 bg-gray-50/85 dark:bg-gray-800 dark:border-t-white border">
+      {/* <section className="py-16 bg-gray-50/85 dark:bg-gray-800 dark:border-t-white border">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
             Eventos Realizados
@@ -513,7 +513,7 @@ export default function EventosContent() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
     </div>
   );
 }

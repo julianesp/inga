@@ -301,7 +301,7 @@ export default function Footer() {
                 <h5 className="font-semibold text-green-400 dark:text-green-500">
                   Sede Sibundoy
                 </h5>
-                <p>Diagonal al mercado</p>
+                <p>Barrio El Recreo</p>
                 <p className="text-gray-300 dark:text-gray-400">
                   Calle 15 # 15 - 69
                 </p>
@@ -319,9 +319,7 @@ export default function Footer() {
                 <h5 className="font-semibold text-green-400 dark:text-green-500">
                   Sede Santiago
                 </h5>
-                <p className="text-gray-300 dark:text-white">
-                  Barrio Nazareth
-                </p>
+                <p className="text-gray-300 dark:text-white">Barrio Nazareth</p>
                 <p className="text-gray-300 dark:text-gray-400">
                   Calle 6 Carrera 5 - 6
                 </p>
@@ -330,9 +328,7 @@ export default function Footer() {
                 <h5 className="font-semibold text-green-400 dark:text-green-500">
                   Sede San Andrés
                 </h5>
-                <p className="text-gray-300 dark:text-white">
-                  Chorro San Jose
-                </p>
+                <p className="text-gray-300 dark:text-white">Chorro San Jose</p>
               </div>
             </div>
           </div>
