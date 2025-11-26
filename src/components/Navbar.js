@@ -11,7 +11,7 @@ const navigationLinks = [
   { href: "/institucional", label: "Institucional" },
   { href: "/servicios", label: "Servicios" },
   { href: "/galeria", label: "Galería" },
-  // { href: "/transparencia", label: "Transparencia" },
+  { href: "/transparencia", label: "Transparencia" },
   { href: "/eventos", label: "Eventos" },
   { href: "/atencion-usuario", label: "Atención al Usuario" },
 ];
