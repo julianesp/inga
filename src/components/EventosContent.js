@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import EventosCalendario from "@/components/EventosCalendario";
-import ModalInstagram from "@/components/ModalInstagram";
+// import ModalInstagram from "@/components/ModalInstagram";
 import RotatingCarousel from "@/components/RotatingCarousel";
 
 // Definir categorías de eventos con sus galerías de fotos
@@ -59,20 +59,81 @@ const eventCategories = {
           },
         ],
       },
+      {
+        title: "Participación simulacro nacional de evacuación",
+        description:
+          "Registro fotográfico de nuestra participación en el simulacro nacional de evacuación, fortaleciendo la preparación y respuesta ante emergencias.",
+        images: [
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/simulacro%20nacional%20de%20evacuacion/1.jpg",
+            alt: "Simulacro de evacuación 1",
+            title: "Simulacro Nacional de Evacuación",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/simulacro%20nacional%20de%20evacuacion/2.jpg",
+            alt: "Simulacro de evacuación 2",
+            title: "Evacuación del Personal",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/simulacro%20nacional%20de%20evacuacion/3.jpg",
+            alt: "Simulacro de evacuación 3",
+            title: "Punto de Encuentro",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/simulacro%20nacional%20de%20evacuacion/4.jpg",
+            alt: "Simulacro de evacuación 4",
+            title: "Protocolo de Emergencia",
+          },
+        ],
+      },
+      {
+        title: "Verificación uso de los elementos de protección personal",
+        description:
+          "Jornada de verificación y capacitación sobre el uso correcto de elementos de protección personal, garantizando la seguridad de nuestro equipo de trabajo.",
+        images: [
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/verificacion%20uso%20de%20elementos%20proteccion%20personal/1.jpg",
+            alt: "Verificación EPP 1",
+            title: "Verificación de Elementos de Protección",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/verificacion%20uso%20de%20elementos%20proteccion%20personal/2.jpg",
+            alt: "Verificación EPP 2",
+            title: "Capacitación en Uso de EPP",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/verificacion%20uso%20de%20elementos%20proteccion%20personal/3.jpg",
+            alt: "Verificación EPP 3",
+            title: "Inspección de Equipos",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/verificacion%20uso%20de%20elementos%20proteccion%20personal/4.jpg",
+            alt: "Verificación EPP 4",
+            title: "Protocolo de Seguridad",
+          },
+          {
+            url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/eventos/verificacion%20uso%20de%20elementos%20proteccion%20personal/5.jpg",
+            alt: "Verificación EPP 5",
+            title: "Entrenamiento del Personal",
+          },
+        ],
+      },
     ],
   },
   celebraciones: {
     name: "Celebraciones",
     icon: "🎉",
     color: "purple",
-    description: "Eventos especiales, días conmemorativos y encuentros comunitarios",
+    description:
+      "Eventos especiales, días conmemorativos y encuentros comunitarios",
     galleries: [],
   },
   encuentros: {
     name: "Encuentros",
     icon: "🤝",
     color: "yellow",
-    description: "Reuniones con líderes, asambleas de usuarios y espacios de diálogo",
+    description:
+      "Reuniones con líderes, asambleas de usuarios y espacios de diálogo",
     galleries: [],
   },
 };
@@ -147,7 +208,7 @@ export default function EventosContent() {
       </section>
 
       {/* Próximos Eventos Destacados */}
-      <section className="py-16 my-2 rounded-xl bg-white/75 dark:bg-gray-800 border dark:border-white">
+      {/* <section className="py-16 my-2 rounded-xl bg-white/75 dark:bg-gray-800 border dark:border-white">
         <div className="container mx-auto px-4 dark:bg-gray-800">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
             Próximos Eventos Destacados
@@ -218,7 +279,7 @@ export default function EventosContent() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <EventosCalendario />
 
@@ -299,23 +360,22 @@ export default function EventosContent() {
       )}
 
       {/* Mensaje cuando no hay galerías */}
-      {currentGalleries.length === 0 &&
-        selectedCategory !== "todas" && (
-          <section className="py-16 bg-white/90 dark:bg-gray-900">
-            <div className="container mx-auto px-4">
-              <div className="text-center max-w-2xl mx-auto">
-                <div className="text-6xl mb-6">📷</div>
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
-                  No hay galerías disponibles
-                </h3>
-                <p className="text-lg text-gray-600 dark:text-gray-400">
-                  Actualmente no tenemos fotos registradas para esta categoría.
-                  Pronto agregaremos más contenido.
-                </p>
-              </div>
+      {currentGalleries.length === 0 && selectedCategory !== "todas" && (
+        <section className="py-16 bg-white/90 dark:bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="text-center max-w-2xl mx-auto">
+              <div className="text-6xl mb-6">📷</div>
+              <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-4">
+                No hay galerías disponibles
+              </h3>
+              <p className="text-lg text-gray-600 dark:text-gray-400">
+                Actualmente no tenemos fotos registradas para esta categoría.
+                Pronto agregaremos más contenido.
+              </p>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
+      )}
 
       {/* Tipos de Eventos - Información */}
       <section className="py-16 bg-gray-50 dark:bg-gray-800 dark:border-t-white border">
