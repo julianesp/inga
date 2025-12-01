@@ -143,10 +143,10 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Organization",
+        "@type": ["Organization", "MedicalBusiness", "LocalBusiness"],
         "@id": "https://ipsinka.com/#organization",
         name: "Asociación IPS Indígena Inga Kamentsa",
-        alternateName: "IPS Inga Kamentsá",
+        alternateName: ["IPS Inga Kamentsá", "IPS INKA", "ipsinka"],
         url: "https://ipsinka.com/",
         logo: {
           "@type": "ImageObject",
@@ -163,19 +163,45 @@ export default function RootLayout({ children }) {
         sameAs: [
           "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy",
         ],
+        telephone: "+57-8-4206789",
+        email: "ipsinga.sibundoy@gmail.com",
+        priceRange: "$$",
+        openingHoursSpecification: [
+          {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            opens: "07:00",
+            closes: "16:00",
+          },
+        ],
         contactPoint: {
           "@type": "ContactPoint",
           telephone: "+57-8-4206789",
           contactType: "customer service",
           areaServed: "CO",
-          availableLanguage: ["Spanish"],
+          availableLanguage: ["Spanish", "Inga", "Kamentsá"],
         },
         address: {
           "@type": "PostalAddress",
           streetAddress: "Calle 15 N° 15-69",
           addressLocality: "Sibundoy",
           addressRegion: "Putumayo",
+          postalCode: "862540",
           addressCountry: "CO",
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: "1.149861",
+          longitude: "-76.832611",
+        },
+        areaServed: {
+          "@type": "GeoCircle",
+          geoMidpoint: {
+            "@type": "GeoCoordinates",
+            latitude: "1.149861",
+            longitude: "-76.832611",
+          },
+          geoRadius: "50000",
         },
       },
       {
@@ -223,64 +249,93 @@ export default function RootLayout({ children }) {
         "@id": "https://ipsinka.com/#website",
         url: "https://ipsinka.com/",
         name: "Asociación IPS Indígena Inga Kamentsa",
+        alternateName: "IPS INKA",
         description:
           "Servicios de salud integral para toda la comunidad del Alto Putumayo",
         publisher: {
           "@id": "https://ipsinka.com/#organization",
         },
-        potentialAction: {
-          "@type": "SearchAction",
-          target: "https://ipsinka.com/busqueda?q={search_term_string}",
-          "query-input": "required name=search_term_string",
-        },
+        potentialAction: [
+          {
+            "@type": "SearchAction",
+            target: {
+              "@type": "EntryPoint",
+              urlTemplate:
+                "https://ipsinka.com/busqueda?q={search_term_string}",
+            },
+            "query-input": "required name=search_term_string",
+          },
+        ],
         inLanguage: "es-CO",
+        about: {
+          "@type": "Thing",
+          name: "Servicios de Salud Indígena",
+          description:
+            "Atención médica integral con enfoque intercultural para comunidades indígenas",
+        },
         mainEntity: {
           "@type": "ItemList",
           name: "Navegación Principal",
+          numberOfItems: 8,
           itemListElement: [
             {
               "@type": "SiteNavigationElement",
-              name: "Servicios",
+              position: 1,
+              name: "Servicios de Salud",
               url: "https://ipsinka.com/servicios",
               description:
-                "Conoce nuestro portafolio completo de servicios de salud",
+                "Consulta médica general, odontología, medicina tradicional y servicios especializados",
             },
             {
               "@type": "SiteNavigationElement",
-              name: "Sedes",
+              position: 2,
+              name: "Nuestras Sedes",
               url: "https://ipsinka.com/sedes",
               description:
-                "Nuestras sedes en Sibundoy, Colón, Santiago y San Andrés",
+                "Sedes en Sibundoy, Colón, Santiago y San Andrés - Putumayo",
             },
             {
               "@type": "SiteNavigationElement",
+              position: 3,
               name: "Institucional",
               url: "https://ipsinka.com/institucional",
-              description: "Historia, misión, visión y portafolio de servicios",
+              description:
+                "Misión, visión, historia y portafolio de servicios de la IPS",
             },
             {
               "@type": "SiteNavigationElement",
-              name: "Contacto",
+              position: 4,
+              name: "Contacto y Citas",
               url: "https://ipsinka.com/contacto",
-              description: "Contacta con nosotros para agendar citas",
+              description: "Agenda tu cita médica y contacta con nosotros",
             },
             {
               "@type": "SiteNavigationElement",
+              position: 5,
               name: "Directorio",
               url: "https://ipsinka.com/directorio",
-              description: "Directorio completo de contactos",
+              description: "Directorio de contactos y profesionales",
             },
             {
               "@type": "SiteNavigationElement",
-              name: "Eventos",
-              url: "https://ipsinka.com/eventos",
-              description: "Eventos programados y anuncios importantes",
+              position: 6,
+              name: "Galería",
+              url: "https://ipsinka.com/galeria",
+              description: "Galería de fotos de nuestras instalaciones",
             },
             {
               "@type": "SiteNavigationElement",
+              position: 7,
               name: "Atención al Usuario",
               url: "https://ipsinka.com/atencion-usuario",
-              description: "PQRSF y Asociación de Usuarios",
+              description: "PQRSF, quejas, reclamos y asociación de usuarios",
+            },
+            {
+              "@type": "SiteNavigationElement",
+              position: 8,
+              name: "Transparencia",
+              url: "https://ipsinka.com/transparencia",
+              description: "Información pública y transparencia institucional",
             },
           ],
         },
