@@ -185,12 +185,12 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
       className="py-16 bg-gray-50/85 dark:bg-gray-800"
     >
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+        {/* <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
           Eventos y Anuncios
-        </h2>
+        </h2> */}
 
         {/* Selector de vista */}
-        <div className="flex justify-center mb-8">
+        {/* <div className="flex justify-center mb-8">
           <div className="bg-white rounded-lg shadow-md p-1 flex">
             <button
               onClick={() => setVistaActiva("eventos")}
@@ -213,11 +213,11 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
               📢 Anuncios
             </button>
           </div>
-        </div>
+        </div> */}
 
-        {vistaActiva === "eventos" && (
+        {/* {vistaActiva === "eventos" && (
           <>
-            {/* Filtros */}
+            
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <button
                 onClick={() => setFiltroTipo("todos")}
@@ -261,7 +261,7 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
               </button>
             </div>
 
-            {/* Lista de eventos */}
+            
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               {eventosFiltrados.map((evento) => (
                 <div
@@ -402,7 +402,7 @@ Fecha de solicitud: ${new Date().toLocaleString("es-CO", {
               ))}
             </div>
           </>
-        )}
+        )} */}
 
         {vistaActiva === "anuncios" && (
           <div className="max-w-4xl mx-auto">
