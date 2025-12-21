@@ -163,7 +163,7 @@ export default function RootLayout({ children }) {
         sameAs: [
           "https://www.facebook.com/luisfernando.mutunbajoyjacacanamejoy",
         ],
-        telephone: "+57-8-4206789",
+        telephone: "3132863398",
         email: "ipsinga.sibundoy@gmail.com",
         priceRange: "$$",
         openingHoursSpecification: [
@@ -176,7 +176,7 @@ export default function RootLayout({ children }) {
         ],
         contactPoint: {
           "@type": "ContactPoint",
-          telephone: "+57-8-4206789",
+          telephone: "3132863398",
           contactType: "customer service",
           areaServed: "CO",
           availableLanguage: ["Spanish", "Inga", "Kamentsá"],

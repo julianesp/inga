@@ -2,7 +2,8 @@ export default function manifest() {
   return {
     name: "IPS Inga-Kamentsa - Servicios de Salud Integral",
     short_name: "IPS Inga-Kamentsa",
-    description: "Servicios de salud integral combinando medicina occidental con conocimientos ancestrales en Sibundoy, Putumayo",
+    description:
+      "Servicios de salud integral combinando medicina occidental con conocimientos ancestrales en Sibundoy, Putumayo",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
@@ -11,18 +12,16 @@ export default function manifest() {
       {
         src: "/android-chrome-192x192.png",
         sizes: "192x192",
-        type: "image/png"
+        type: "image/png",
       },
       {
         src: "/android-chrome-512x512.png",
         sizes: "512x512",
-        type: "image/png"
-      }
+        type: "image/png",
+      },
     ],
     categories: ["health", "medical", "healthcare"],
     lang: "es-CO",
-    orientation: "portrait-primary"
-  }
+    orientation: "portrait-primary",
+  };
 }
-
-
