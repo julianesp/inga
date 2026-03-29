@@ -85,7 +85,9 @@ export default function Footer() {
                 </Link>
 
                 <div>
-                  <h3 className="text-lg font-bold">IPS INGA KAMËNTSÁ</h3>
+                  <h3 className="text-lg font-bold">
+                    ASOCIACIÓN IPS INDÍGENA INGA KAMËNTSÁ
+                  </h3>
                   <p className="text-sm text-gray-300 dark:text-gray-400">
                     Servicios de Salud
                   </p>
@@ -336,7 +338,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="border-t border-gray-700 dark:border-gray-600 mt-8 pt-6 flex flex-col sm:flex-row justify-between items-center">
             <p className="text-gray-400 dark:text-gray-500 text-sm">
-              © 2025 IPS INGA KAMËNTSÁ. Todos los derechos reservados.
+              © 2026 IPS INGA KAMËNTSÁ. Todos los derechos reservados.
             </p>
 
             <div className=" space-x-6 mt-4 sm:mt-0 ">
