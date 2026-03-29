@@ -76,8 +76,8 @@ export default async function Image() {
               <img
                 src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
                 alt="Logo IPS Inga Kamentsá"
-                width="100"
-                height="100"
+                width={100}
+                height={100}
                 style={{
                   borderRadius: '50%',
                   objectFit: 'cover',
