@@ -230,6 +230,15 @@ const anios = [
     etiqueta: "Más reciente",
     secciones: [
       {
+        nombre: "Estados Financieros",
+        documentos: [
+          {
+            nombre: "Estados Financieros 2025",
+            url: `${BASE}/2025/estados%20financieros/ESTADOSFINANCIEROS2025.pdf`,
+          },
+        ],
+      },
+      {
         nombre: "Informe Financiero",
         documentos: [
           {
@@ -261,7 +270,10 @@ const anios = [
             nombre: "Informe de Gestión",
             url: `${BASE}/2025/informes%20financieros/INFORME%20DE%20GESTION.pdf`,
           },
+          
         ],
+
+        
       },
     ],
   },
