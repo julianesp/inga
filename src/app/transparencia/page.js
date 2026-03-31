@@ -224,20 +224,11 @@ const BASE =
   "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/documentos";
 
 const anios = [
-  // ── 2025 ──────────────────────────────────────────────────────────────────
+  // ── 2026 ──────────────────────────────────────────────────────────────────
   {
-    año: 2025,
+    año: 2026,
     etiqueta: "Más reciente",
     secciones: [
-      {
-        nombre: "Estados Financieros",
-        documentos: [
-          {
-            nombre: "Estados Financieros 2025",
-            url: `${BASE}/2025/estados%20financieros/ESTADOSFINANCIEROS2025.pdf`,
-          },
-        ],
-      },
       {
         nombre: "Documentación Institucional",
         documentos: [
@@ -260,6 +251,22 @@ const anios = [
           {
             nombre: "Certificado de Cargos Directivos y Gerenciales",
             url: `${BASE}/2025/new/CERTIFICADO%20DE%20CARGOS%20DIRECTIVOS%20Y%20GERENCIALES.pdf`,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── 2025 ──────────────────────────────────────────────────────────────────
+  {
+    año: 2025,
+    secciones: [
+      {
+        nombre: "Estados Financieros",
+        documentos: [
+          {
+            nombre: "Estados Financieros 2025",
+            url: `${BASE}/2025/estados%20financieros/ESTADOSFINANCIEROS2025.pdf`,
           },
         ],
       },
@@ -808,7 +815,7 @@ export default function Transparencia() {
                   <AcordeonAnio
                     key={anio.año}
                     anio={anio}
-                    defaultAbierto={anio.año === 2025}
+                    defaultAbierto={anio.año === 2026}
                   />
                 ))
               )}
