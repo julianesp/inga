@@ -239,6 +239,31 @@ const anios = [
         ],
       },
       {
+        nombre: "Documentación Institucional",
+        documentos: [
+          {
+            nombre: "Acta de Asamblea General",
+            url: `${BASE}/2025/new/ACTA%20DE%20ASAMBLEA%20GENERAL.pdf`,
+          },
+          {
+            nombre: "Actas de Estados de Asignaciones",
+            url: `${BASE}/2025/new/ACTAS%20DE%20ESTADOS%20DE%20ASIGNACIONES.pdf`,
+          },
+          {
+            nombre: "Certificación de Antecedentes",
+            url: `${BASE}/2025/new/CERTIFICACION%20DE%20ANTECEDENTES.pdf`,
+          },
+          {
+            nombre: "Certificación de Cumplimiento",
+            url: `${BASE}/2025/new/CERTIFICACION%20DE%20CUMPLIMIENTO.pdf`,
+          },
+          {
+            nombre: "Certificado de Cargos Directivos y Gerenciales",
+            url: `${BASE}/2025/new/CERTIFICADO%20DE%20CARGOS%20DIRECTIVOS%20Y%20GERENCIALES.pdf`,
+          },
+        ],
+      },
+      {
         nombre: "Informe Financiero",
         documentos: [
           {
