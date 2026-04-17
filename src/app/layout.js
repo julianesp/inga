@@ -4,6 +4,7 @@ import { ThemeProvider } from "next-themes";
 import AOSInit from "@/components/AOSInit";
 import Image from "next/image";
 import AdminLayoutGuard from "@/components/admin/AdminLayoutGuard";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -343,6 +344,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
+    <ClerkProvider>
     <html lang="es" suppressHydrationWarning>
       <head>
         <script
@@ -423,5 +425,6 @@ export default function RootLayout({ children }) {
         </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
