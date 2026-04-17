@@ -2,8 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { useClerk } from "@clerk/nextjs";
+import { usePathname, useRouter } from "next/navigation";
+import { useClerk, useUser } from "@clerk/nextjs";
+import { useEffect } from "react";
+
+const ADMIN_EMAIL = "ipsingakamentsa@gmail.com";
 import {
   LayoutDashboard,
   Newspaper,
@@ -34,6 +37,24 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
   const { signOut } = useClerk();
+  const { user, isLoaded } = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isLoaded) return;
+    const isSignInPage = pathname.startsWith("/admin/sign-in");
+    if (!user && !isSignInPage) {
+      router.replace("/admin/sign-in");
+      return;
+    }
+    const email = user?.primaryEmailAddress?.emailAddress ?? "";
+    if (user && email !== ADMIN_EMAIL && !isSignInPage) {
+      router.replace("/admin/sign-in?error=unauthorized");
+    }
+  }, [isLoaded, user, pathname, router]);
+
+  const isSignInPage = pathname.startsWith("/admin/sign-in");
+  if (isSignInPage) return <>{children}</>;
 
   return (
     <div className="min-h-screen bg-slate-100 flex">
