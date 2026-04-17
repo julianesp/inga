@@ -83,6 +83,20 @@ CREATE TABLE IF NOT EXISTS sedes (
   creado_en TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Publicaciones (contenido enriquecido)
+CREATE TABLE IF NOT EXISTS publicaciones (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  titulo TEXT NOT NULL,
+  resumen TEXT,
+  contenido TEXT NOT NULL,
+  imagen_portada TEXT,
+  slug TEXT UNIQUE,
+  estado TEXT NOT NULL DEFAULT 'borrador', -- 'borrador' | 'publicado' | 'archivado'
+  autor TEXT,
+  creado_en TEXT NOT NULL DEFAULT (datetime('now')),
+  actualizado_en TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
 -- Usuarios administradores
 CREATE TABLE IF NOT EXISTS usuarios (
   id INTEGER PRIMARY KEY AUTOINCREMENT,

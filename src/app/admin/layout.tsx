@@ -16,10 +16,12 @@ import {
   X,
   LogOut,
   Building2,
+  BookOpen,
 } from "lucide-react";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/publicaciones", label: "Publicaciones", icon: BookOpen },
   { href: "/admin/noticias", label: "Noticias", icon: Newspaper },
   { href: "/admin/galeria", label: "Galería", icon: Image },
   { href: "/admin/documentos", label: "Documentos", icon: FileText },
