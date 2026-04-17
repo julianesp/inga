@@ -6,5 +6,18 @@
   "pages_build_output_dir": ".open-next/assets",
   "observability": {
     "enabled": true
-  }
+  },
+  "r2_buckets": [
+    {
+      "binding": "STORAGE",
+      "bucket_name": "inga-storage"
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "inga-db",
+      "database_id": "d0958fa9-4236-4957-8783-91fb4540631c"
+    }
+  ]
 }

@@ -1,10 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components";
-import { Footer } from "@/containers";
 import { ThemeProvider } from "next-themes";
 import AOSInit from "@/components/AOSInit";
 import Image from "next/image";
+import AdminLayoutGuard from "@/components/admin/AdminLayoutGuard";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -420,11 +419,7 @@ export default function RootLayout({ children }) {
             />
           </div>
 
-          <div className="watermark-container relative flex min-h-screen flex-col">
-            <Navbar />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
+          <AdminLayoutGuard>{children}</AdminLayoutGuard>
         </ThemeProvider>
       </body>
     </html>
