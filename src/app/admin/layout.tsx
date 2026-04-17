@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useClerk } from "@clerk/nextjs";
 import {
   LayoutDashboard,
   Newspaper,
@@ -30,6 +31,7 @@ const navItems = [
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
+  const { signOut } = useClerk();
 
   return (
     <div className="min-h-screen bg-slate-100 flex">
@@ -88,7 +90,10 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         {/* Cerrar sesión */}
         <div className="absolute bottom-0 left-0 right-0 px-3 py-4 border-t border-slate-700">
-          <button className="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700 hover:text-white transition-colors">
+          <button
+            onClick={() => signOut({ redirectUrl: "/admin/sign-in" })}
+            className="flex items-center gap-3 w-full px-4 py-2.5 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-700 hover:text-white transition-colors"
+          >
             <LogOut className="h-5 w-5 flex-shrink-0" />
             Cerrar sesión
           </button>
