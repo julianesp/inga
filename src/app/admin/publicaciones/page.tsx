@@ -42,7 +42,8 @@ export default function PublicacionesPage() {
   const load = async () => {
     setLoading(true);
     const res = await fetch("/api/publicaciones");
-    setItems(await res.json());
+    const data = await res.json();
+    setItems(Array.isArray(data) ? data : []);
     setLoading(false);
   };
 

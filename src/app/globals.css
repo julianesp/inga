@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Ocultar banner de desarrollo de Clerk */
+[data-clerk-development-banner],
+.__clerk_development_banner {
+  display: none !important;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,7 +19,7 @@ html {
 
 html,
 body {
-  margin: 32px 0 0 0;
+  /* margin: 32px 0 0 0; */
   padding: 0;
   overflow-x: hidden;
   font-family: "Lato", sans-serif;

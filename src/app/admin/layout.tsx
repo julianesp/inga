@@ -6,7 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
 
-const ADMIN_EMAIL = "ipsingakamentsa@gmail.com";
+const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL ?? "";
 import {
   LayoutDashboard,
   Newspaper,
@@ -57,7 +57,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (isSignInPage) return <>{children}</>;
 
   return (
-    <div className="min-h-screen bg-slate-100 flex">
+    <div className="h-dvh bg-slate-100 flex overflow-hidden">
       {/* Overlay móvil */}
       {sidebarOpen && (
         <div
@@ -68,7 +68,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
       {/* Sidebar */}
       <aside
-        className={`fixed top-0 left-0 h-full w-64 bg-slate-800 z-30 transform transition-transform duration-300 ease-in-out
+        className={`fixed top-0 left-0 h-dvh w-64 bg-slate-800 z-30 transform transition-transform duration-300 ease-in-out flex flex-col
           ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0 lg:static lg:z-auto`}
       >
         {/* Logo sidebar */}
@@ -88,7 +88,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
 
         {/* Navegación */}
-        <nav className="px-3 py-4 space-y-1">
+        <nav className="px-3 py-4 space-y-1 overflow-y-auto flex-1">
           {navItems.map(({ href, label, icon: Icon }) => {
             const isActive =
               href === "/admin" ? pathname === "/admin" : pathname.startsWith(href);
@@ -126,7 +126,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Contenido principal */}
       <div className="flex-1 flex flex-col min-w-0 lg:ml-0">
         {/* Header */}
-        <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-4 sticky top-0 z-10">
+        {/* <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-4 sticky top-0 z-10">
           <button
             onClick={() => setSidebarOpen(true)}
             className="lg:hidden text-slate-600 hover:text-slate-900"
@@ -136,7 +136,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <h1 className="text-slate-800 font-semibold text-base sm:text-lg truncate">
             Panel Admin — IPS Inga Kamentsa
           </h1>
-        </header>
+        </header> */}
 
         {/* Página */}
         <main className="flex-1 p-4 sm:p-6 overflow-auto">{children}</main>

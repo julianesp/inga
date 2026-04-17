@@ -97,12 +97,14 @@ export default function AdminDashboard() {
             const res = await fetch(card.endpoint);
             if (!res.ok) return [card.endpoint, 0] as const;
             const data = await res.json();
-            const count = Array.isArray(data) ? data.length : (data.results?.length ?? 0);
+            const count = Array.isArray(data)
+              ? data.length
+              : (data.results?.length ?? 0);
             return [card.endpoint, count] as const;
           } catch {
             return [card.endpoint, 0] as const;
           }
-        })
+        }),
       );
       setCounts(Object.fromEntries(results));
       setLoading(false);
@@ -115,7 +117,9 @@ export default function AdminDashboard() {
     <div className="space-y-6">
       {/* Bienvenida */}
       <div>
-        <h2 className="text-2xl font-bold text-slate-800">Bienvenido al panel</h2>
+        <h2 className="text-2xl font-bold text-slate-800">
+          Bienvenido al panel
+        </h2>
         <p className="text-slate-500 mt-1">
           Administra el contenido del sitio web de IPS Inga Kamentsa.
         </p>
@@ -134,14 +138,18 @@ export default function AdminDashboard() {
                   className="bg-white rounded-xl p-6 shadow-sm border border-slate-200"
                 >
                   <div className="flex items-center justify-between mb-4">
-                    <div className={`h-10 w-10 rounded-lg ${card.bgColor} flex items-center justify-center`}>
+                    <div
+                      className={`h-10 w-10 rounded-lg ${card.bgColor} flex items-center justify-center`}
+                    >
                       <Icon className={`h-5 w-5 ${card.color}`} />
                     </div>
                     <span className="text-3xl font-bold text-slate-800">
                       {count ?? "—"}
                     </span>
                   </div>
-                  <p className="text-slate-500 text-sm font-medium mb-3">{card.label}</p>
+                  <p className="text-slate-500 text-sm font-medium mb-3">
+                    {card.label}
+                  </p>
                   <Link
                     href={card.href}
                     className={`inline-flex items-center gap-1 text-sm font-medium ${card.color} hover:underline`}
