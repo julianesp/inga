@@ -64,7 +64,7 @@ const defaultSlides = [
     description:
       "Ofrecemos atención médica integral con un enfoque personalizado, combinando tecnología avanzada con un trato humano de calidad.",
     image:
-      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/portada.jpg",
+      "https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/portada.jpg",
     cta: {
       primary: { text: "Conocer Servicios", href: "/servicios" },
       secondary: { text: "Nuestras Sedes", href: "/sedes" },
@@ -80,7 +80,7 @@ const defaultSlides = [
     description:
       "Contamos con un equipo profesional de médicos y odontólogos especializados para brindar atención integral de calidad.",
     image:
-      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/2.jpeg",
+      "https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/2.jpeg",
     cta: {
       primary: { text: "Agendar Cita", href: "tel:+57842041199" },
       secondary: { text: "Ver Sedes", href: "/sedes" },
@@ -96,7 +96,7 @@ const defaultSlides = [
     description:
       "Promovemos la medicina preventiva y el bienestar integral a través de programas de salud personalizados y seguimiento continuo.",
     image:
-      "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/4.jpeg",
+      "https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/4.jpeg",
     cta: {
       primary: { text: "Conocer Más", href: "/servicios" },
       secondary: { text: "Agendar Cita", href: "/contacto" },
