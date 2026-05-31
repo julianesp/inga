@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
 import GlobalSearch from "@/components/GlobalSearch";
@@ -9,20 +10,168 @@ import ImageCarousel from "../components/ImageCarousel";
 import CalendarioConsultas from "@/components/CalendarioConsultas";
 import { obtenerTodasLasCitas } from "@/data/citasProduccion";
 
+const sedesSlides = [
+  {
+    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/col%C3%B3n_service.jpeg",
+    alt: "Sede Colón",
+    label: "Servicios en la sede de Colón",
+  },
+  {
+    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/santiago_servicio.jpeg",
+    alt: "Sede Santiago",
+    label: "Servicios en la sede de Santiago",
+  },
+  {
+    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/sibundoy_service.jpeg",
+    alt: "Sede Sibundoy",
+    label: "Servicios en la sede de Sibundoy",
+  },
+];
+
+const consultasSlides = [
+  {
+    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/1.jpeg",
+    alt: "Consulta 1",
+    label: "Servicios en la sede de Sibundoy",
+  },
+  {
+    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/2.jpeg",
+    alt: "Consulta 2",
+    label: "Servicios en la sede de Santiago",
+  },
+  {
+    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/3.jpeg",
+    alt: "Consulta 3",
+    label: "Servicios en la sede de Colón",
+  },
+  {
+    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/4.jpeg",
+    alt: "Consulta 4",
+    label: "Servicios en la sede de Chorro San José",
+  },
+];
+
+function AutoSlider({ slides, title }) {
+  const [current, setCurrent] = useState(0);
+  const [paused, setPaused] = useState(false);
+  const [modal, setModal] = useState(null);
+
+  useEffect(() => {
+    if (paused || modal !== null) return;
+    const t = setInterval(() => setCurrent((p) => (p + 1) % slides.length), 2800);
+    return () => clearInterval(t);
+  }, [paused, modal, slides.length]);
+
+  return (
+    <section className="flex flex-col justify-center items-center transition-colors duration-200 pb-8 bg-gray-100 dark:bg-gray-800">
+      <h1 className="text-3xl font-bold my-4 dark:text-white" data-aos="fade-down">
+        {title}
+      </h1>
+
+      {/* Carrusel horizontal */}
+      <div className="relative w-full overflow-hidden">
+        <div
+          className="flex transition-transform duration-700 ease-in-out"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {slides.map((slide, i) => (
+            <div
+              key={i}
+              className="min-w-full px-4 md:px-16 lg:px-32 cursor-pointer group"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+              onClick={() => { setPaused(true); setModal(i); }}
+            >
+              <div className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-lg">
+                <Image
+                  src={slide.url}
+                  alt={slide.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-3 shadow-lg">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
+                    </svg>
+                  </div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                  <p className="text-white font-semibold">{slide.label}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Flechas */}
+        <button
+          onClick={() => setCurrent((p) => (p - 1 + slides.length) % slides.length)}
+          className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full z-10"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button
+          onClick={() => setCurrent((p) => (p + 1) % slides.length)}
+          className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/75 text-white p-2 rounded-full z-10"
+        >
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        {/* Indicadores */}
+        <div className="flex justify-center gap-2 mt-3">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`w-2.5 h-2.5 rounded-full transition-colors ${i === current ? "bg-green-600" : "bg-gray-400"}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Modal */}
+      {modal !== null && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center pt-20 bg-black/40 backdrop-blur-sm"
+          onClick={() => { setModal(null); setPaused(false); }}
+        >
+          <div
+            className="relative bg-white rounded-xl shadow-2xl max-w-3xl w-[90vw] overflow-hidden"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => { setModal(null); setPaused(false); }}
+              className="absolute top-3 right-3 bg-red-500 hover:bg-red-600 text-white rounded-full p-2 z-20"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="relative w-full h-[60vh]">
+              <Image src={slides[modal].url} alt={slides[modal].alt} fill className="object-contain" />
+            </div>
+            <div className="p-4 text-center font-medium text-gray-800">{slides[modal].label}</div>
+          </div>
+        </div>
+      )}
+    </section>
+  );
+}
+
 export default function Home() {
   const [consultas, setConsultas] = useState([]);
 
   useEffect(() => {
-    // Cargar consultas combinadas (producción + localStorage)
     const citas = obtenerTodasLasCitas();
     setConsultas(citas);
-
-    // Actualizar cada 30 segundos para reflejar cambios
     const interval = setInterval(() => {
-      const citasActualizadas = obtenerTodasLasCitas();
-      setConsultas(citasActualizadas);
+      setConsultas(obtenerTodasLasCitas());
     }, 30000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -30,134 +179,8 @@ export default function Home() {
     <div className="min-h-screen bg-slate-300/75 dark:bg-gray-900">
       <PresentacionCarousel />
 
-      <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 bg-gray-100 dark:bg-gray-800">
-        <h1
-          className="text-3xl font-bold my-4 dark:text-white"
-          data-aos="fade-down"
-        >
-          Servicios
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
-          <div
-            className="w-full px-0 md:px-2"
-            data-aos="fade-right"
-            data-aos-delay="100"
-          >
-            <ImageCarousel
-              images={[
-                {
-                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/col%C3%B3n_service.jpeg",
-                  alt: "Image 1",
-                  description: "Servicios en la sede de Colón",
-                },
-              ]}
-            />
-          </div>
-          <div
-            className="w-full px-0 md:px-2"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <ImageCarousel
-              images={[
-                {
-                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/santiago_servicio.jpeg",
-                  alt: "Image 2",
-                  description: "Servicios en la sede de Santiago",
-                },
-              ]}
-            />
-          </div>
-          <div
-            className="w-full px-0 md:px-2"
-            data-aos="fade-left"
-            data-aos-delay="300"
-          >
-            <ImageCarousel
-              images={[
-                {
-                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/services/sibundoy_service.jpeg",
-                  alt: "Image 3",
-                  description: "Servicios en la sede de Sibundoy",
-                },
-              ]}
-            />
-          </div>
-        </div>
-      </section>
-
-      <section className="flex flex-col justify-center items-center  transition-colors duration-200 pb-8 ml-4 mr-4 mt-7 bg-gray-100 dark:bg-gray-800 border rounded-">
-        <h1
-          className="text-3xl font-bold my-4 dark:text-white"
-          data-aos="zoom-in"
-        >
-          Consulta médica
-        </h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-4 w-full">
-          <div
-            className="w-full px-0 md:px-2"
-            data-aos="flip-left"
-            data-aos-delay="100"
-          >
-            <ImageCarousel
-              images={[
-                {
-                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/1.jpeg",
-                  alt: "Image 1",
-                  description: "Servicios en la sede de Sibundoy",
-                },
-              ]}
-            />
-          </div>
-          <div
-            className="w-full px-0 md:px-2"
-            data-aos="flip-left"
-            data-aos-delay="200"
-          >
-            <ImageCarousel
-              images={[
-                {
-                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/2.jpeg",
-                  alt: "Image 2",
-                  description: "Servicios en la sede de Santiago",
-                },
-              ]}
-            />
-          </div>
-          <div
-            className="w-full px-0 md:px-2"
-            data-aos="flip-left"
-            data-aos-delay="300"
-          >
-            <ImageCarousel
-              images={[
-                {
-                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/3.jpeg",
-                  alt: "Image 3",
-                  description: "Servicios en la sede de Colón",
-                },
-              ]}
-            />
-          </div>
-          <div
-            className="w-full px-0 md:px-2"
-            data-aos="flip-left"
-            data-aos-delay="400"
-          >
-            <ImageCarousel
-              images={[
-                {
-                  url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/4.jpeg",
-                  alt: "Image 4",
-                  description: "Servicios en la sede de Chorro San José",
-                },
-              ]}
-            />
-          </div>
-        </div>
-      </section>
+      <AutoSlider slides={sedesSlides} title="Servicios" />
+      <AutoSlider slides={consultasSlides} title="Consulta médica" />
 
       <HealthInfoSection />
 
