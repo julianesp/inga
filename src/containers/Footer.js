@@ -79,7 +79,7 @@ export default function Footer() {
                     alt="Logo IPS Inga Kamentsá"
                     width={40}
                     height={40}
-                    src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
+                    src="https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/logo.jpg"
                     className="rounded-full"
                   />
                 </Link>
