@@ -86,6 +86,7 @@ function AutoSlider({ slides, title }) {
                   src={slide.url}
                   alt={slide.alt}
                   fill
+                  sizes="100vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
@@ -136,7 +137,7 @@ function AutoSlider({ slides, title }) {
       {/* Modal */}
       {modal !== null && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center pt-20 bg-black/40 backdrop-blur-sm"
+          className="fixed inset-0 z-40 flex items-center justify-center pt-16 bg-black/40 backdrop-blur-sm"
           onClick={() => { setModal(null); setPaused(false); }}
         >
           <div
@@ -152,7 +153,7 @@ function AutoSlider({ slides, title }) {
               </svg>
             </button>
             <div className="relative w-full h-[60vh]">
-              <Image src={slides[modal].url} alt={slides[modal].alt} fill className="object-contain" />
+              <Image src={slides[modal].url} alt={slides[modal].alt} fill sizes="90vw" className="object-contain" />
             </div>
             <div className="p-4 text-center font-medium text-gray-800">{slides[modal].label}</div>
           </div>
