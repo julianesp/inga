@@ -29,22 +29,22 @@ const sedesSlides = [
 
 const consultasSlides = [
   {
-    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/1.jpeg",
+    url: "https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/consultas_medicas/1.jpeg",
     alt: "Consulta 1",
     label: "Servicios en la sede de Sibundoy",
   },
   {
-    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/2.jpeg",
+    url: "https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/consultas_medicas/2.jpeg",
     alt: "Consulta 2",
     label: "Servicios en la sede de Santiago",
   },
   {
-    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/3.jpeg",
+    url: "https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/consultas_medicas/3.jpeg",
     alt: "Consulta 3",
     label: "Servicios en la sede de Colón",
   },
   {
-    url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/consultas_medicas/4.jpeg",
+    url: "https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/consultas_medicas/4.jpeg",
     alt: "Consulta 4",
     label: "Servicios en la sede de Chorro San José",
   },
