@@ -34,7 +34,7 @@ export default function Navbar() {
           <div className="flex items-center " style={{ perspective: "1000px" }}>
             <Link href="/" className="flex items-center">
               <Image
-                src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/logo.jpg"
+                src="https://pub-c0883d14d3e84a69bf84546fa108aa0b.r2.dev/ipsinka/logo.jpg"
                 alt="Logo IPS Inga Kametsa"
                 width={50}
                 height={50}
