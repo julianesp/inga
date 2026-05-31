@@ -6,7 +6,6 @@ import Image from "next/image";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
 import HealthInfoSection from "@/components/HealthInfoSection";
 import GlobalSearch from "@/components/GlobalSearch";
-import ImageCarousel from "../components/ImageCarousel";
 import CalendarioConsultas from "@/components/CalendarioConsultas";
 import { obtenerTodasLasCitas } from "@/data/citasProduccion";
 
