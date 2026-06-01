@@ -223,6 +223,161 @@ function AcordeonAnio({ anio, defaultAbierto = false }) {
 const BASE = "https://pub-49f5ca8cdb65405f8a86e9257bee4c7f.r2.dev/documents";
 
 const anios = [
+  // ── 2026 ──────────────────────────────────────────────────────────────────
+  {
+    año: 2026,
+    etiqueta: "Más reciente",
+    secciones: [
+      {
+        nombre: "Documentación Institucional",
+        documentos: [
+          {
+            nombre: "Informe de Gestión Año 2025",
+            url: `${BASE}/2026/INFORME%20DE%20GESTI%C3%93N%20A%C3%91O%202025.pdf`,
+          },
+          {
+            nombre: "Acta de Asamblea General",
+            url: `${BASE}/2026/ACTA%20DE%20ASAMBLEA%20GENERAL.pdf`,
+          },
+          {
+            nombre: "Acta Estado de Asignación Permanente",
+            url: `${BASE}/2026/ACTA%20ESTADO%20DE%20ASIGNACI%C3%93N%20PERMANENTE.pdf`,
+          },
+          {
+            nombre: "Certificación Cargos Directivos y Gerenciales",
+            url: `${BASE}/2026/CERTIFICACI%C3%93N%20CARGOS%20DIRECTIVOS%20Y%20GERENCIALES.pdf`,
+          },
+          {
+            nombre: "Certificación de Antecedentes",
+            url: `${BASE}/2026/CERTIFICACI%C3%93N%20DE%20ATENCEDENTES.pdf`,
+          },
+          {
+            nombre: "Certificado de Cumplimiento",
+            url: `${BASE}/2026/CERTIFICADO%20DE%20CUMPLIMIENTO.pdf`,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── 2025 ──────────────────────────────────────────────────────────────────
+  {
+    año: 2025,
+    secciones: [
+      {
+        nombre: "Estados Financieros",
+        documentos: [
+          {
+            nombre: "Estados Financieros 2025",
+            url: `${BASE}/2025/estados%20financieros/ESTADOSFINANCIEROS2025.pdf`,
+          },
+        ],
+      },
+      {
+        nombre: "Informe Financiero",
+        documentos: [
+          {
+            nombre: "Informe de Gestión",
+            url: `${BASE}/2025/informes%20financieros/INFORME%20DE%20GESTION.pdf`,
+          },
+          {
+            nombre: "Acta Asignación Permanente",
+            url: `${BASE}/2025/informes%20financieros/ACTA%20ASIGNACION%20PERMANENTE.pdf`,
+          },
+          {
+            nombre: "Acta No Excedente – Resultado del Ejercicio",
+            url: `${BASE}/2025/informes%20financieros/ACTA%20NO%20EXCEDENTE%20RESULTADO%20DEL%20EJERCICIO.pdf`,
+          },
+          {
+            nombre: "Certificación Cargos Directivos y Gerenciales / Informe de Gestión",
+            url: `${BASE}/2025/informes%20financieros/CERTIFICACION%20CARGOS%20DIRECTIVOS%20Y%20GERENCIALESINFORME%20DE%20GESTION.pdf`,
+          },
+          {
+            nombre: "Certificado Antecedentes",
+            url: `${BASE}/2025/informes%20financieros/CERTIFICADO%20ANTECEDENTES.pdf`,
+          },
+          {
+            nombre: "Certificado de Cumplimiento",
+            url: `${BASE}/2025/informes%20financieros/CERTIFICADO%20DE%20CUMPLIMIENTO.pdf`,
+          },
+          {
+            nombre: "Certificado Estados Financieros",
+            url: `${BASE}/2025/informes%20financieros/CERTIFICADO%20ESTADOS%20%20FINANCIEROS.pdf`,
+          },
+        ],
+      },
+      {
+        nombre: "Documentación Institucional",
+        documentos: [
+          {
+            nombre: "Certificado de Cargos Directivos y Gerenciales",
+            url: `${BASE}/2025/new/CERTIFICADO%20DE%20CARGOS%20DIRECTIVOS%20Y%20GERENCIALES.pdf`,
+          },
+          {
+            nombre: "Acta de Asamblea General",
+            url: `${BASE}/2025/new/ACTA%20DE%20ASAMBLEA%20GENERAL.pdf`,
+          },
+          {
+            nombre: "Actas de Estados de Asignaciones",
+            url: `${BASE}/2025/new/ACTAS%20DE%20ESTADOS%20DE%20ASIGNACIONES.pdf`,
+          },
+          {
+            nombre: "Certificación de Antecedentes",
+            url: `${BASE}/2025/new/CERTIFICACION%20DE%20ANTECEDENTES.pdf`,
+          },
+          {
+            nombre: "Certificación de Cumplimiento",
+            url: `${BASE}/2025/new/CERTIFICACION%20DE%20CUMPLIMIENTO.pdf`,
+          },
+        ],
+      },
+    ],
+  },
+
+  // ── 2024 ──────────────────────────────────────────────────────────────────
+  {
+    año: 2024,
+    secciones: [
+      {
+        nombre: "Informe Financiero",
+        documentos: [
+          {
+            nombre: "RUT Asociación IPS Inga Kamentsa 2024",
+            url: `${BASE}/2024/informe%20financiero/RUT%20ASOCIACION%20IPS%20INGA%20KAMENTSA%202024.pdf`,
+          },
+          {
+            nombre: "Acta Asamblea General 2024",
+            url: `${BASE}/2024/informe%20financiero/ACTA%20ASAMBLEA%20GENERAL%202024.pdf`,
+          },
+          {
+            nombre: "Acta de Posesión Representante Legal 2024",
+            url: `${BASE}/2024/informe%20financiero/ACTA%20DE%20POSESION%20REPRESENTANTE%20LEGAL%202024.pdf`,
+          },
+          {
+            nombre: "Certificación de Antecedentes Judiciales 2024",
+            url: `${BASE}/2024/informe%20financiero/CERTFICACION%20DE%20ANTECEDENTES%20JUDIACIALES%202024.pdf`,
+          },
+          {
+            nombre: "Certificación de Requisitos 2024",
+            url: `${BASE}/2024/informe%20financiero/CERTIFICACION%20DE%20REQUISITOS%202024.pdf`,
+          },
+          {
+            nombre: "Certificación Integrantes Junta Directiva",
+            url: `${BASE}/2024/informe%20financiero/CERTIFICACION%20INTEGRANTES%20JUNTA%20DIRECTIVA.pdf`,
+          },
+          {
+            nombre: "Estados Financieros 2024",
+            url: `${BASE}/2024/informe%20financiero/ESTADOS%20FINANCIERO%202024.pdf`,
+          },
+          {
+            nombre: "Informe de Gestión IPS-I Inga Kamentsa 2024",
+            url: `${BASE}/2024/informe%20financiero/INFORME%20DE%20GESTION%20IPS-I%20INGA%20KAMENTSA%202024.pdf`,
+          },
+        ],
+      },
+    ],
+  },
+
   // ── 2023 (datos 2022) ──────────────────────────────────────────────────────
   {
     año: 2023,
@@ -684,7 +839,7 @@ export default function Transparencia() {
                   <AcordeonAnio
                     key={anio.año}
                     anio={anio}
-                    defaultAbierto={anio.año === 2023}
+                    defaultAbierto={anio.año === 2026}
                   />
                 ))
               )}
