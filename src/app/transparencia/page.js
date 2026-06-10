@@ -49,8 +49,14 @@ function IconoChevron({ abierto }) {
   );
 }
 
+const BASE = "https://pub-49f5ca8cdb65405f8a86e9257bee4c7f.r2.dev/documents";
+
 async function descargarDoc(url, nombre) {
-  const res = await fetch(url);
+  // Extraer la ruta relativa al bucket para pasarla al proxy server-side
+  const ruta = url.startsWith(BASE + "/") ? url.slice(BASE.length + 1) : url;
+  const proxyUrl = `/api/descargar?ruta=${ruta}`;
+  const res = await fetch(proxyUrl);
+  if (!res.ok) throw new Error("Error al descargar");
   const blob = await res.blob();
   const objectUrl = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -238,8 +244,6 @@ function AcordeonAnio({ anio, defaultAbierto = false }) {
 }
 
 // ─── DATOS ────────────────────────────────────────────────────────────────────
-
-const BASE = "https://pub-49f5ca8cdb65405f8a86e9257bee4c7f.r2.dev/documents";
 
 const anios = [
   // ── 2026 ──────────────────────────────────────────────────────────────────
