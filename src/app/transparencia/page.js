@@ -232,6 +232,10 @@ const anios = [
         nombre: "Documentación Institucional",
         documentos: [
           {
+            nombre: "Informe de Gestión Vigencia 2025",
+            url: `${BASE}/2026/INFORME%20DE%20GESTI%C3%93N%20VIGENCIA%202025.pdf`,
+          },
+          {
             nombre: "Informe de Gestión Año 2025",
             url: `${BASE}/2026/INFORME%20DE%20GESTI%C3%93N%20A%C3%91O%202025.pdf`,
           },
