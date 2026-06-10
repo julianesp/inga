@@ -49,8 +49,27 @@ function IconoChevron({ abierto }) {
   );
 }
 
+async function descargarDoc(url, nombre) {
+  const res = await fetch(url);
+  const blob = await res.blob();
+  const objectUrl = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = objectUrl;
+  a.download = `${nombre}.pdf`;
+  a.click();
+  URL.revokeObjectURL(objectUrl);
+}
+
 // Componente: fila de un documento
 function FilaDocumento({ doc }) {
+  const [descargando, setDescargando] = useState(false);
+
+  async function handleDescargar() {
+    setDescargando(true);
+    await descargarDoc(doc.url, doc.nombre);
+    setDescargando(false);
+  }
+
   return (
     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 px-4 rounded-lg bg-white dark:bg-gray-800 hover:bg-green-50 dark:hover:bg-gray-700 transition-colors border border-gray-100 dark:border-gray-700">
       <div className="flex items-center gap-3 min-w-0">
@@ -86,10 +105,10 @@ function FilaDocumento({ doc }) {
           </svg>
           Ver
         </Link>
-        <a
-          href={doc.url}
-          download
-          className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors shadow-sm"
+        <button
+          onClick={handleDescargar}
+          disabled={descargando}
+          className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-md transition-colors shadow-sm"
         >
           <svg
             className="w-3.5 h-3.5"
@@ -104,8 +123,8 @@ function FilaDocumento({ doc }) {
               d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
             />
           </svg>
-          Descargar
-        </a>
+          {descargando ? "Descargando…" : "Descargar"}
+        </button>
       </div>
     </div>
   );
@@ -717,6 +736,27 @@ function todosLosDocs(anio) {
 
 // ─── RESULTADOS DE BÚSQUEDA ───────────────────────────────────────────────────
 
+function BtnDescargarBusqueda({ doc }) {
+  const [descargando, setDescargando] = useState(false);
+  async function handleDescargar() {
+    setDescargando(true);
+    await descargarDoc(doc.url, doc.nombre);
+    setDescargando(false);
+  }
+  return (
+    <button
+      onClick={handleDescargar}
+      disabled={descargando}
+      className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 text-white rounded-md transition-colors shadow-sm"
+    >
+      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+      </svg>
+      {descargando ? "Descargando…" : "Descargar"}
+    </button>
+  );
+}
+
 function ResultadosBusqueda({ query }) {
   const q = query.toLowerCase().trim();
   const resultados = anios.flatMap(todosLosDocs).filter(
@@ -759,12 +799,7 @@ function ResultadosBusqueda({ query }) {
               </svg>
               Ver
             </Link>
-            <a href={doc.url} download className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors shadow-sm">
-              <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-              </svg>
-              Descargar
-            </a>
+            <BtnDescargarBusqueda doc={doc} />
           </div>
         </div>
       ))}
