@@ -8,8 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "build:cf": "opennextjs-cloudflare build",
-    "deploy": "opennextjs-cloudflare build && wrangler pages deploy",
-    "preview": "opennextjs-cloudflare build && wrangler pages dev"
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview"
   },
   "dependencies": {
     "@clerk/nextjs": "^7.2.2",
