@@ -20,10 +20,15 @@ import {
   LogOut,
   Building2,
   BookOpen,
+  ClipboardList,
+  CalendarDays,
+  UserCog,
 } from "lucide-react";
 
 const navItems = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/informes", label: "Informes Mensuales", icon: ClipboardList },
+  { href: "/admin/eventos", label: "Calendario", icon: CalendarDays },
   { href: "/admin/publicaciones", label: "Publicaciones", icon: BookOpen },
   { href: "/admin/noticias", label: "Noticias", icon: Newspaper },
   { href: "/admin/galeria", label: "Galería", icon: Image },
@@ -31,6 +36,7 @@ const navItems = [
   { href: "/admin/servicios", label: "Servicios", icon: Heart },
   { href: "/admin/directorio", label: "Directorio", icon: Users },
   { href: "/admin/sedes", label: "Sedes", icon: MapPin },
+  { href: "/admin/usuarios", label: "Usuarios", icon: UserCog },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {

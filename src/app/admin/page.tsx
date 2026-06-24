@@ -10,6 +10,9 @@ import {
   Users,
   MapPin,
   ArrowRight,
+  ClipboardList,
+  CalendarDays,
+  UserCog,
 } from "lucide-react";
 
 interface StatCard {
@@ -22,6 +25,22 @@ interface StatCard {
 }
 
 const statCards: StatCard[] = [
+  {
+    label: "Informes Mensuales",
+    href: "/admin/informes",
+    icon: ClipboardList,
+    color: "text-indigo-600",
+    bgColor: "bg-indigo-50",
+    endpoint: "/api/informes",
+  },
+  {
+    label: "Eventos",
+    href: "/admin/eventos",
+    icon: CalendarDays,
+    color: "text-orange-600",
+    bgColor: "bg-orange-50",
+    endpoint: "/api/eventos",
+  },
   {
     label: "Noticias",
     href: "/admin/noticias",
@@ -69,6 +88,14 @@ const statCards: StatCard[] = [
     color: "text-teal-600",
     bgColor: "bg-teal-50",
     endpoint: "/api/sedes",
+  },
+  {
+    label: "Usuarios",
+    href: "/admin/usuarios",
+    icon: UserCog,
+    color: "text-slate-600",
+    bgColor: "bg-slate-100",
+    endpoint: "/api/usuarios",
   },
 ];
 

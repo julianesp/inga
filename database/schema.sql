@@ -97,13 +97,46 @@ CREATE TABLE IF NOT EXISTS publicaciones (
   actualizado_en TEXT NOT NULL DEFAULT (datetime('now'))
 );
 
+-- Informes mensuales de entrega de documentación (MÓDULO CLAVE)
+CREATE TABLE IF NOT EXISTS informes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  titulo TEXT NOT NULL,
+  descripcion TEXT,
+  archivo_url TEXT NOT NULL,
+  area TEXT, -- 'administrativa' | 'asistencial' | 'financiera' | 'juridica' | etc.
+  mes INTEGER NOT NULL, -- 1..12
+  anio INTEGER NOT NULL,
+  activo INTEGER NOT NULL DEFAULT 1,
+  creado_en TEXT NOT NULL DEFAULT (datetime('now')),
+  actualizado_en TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_informes_periodo ON informes (anio, mes);
+CREATE INDEX IF NOT EXISTS idx_informes_area ON informes (area);
+
+-- Eventos del calendario (publicados por administradores)
+CREATE TABLE IF NOT EXISTS eventos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  titulo TEXT NOT NULL,
+  descripcion TEXT,
+  lugar TEXT,
+  fecha_inicio TEXT NOT NULL, -- ISO 'YYYY-MM-DD' o 'YYYY-MM-DDTHH:MM'
+  fecha_fin TEXT,
+  imagen_url TEXT,
+  activo INTEGER NOT NULL DEFAULT 1,
+  creado_en TEXT NOT NULL DEFAULT (datetime('now')),
+  actualizado_en TEXT NOT NULL DEFAULT (datetime('now'))
+);
+
+CREATE INDEX IF NOT EXISTS idx_eventos_fecha ON eventos (fecha_inicio);
+
 -- Usuarios administradores
 CREATE TABLE IF NOT EXISTS usuarios (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   nombre TEXT NOT NULL,
   email TEXT NOT NULL UNIQUE,
-  password_hash TEXT NOT NULL,
-  rol TEXT NOT NULL DEFAULT 'editor', -- 'admin' | 'editor'
+  password_hash TEXT,
+  rol TEXT NOT NULL DEFAULT 'editor', -- 'admin' | 'editor' | 'visualizador'
   activo INTEGER NOT NULL DEFAULT 1,
   creado_en TEXT NOT NULL DEFAULT (datetime('now')),
   ultimo_acceso TEXT
