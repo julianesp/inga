@@ -1,8 +1,168 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import RotatingCarousel from "@/components/RotatingCarousel";
 
+// Imágenes de respaldo: se muestran si la BD de galería está vacía o sin conexión.
+// Cada grupo equivale a una `categoria` en la tabla `galeria`.
+const galeriasFallback = [
+  {
+    categoria: "comunidad",
+    titulo: "Galería de Imágenes",
+    aos: "fade-up",
+    images: [
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/1.jpeg",
+        alt: "Encuentros de Saberes 1",
+        title: "Encuentros de Saberes y Prácticas Ancestrales",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/2.jpeg",
+        alt: "Encuentros de Saberes 2",
+        title: "Prácticas Tradicionales de Salud",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/3.jpeg",
+        alt: "Encuentros de Saberes 3",
+        title: "Medicina Ancestral",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/4.jpeg",
+        alt: "Encuentros de Saberes 4",
+        title: "Comunidad y Tradición",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/5.jpeg",
+        alt: "Encuentros de Saberes 5",
+        title: "Saberes Comunitarios",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/6.jpeg",
+        alt: "Encuentros de Saberes 6",
+        title: "Encuentros Culturales",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/7.jpeg",
+        alt: "Encuentros de Saberes 7",
+        title: "Medicina Tradicional Santiago",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/8.jpeg",
+        alt: "Encuentros de Saberes 8",
+        title: "Medicina Tradicional",
+      },
+    ],
+  },
+  {
+    categoria: "ips",
+    titulo: "Nuestra IPS",
+    aos: "fade-down",
+    images: [
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/1.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Farmacia Sibundoy",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/2.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Odontología",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/3.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Farmacia Colón",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/4.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Farmacia Sibundoy",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/5.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Atención médica",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/7.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Atención médica",
+      },
+    ],
+  },
+  {
+    categoria: "atencion_domiciliaria",
+    titulo: "Atención domiciliaria",
+    aos: "fade-down",
+    images: [
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/1.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Atención domiciliaria",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/2.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Atención domiciliaria",
+      },
+      {
+        url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/3.jpeg",
+        alt: "Fotos IPS Inga Kamentsa",
+        title: "Atención domiciliaria",
+      },
+    ],
+  },
+];
+
+// Etiqueta legible para una categoría sin título predefinido
+function tituloDeCategoria(categoria) {
+  if (!categoria) return "Galería de Imágenes";
+  return categoria
+    .replace(/_/g, " ")
+    .replace(/\b\w/g, (c) => c.toUpperCase());
+}
+
 export default function Galeria() {
+  const [galerias, setGalerias] = useState(galeriasFallback);
+
+  useEffect(() => {
+    let activo = true;
+    const cargarGaleria = async () => {
+      try {
+        const res = await fetch("/api/galeria");
+        if (!res.ok) throw new Error("Error al cargar galería");
+        const data = await res.json();
+        const lista = Array.isArray(data) ? data : (data.results ?? []);
+        if (!activo || lista.length === 0) return; // Conserva el respaldo si la BD está vacía
+
+        // Agrupar las imágenes de la BD por categoría
+        const grupos = new Map();
+        for (const item of lista) {
+          const cat = item.categoria || "general";
+          if (!grupos.has(cat)) grupos.set(cat, []);
+          grupos.get(cat).push({
+            url: item.imagen_url,
+            alt: item.titulo,
+            title: item.titulo,
+          });
+        }
+        const mapeadas = Array.from(grupos.entries()).map(([categoria, images]) => ({
+          categoria,
+          titulo: tituloDeCategoria(categoria),
+          aos: "fade-up",
+          images,
+        }));
+        setGalerias(mapeadas);
+      } catch {
+        // Se conserva el respaldo estático
+      }
+    };
+    cargarGaleria();
+    return () => {
+      activo = false;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-300/75 dark:bg-gray-900">
       {/* Hero Section */}
@@ -33,144 +193,23 @@ export default function Galeria() {
       <section className="py-8 px-4 md:px-8">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {/* Galería de Imágenes */}
-            <div className="py-8">
-              <h2
-                className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
-                data-aos="fade-up"
-              >
-                Galería de Imágenes
-              </h2>
-              <div data-aos="zoom-in" data-aos-delay="200">
-                <RotatingCarousel
-                  images={[
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/1.jpeg",
-                      alt: "Encuentros de Saberes 1",
-                      title: "Encuentros de Saberes y Prácticas Ancestrales",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/2.jpeg",
-                      alt: "Encuentros de Saberes 2",
-                      title: "Prácticas Tradicionales de Salud",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/3.jpeg",
-                      alt: "Encuentros de Saberes 3",
-                      title: "Medicina Ancestral",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/4.jpeg",
-                      alt: "Encuentros de Saberes 4",
-                      title: "Comunidad y Tradición",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/5.jpeg",
-                      alt: "Encuentros de Saberes 5",
-                      title: "Saberes Comunitarios",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/6.jpeg",
-                      alt: "Encuentros de Saberes 6",
-                      title: "Encuentros Culturales",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/7.jpeg",
-                      alt: "Encuentros de Saberes 7",
-                      title: "Medicina Tradicional Santiago",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/comunidad/8.jpeg",
-                      alt: "Encuentros de Saberes 8",
-                      title: "Medicina Tradicional",
-                    },
-                  ]}
-                  interval={5000}
-                  height="500px"
-                />
+            {galerias.map((galeria) => (
+              <div key={galeria.categoria} className="py-8">
+                <h2
+                  className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
+                  data-aos={galeria.aos}
+                >
+                  {galeria.titulo}
+                </h2>
+                <div data-aos="zoom-in" data-aos-delay="200">
+                  <RotatingCarousel
+                    images={galeria.images}
+                    interval={5000}
+                    height="500px"
+                  />
+                </div>
               </div>
-            </div>
-
-            {/* Nuestra IPS */}
-            <div className="py-8">
-              <h2
-                className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
-                data-aos="fade-down"
-              >
-                Nuestra IPS
-              </h2>
-              <div data-aos="flip-right" data-aos-delay="200">
-                <RotatingCarousel
-                  images={[
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/1.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Farmacia Sibundoy",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/2.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Odontología",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/3.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Farmacia Colón",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/4.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Farmacia Sibundoy",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/5.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Atención médica",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/ips/7.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Atención médica",
-                    },
-                  ]}
-                  interval={5000}
-                  height="500px"
-                />
-              </div>
-            </div>
-
-            {/* Atención domiciliaria */}
-            <div className="py-8">
-              <h2
-                className="text-3xl font-bold text-center mb-6 text-gray-800 dark:text-white"
-                data-aos="fade-down"
-              >
-                Atención domiciliaria
-              </h2>
-              <div data-aos="flip-right" data-aos-delay="200">
-                <RotatingCarousel
-                  images={[
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/1.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Atención domiciliaria",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/2.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Atención domiciliaria",
-                    },
-                    {
-                      url: "https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/atencion_domiciliaria/3.jpeg",
-                      alt: "Fotos IPS Inga Kamentsa",
-                      title: "Atención domiciliaria",
-                    },
-                  ]}
-                  interval={5000}
-                  height="500px"
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

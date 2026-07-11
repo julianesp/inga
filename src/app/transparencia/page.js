@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // Icono PDF inline
 function IconoPDF() {
@@ -750,6 +750,45 @@ export default function Transparencia() {
   const [busqueda, setBusqueda] = useState("");
   const buscando = busqueda.trim().length > 1;
 
+  // Documentos subidos desde el panel admin (/api/documentos), agrupados por año.
+  // Se muestran como acordeones adicionales junto a los años estáticos.
+  const [aniosBD, setAniosBD] = useState([]);
+
+  useEffect(() => {
+    let activo = true;
+    const cargarDocumentos = async () => {
+      try {
+        const res = await fetch("/api/documentos");
+        if (!res.ok) throw new Error("Error al cargar documentos");
+        const data = await res.json();
+        const lista = Array.isArray(data) ? data : (data.results ?? []);
+        if (!activo || lista.length === 0) return;
+
+        // Agrupar por año
+        const porAnio = new Map();
+        for (const d of lista) {
+          const anio = d.anio ?? "Sin año";
+          if (!porAnio.has(anio)) porAnio.set(anio, []);
+          porAnio.get(anio).push({ nombre: d.nombre, url: d.archivo_url });
+        }
+        const agrupados = Array.from(porAnio.entries())
+          .sort((a, b) => Number(b[0]) - Number(a[0]))
+          .map(([anio, documentos]) => ({
+            año: anio,
+            etiqueta: "Publicados desde el panel",
+            secciones: [{ titulo: "Documentos", documentos }],
+          }));
+        setAniosBD(agrupados);
+      } catch {
+        // Sin documentos de BD: solo se muestran los años estáticos
+      }
+    };
+    cargarDocumentos();
+    return () => {
+      activo = false;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-gray-900">
       {/* Hero */}
@@ -811,13 +850,21 @@ export default function Transparencia() {
               {buscando ? (
                 <ResultadosBusqueda query={busqueda} />
               ) : (
-                anios.map((anio) => (
-                  <AcordeonAnio
-                    key={anio.año}
-                    anio={anio}
-                    defaultAbierto={anio.año === 2026}
-                  />
-                ))
+                <>
+                  {anios.map((anio) => (
+                    <AcordeonAnio
+                      key={anio.año}
+                      anio={anio}
+                      defaultAbierto={anio.año === 2026}
+                    />
+                  ))}
+                  {aniosBD.map((anio) => (
+                    <AcordeonAnio
+                      key={`bd-${anio.año}`}
+                      anio={anio}
+                    />
+                  ))}
+                </>
               )}
             </div>
           </div>

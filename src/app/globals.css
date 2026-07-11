@@ -148,10 +148,14 @@ body {
     border-color: hsl(var(--border));
   }
 
-  /* Ajustes para inputs y formularios en modo oscuro */
-  .dark input,
-  .dark textarea,
-  .dark select {
+  /* Ajustes para inputs y formularios en modo oscuro.
+     Solo aplica a inputs "sin estilar" (sin clases de Tailwind que
+     controlen su color). Los formularios que gestionan su propio tema
+     con variantes dark:* (p. ej. el panel admin) quedan excluidos para
+     evitar que esta regla los pinte de negro de forma inconsistente. */
+  .dark input:not([class*="bg-"]):not([class*="dark:bg-"]),
+  .dark textarea:not([class*="bg-"]):not([class*="dark:bg-"]),
+  .dark select:not([class*="bg-"]):not([class*="dark:bg-"]) {
     background-color: hsl(var(--input));
     color: hsl(var(--foreground));
     border-color: hsl(var(--border));

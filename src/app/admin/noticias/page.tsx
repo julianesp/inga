@@ -143,7 +143,7 @@ export default function AdminNoticias() {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-2xl font-bold text-slate-800">Noticias</h2>
+        <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100">Noticias</h2>
         <button
           onClick={openCreate}
           className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
@@ -154,33 +154,33 @@ export default function AdminNoticias() {
       </div>
 
       {/* Tabla */}
-      <div className="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+      <div className="bg-white dark:bg-slate-900 rounded-xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
         {loading ? (
           <div className="flex items-center justify-center py-16">
             <Loader2 className="h-6 w-6 animate-spin text-slate-400" />
           </div>
         ) : items.length === 0 ? (
-          <p className="text-center text-slate-400 py-16">No hay noticias registradas.</p>
+          <p className="text-center text-slate-400 dark:text-slate-500 py-16">No hay noticias registradas.</p>
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
-              <thead className="bg-slate-50 border-b border-slate-200">
+              <thead className="bg-slate-50 dark:bg-slate-800/60 border-b border-slate-200 dark:border-slate-800">
                 <tr>
-                  <th className="text-left px-4 py-3 font-medium text-slate-600">Título</th>
-                  <th className="text-left px-4 py-3 font-medium text-slate-600">Tipo</th>
-                  <th className="text-left px-4 py-3 font-medium text-slate-600">Fecha</th>
-                  <th className="text-left px-4 py-3 font-medium text-slate-600">Estado</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600 dark:text-slate-300">Título</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600 dark:text-slate-300">Tipo</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600 dark:text-slate-300">Fecha</th>
+                  <th className="text-left px-4 py-3 font-medium text-slate-600 dark:text-slate-300">Estado</th>
                   <th className="px-4 py-3" />
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
                 {items.map((item) => (
-                  <tr key={item.id} className="hover:bg-slate-50">
-                    <td className="px-4 py-3 text-slate-800 font-medium max-w-xs truncate">
+                  <tr key={item.id} className="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                    <td className="px-4 py-3 text-slate-800 dark:text-slate-100 font-medium max-w-xs truncate">
                       {item.titulo}
                     </td>
-                    <td className="px-4 py-3 text-slate-500 capitalize">{item.tipo ?? "—"}</td>
-                    <td className="px-4 py-3 text-slate-500">
+                    <td className="px-4 py-3 text-slate-500 dark:text-slate-400 capitalize">{item.tipo ?? "—"}</td>
+                    <td className="px-4 py-3 text-slate-500 dark:text-slate-400">
                       {item.creado_en ? new Date(item.creado_en).toLocaleDateString("es-CO") : "—"}
                     </td>
                     <td className="px-4 py-3">
@@ -221,25 +221,25 @@ export default function AdminNoticias() {
       {/* Modal */}
       {modalOpen && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200">
-              <h3 className="text-lg font-semibold text-slate-800">
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800">
+              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">
                 {editing ? "Editar Noticia" : "Nueva Noticia"}
               </h3>
-              <button onClick={closeModal} className="text-slate-400 hover:text-slate-600">
+              <button onClick={closeModal} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
                 <X className="h-5 w-5" />
               </button>
             </div>
 
             <form onSubmit={handleSubmit} className="px-6 py-4 space-y-4">
               {error && (
-                <div className="bg-red-50 border border-red-200 text-red-700 text-sm px-4 py-2 rounded-lg">
+                <div className="bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900 text-red-700 dark:text-red-300 text-sm px-4 py-2 rounded-lg">
                   {error}
                 </div>
               )}
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   Título <span className="text-red-500">*</span>
                 </label>
                 <input
@@ -248,12 +248,12 @@ export default function AdminNoticias() {
                   value={form.titulo}
                   onChange={handleChange}
                   required
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 [color-scheme:light] dark:[color-scheme:dark]"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   Descripción
                 </label>
                 <input
@@ -261,12 +261,12 @@ export default function AdminNoticias() {
                   name="descripcion"
                   value={form.descripcion}
                   onChange={handleChange}
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 [color-scheme:light] dark:[color-scheme:dark]"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   Contenido
                 </label>
                 <textarea
@@ -274,12 +274,12 @@ export default function AdminNoticias() {
                   value={form.contenido}
                   onChange={handleChange}
                   rows={5}
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-y"
+                  className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 resize-y"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-slate-700 mb-1">
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                   URL de imagen
                 </label>
                 <input
@@ -288,27 +288,27 @@ export default function AdminNoticias() {
                   value={form.imagen_url}
                   onChange={handleChange}
                   placeholder="https://... o clave de R2"
-                  className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                  className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 [color-scheme:light] dark:[color-scheme:dark]"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                     Tipo
                   </label>
                   <select
                     name="tipo"
                     value={form.tipo}
                     onChange={handleChange}
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 [color-scheme:light] dark:[color-scheme:dark]"
                   >
                     <option value="noticia">Noticia</option>
                     <option value="evento">Evento</option>
                   </select>
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-slate-700 mb-1">
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
                     Fecha del evento
                   </label>
                   <input
@@ -316,7 +316,7 @@ export default function AdminNoticias() {
                     name="fecha_evento"
                     value={form.fecha_evento}
                     onChange={handleChange}
-                    className="w-full border border-slate-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                    className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 [color-scheme:light] dark:[color-scheme:dark]"
                   />
                 </div>
               </div>
@@ -325,7 +325,7 @@ export default function AdminNoticias() {
                 <button
                   type="button"
                   onClick={closeModal}
-                  className="px-4 py-2 text-sm text-slate-600 border border-slate-300 rounded-lg hover:bg-slate-50 transition-colors"
+                  className="px-4 py-2 text-sm text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
                 >
                   Cancelar
                 </button>

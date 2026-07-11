@@ -11,6 +11,12 @@
   "observability": {
     "enabled": true
   },
+  "vars": {
+    "NEXT_PUBLIC_ADMIN_EMAIL": "ipsingakamentsa@gmail.com",
+    "NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY": "pk_test_am9pbnQtYWlyZWRhbGUtMTEuY2xlcmsuYWNjb3VudHMuZGV2JA",
+    "NEXT_PUBLIC_CLERK_SIGN_IN_URL": "/admin/sign-in",
+    "NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL": "/admin"
+  },
   "r2_buckets": [
     {
       "binding": "STORAGE",

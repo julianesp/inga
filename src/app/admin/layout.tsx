@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useClerk, useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
 
 const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL ?? "";
 import {
@@ -63,7 +64,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   if (isSignInPage) return <>{children}</>;
 
   return (
-    <div className="h-dvh bg-slate-100 flex overflow-hidden">
+    <div className="h-dvh bg-slate-100 dark:bg-slate-950 flex overflow-hidden">
       {/* Overlay móvil */}
       {sidebarOpen && (
         <div
@@ -132,17 +133,20 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Contenido principal */}
       <div className="flex-1 flex flex-col min-w-0 lg:ml-0">
         {/* Header */}
-        {/* <header className="bg-white border-b border-slate-200 px-4 py-3 flex items-center gap-4 sticky top-0 z-10">
+        <header className="bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 py-3 flex items-center gap-4 sticky top-0 z-10">
           <button
             onClick={() => setSidebarOpen(true)}
-            className="lg:hidden text-slate-600 hover:text-slate-900"
+            className="lg:hidden text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
           >
             <Menu className="h-6 w-6" />
           </button>
-          <h1 className="text-slate-800 font-semibold text-base sm:text-lg truncate">
+          <h1 className="text-slate-800 dark:text-slate-100 font-semibold text-base sm:text-lg truncate">
             Panel Admin — IPS Inga Kamentsa
           </h1>
-        </header> */}
+          <div className="ml-auto">
+            <ThemeSwitcher />
+          </div>
+        </header>
 
         {/* Página */}
         <main className="flex-1 p-4 sm:p-6 overflow-auto">{children}</main>
