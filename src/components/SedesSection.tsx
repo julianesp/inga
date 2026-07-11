@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Sede {
   id: string;
@@ -11,7 +11,8 @@ interface Sede {
   servicios: string[];
 }
 
-const sedes: Sede[] = [
+// Datos de respaldo: se muestran si la API no devuelve sedes (BD vacía o sin conexión)
+const sedesFallback: Sede[] = [
   {
     id: "sibundoy",
     nombre: "Sede Principal Sibundoy",
@@ -74,8 +75,55 @@ const sedes: Sede[] = [
   },
 ];
 
+// Servicios por defecto (la tabla `sedes` de la BD no almacena la lista de servicios)
+const serviciosPorDefecto = [
+  "Medicina General",
+  "Odontología",
+  "Servicio farmacéutico",
+  "Medicina tradicional",
+  "Psicología",
+];
+
 export default function SedesSection() {
-  const [selectedSede, setSelectedSede] = useState<string>("sibundoy");
+  const [sedes, setSedes] = useState<Sede[]>(sedesFallback);
+  const [selectedSede, setSelectedSede] = useState<string>(sedesFallback[0].id);
+
+  useEffect(() => {
+    let activo = true;
+    const cargarSedes = async () => {
+      try {
+        const res = await fetch("/api/sedes");
+        if (!res.ok) throw new Error("Error al cargar sedes");
+        const data = await res.json();
+        const lista = Array.isArray(data) ? data : (data.results ?? []);
+        if (!activo || lista.length === 0) return; // Mantiene el respaldo si la BD está vacía
+        const mapeadas: Sede[] = lista.map(
+          (s: {
+            id: number;
+            nombre: string;
+            direccion: string;
+            telefono: string | null;
+            horario: string | null;
+          }) => ({
+            id: String(s.id),
+            nombre: s.nombre,
+            direccion: s.direccion,
+            telefono: s.telefono ?? "+573132863398",
+            horarios: s.horario ?? "Lunes a Viernes: 8:00 AM - 12:00 PM y 2:00 PM - 5:00 PM",
+            servicios: serviciosPorDefecto,
+          })
+        );
+        setSedes(mapeadas);
+        setSelectedSede(mapeadas[0].id);
+      } catch {
+        // Se conserva el respaldo estático
+      }
+    };
+    cargarSedes();
+    return () => {
+      activo = false;
+    };
+  }, []);
 
   // Función para agendar cita - WhatsApp temporalmente deshabilitado
   const handleAgendarCita = (sede: Sede) => {

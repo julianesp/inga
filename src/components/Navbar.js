@@ -13,6 +13,8 @@ const navigationLinks = [
   { href: "/galeria", label: "Galería" },
   { href: "/transparencia", label: "Transparencia" },
   { href: "/eventos", label: "Eventos" },
+  { href: "/noticias", label: "Noticias" },
+  { href: "/publicaciones", label: "Publicaciones" },
   { href: "/atencion-usuario", label: "Atención al Usuario" },
 ];
 

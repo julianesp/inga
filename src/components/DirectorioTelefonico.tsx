@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface Contacto {
   id: string;
@@ -15,46 +15,50 @@ interface Contacto {
   horarioAtencion: string;
 }
 
-const directorioContactos: Contacto[] = [
-  {
-    id: "1",
-    nombre: "Colocar nombre aquí",
-    cargo: "Gerente General",
-    departamento: "Gerencia",
-    telefono: "3132863398",
-
-    email: "ipsingakamentsa@gmail.com",
-    sede: "Sibundoy",
-    horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
-  },
-  {
-    id: "2",
-    nombre: "Colocar nombre aquí",
-    cargo: "Directora Científica",
-    departamento: "Asistencial",
-    telefono: "3132863398",
-
-    email: "ipsingakamentsa@gmail.com",
-    sede: "Sibundoy",
-    horarioAtencion: "Lunes a Viernes 7:00 AM - 4:00 PM",
-  },
-  {
-    id: "3",
-    nombre: "Colocar nombre aquí",
-    cargo: "Coordinadora Administrativa",
-    departamento: "Secretaría",
-    telefono: "3132863398",
-
-    email: "ipsingakamentsa@gmail.com",
-    sede: "Sibundoy",
-    horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
-  },
-];
-
 export default function DirectorioTelefonico() {
+  const [directorioContactos, setDirectorioContactos] = useState<Contacto[]>([]);
   const [filtroSede, setFiltroSede] = useState<string>("todas");
   const [filtroDepartamento, setFiltroDepartamento] = useState<string>("todos");
   const [busqueda, setBusqueda] = useState<string>("");
+
+  useEffect(() => {
+    let activo = true;
+    const cargarDirectorio = async () => {
+      try {
+        const res = await fetch("/api/directorio");
+        if (!res.ok) throw new Error("Error al cargar directorio");
+        const data = await res.json();
+        const lista = Array.isArray(data) ? data : (data.results ?? []);
+        if (!activo) return;
+        const mapeados: Contacto[] = lista.map(
+          (c: {
+            id: number;
+            nombre: string;
+            cargo: string;
+            area: string | null;
+            telefono: string | null;
+            email: string | null;
+          }) => ({
+            id: String(c.id),
+            nombre: c.nombre,
+            cargo: c.cargo,
+            departamento: c.area ?? "Administrativo",
+            telefono: c.telefono ?? "3132863398",
+            email: c.email ?? "ipsingakamentsa@gmail.com",
+            sede: "Sibundoy",
+            horarioAtencion: "Lunes a Viernes 8:00 AM - 5:00 PM",
+          })
+        );
+        setDirectorioContactos(mapeados);
+      } catch {
+        if (activo) setDirectorioContactos([]);
+      }
+    };
+    cargarDirectorio();
+    return () => {
+      activo = false;
+    };
+  }, []);
 
   const sedes = [
     "todas",
@@ -202,7 +206,8 @@ export default function DirectorioTelefonico() {
         </div> */}
 
         {/* Lista de contactos */}
-        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
+        {contactosFiltrados.length > 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {contactosFiltrados.map((contacto) => (
             <div
               key={contacto.id}
@@ -335,9 +340,10 @@ export default function DirectorioTelefonico() {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>
+        )}
 
-        {contactosFiltrados.length === 0 && (
+        {directorioContactos.length > 0 && contactosFiltrados.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">
               No se encontraron contactos con los criterios seleccionados.

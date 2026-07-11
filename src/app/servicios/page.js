@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import InformacionInstitucional from "@/components/InformacionInstitucional";
 import GestionClinica from "@/components/GestionClinica";
 import Link from "next/link";
@@ -11,6 +12,29 @@ import Link from "next/link";
 // };
 
 export default function ServiciosPage() {
+  // Servicios adicionales gestionados desde el panel admin (/api/servicios).
+  // Se muestran como complemento del contenido fijo de arriba.
+  const [serviciosExtra, setServiciosExtra] = useState([]);
+
+  useEffect(() => {
+    let activo = true;
+    const cargarServicios = async () => {
+      try {
+        const res = await fetch("/api/servicios");
+        if (!res.ok) throw new Error("Error al cargar servicios");
+        const data = await res.json();
+        const lista = Array.isArray(data) ? data : (data.results ?? []);
+        if (activo) setServiciosExtra(lista);
+      } catch {
+        if (activo) setServiciosExtra([]);
+      }
+    };
+    cargarServicios();
+    return () => {
+      activo = false;
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white/45 dark:bg-gray-900">
       {/* Hero Section */}
@@ -193,6 +217,45 @@ export default function ServiciosPage() {
           </div>
         </div>
       </section>
+
+      {/* Servicios adicionales cargados desde el panel administrativo */}
+      {serviciosExtra.length > 0 && (
+        <section className="py-16 bg-white/45 dark:bg-gray-900">
+          <div className="container mx-auto px-4">
+            <h2
+              className="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white"
+              data-aos="fade-down"
+            >
+              Otros Servicios
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {serviciosExtra.map((servicio) => (
+                <div
+                  key={servicio.id}
+                  className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border border-gray-200 dark:border-gray-700"
+                  data-aos="fade-up"
+                >
+                  {servicio.imagen_url && (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      src={servicio.imagen_url}
+                      alt={servicio.nombre}
+                      className="w-full h-40 object-cover rounded-lg mb-4"
+                    />
+                  )}
+                  <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-3 text-center">
+                    {servicio.icono ? `${servicio.icono} ` : ""}
+                    {servicio.nombre}
+                  </h3>
+                  <p className="text-gray-700 dark:text-gray-300 text-center">
+                    {servicio.descripcion}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <InformacionInstitucional />
       <GestionClinica />

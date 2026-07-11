@@ -1,10 +1,9 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components";
-import { Footer } from "@/containers";
 import { ThemeProvider } from "next-themes";
 import AOSInit from "@/components/AOSInit";
-import Image from "next/image";
+import AdminLayoutGuard from "@/components/admin/AdminLayoutGuard";
+import { ClerkProvider } from "@clerk/nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -344,6 +343,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
+    <ClerkProvider>
     <html lang="es" suppressHydrationWarning>
       <head>
         <script
@@ -359,74 +359,10 @@ export default function RootLayout({ children }) {
           disableTransitionOnChange
         >
           <AOSInit />
-
-          {/* Patrón de marcas de agua */}
-          <div className="watermark-pattern flex justify-center items-center">
-            {/* <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/marca_agua.jpeg"
-              alt=""
-              className="watermark"
-              aria-hidden="true"
-              width={400}
-              height={400}
-            />
-            <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/marca_agua.jpeg"
-              alt=""
-              className="watermark"
-              aria-hidden="true"
-              width={400}
-              height={400}
-            />
-            <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/marca_agua.jpeg"
-              alt=""
-              className="watermark"
-              aria-hidden="true"
-              width={400}
-              height={400}
-            />
-            <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/marca_agua.jpeg"
-              alt=""
-              className="watermark"
-              aria-hidden="true"
-              width={400}
-              height={400}
-            />
-            <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/marca_agua.jpeg"
-              alt=""
-              className="watermark"
-              aria-hidden="true"
-              width={400}
-              height={400}
-            /> */}
-            <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/marca_agua.jpeg"
-              alt=""
-              className="watermark"
-              aria-hidden="true"
-              width={400}
-              height={400}
-            />
-            <Image
-              src="https://ghx22gzm9l6t5pgk.public.blob.vercel-storage.com/images/marca_agua.jpeg"
-              alt=""
-              className="watermark"
-              aria-hidden="true"
-              width={400}
-              height={400}
-            />
-          </div>
-
-          <div className="watermark-container relative flex min-h-screen flex-col">
-            <Navbar />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </div>
+          <AdminLayoutGuard>{children}</AdminLayoutGuard>
         </ThemeProvider>
       </body>
     </html>
+    </ClerkProvider>
   );
 }
