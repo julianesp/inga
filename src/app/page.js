@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import PresentacionCarousel from "@/components/PresentacionCarousel";
+import NoticiasDestacadas from "@/components/NoticiasDestacadas";
 import HealthInfoSection from "@/components/HealthInfoSection";
 import GlobalSearch from "@/components/GlobalSearch";
 import CalendarioConsultas from "@/components/CalendarioConsultas";
@@ -178,6 +179,9 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-300/75 dark:bg-gray-900">
       <PresentacionCarousel />
+
+      {/* Noticias publicadas por la IPS (después de las imágenes de presentación) */}
+      <NoticiasDestacadas />
 
       <AutoSlider slides={sedesSlides} title="Servicios" />
       <AutoSlider slides={consultasSlides} title="Consulta médica" />
