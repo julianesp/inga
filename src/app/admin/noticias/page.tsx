@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2 } from "lucide-react";
 import { confirmDelete, showError } from "@/lib/alerts";
+import FileUpload from "@/components/admin/FileUpload";
 
 interface Noticia {
   id: number;
@@ -281,15 +282,36 @@ export default function AdminNoticias() {
 
               <div>
                 <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
-                  URL de imagen
+                  Imagen
                 </label>
+                <FileUpload
+                  accept="image/*"
+                  carpeta="noticias"
+                  label="Subir imagen"
+                  onUpload={(url) =>
+                    setForm((prev) => ({ ...prev, imagen_url: url }))
+                  }
+                />
+                {form.imagen_url && (
+                  <div className="mt-2">
+                    <p className="text-xs text-slate-500 dark:text-slate-400 mb-1">
+                      Vista previa:
+                    </p>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={form.imagen_url}
+                      alt="Vista previa"
+                      className="h-32 w-auto rounded-lg object-cover border border-slate-200 dark:border-slate-700"
+                    />
+                  </div>
+                )}
                 <input
                   type="text"
                   name="imagen_url"
                   value={form.imagen_url}
                   onChange={handleChange}
-                  placeholder="https://... o clave de R2"
-                  className="w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 [color-scheme:light] dark:[color-scheme:dark]"
+                  placeholder="o pega una URL de imagen aquí"
+                  className="mt-2 w-full bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 border border-slate-300 dark:border-slate-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 [color-scheme:light] dark:[color-scheme:dark]"
                 />
               </div>
 
