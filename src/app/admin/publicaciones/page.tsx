@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2, FileText, Eye, EyeOff } from "lucide-react";
 import dynamic from "next/dynamic";
 import FileUpload from "@/components/admin/FileUpload";
+import { confirmDelete } from "@/lib/alerts";
 
 const RichTextEditor = dynamic(() => import("@/components/admin/RichTextEditor"), { ssr: false });
 
@@ -64,7 +65,7 @@ export default function PublicacionesPage() {
   };
 
   const handleDelete = async (id: number) => {
-    if (!confirm("¿Eliminar esta publicación?")) return;
+    if (!(await confirmDelete("¿Eliminar esta publicación?"))) return;
     await fetch(`/api/publicaciones/${id}`, { method: "DELETE" });
     load();
   };

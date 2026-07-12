@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { showSuccess } from "@/lib/alerts";
 
 interface ContactoSede {
   id: string;
@@ -107,7 +108,7 @@ export default function ContactoSedes() {
   const handleSubmitCita = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Solicitud de cita:", formData);
-    alert(
+    showSuccess(
       "Su solicitud de cita ha sido enviada. Nos pondremos en contacto con usted pronto."
     );
     setFormData({

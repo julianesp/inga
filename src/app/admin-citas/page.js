@@ -5,6 +5,7 @@ import { obtenerCitasDelLocalStorage, formatearFechaLegible, eliminarCitaDelLoca
 import { SERVICIOS_DISPONIBLES } from '@/types/citas';
 import { cargarCitasEjemplo, agregarCitasEjemplo } from '@/data/citasEjemplo';
 import { obtenerTodasLasCitas, esCitaDeProduccion } from '@/data/citasProduccion';
+import { confirmDelete, confirmAction, showWarning } from '@/lib/alerts';
 
 const sedes = [
   { id: 'sibundoy', nombre: 'Sede Principal Sibundoy' },
@@ -40,14 +41,16 @@ export default function AdminCitasPage() {
     setCitas(citasGuardadas);
   };
 
-  const eliminarCita = (citaId) => {
+  const eliminarCita = async (citaId) => {
     // Verificar si es una cita de producción (no se puede eliminar)
     if (esCitaDeProduccion(citaId)) {
-      alert('⚠️ Esta cita es parte de los datos de producción y no se puede eliminar.\n\nSolo se pueden eliminar las citas creadas localmente.');
+      showWarning(
+        'Esta cita es parte de los datos de producción y no se puede eliminar. Solo se pueden eliminar las citas creadas localmente.'
+      );
       return;
     }
 
-    if (confirm('¿Estás seguro de que quieres eliminar esta cita?')) {
+    if (await confirmDelete('¿Estás seguro de que quieres eliminar esta cita?')) {
       eliminarCitaDelLocalStorage(citaId);
       cargarCitas();
     }
@@ -90,8 +93,13 @@ export default function AdminCitasPage() {
     a.click();
   };
 
-  const limpiarTodasLasCitas = () => {
-    if (confirm('¿Estás seguro de que quieres eliminar TODAS las citas? Esta acción no se puede deshacer.')) {
+  const limpiarTodasLasCitas = async () => {
+    if (
+      await confirmDelete(
+        '¿Estás seguro de que quieres eliminar TODAS las citas? Esta acción no se puede deshacer.',
+        { title: "Eliminar todas las citas", confirmButtonText: "Sí, eliminar todas" }
+      )
+    ) {
       localStorage.removeItem('citas-inga');
       cargarCitas();
     }
@@ -156,8 +164,13 @@ export default function AdminCitasPage() {
     }
   };
 
-  const handleCargarEjemplos = () => {
-    if (confirm('¿Deseas cargar las citas de ejemplo? Esto reemplazará todas las citas actuales.')) {
+  const handleCargarEjemplos = async () => {
+    if (
+      await confirmAction(
+        '¿Deseas cargar las citas de ejemplo? Esto reemplazará todas las citas actuales.',
+        { title: "Cargar ejemplos", confirmButtonText: "Sí, cargar" }
+      )
+    ) {
       cargarCitasEjemplo();
       cargarCitas();
     }

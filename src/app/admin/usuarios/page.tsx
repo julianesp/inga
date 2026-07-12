@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2, ShieldCheck } from "lucide-react";
+import { confirmDelete, showError } from "@/lib/alerts";
 
 interface Usuario {
   id: number;
@@ -130,13 +131,13 @@ export default function AdminUsuarios() {
   };
 
   const handleDelete = async (item: Usuario) => {
-    if (!confirm(`¿Revocar el acceso de "${item.nombre}"?`)) return;
+    if (!(await confirmDelete(`¿Revocar el acceso de "${item.nombre}"?`, { confirmButtonText: "Sí, revocar" }))) return;
     try {
       const res = await fetch(`/api/usuarios/${item.id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Error al eliminar");
       fetchItems();
     } catch {
-      alert("No se pudo eliminar el usuario.");
+      showError("No se pudo eliminar el usuario.");
     }
   };
 

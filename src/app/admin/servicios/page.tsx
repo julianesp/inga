@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2 } from "lucide-react";
+import { confirmDelete, showError } from "@/lib/alerts";
 
 interface Servicio {
   id: number;
@@ -124,13 +125,13 @@ export default function AdminServicios() {
   };
 
   const handleDelete = async (item: Servicio) => {
-    if (!confirm(`¿Eliminar el servicio "${item.nombre}"?`)) return;
+    if (!(await confirmDelete(`¿Eliminar el servicio "${item.nombre}"?`))) return;
     try {
       const res = await fetch(`/api/servicios/${item.id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Error al eliminar");
       fetchItems();
     } catch {
-      alert("No se pudo eliminar el servicio.");
+      showError("No se pudo eliminar el servicio.");
     }
   };
 

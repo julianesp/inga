@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2, MapPin, Calendar } from "lucide-react";
 import FileUpload from "@/components/admin/FileUpload";
+import { confirmDelete, showError } from "@/lib/alerts";
 
 interface Evento {
   id: number;
@@ -147,13 +148,13 @@ export default function AdminEventos() {
   };
 
   const handleDelete = async (item: Evento) => {
-    if (!confirm(`¿Eliminar el evento "${item.titulo}"?`)) return;
+    if (!(await confirmDelete(`¿Eliminar el evento "${item.titulo}"?`))) return;
     try {
       const res = await fetch(`/api/eventos/${item.id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Error al eliminar");
       fetchItems();
     } catch {
-      alert("No se pudo eliminar el evento.");
+      showError("No se pudo eliminar el evento.");
     }
   };
 

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2 } from "lucide-react";
 import FileUpload from "@/components/admin/FileUpload";
+import { confirmDelete, showError } from "@/lib/alerts";
 
 interface GaleriaItem {
   id: number;
@@ -121,13 +122,13 @@ export default function AdminGaleria() {
   };
 
   const handleDelete = async (item: GaleriaItem) => {
-    if (!confirm(`¿Eliminar la imagen "${item.titulo}"?`)) return;
+    if (!(await confirmDelete(`¿Eliminar la imagen "${item.titulo}"?`))) return;
     try {
       const res = await fetch(`/api/galeria/${item.id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Error al eliminar");
       fetchItems();
     } catch {
-      alert("No se pudo eliminar la imagen.");
+      showError("No se pudo eliminar la imagen.");
     }
   };
 

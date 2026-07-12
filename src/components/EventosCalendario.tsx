@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { showSuccess, showWarning } from "@/lib/alerts";
 
 interface Evento {
   id: number;
@@ -114,7 +115,7 @@ export default function EventosCalendario() {
     // Validar formato de email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(emailSuscripcion)) {
-      alert("Por favor ingrese un correo electrónico válido");
+      showWarning("Por favor ingrese un correo electrónico válido");
       return;
     }
 
@@ -139,8 +140,8 @@ Fecha de suscripción: ${new Date().toLocaleString("es-CO", {
 
     // Limpiar campo y mostrar confirmación
     setEmailSuscripcion("");
-    alert(
-      "¡Gracias por suscribirte! Tu correo será registrado y comenzarás a recibir nuestras notificaciones importantes."
+    showSuccess(
+      "¡Gracias por suscribirte! Comenzarás a recibir nuestras notificaciones importantes."
     );
   };
 

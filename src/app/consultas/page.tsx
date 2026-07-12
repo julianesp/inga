@@ -9,6 +9,7 @@ import {
   agregarCitasEjemplo,
   limpiarTodasLasCitas,
 } from '@/data/citasEjemplo';
+import { confirmDelete, confirmAction } from '@/lib/alerts';
 
 export default function ConsultasPage() {
   const [consultas, setConsultas] = useState<Cita[]>([]);
@@ -47,10 +48,11 @@ export default function ConsultasPage() {
   };
 
   // Cargar datos de ejemplo
-  const handleCargarEjemplos = () => {
+  const handleCargarEjemplos = async () => {
     if (
-      confirm(
-        '¿Deseas cargar las citas de ejemplo? Esto reemplazará todas las citas actuales.'
+      await confirmAction(
+        '¿Deseas cargar las citas de ejemplo? Esto reemplazará todas las citas actuales.',
+        { title: 'Cargar ejemplos', confirmButtonText: 'Sí, cargar' }
       )
     ) {
       cargarCitasEjemplo();
@@ -65,10 +67,11 @@ export default function ConsultasPage() {
   };
 
   // Limpiar todas las citas
-  const handleLimpiarCitas = () => {
+  const handleLimpiarCitas = async () => {
     if (
-      confirm(
-        '¿Estás seguro de eliminar TODAS las citas? Esta acción no se puede deshacer.'
+      await confirmDelete(
+        '¿Estás seguro de eliminar TODAS las citas? Esta acción no se puede deshacer.',
+        { title: 'Eliminar todas las citas', confirmButtonText: 'Sí, eliminar todas' }
       )
     ) {
       limpiarTodasLasCitas();

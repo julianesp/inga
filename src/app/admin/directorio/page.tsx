@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2 } from "lucide-react";
+import { confirmDelete, showError } from "@/lib/alerts";
 
 interface DirectorioItem {
   id: number;
@@ -132,13 +133,13 @@ export default function AdminDirectorio() {
   };
 
   const handleDelete = async (item: DirectorioItem) => {
-    if (!confirm(`¿Eliminar a "${item.nombre}" del directorio?`)) return;
+    if (!(await confirmDelete(`¿Eliminar a "${item.nombre}" del directorio?`))) return;
     try {
       const res = await fetch(`/api/directorio/${item.id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Error al eliminar");
       fetchItems();
     } catch {
-      alert("No se pudo eliminar el registro.");
+      showError("No se pudo eliminar el registro.");
     }
   };
 

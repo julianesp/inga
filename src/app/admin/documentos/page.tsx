@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2 } from "lucide-react";
 import FileUpload from "@/components/admin/FileUpload";
+import { confirmDelete, showError } from "@/lib/alerts";
 
 interface Documento {
   id: number;
@@ -126,13 +127,13 @@ export default function AdminDocumentos() {
   };
 
   const handleDelete = async (item: Documento) => {
-    if (!confirm(`¿Eliminar el documento "${item.nombre}"?`)) return;
+    if (!(await confirmDelete(`¿Eliminar el documento "${item.nombre}"?`))) return;
     try {
       const res = await fetch(`/api/documentos/${item.id}`, { method: "DELETE" });
       if (!res.ok) throw new Error("Error al eliminar");
       fetchItems();
     } catch {
-      alert("No se pudo eliminar el documento.");
+      showError("No se pudo eliminar el documento.");
     }
   };
 
