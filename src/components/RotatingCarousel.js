@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 
 /**
@@ -32,7 +33,12 @@ export default function RotatingCarousel({
 }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [expandedImage, setExpandedImage] = useState(null);
+  // Índice de la imagen maximizada a pantalla completa, o null si ninguna
+  const [expandedIndex, setExpandedIndex] = useState(null);
+  // El overlay se renderiza con portal a document.body; solo tras montar
+  const [montado, setMontado] = useState(false);
+
+  useEffect(() => setMontado(true), []);
 
   useEffect(() => {
     if (!isAutoPlaying || images.length === 0) return;
@@ -62,15 +68,45 @@ export default function RotatingCarousel({
     setTimeout(() => setIsAutoPlaying(true), 10000);
   };
 
-  const handleImageClick = (imageUrl) => {
+  // Abrir la imagen a pantalla completa (por índice)
+  const openExpanded = (index) => {
     setIsAutoPlaying(false);
-    setExpandedImage(imageUrl);
+    setExpandedIndex(index);
   };
 
-  const handleCloseExpandedImage = () => {
-    setExpandedImage(null);
+  const closeExpanded = useCallback(() => {
+    setExpandedIndex(null);
     setIsAutoPlaying(true);
-  };
+  }, []);
+
+  // Navegar dentro del overlay; sincroniza también el carrusel de fondo
+  const expandedNext = useCallback(() => {
+    setExpandedIndex((prev) => {
+      const next = (prev + 1) % images.length;
+      setCurrentIndex(next);
+      return next;
+    });
+  }, [images.length]);
+
+  const expandedPrev = useCallback(() => {
+    setExpandedIndex((prev) => {
+      const next = (prev - 1 + images.length) % images.length;
+      setCurrentIndex(next);
+      return next;
+    });
+  }, [images.length]);
+
+  // Teclado: Escape cierra, flechas navegan mientras está expandida
+  useEffect(() => {
+    if (expandedIndex === null) return;
+    const onKey = (e) => {
+      if (e.key === "Escape") closeExpanded();
+      else if (e.key === "ArrowRight") expandedNext();
+      else if (e.key === "ArrowLeft") expandedPrev();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [expandedIndex, closeExpanded, expandedNext, expandedPrev]);
 
   if (images.length === 0) {
     return (
@@ -85,48 +121,122 @@ export default function RotatingCarousel({
     );
   }
 
+  const expandedImg =
+    expandedIndex !== null ? images[expandedIndex] : null;
+
   return (
     <>
-      {/* Modal para imagen expandida */}
-      {expandedImage && (
-        <div
-          className="fixed inset-0 z-50 bg-black bg-opacity-90 flex items-center justify-center cursor-pointer "
-          onClick={handleCloseExpandedImage}
-        >
-          {/* max-h-[40vh] */}
-          <div className="relative max-w-[90vw] max-h-[40vh]">
-            <Image
-              src={expandedImage}
-              alt="Imagen expandida"
-              className="max-w-full max-h-[90vh] object-contain"
-              width={1920}
-              height={1080}
-              priority
-            />
-            <button
-              className="absolute top-4 right-4 text-white bg-black bg-opacity-50 rounded-full p-2 hover:bg-opacity-75"
-              onClick={handleCloseExpandedImage}
+      {/* Overlay de imagen a pantalla completa.
+          Se renderiza con portal a document.body para que el `fixed` se
+          posicione respecto al viewport y no quede confinado por los
+          `transform` que AOS aplica a los contenedores ancestros.
+          Arranca debajo del navbar (top-16 = 64px) y con z-40 (< z-50 del
+          navbar) para que el navbar siga visible. Fondo oscuro + blur. */}
+      {montado &&
+        expandedImg &&
+        createPortal(
+          <div
+            className="fixed top-16 left-0 right-0 bottom-0 z-40 flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm"
+            onClick={closeExpanded}
+          >
+            <div
+              className="relative w-full h-full"
+              onClick={(e) => e.stopPropagation()}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
+              <Image
+                src={expandedImg.url}
+                alt={expandedImg.alt || "Imagen ampliada"}
+                fill
+                sizes="100vw"
+                className="no-hover-zoom object-contain rounded-lg shadow-2xl"
+                priority
+              />
+
+              {/* Título */}
+              {expandedImg.title && (
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/60 text-white px-5 py-2 rounded-full text-base font-medium pointer-events-none z-10">
+                  {expandedImg.title}
+                </div>
+              )}
+
+              {/* Contador */}
+              {images.length > 1 && (
+                <div className="absolute top-4 left-4 bg-black/50 text-white px-3 py-1 rounded-full text-sm z-10">
+                  {expandedIndex + 1} / {images.length}
+                </div>
+              )}
+
+              {/* Flechas de navegación */}
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={expandedPrev}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-3 hover:bg-black/75 transition-colors z-10"
+                    aria-label="Imagen anterior"
+                  >
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 19l-7-7 7-7"
+                      />
+                    </svg>
+                  </button>
+                  <button
+                    onClick={expandedNext}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 text-white bg-black/50 rounded-full p-3 hover:bg-black/75 transition-colors z-10"
+                    aria-label="Siguiente imagen"
+                  >
+                    <svg
+                      className="w-7 h-7"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M9 5l7 7-7 7"
+                      />
+                    </svg>
+                  </button>
+                </>
+              )}
+
+              {/* Botón cerrar */}
+              <button
+                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/75 transition-colors z-10"
+                onClick={closeExpanded}
+                aria-label="Cerrar imagen"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-          </div>
-        </div>
-      )}
+                <svg
+                  className="w-6 h-6"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M6 18L18 6M6 6l12 12"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>,
+          document.body
+        )}
 
       <div
-        className="relative overflow-hidden rounded-lg shadow-lg"
+        className="relative overflow-hidden rounded-lg shadow-lg group"
         style={{ height }}
       >
         {/* Imágenes */}
@@ -134,13 +244,12 @@ export default function RotatingCarousel({
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ${
-              index === currentIndex ? "opacity-100" : "opacity-0"
+              index === currentIndex
+                ? "opacity-100 pointer-events-auto"
+                : "opacity-0 pointer-events-none"
             }`}
           >
-            <div
-              className="relative w-full h-full cursor-zoom-in"
-              onClick={() => handleImageClick(image.url)}
-            >
+            <div className="relative w-full h-full">
               <Image
                 src={image.url}
                 alt={image.alt || `Imagen ${index + 1}`}
@@ -148,26 +257,6 @@ export default function RotatingCarousel({
                 className="object-cover"
                 priority={index === 0}
               />
-
-              {/* Indicador de zoom */}
-              <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                <div className="bg-black bg-opacity-75 text-white px-4 py-3 rounded-lg shadow-lg flex items-center space-x-2">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
-                    />
-                  </svg>
-                  <p className="text-sm font-medium">Clic para expandir</p>
-                </div>
-              </div>
 
               {/* Título de la imagen */}
               {image.title && (
@@ -180,6 +269,30 @@ export default function RotatingCarousel({
             </div>
           </div>
         ))}
+
+        {/* Botón de maximizar (abre la imagen actual a pantalla completa).
+            En escritorio aparece al pasar el ratón sobre el carrusel; en
+            móvil/tablet siempre visible. */}
+        <button
+          onClick={() => openExpanded(currentIndex)}
+          className="boton-maximizar-pulso absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30 bg-black/50 text-white p-4 rounded-full hover:bg-black/75 transition-colors opacity-100 lg:opacity-0 lg:group-hover:opacity-100 [animation-play-state:running] hover:[animation-play-state:paused]"
+          aria-label="Maximizar imagen"
+          title="Ver en pantalla completa"
+        >
+          <svg
+            className="w-9 h-9"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+            />
+          </svg>
+        </button>
 
         {/* Controles de navegación - Flechas */}
         {images.length > 1 && (

@@ -12,36 +12,10 @@ import { Cita } from '@/types/citas';
  * - Para agregar más citas aquí, copia y pega desde localStorage
  */
 
-// Función helper para obtener fechas relativas desde HOY
-const obtenerFechaDesdeHoy = (diasDesdeHoy: number): string => {
-  const fecha = new Date();
-  fecha.setDate(fecha.getDate() + diasDesdeHoy);
-  return fecha.toISOString().split('T')[0];
-};
-
 export const citasProduccion: Cita[] = [
-
-
   // ============================================
-  // CITAS DE MAÑANA
-  // ============================================
-  {
-    id: 'prod-003',
-    sedeId: 'colon',
-    fecha: obtenerFechaDesdeHoy(1), // MAÑANA
-    hora: '11:00',
-    nombrePaciente: 'Usuario',
-    telefonoPaciente: '31500000009',
-    tipoDocumento: 'CC',
-    numeroDocumento: '1122334455',
-    servicio: 'servicio',
-    estado: 'agendada',
-    fechaCreacion: new Date().toISOString(),
-  },
-
-  // ============================================
-  // AGREGAR MÁS CITAS AQUÍ
-  // Copia y pega el formato de arriba
+  // AGREGAR CITAS AQUÍ
+  // Copia y pega el formato de una cita (ver instrucciones al final)
   // ============================================
 ];
 

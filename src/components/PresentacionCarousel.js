@@ -177,7 +177,7 @@ export default function PresentacionCarousel({
             <Image
               src={expandedImage}
               alt="Imagen expandida"
-              className="max-w-full max-h-[90vh] "
+              className="no-hover-zoom max-w-full max-h-[90vh] "
               width={1920}
               height={1080}
               priority

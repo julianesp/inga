@@ -367,3 +367,81 @@ textarea:focus-visible {
 .dark .watermark-pattern {
   display: none;
 }
+
+/* ============================================
+   Hover-zoom en imágenes del área pública.
+   Solo en pantallas >1024px. Se excluyen el navbar,
+   el footer, los indicadores/controles y las imágenes
+   de presentación marcadas con .no-hover-zoom.
+   El área pública vive dentro de .watermark-container,
+   así que el panel admin (fuera de ese contenedor)
+   queda automáticamente excluido.
+   ============================================ */
+@media (min-width: 1025px) {
+  .watermark-container img:not(nav img):not(footer img):not(.no-hover-zoom):not(.no-hover-zoom img) {
+    transition: transform 0.35s ease;
+  }
+
+  .watermark-container
+    img:not(nav img):not(footer img):not(.no-hover-zoom):not(.no-hover-zoom img):hover {
+    transform: scale(1.08);
+  }
+}
+
+/* ============================================
+   Día del calendario con eventos: borde verde
+   principal con animación de pulsaciones
+   ============================================ */
+.dia-con-eventos {
+  border-color: #2f8132 !important;
+  animation: pulso-eventos 1.6s ease-in-out infinite;
+}
+
+@keyframes pulso-eventos {
+  0% {
+    box-shadow: 0 0 0 0 rgba(47, 129, 50, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(47, 129, 50, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(47, 129, 50, 0);
+  }
+}
+
+/* Respetar la preferencia de menos movimiento: mantener el
+   borde verde pero sin la animación de pulso */
+@media (prefers-reduced-motion: reduce) {
+  .dia-con-eventos {
+    animation: none;
+  }
+}
+
+/* ============================================
+   Botón de maximizar (galería): pulsaciones para
+   indicar al usuario que puede tocarlo.
+   ============================================ */
+.boton-maximizar-pulso {
+  animation: pulso-maximizar 1.8s ease-in-out infinite;
+}
+
+@keyframes pulso-maximizar {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.6);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(255, 255, 255, 0);
+    transform: translate(-50%, -50%) scale(1.06);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .boton-maximizar-pulso {
+    animation: none;
+  }
+}

@@ -88,7 +88,7 @@ function AutoSlider({ slides, title }) {
                   alt={slide.alt}
                   fill
                   sizes="100vw"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="no-hover-zoom object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
                   <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white rounded-full p-3 shadow-lg">
@@ -166,6 +166,7 @@ function AutoSlider({ slides, title }) {
 
 export default function Home() {
   const [consultas, setConsultas] = useState([]);
+  const [eventos, setEventos] = useState([]);
 
   useEffect(() => {
     const citas = obtenerTodasLasCitas();
@@ -174,6 +175,25 @@ export default function Home() {
       setConsultas(obtenerTodasLasCitas());
     }, 30000);
     return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    let activo = true;
+    const cargarEventos = async () => {
+      try {
+        const res = await fetch("/api/eventos");
+        if (!res.ok) throw new Error("Error al cargar eventos");
+        const data = await res.json();
+        const lista = Array.isArray(data) ? data : (data.results ?? []);
+        if (activo) setEventos(lista);
+      } catch {
+        if (activo) setEventos([]);
+      }
+    };
+    cargarEventos();
+    return () => {
+      activo = false;
+    };
   }, []);
 
   return (
@@ -252,7 +272,7 @@ export default function Home() {
               Selecciona un día para ver las consultas disponibles.
             </p>
           </div>
-          <CalendarioConsultas consultas={consultas} />
+          <CalendarioConsultas consultas={consultas} eventos={eventos} />
         </div>
       </section>
 
