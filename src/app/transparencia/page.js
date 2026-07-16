@@ -2,6 +2,9 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { useRolUsuario } from "@/hooks/useRolUsuario";
+import { Plus, Loader2, X } from "lucide-react";
+import FileUpload from "@/components/admin/FileUpload";
 
 // Icono PDF inline
 function IconoPDF() {
@@ -807,50 +810,162 @@ function ResultadosBusqueda({ query }) {
   );
 }
 
+const MESES_NOMBRE = ["","Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+
+function InformesArea({ label, informes }) {
+  const [abierto, setAbierto] = useState(false);
+  // Agrupar por año desc
+  const porAnio = informes.reduce((acc, inf) => {
+    const a = inf.anio ?? "—";
+    if (!acc[a]) acc[a] = [];
+    acc[a].push(inf);
+    return acc;
+  }, {});
+  const aniosOrdenados = Object.keys(porAnio).sort((a, b) => Number(b) - Number(a));
+
+  return (
+    <div className="rounded-xl overflow-hidden shadow-sm border border-gray-200 dark:border-gray-700">
+      <button
+        onClick={() => setAbierto(!abierto)}
+        className="w-full flex items-center justify-between px-5 py-4 bg-gradient-to-r from-green-700 to-green-600 dark:from-gray-700 dark:to-gray-600 text-white hover:from-green-800 hover:to-green-700 transition-all"
+      >
+        <div className="flex items-center gap-3">
+          <span className="font-semibold">{label}</span>
+          <span className="text-xs bg-white/20 px-2 py-0.5 rounded-full">{informes.length} informe{informes.length !== 1 ? "s" : ""}</span>
+        </div>
+        <IconoChevron abierto={abierto} />
+      </button>
+      {abierto && (
+        <div className="bg-gray-50 dark:bg-gray-800 p-4 space-y-4">
+          {aniosOrdenados.map((anio) => (
+            <div key={anio}>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 dark:text-gray-500 mb-2 ml-1">{anio}</p>
+              <div className="space-y-1.5">
+                {porAnio[anio]
+                  .sort((a, b) => Number(b.mes) - Number(a.mes))
+                  .map((inf) => (
+                    <div key={inf.id} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 py-3 px-4 rounded-lg bg-white dark:bg-gray-700 border border-gray-100 dark:border-gray-600">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <IconoPDF />
+                        <div className="min-w-0">
+                          <p className="text-sm font-medium text-gray-700 dark:text-gray-200 truncate">{inf.titulo}</p>
+                          <p className="text-xs text-gray-400 dark:text-gray-400">{MESES_NOMBRE[inf.mes]} {inf.anio}{inf.descripcion ? ` · ${inf.descripcion}` : ""}</p>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <Link href={inf.archivo_url} target="_blank"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-green-600 hover:bg-green-700 text-white rounded-md transition-colors shadow-sm">
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                          </svg>
+                          Ver
+                        </Link>
+                        <a href={inf.archivo_url} download
+                          className="inline-flex items-center gap-1 px-3 py-1.5 text-xs font-semibold bg-blue-600 hover:bg-blue-700 text-white rounded-md transition-colors shadow-sm">
+                          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                          </svg>
+                          Descargar
+                        </a>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+const AREA_LABEL = { administrativa:"Administrativa", asistencial:"Asistencial", financiera:"Financiera", juridica:"Jurídica", "talento-humano":"Talento Humano", otros:"Otros" };
+const AREAS = Object.keys(AREA_LABEL);
+
+const emptyInforme = { titulo:"", descripcion:"", archivo_url:"", area:"administrativa", mes: String(new Date().getMonth()+1), anio: String(new Date().getFullYear()) };
+
 // ─── PÁGINA ───────────────────────────────────────────────────────────────────
 
 export default function Transparencia() {
+  const { esAdmin } = useRolUsuario();
   const [busqueda, setBusqueda] = useState("");
   const buscando = busqueda.trim().length > 1;
 
-  // Documentos subidos desde el panel admin (/api/documentos), agrupados por año.
-  // Se muestran como acordeones adicionales junto a los años estáticos.
+  // Documentos estáticos de la BD (/api/documentos)
   const [aniosBD, setAniosBD] = useState([]);
+
+  // Informes mensuales de la BD (/api/informes)
+  const [informes, setInformes] = useState([]);
+
+  // Modal para agregar informe
+  const [modalOpen, setModalOpen] = useState(false);
+  const [form, setForm] = useState(emptyInforme);
+  const [saving, setSaving] = useState(false);
+  const [errorModal, setErrorModal] = useState(null);
 
   useEffect(() => {
     let activo = true;
-    const cargarDocumentos = async () => {
-      try {
-        const res = await fetch("/api/documentos");
-        if (!res.ok) throw new Error("Error al cargar documentos");
-        const data = await res.json();
+    fetch("/api/documentos")
+      .then((r) => r.ok ? r.json() : [])
+      .then((data) => {
+        if (!activo) return;
         const lista = Array.isArray(data) ? data : (data.results ?? []);
-        if (!activo || lista.length === 0) return;
-
-        // Agrupar por año
+        if (lista.length === 0) return;
         const porAnio = new Map();
         for (const d of lista) {
           const anio = d.anio ?? "Sin año";
           if (!porAnio.has(anio)) porAnio.set(anio, []);
           porAnio.get(anio).push({ nombre: d.nombre, url: d.archivo_url });
         }
-        const agrupados = Array.from(porAnio.entries())
-          .sort((a, b) => Number(b[0]) - Number(a[0]))
-          .map(([anio, documentos]) => ({
-            año: anio,
-            etiqueta: "Publicados desde el panel",
-            secciones: [{ titulo: "Documentos", documentos }],
-          }));
-        setAniosBD(agrupados);
-      } catch {
-        // Sin documentos de BD: solo se muestran los años estáticos
-      }
-    };
-    cargarDocumentos();
-    return () => {
-      activo = false;
-    };
+        setAniosBD(
+          Array.from(porAnio.entries())
+            .sort((a, b) => Number(b[0]) - Number(a[0]))
+            .map(([anio, documentos]) => ({ año: anio, etiqueta: "Publicados desde el panel", secciones: [{ titulo: "Documentos", documentos }] }))
+        );
+      })
+      .catch(() => {});
+    return () => { activo = false; };
   }, []);
+
+  const cargarInformes = () => {
+    fetch("/api/informes")
+      .then((r) => r.ok ? r.json() : [])
+      .then((data) => setInformes(Array.isArray(data) ? data : (data.results ?? [])))
+      .catch(() => {});
+  };
+
+  useEffect(() => { cargarInformes(); }, []);
+
+  // Informes agrupados por área y luego por año/mes
+  const informesAgrupados = informes.reduce((acc, inf) => {
+    const area = inf.area ?? "otros";
+    if (!acc[area]) acc[area] = [];
+    acc[area].push(inf);
+    return acc;
+  }, {});
+
+  const handleChange = (e) => setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSaving(true);
+    setErrorModal(null);
+    try {
+      const res = await fetch("/api/informes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, mes: Number(form.mes), anio: Number(form.anio) }),
+      });
+      if (!res.ok) { const d = await res.json(); throw new Error(d.error || "Error al guardar"); }
+      setModalOpen(false);
+      setForm(emptyInforme);
+      cargarInformes();
+    } catch (err) {
+      setErrorModal(err.message);
+    } finally {
+      setSaving(false);
+    }
+  };
 
   return (
     <div className="min-h-screen bg-slate-100 dark:bg-gray-900">
@@ -894,11 +1009,10 @@ export default function Transparencia() {
         </div>
       </section>
 
-      {/* Cuerpo */}
+      {/* Cuerpo — documentos estáticos */}
       <section className="py-14 bg-white dark:bg-gray-800 transition-colors duration-200">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            {/* Intro */}
             <div className="mb-10 text-center" data-aos="fade-up">
               <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-3">
                 Estados Financieros e Informes de Gestión - Régimen Tributario Especial ESAL
@@ -908,24 +1022,16 @@ export default function Transparencia() {
               </p>
             </div>
 
-            {/* Resultados de búsqueda O acordeones */}
             <div data-aos="fade-up" data-aos-delay="100">
               {buscando ? (
                 <ResultadosBusqueda query={busqueda} />
               ) : (
                 <>
                   {anios.map((anio) => (
-                    <AcordeonAnio
-                      key={anio.año}
-                      anio={anio}
-                      defaultAbierto={anio.año === 2026}
-                    />
+                    <AcordeonAnio key={anio.año} anio={anio} defaultAbierto={anio.año === 2026} />
                   ))}
                   {aniosBD.map((anio) => (
-                    <AcordeonAnio
-                      key={`bd-${anio.año}`}
-                      anio={anio}
-                    />
+                    <AcordeonAnio key={`bd-${anio.año}`} anio={anio} />
                   ))}
                 </>
               )}
@@ -933,6 +1039,125 @@ export default function Transparencia() {
           </div>
         </div>
       </section>
+
+      {/* Sección de Informes Mensuales */}
+      <section className="py-14 bg-gray-50 dark:bg-gray-900 transition-colors duration-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center justify-between mb-8" data-aos="fade-up">
+              <div>
+                <h2 className="text-3xl font-bold text-gray-800 dark:text-white mb-1">
+                  Informes Mensuales
+                </h2>
+                <p className="text-gray-500 dark:text-gray-400 text-sm">
+                  Informes de gestión por área y período.
+                </p>
+              </div>
+              {esAdmin && (
+                <button
+                  onClick={() => { setForm(emptyInforme); setErrorModal(null); setModalOpen(true); }}
+                  className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors shadow"
+                >
+                  <Plus className="h-4 w-4" />
+                  Agregar
+                </button>
+              )}
+            </div>
+
+            {informes.length === 0 ? (
+              <p className="text-center text-gray-400 dark:text-gray-500 py-10 text-sm">
+                No hay informes publicados aún.
+              </p>
+            ) : (
+              <div className="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                {AREAS.filter((a) => informesAgrupados[a]?.length > 0).map((area) => (
+                  <InformesArea
+                    key={area}
+                    area={area}
+                    label={AREA_LABEL[area]}
+                    informes={informesAgrupados[area]}
+                  />
+                ))}
+                {/* Áreas no reconocidas */}
+                {informesAgrupados["otros"]?.length > 0 && !AREAS.includes("otros") && (
+                  <InformesArea area="otros" label="Otros" informes={informesAgrupados["otros"]} />
+                )}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* Modal agregar informe */}
+      {modalOpen && (
+        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
+          <div className="bg-white dark:bg-slate-900 rounded-xl shadow-xl w-full max-w-lg max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-700">
+              <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100">Nuevo Informe</h3>
+              <button onClick={() => setModalOpen(false)} className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+                <X className="h-5 w-5" />
+              </button>
+            </div>
+            <form onSubmit={handleSubmit} className="px-6 py-4 space-y-4">
+              {errorModal && (
+                <div className="bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900 text-red-700 dark:text-red-300 text-sm px-4 py-2 rounded-lg">
+                  {errorModal}
+                </div>
+              )}
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Título <span className="text-red-500">*</span></label>
+                <input type="text" name="titulo" value={form.titulo} onChange={handleChange} required
+                  className="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Descripción</label>
+                <input type="text" name="descripcion" value={form.descripcion} onChange={handleChange}
+                  className="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+              </div>
+              <div className="grid grid-cols-3 gap-3">
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Área</label>
+                  <select name="area" value={form.area} onChange={handleChange}
+                    className="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    {AREAS.map((a) => <option key={a} value={a}>{AREA_LABEL[a]}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Mes</label>
+                  <select name="mes" value={form.mes} onChange={handleChange}
+                    className="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500">
+                    {MESES_NOMBRE.slice(1).map((m, i) => <option key={i+1} value={i+1}>{m}</option>)}
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Año</label>
+                  <input type="number" name="anio" value={form.anio} onChange={handleChange} min="2015" max="2100"
+                    className="w-full border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500" />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Archivo <span className="text-red-500">*</span></label>
+                <FileUpload accept=".pdf,.doc,.docx,.xls,.xlsx" carpeta="informes" label="Subir archivo"
+                  onUpload={(url) => setForm((p) => ({ ...p, archivo_url: url }))} />
+                {form.archivo_url && (
+                  <p className="mt-1 text-xs text-emerald-600 dark:text-emerald-400 truncate">✓ {form.archivo_url}</p>
+                )}
+              </div>
+              <div className="flex justify-end gap-3 pt-2">
+                <button type="button" onClick={() => setModalOpen(false)}
+                  className="px-4 py-2 text-sm text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                  Cancelar
+                </button>
+                <button type="submit" disabled={saving || !form.archivo_url}
+                  className="inline-flex items-center gap-2 px-4 py-2 text-sm bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors disabled:opacity-60">
+                  {saving && <Loader2 className="h-4 w-4 animate-spin" />}
+                  Publicar informe
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

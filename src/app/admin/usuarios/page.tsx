@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2, ShieldCheck } from "lucide-react";
 import { confirmDelete, showError } from "@/lib/alerts";
+import { useRolUsuario } from "@/hooks/useRolUsuario";
 
 interface Usuario {
   id: number;
@@ -41,6 +42,7 @@ const emptyForm: FormData = {
 };
 
 export default function AdminUsuarios() {
+  const { esAdmin } = useRolUsuario();
   const [items, setItems] = useState<Usuario[]>([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
@@ -150,13 +152,15 @@ export default function AdminUsuarios() {
             Gestiona los accesos y roles del personal autorizado.
           </p>
         </div>
-        <button
-          onClick={openCreate}
-          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-        >
-          <Plus className="h-4 w-4" />
-          Nuevo Usuario
-        </button>
+        {esAdmin && (
+          <button
+            onClick={openCreate}
+            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+          >
+            <Plus className="h-4 w-4" />
+            Agregar
+          </button>
+        )}
       </div>
 
       <div className="bg-amber-50 border border-amber-200 text-amber-800 text-sm px-4 py-3 rounded-lg flex items-start gap-2">

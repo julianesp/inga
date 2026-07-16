@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2 } from "lucide-react";
 import { confirmDelete, showError } from "@/lib/alerts";
+import { useRolUsuario } from "@/hooks/useRolUsuario";
 
 interface Servicio {
   id: number;
@@ -31,6 +32,7 @@ const emptyForm: FormData = {
 };
 
 export default function AdminServicios() {
+  const { esAdmin } = useRolUsuario();
   const [items, setItems] = useState<Servicio[]>([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
@@ -139,13 +141,15 @@ export default function AdminServicios() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl font-bold text-slate-800">Servicios</h2>
-        <button
-          onClick={openCreate}
-          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-        >
-          <Plus className="h-4 w-4" />
-          Nuevo Servicio
-        </button>
+        {esAdmin && (
+          <button
+            onClick={openCreate}
+            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+          >
+            <Plus className="h-4 w-4" />
+            Agregar
+          </button>
+        )}
       </div>
 
       {/* Tabla */}

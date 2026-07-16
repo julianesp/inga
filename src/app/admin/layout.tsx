@@ -7,7 +7,6 @@ import { useClerk, useUser } from "@clerk/nextjs";
 import { useEffect } from "react";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 
-const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL ?? "";
 import {
   LayoutDashboard,
   Newspaper,
@@ -40,8 +39,12 @@ const navItems = [
   { href: "/admin/usuarios", label: "Usuarios", icon: UserCog },
 ];
 
+const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL ?? "";
+
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  // null = verificando, false = no autorizado, true = autorizado
+  const [autorizado, setAutorizado] = useState<boolean | null>(null);
   const pathname = usePathname();
   const { signOut } = useClerk();
   const { user, isLoaded } = useUser();
@@ -50,18 +53,48 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
   useEffect(() => {
     if (!isLoaded) return;
     const isSignInPage = pathname.startsWith("/admin/sign-in");
-    if (!user && !isSignInPage) {
+    if (isSignInPage) return;
+
+    if (!user) {
       router.replace("/admin/sign-in");
       return;
     }
-    const email = user?.primaryEmailAddress?.emailAddress ?? "";
-    if (user && email !== ADMIN_EMAIL && !isSignInPage) {
-      router.replace("/admin/sign-in?error=unauthorized");
+
+    const email = user.primaryEmailAddress?.emailAddress ?? "";
+
+    // El email del env var siempre tiene acceso (admin por defecto)
+    if (ADMIN_EMAIL && email === ADMIN_EMAIL) {
+      setAutorizado(true);
+      return;
     }
+
+    fetch(`/api/usuarios/me?email=${encodeURIComponent(email)}`)
+      .then((r) => (r.ok ? r.json() : { rol: null }))
+      .then((data) => {
+        if (data.rol) {
+          setAutorizado(true);
+        } else {
+          setAutorizado(false);
+          router.replace("/admin/sign-in?error=unauthorized");
+        }
+      })
+      .catch(() => {
+        setAutorizado(false);
+        router.replace("/admin/sign-in?error=unauthorized");
+      });
   }, [isLoaded, user, pathname, router]);
 
   const isSignInPage = pathname.startsWith("/admin/sign-in");
   if (isSignInPage) return <>{children}</>;
+
+  // Mientras se verifica el acceso, mostrar pantalla en blanco (evita flash de redirección)
+  if (!autorizado) {
+    return (
+      <div className="h-dvh flex items-center justify-center bg-slate-100 dark:bg-slate-950">
+        <div className="w-8 h-8 border-4 border-emerald-600 border-t-transparent rounded-full animate-spin" />
+      </div>
+    );
+  }
 
   return (
     <div className="h-dvh bg-slate-100 dark:bg-slate-950 flex overflow-hidden">

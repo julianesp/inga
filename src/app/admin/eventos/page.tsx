@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Plus, Pencil, Trash2, X, Loader2, MapPin, Calendar } from "lucide-react";
 import FileUpload from "@/components/admin/FileUpload";
 import { confirmDelete, showError } from "@/lib/alerts";
+import { useRolUsuario } from "@/hooks/useRolUsuario";
 
 interface Evento {
   id: number;
@@ -49,6 +50,7 @@ function formatFecha(value: string | null): string {
 }
 
 export default function AdminEventos() {
+  const { esAdmin } = useRolUsuario();
   const [items, setItems] = useState<Evento[]>([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
@@ -169,13 +171,15 @@ export default function AdminEventos() {
             Publica eventos institucionales que aparecerán en el calendario.
           </p>
         </div>
-        <button
-          onClick={openCreate}
-          className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
-        >
-          <Plus className="h-4 w-4" />
-          Nuevo Evento
-        </button>
+        {esAdmin && (
+          <button
+            onClick={openCreate}
+            className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+          >
+            <Plus className="h-4 w-4" />
+            Agregar
+          </button>
+        )}
       </div>
 
       {/* Lista de eventos */}

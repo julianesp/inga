@@ -5,6 +5,7 @@ import { Plus, Pencil, Trash2, X, Loader2, FileText, Eye, EyeOff } from "lucide-
 import dynamic from "next/dynamic";
 import FileUpload from "@/components/admin/FileUpload";
 import { confirmDelete } from "@/lib/alerts";
+import { useRolUsuario } from "@/hooks/useRolUsuario";
 
 const RichTextEditor = dynamic(() => import("@/components/admin/RichTextEditor"), { ssr: false });
 
@@ -33,6 +34,7 @@ type EstadoPublicacion = "borrador" | "publicado" | "archivado";
 const empty = { titulo: "", resumen: "", contenido: "", imagen_portada: "", slug: "", estado: "borrador" as EstadoPublicacion, autor: "" };
 
 export default function PublicacionesPage() {
+  const { esAdmin } = useRolUsuario();
   const [items, setItems] = useState<Publicacion[]>([]);
   const [loading, setLoading] = useState(true);
   const [modalOpen, setModalOpen] = useState(false);
@@ -80,9 +82,11 @@ export default function PublicacionesPage() {
     <div>
       <div className="flex items-center justify-between mb-6">
         <h1 className="text-2xl font-bold text-slate-800">Publicaciones</h1>
-        <button onClick={openNew} className="flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm font-medium">
-          <Plus className="h-4 w-4" /> Nueva publicación
-        </button>
+        {esAdmin && (
+          <button onClick={openNew} className="flex items-center gap-2 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors text-sm font-medium">
+            <Plus className="h-4 w-4" /> Agregar
+          </button>
+        )}
       </div>
 
       {loading ? (
